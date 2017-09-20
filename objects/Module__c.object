@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Academic_Year__c</fullName>
+        <description>From Global picklist</description>
+        <externalId>false</externalId>
+        <globalPicklist>Academic_Year</globalPicklist>
+        <inlineHelpText>For reporting use academic year for this Instance, not from the Version</inlineHelpText>
+        <label>Academic Year</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Accreditation__c</fullName>
+        <externalId>false</externalId>
+        <label>Accreditation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>LSTM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>University of Liverpool</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Active_Date__c</fullName>
+        <description>Date from which Module Version is Active, to trigger workflow</description>
+        <externalId>false</externalId>
+        <label>Active Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Approved_Date__c</fullName>
+        <description>Date from which the Module is valid/active</description>
+        <externalId>false</externalId>
+        <label>Approved Date</label>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Assessment_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Semester 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semester 2 - Block 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semester 2 - Block 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semester 2 - Block 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Semester 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_1__c</fullName>
+        <defaultValue>1</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>At least one variable should be added, with total of 100%; to assist this variable defaults to 100%</inlineHelpText>
+        <label>Assessment Variable 1</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_2__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Variable 2</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_3__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Variable 3</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_4__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Variable 4</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_5__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Variable 5</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_6__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Variable 6</label>
+        <precision>8</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessment_Variable_Sum__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assessment_Variable_1__c + Assessment_Variable_2__c + Assessment_Variable_3__c + Assessment_Variable_4__c + Assessment_Variable_5__c + Assessment_Variable_6__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assessment Variable Sum</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Assessments_Count__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessments Count</label>
+        <summaryForeignKey>Assessment__c.Module__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Audit_Log__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Audit Log</label>
+        <referenceTo>SIS_Audit__c</referenceTo>
+        <relationshipLabel>Modules</relationshipLabel>
+        <relationshipName>Active_Modules</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Audit_Trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Hidden, for testing &amp; manual trigger of SIS Audit record</description>
+        <externalId>false</externalId>
+        <label>Audit Trigger</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Av_Attendance__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Sessions_Expected_Sum__c =0, 0, Sessions_Actual_Sum__c / Sessions_Expected_Sum__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Av Attendance %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>CRM_Temp_Id__c</fullName>
+        <externalId>false</externalId>
+        <label>CRM Temp Id</label>
+        <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Course_Template_VLE_ID__c</fullName>
+        <description>Formula shows Course Template VLE ID from Module Version's 'Master Version'</description>
+        <externalId>false</externalId>
+        <formula>Module_Version__r.Course_Template_VLE_ID_Reference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Formula shows Course Template VLE ID from Module Version's 'Master Version'</inlineHelpText>
+        <label>Course Template VLE ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Credits__c</fullName>
+        <externalId>false</externalId>
+        <label>Credits</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Criticality_Rollup__c</fullName>
+        <description>May need not be needed, will be tested with Student Assessment records</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Rollup score of how 'critical' related assessments are to overall pass/fail</inlineHelpText>
+        <label>Criticality Rollup</label>
+        <summarizedField>Assessment__c.Criticality_Score__c</summarizedField>
+        <summaryForeignKey>Assessment__c.Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Criticality_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of Pooled assessments that must be passed</inlineHelpText>
+        <label>Criticality Threshold</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Pass Definition</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>HESA_Audit__c</fullName>
+        <externalId>false</externalId>
+        <formula>Module_Version__r.Master_Link__r.HESA_Audit__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HESA Audit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>HESA_Cost_Centre__c</fullName>
+        <externalId>false</externalId>
+        <formula>Module_Version__r.Master_Link__r.HESA_Cost_Centre__c</formula>
+        <inlineHelpText>HESA Cost Centre COSTCN set at Master level</inlineHelpText>
+        <label>HESA Cost Centre</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>HESA_FTE__c</fullName>
+        <description>Used in HESA XML output to indicate the proportion of a full-time equivalent year attributed to the module
+For MSc is what proportion of total credits comes from this Module; for DTM&amp;H set at Programme FTE (STULOAD) of 44; for DTN set at 22</description>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT (Module_Type__c) = "MSc Module",
+    100 * (Credits__c /180),
+   IF (  Module_Reference__c = "DTM&amp;H", 44, 22)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HESA FTE</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Incorrect_Version__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Instance_Suffix__c=Module_Version__r.Version_Suffix__c,FALSE,TRUE)</formula>
+        <inlineHelpText>Module parented to incorrect Version, comparing Instance/Version Suffix fields</inlineHelpText>
+        <label>Incorrect Version</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Instance_Code__c</fullName>
+        <description>Used for HESA reporting to give unique code per Module instance</description>
+        <externalId>false</externalId>
+        <formula>Module_Reference__c &amp; "-" &amp;  Instance_Suffix__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Instance Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Instance_Suffix__c</fullName>
+        <externalId>false</externalId>
+        <label>Instance Suffix</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Code__c</fullName>
+        <description>Course unique Code value</description>
+        <externalId>false</externalId>
+        <label>Module Code</label>
+        <length>64</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Convenor__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup to Contact, with record type = Staff</description>
+        <externalId>false</externalId>
+        <label>Module Convenor</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>Staff</value>
+            </filterItems>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>My Modules</relationshipLabel>
+        <relationshipName>Staff_Modules</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Module_Reference__c</fullName>
+        <description>LSTM reference for each course</description>
+        <externalId>false</externalId>
+        <inlineHelpText>LSTM reference for each course</inlineHelpText>
+        <label>Module Reference</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Retired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Module_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Module Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MSc Module</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Professional Diploma</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Short Course</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>PGR Module</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Module_Version__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Filter prevents attaching Master record for Module Versions to Module Instance</description>
+        <externalId>false</externalId>
+        <label>Module Version</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <filterItems>
+                <field>Module_Version__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Versions</value>
+            </filterItems>
+            <filterItems>
+                <field>Module_Version__c.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Pre-Approved</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Module_Version__c</referenceTo>
+        <relationshipLabel>Module Instances</relationshipLabel>
+        <relationshipName>Modules_Instances</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Passmark__c</fullName>
+        <defaultValue>0.5</defaultValue>
+        <description>Referenced by Student Module</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Defaults to 50%, can be amended by System Admins only</inlineHelpText>
+        <label>Passmark</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Retire_Date__c</fullName>
+        <description>Date from which Module is retired from use and is termed inactive</description>
+        <externalId>false</externalId>
+        <label>Retire Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Sessions_Actual_Sum__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <label>Sessions Actual Sum</label>
+        <summarizedField>Session__c.Actual__c</summarizedField>
+        <summaryForeignKey>Session__c.Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Sessions_Expected_Sum__c</fullName>
+        <externalId>false</externalId>
+        <label>Sessions Expected Sum</label>
+        <summarizedField>Session__c.Expected__c</summarizedField>
+        <summaryForeignKey>Session__c.Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Test_Class_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Test Class Record</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>VLE_ID__c</fullName>
+        <description>Course offering ID at VLE side</description>
+        <externalId>false</externalId>
+        <label>VLE ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>VLE_Visibility__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To prevent some records triggering actions in VLE</description>
+        <externalId>false</externalId>
+        <inlineHelpText>To prevent some records triggering actions in VLE</inlineHelpText>
+        <label>VLE Visibility</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Instances of Modules</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Private</externalSharingModel><label>Module</label><nameField>
+        <label>Module Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Modules</pluralLabel><searchLayouts>
+        <searchResultsAdditionalFields>Module_Reference__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Module_Version__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Module_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Credits__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Active__c</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Credits__c</columns>
+        <columns>Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Modules</label>
+    </listViews><listViews>
+        <fullName>All_MSc_Modules</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Credits__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Type__c</field>
+            <operation>equals</operation>
+            <value>MSc Module</value>
+        </filters>
+        <label>All MSc Modules</label>
+    </listViews><listViews>
+        <fullName>All_MSc_Modules_Cloning</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Credits__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Type__c</field>
+            <operation>equals</operation>
+            <value>MSc Module</value>
+        </filters>
+        <filters>
+            <field>NAME</field>
+            <operation>contains</operation>
+            <value>15/16,16/17</value>
+        </filters>
+        <label>All MSc Modules - Cloning</label>
+    </listViews><listViews>
+        <fullName>All_Module_Instances_15_16</fullName>
+        <booleanFilter>4 and (1 OR 2 OR 3 OR 5 OR 6)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Instance_Suffix__c</columns>
+        <columns>Academic_Year__c</columns>
+        <columns>Credits__c</columns>
+        <columns>Active__c</columns>
+        <columns>VLE_Visibility__c</columns>
+        <columns>Course_Template_VLE_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>equals</operation>
+            <value>15/16</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>equals</operation>
+            <value>2015</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>equals</operation>
+            <value>2016</value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>equals</operation>
+            <value>15/16-1</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>equals</operation>
+            <value>15/16-2</value>
+        </filters>
+        <label>All Module Instances 15/16</label>
+    </listViews><listViews>
+        <fullName>All_Module_Instances_16_17</fullName>
+        <booleanFilter>1 OR 2 OR 3</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Module_Version__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Instance_Suffix__c</columns>
+        <columns>Credits__c</columns>
+        <columns>Active__c</columns>
+        <columns>VLE_Visibility__c</columns>
+        <columns>VLE_ID__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Academic_Year__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>contains</operation>
+            <value>16-17</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>contains</operation>
+            <value>2016</value>
+        </filters>
+        <filters>
+            <field>Instance_Suffix__c</field>
+            <operation>contains</operation>
+            <value>2017</value>
+        </filters>
+        <label>All Module Instances 16/17</label>
+    </listViews><listViews>
+        <fullName>All_PCU</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Credits__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Type__c</field>
+            <operation>equals</operation>
+            <value>Masters Module,Professional Diploma,Short Course</value>
+        </filters>
+        <label>All PCU</label>
+    </listViews><listViews>
+        <fullName>Color_Test_Listview</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Reference__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Credits__c</columns>
+        <columns>Course_Template_VLE_ID__c</columns>
+        <columns>VLE_ID__c</columns>
+        <columns>VLE_Visibility__c</columns>
+        <columns>Active__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Reference__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Color Test Listview</label>
+        <sharedTo>
+            <group>Color_Group</group>
+        </sharedTo>
+    </listViews><validationRules>
+        <fullName>Assessment_Variable_Check</fullName>
+        <active>false</active>
+        <errorConditionFormula>OR( Assessment_Variable_Sum__c &lt; 1.00, Assessment_Variable_Sum__c &gt; 1.00)</errorConditionFormula>
+        <errorMessage>Assessment variables need to add up to 100%</errorMessage>
+    </validationRules><webLinks>
+        <fullName>Student_Intake</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Student Intake</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>https://emea.salesforce.com/00O20000005wO1y?pv0={!Module__c.Id}</url>
+    </webLinks></CustomObject>

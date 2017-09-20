@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>MRC-DTP Reminder 1 for Draft Applicants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>MRC-DTP Reminder 1</name>
+    <style>formalLetter</style>
+    <subject>Your LSTM MRC Doctoral Training Partnership Application</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c}
+
+Programme: {!Student_Programme__c.Programme__c}
+Application Status: {!Student_Programme__c.Stage__c}
+
+Thank you for registering to apply for the MRC Doctoral Training Partnership.
+
+We’re writing to let you know that you have not yet submitted your application form which still appears as a draft application.
+
+Please login to MyLSTM to complete your application and submit it at your earliest convenience.
+
+I would like to remind you that the MRC Doctoral Training Partnership call closes at 23:59 on 3rd January 2016 and draft applications will not be considered.
+
+Just as a reminder, the username you used to login with is: {!Student_Programme__c.Personal_Email__c}
+
+If you do not remember your password, please use the “forgot your password?” facility which is on the login page at https://mylstm.com/apply.
+
+If you have any problems, or need any assistance with your application, please contact us via email at mrcdtp@lstmed.ac.uk.
+
+Best,
+
+The MRC DTP Team
+
+The Liverpool School of Tropical Medicine
+Pembroke Place
+Liverpool
+L3 5QA</textOnly>
+    <type>html</type>
+</EmailTemplate>

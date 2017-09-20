@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Available_for_Staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Available for Staff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Available_for_Student__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Available for Student</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Vle_Role_Id__c</fullName>
+        <caseSensitive>false</caseSensitive>
+        <description>Role Id in Vle Environment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Role Id in Vle Environment</inlineHelpText>
+        <label>Vle Role Id</label>
+        <length>10</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><customSettingsType>List</customSettingsType><enableFeeds>false</enableFeeds><label>VLE Roles</label><visibility>Public</visibility></CustomObject>

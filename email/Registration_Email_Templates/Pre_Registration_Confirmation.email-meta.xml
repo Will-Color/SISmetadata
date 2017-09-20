@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Confirmation email sent on completion of Pre-Registration</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Pre-Registration Confirmation</name>
+    <style>freeForm</style>
+    <subject>Welcome to LSTM: Important Information</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+
+Thank you for completing pre-registration.
+
+
+
+Your Student ID Number is: {!Student_Programme__c.LSTM_No__c}
+
+
+
+Your Username and Email Address is: {!Student_Programme__c.LSTM_Email__c}
+
+
+
+For security reasons, we are unable to include your LSTM password in this email. However, we have sent a copy of your password in a separate email to your personal email address.
+
+
+
+You can now use your new username and password to access a number of different LSTM systems. Watch the video guide or go to the student intranet to get started.
+
+
+
+Get Started Video Guide: https://goo.gl/nFEcp8
+
+
+
+Student Intranet: http://mylstm.com
+
+
+
+The Student Intranet provides useful information on services and support for students. It also gives you access to Office 365 allowing you to download Microsoft Word, Excel and PowerPoint and access your LSTM email account. It is important you check your LSTM email account regularly, as we will send all future correspondence to this address.
+
+
+
+Brightspace: http://brightspace.lstmed.ac.uk
+
+
+
+Brightspace is LSTM&apos;s Virtual Learning Environment, which allows you to get connected with staff and fellow students, access programme/module material and submit your assignments.
+
+
+
+Information about LSTM&apos;s Library opening times and the services available can be found at: https://lstmed.sharepoint.com/sites/Students/SitePages/Library.aspx
+
+
+
+If you have any difficulty accessing any of our systems, please email MyLSTM@lstmed.ac.uk.
+
+
+
+
+
+Yours sincerely
+
+
+
+
+
+
+The Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

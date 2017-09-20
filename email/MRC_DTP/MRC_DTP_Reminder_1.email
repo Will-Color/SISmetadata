@@ -1,0 +1,63 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="Arial, sans-serif">Dear
+{!Student_Programme__c.Student__c}</font><font face="arial"><o:p></o:p></font></p>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Programme: <b>{!Student_Programme__c.Programme__c}</b></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Application Status:&nbsp;<b>{!Student_Programme__c.Stage__c}</b></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">Thank you for registering to apply for the MRC Doctoral Training
+Partnership.<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt; text-indent: 36pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">We’re writing to let you know that you have not yet submitted your
+application form which still appears as a draft application.<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">Please login to <a href="http://mylstm.com/apply">MyLSTM</a> to complete your application and&nbsp;</span><span style="font-family: Arial, sans-serif;">submit it at your earliest
+convenience.<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><br></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">I would like to remind you that the MRC Doctoral Training
+Partnership call closes at <b>23:59 on 3<sup>rd</sup>
+January 2016</b> and draft applications will not be considered.<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="margin: 0cm 0cm 0.0001pt;"><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">Just as a reminder, the username you used to login with is:&nbsp;</span><font face="Arial, sans-serif">{!Student_Programme__c.Personal_Email__c}</font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">If you do not remember your password, please use the
+“<a href="https://mylstm.force.com/students/secur/forgotpassword.jsp?locale=us">forgot your password?</a>” facility which is on the login page at&nbsp;<o:p></o:p></span><a href="https://mylstm.com/apply" style="font-size: 12pt; font-family: Arial, sans-serif;">https://mylstm.com/apply</a>.</p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;"><br></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">If you have any problems, or need any assistance with your application, please contact us via email at<span class="apple-converted-space">&nbsp;</span></span><a href="mailto:mrcdtp@lstmed.ac.uk"><span style="font-family:&quot;Arial&quot;,sans-serif">mrcdtp@lstmed.ac.uk</span></a><span style="font-family: Arial, sans-serif;">.<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">Best,<o:p></o:p></span></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin: 0cm 0cm 0.0001pt;"><span style="font-family: Arial, sans-serif;">The MRC DTP Team</span></p>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="Arial, sans-serif">The
+Liverpool School of Tropical Medicine<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="Arial, sans-serif">Pembroke
+Place<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="Arial, sans-serif">Liverpool<o:p></o:p></font></p><p class="MsoNormal" style="margin-bottom: 0.0001pt;">
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="Arial, sans-serif">L3 5QA</font><font face="arial"><o:p></o:p></font></p>]]></td>
+</tr>
+</table>

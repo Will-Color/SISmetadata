@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>conditional offer - payment</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Conditional Offer - DipUKMP</name>
+    <style>freeForm</style>
+    <subject>DipUKMP Application approved</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+
+Student ID Number: {!Contact.LSTM_No__c}
+
+Course: {!Student_Programme__c.Programme__c}
+
+
+
+
+Thank you for your application to the Diploma in UK Medical Practice. This has been approved by the Director of Studies and is conditional on:
+
+
+
+Receipt of your MTI confirmation letter from the RCP. Please e-mail this to dipukmp@lstmed.ac.uk if you have not already done so.
+Payment of the fee. You will be able to access content at the start of the month following payment. You will receive a separate email with instructions on how to pay your tuition fee.
+
+
+Once these things are done, you will receive a further e-mail with details of how to access the virtual learning environment (“BrightSpace”), where you will find the full programme specification and learning outcomes, details on what is expected for the written assignment and supporting resources. We will also tell you your written assignment deadline.
+
+
+Please do contact us with any questions in the meantime.
+
+Best wishes
+
+
+Natasha Sutton
+
+
+DipUKMP Programme Administrator
+
+Liverpool School of Tropical Medicine
+
+
+Tel: 0151 705 3754</textOnly>
+    <type>html</type>
+</EmailTemplate>

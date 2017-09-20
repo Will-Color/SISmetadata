@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Narrative field for use on Staff Community Home page list views --></help>
+        <label><!-- Action Required --></label>
+        <name>Action_Required__c</name>
+    </fields><fields>
+        <label><!-- Add PAP Members --></label>
+        <name>Add_PAP_Members__c</name>
+    </fields><fields>
+        <label><!-- Assessed Period --></label>
+        <name>Assessed_Period__c</name>
+        <relationshipLabel><!-- Progress Assessments --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Specified on Research Period --></help>
+        <label><!-- Attendance at PGR Conference --></label>
+        <name>Attendance_at_PGR_Conference__c</name>
+    </fields><fields>
+        <label><!-- Completed Supervisions --></label>
+        <name>Completed_Supervisions__c</name>
+    </fields><fields>
+        <help><!-- Taken from Previous Panel --></help>
+        <label><!-- Date of Last Panel --></label>
+        <name>Date_of_Last_Panel__c</name>
+    </fields><fields>
+        <help><!-- From Student Programme --></help>
+        <label><!-- Date of Registration --></label>
+        <name>Date_of_Registration__c</name>
+    </fields><fields>
+        <help><!-- Date on which PAP takes place --></help>
+        <label><!-- Date of Review --></label>
+        <name>Date_of_Review__c</name>
+    </fields><fields>
+        <help><!-- Difficulties experienced with facilities or resources needed to undertake research --></help>
+        <label><!-- Difficulties experienced --></label>
+        <name>Difficulties_experienced__c</name>
+    </fields><fields>
+        <help><!-- Panel&apos;s assessment of the Student&apos;s engagement with identification of training and development needs, and actions to meet needs. --></help>
+        <label><!-- Identification of development needs(PAP) --></label>
+        <name>Idenification_of_development_needs_PAP__c</name>
+    </fields><fields>
+        <help><!-- Primary Supervisor&apos;s assessment of the Student&apos;s engagement with identification of training and development needs, and actions to meet needs. --></help>
+        <label><!-- Idenification of development needs (Sup) --></label>
+        <name>Idenification_of_development_needs_Sup__c</name>
+    </fields><fields>
+        <label><!-- Location of Study --></label>
+        <name>Location_of_Study__c</name>
+    </fields><fields>
+        <label><!-- Mode of Study --></label>
+        <name>Mode_of_Study__c</name>
+    </fields><fields>
+        <label><!-- PAP Form --></label>
+        <name>PAP_Form__c</name>
+    </fields><fields>
+        <help><!-- Not seen by Student until  &apos;Released to Student&apos; is ticked. --></help>
+        <label><!-- Panel Recommendation --></label>
+        <name>Panel_Recommendation__c</name>
+        <picklistValues>
+            <masterLabel>Minor concerns have been raised and these will be brought to attention of DPR and may require further action.</masterLabel>
+            <translation><!-- Minor concerns have been raised and these will be brought to attention of DPR and may require further action. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes.</masterLabel>
+            <translation><!-- Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student has made satisfactory progress and should be permitted to re-register.</masterLabel>
+            <translation><!-- Student has made satisfactory progress and should be permitted to re-register. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student has not made satisfactory academic progress, and their studies should be terminated.</masterLabel>
+            <translation><!-- Student has not made satisfactory academic progress, and their studies should be terminated. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student has not made sufficient satisfactory academic progress but is permitted a further period under review. Academic progress will be assessed further by the PAP.</masterLabel>
+            <translation><!-- Student has not made sufficient satisfactory academic progress but is permitted a further period under review. Academic progress will be assessed further by the PAP. --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student's initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim.</masterLabel>
+            <translation><!-- Student&apos;s initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim. --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Information given here will not be visible to the Student or Assigned Supervisors, but will remain visible to all PAP Members. --></help>
+        <label><!-- Panel&apos;s Confidential Issues --></label>
+        <name>Panel_s_Confidential_Issues__c</name>
+    </fields><fields>
+        <label><!-- Period of Study --></label>
+        <name>Period_of_Study__c</name>
+    </fields><fields>
+        <help><!-- Link to last Progress Assessment Panel record --></help>
+        <label><!-- Previous Panel --></label>
+        <name>Previous_Panel__c</name>
+        <relationshipLabel><!-- Subsequent PAPs --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Taken from Entry/Exit Options on Student Programme --></help>
+        <label><!-- Programme --></label>
+        <name>Programme__c</name>
+    </fields><fields>
+        <help><!-- Panel&apos;s assessment of the project, its management and the availability of resources --></help>
+        <label><!-- Project, management and resources --></label>
+        <name>Project_management_and_resources__c</name>
+    </fields><fields>
+        <help><!-- Primary Supervisor&apos;s assessment of Student&apos;s prospects for delivering a timely and high-quality thesis. --></help>
+        <label><!-- Prospect of timely/quality submit (Sup) --></label>
+        <name>Prospect_of_timely_quality_submission_Su__c</name>
+    </fields><fields>
+        <help><!-- Panel&apos;s assessment of Student&apos;s prospects for delivering a timely and high-quality thesis. --></help>
+        <label><!-- Prospect of timely/quality submit (PAP) --></label>
+        <name>Prospect_of_timely_quality_submit_PAP__c</name>
+    </fields><fields>
+        <help><!-- Once ticked, Student will be able to review the outcome of the PAP. --></help>
+        <label><!-- Release to Student --></label>
+        <name>Release_to_Student__c</name>
+    </fields><fields>
+        <label><!-- Release to Supervisor --></label>
+        <name>Release_to_Supervisor__c</name>
+    </fields><fields>
+        <help><!-- Set on Assessed Research Period record --></help>
+        <label><!-- Required Supervisions --></label>
+        <name>Required_Supervisions__c</name>
+    </fields><fields>
+        <help><!-- Panel&apos;s assessment of research outputs, eg papers, conference papers, etc --></help>
+        <label><!-- Research Outputs (PAP) --></label>
+        <name>Research_Outputs_PAP__c</name>
+    </fields><fields>
+        <help><!-- e.g papers, conference papers --></help>
+        <label><!-- Research Outputs (Student) --></label>
+        <name>Research_Outputs_Student__c</name>
+    </fields><fields>
+        <label><!-- Research Period Active --></label>
+        <name>Research_Period_Active__c</name>
+    </fields><fields>
+        <help><!-- Primary Supervisor&apos;s assessment of student&apos;s self-management skills; their grasp of their work; their effort and commitment. --></help>
+        <label><!-- Self-management, effort &amp; commitmt (Sup) --></label>
+        <name>Self_management_effort_commitment_Sup_vi__c</name>
+    </fields><fields>
+        <help><!-- Panel&apos;s assessment of student&apos;s self-management skills; their grasp of their work; their effort and commitment. --></help>
+        <label><!-- Self-management, effort &amp; commitmt (PAP) --></label>
+        <name>Self_management_effort_commitmt_PAP__c</name>
+    </fields><fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+    </fields><fields>
+        <help><!-- Information given here will not be visible by your Supervisor, but will be visible to all PAP Members. --></help>
+        <label><!-- Student&apos;s Confidential Issues --></label>
+        <name>Student_s_Confidential_Issues__c</name>
+    </fields><fields>
+        <help><!-- Once ticked, the Panel will be alerted to review. --></help>
+        <label><!-- Submit to Panel --></label>
+        <name>Submit_to_Panel__c</name>
+    </fields><fields>
+        <help><!-- Once ticked, your Primary Supervisor will be alerted to complete their sections. --></help>
+        <label><!-- Submit to Supervisor --></label>
+        <name>Submit_to_Supervisor__c</name>
+    </fields><fields>
+        <help><!-- Information given here will not be shown to the Student, but will be visible to all PAP Members and all Assigned Supervisors --></help>
+        <label><!-- Supervisor&apos;s Confidential Issues --></label>
+        <name>Supervisor_s_Confidential_Issues__c</name>
+    </fields><fields>
+        <help><!-- To be completed by Student --></help>
+        <label><!-- Teaching/demonstration undertaken --></label>
+        <name>Teaching_demonstration_undertaken__c</name>
+    </fields><fields>
+        <label><!-- Type of Review --></label>
+        <name>Type_of_Review__c</name>
+        <picklistValues>
+            <masterLabel>Annual Review</masterLabel>
+            <translation><!-- Annual Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interim Review</masterLabel>
+            <translation><!-- Interim Review --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Uploaded Development Needs Analysis --></label>
+        <name>Uploaded_Development_Needs_Analysis__c</name>
+    </fields><fields>
+        <label><!-- Uploaded Project Plan --></label>
+        <name>Uploaded_Project_Plan__c</name>
+    </fields><fields>
+        <label><!-- Uploaded Project Report --></label>
+        <name>Uploaded_Project_Report__c</name>
+    </fields><fields>
+        <label><!-- Uploaded Timeline for Data Collection --></label>
+        <name>Uploaded_Timeline_for_Data_Collection__c</name>
+    </fields><fields>
+        <help><!-- Returns TRUE if Running User&apos;s Contact ID is contained in PAP Members string on Research Period parent record. Used to drive List Views on Staff Community --></help>
+        <label><!-- User is PAP Member --></label>
+        <name>User_is_PAP_Member__c</name>
+    </fields><fields>
+        <help><!-- Returns TRUE if Running User&apos;s Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community --></help>
+        <label><!-- User is Supervisor --></label>
+        <name>User_is_Supervisor__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Progress Assessment</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Progress Assessments</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>DPGS Full PAP Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Section --></label>
+            <section>Hidden Section</section>
+        </sections>
+        <sections>
+            <label><!-- Panel Section --></label>
+            <section>Panel Section</section>
+        </sections>
+        <sections>
+            <label><!-- Student Section --></label>
+            <section>Student Section</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Assessed Period --></label>
+            <section>Summary of Assessed Period</section>
+        </sections>
+        <sections>
+            <label><!-- Supervisor Section --></label>
+            <section>Supervisor Section</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Staff Progression Assessment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Pre-Submission PAP Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Student Section --></label>
+            <section>Student Section</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Assessed Period --></label>
+            <section>Summary of Assessed Period</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Released PAP Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Panel Section --></label>
+            <section>Panel Section</section>
+        </sections>
+        <sections>
+            <label><!-- Student Section --></label>
+            <section>Student Section</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Assessed Period --></label>
+            <section>Summary of Assessed Period</section>
+        </sections>
+        <sections>
+            <label><!-- Supervisor Section --></label>
+            <section>Supervisor Section</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Submitted Read Only PAP Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Student Section --></label>
+            <section>Student Section</section>
+        </sections>
+        <sections>
+            <label><!-- Summary of Assessed Period --></label>
+            <section>Summary of Assessed Period</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Pre-submission --></label>
+        <name>Pre_submission</name>
+    </recordTypes><recordTypes>
+        <label><!-- Released --></label>
+        <name>Released</name>
+    </recordTypes><recordTypes>
+        <label><!-- Submitted --></label>
+        <name>Submitted</name>
+    </recordTypes><validationRules>
+        <errorMessage><!-- You have not specified whether Student has attended a PGR Conference. Untick &apos;Submit to Panel&apos; and update Attendance of PGR Conference on Research Period record. --></errorMessage>
+        <name>Attendance_at_Conference_not_set</name>
+    </validationRules></CustomObjectTranslation>

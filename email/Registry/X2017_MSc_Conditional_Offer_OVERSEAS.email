@@ -1,0 +1,272 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">{!Contact.Title}
+{!Contact.FirstName}&nbsp;{!Contact.LastName}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">{!Contact.MailingAddress}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">{!Today}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Dear&nbsp;{!Contact.FirstName},<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Student
+ID Number:&nbsp;{!Contact.LSTM_No__c}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">On
+behalf of the Liverpool School of Tropical Medicine I would like to offer you a
+conditional place on the&nbsp;MSc in&nbsp;{!Student_Programme__c.Programme__c}.&nbsp;The
+programme runs&nbsp;from
+{!Student_Programme__c.Programme_Start_Date__c}&nbsp;to
+{!Student_Programme__c.Programme_End_Date__c}.&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Please
+note that fees for September 2017 are due to be revised in December.&nbsp; We
+will automatically email you with this information.&nbsp; Fees for September
+2016 are attached for reference purposes only.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">The
+conditions of this offer are:<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+You must provide evidence of your degree award and classification if
+applicable.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+Receipt of&nbsp;one/two&nbsp;suitable references which are no more than two
+years old. References should be from senior academic and/ or professional
+persons who are currently responsible or have recently been responsible for
+supervising you; friends and family are not acceptable. &nbsp;If you have given
+us permission to contact your referees on submitting your application then you
+do not need to take any further action. If you have not given us permission to
+contact your referees then you will need to ask your referees to email their
+references directly to MyLSTM@lstmed.ac.uk.&nbsp;Please note that for
+verification purposes references should be emailed from a business email
+address. If this is not possible, then references should appear on headed
+stationery and/ or bear the official stamp of the organisation.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+To enable us to identify your fee status please complete and return the
+attached questionnaire as soon as possible.&nbsp; You will be classified as an
+“overseas” student by default until we have the information to enable us to
+make a formal assessment.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+Provide evidence of how you are going to fund your studies. If you are
+self-funding then please sign and return the attached fees agreement letter.
+Please note that electronic signatures are not accepted. You must also provide
+a recent bank statement showing that you have sufficient funds to cover both
+your tuition fees and living expenses. For living expenses you must show £9,135
+(£1,015 per month of a maximum of 9 months) which is in line with the
+maintenance requirement set by the Home Office. The bank statement must be in your
+name (a joint account with your name on is acceptable). If you are sponsored by
+an organisation (for example,&nbsp;your home government, the British Council
+etc.)&nbsp;then please provide a letter from your sponsor confirming these
+arrangements. The letter&nbsp;must&nbsp;include all of the information detailed
+in the template sponsor letter which you will find as an attachment to this
+offer.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+You must meet the English language entry requirements. Further information on
+how to meet these requirements can be found on the website:<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;"><a href="http://www.lstmed.ac.uk/study/how-to-apply/english-language-requirements">http://www.lstmed.ac.uk/study/how-to-apply/english-language-requirements</a> <o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;-
+Payment of £1000 tuition fee in advance must be made no later than
+1st&nbsp;June 2017. Payment&nbsp;details can be requested from us once&nbsp;you
+have met all of the conditions detailed above. Payment constitutes a commitment
+to LSTM and as such is non-refundable.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Demand
+for our programmes often exceeds the number of available places; therefore it
+is in your best interest to meet all the conditions of your offer as soon as
+possible in order to secure a place. If you think you will be unable to meet
+the conditions of your offer in time for the start date of the programme, you
+may be able to defer entry until the following year.&nbsp; Students may only
+defer entry once. For further details please see the LSTM Admissions policy
+which can be found on our website by clicking:&nbsp;<a href="http://www.lstmed.ac.uk/study/quality-manual">http://www.lstmed.ac.uk/study/quality-manual</a> <o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Once
+you have met&nbsp;all&nbsp;of the conditions of this offer we will confirm your
+place on the programme and you will be&nbsp;invoiced for the remaining balance
+of your tuition fees. Attached to this email is information about the research
+project which you should read carefully.&nbsp; If you are currently undecided
+about undertaking an overseas project you should let me know now so that I do
+not include the fee in the final invoice; you can reconsider this decision further
+into your studies. Sponsored students should be aware that it is difficult to
+request additional funds after they have commenced their studies. Tuition fees
+are normally due in full one week before the start of the programme.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Scholarships<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">LSTM
+is able to offer a limited number of scholarships to support applicants who
+already have some funding in place.&nbsp;Awards granted do not normally exceed
+50% of the tuition fee&nbsp;and in most cases are considerably less. The
+deadline for applying is midnight on 30th&nbsp;April 2017 and in time
+applications will be considered at the Fellowships and Scholarships Committee
+in May.&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Occasionally,
+if there are unused funds we may hold a second Fellowships and Scholarships
+Committee so if you are receiving this offer after the deadline you may still
+wish to submit an application.&nbsp;&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Thomas
+Mark Scholarship (MSc in Tropical Paediatrics only)<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">LSTM
+is able to offer one full scholarship to support a student undertaking the MSc
+in Tropical Paediatrics. Candidates must be:<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+a national of a developing country; and<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+currently working in a developing country and will return to work in a
+developing country upon completion of the MSc in Tropical Paediatrics; and<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">-
+can demonstrate a strong research interest, evidenced by published papers or conference
+presentations.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">The
+deadline for applying is midnight on 31st December 2016 and candidates can
+expect to hear the outcome of their application within four weeks of the
+deadline. Applications received after the deadline will not be considered.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Candidates
+for the Thomas Mark Scholarship are also welcome to submit an application for
+an LSTM Scholarship but they should only do so if they already have some
+funding in place.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Current
+Passport<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">As
+part of the application process you were asked to provide details of your
+current passport. If you update your passport you must inform us by emailing us
+a copy of the photo ID page.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">May
+I offer my congratulations on gaining this offer. If you require any further
+information or advice then please do not hesitate to contact me.<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Yours
+sincerely<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">{!User.FirstName}&nbsp;{!User.LastName}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Administrator
+– Academic Registry<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Email:
+MyLSTM@lstmed.ac.uk<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Telephone:&nbsp;{!User.Phone}<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Encs:<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Tuition
+Fees 2016/17 -&nbsp;for guidance only<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Fee
+Status Questionnaire<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Project
+Information<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Template
+Sponsor Letter<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Fees
+Agreement Letter<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">LSTM
+Scholarship Information</span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">Thomas Mark Scholarship Information </span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">&nbsp;<o:p></o:p></span></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal; font-size: 12pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoPlainText"><span style="font-size: 10pt; mso-bidi-font-family: Arial;">SPONSOR
+LICENCE NUMBER:&nbsp;WBN38URF9<o:p></o:p></span></p><font face="Times New Roman" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">
+
+</font>]]></td>
+</tr>
+</table>

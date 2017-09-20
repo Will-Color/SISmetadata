@@ -1,0 +1,142 @@
+<apex:page controller="StudentLandingPageController" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/> 
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+    </style>
+
+
+<!-- Script for Ruler analytics app -->
+
+    <script type="text/javascript">
+        var __raconfig = __raconfig || {};
+        __raconfig.uid = '582f0e86520ec';
+        __raconfig.action = 'track';
+        (function () {
+            var ra = document.createElement('script');
+            ra.type = 'text/javascript';
+            ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ra, s);
+        }());
+    </script>
+    
+<!-- Ruler Analytics Script end -->
+
+
+
+    <script>
+      var j$ = jQuery.noConflict();
+      j$(document).ready(function() {
+          j$('.headerSearchContainer').hide();
+      });
+    </script>
+    <apex:define name="body">
+    
+    <apex:form >
+    
+    <!-- <h2><b>Welcome {!currentStudentRecord.Name}</b></h2> -->
+    
+    <br/><br/>
+    
+    <!-- Expected / Registration Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="regApps" rendered="{!showExpected}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Applications awaiting Registration" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!expectedApplications}" var="regApp" id="draftAppTable" rendered="{!(expectedApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+               <!--<apex:outputLink value="/PreRegistration?Id={!regApp.id}" rendered="{!regApp.Stage__c = 'Expected'}">Register Online</apex:outputLink>-->
+
+              <apex:outputLink value="/PreRegistration?Id={!regApp.id}" rendered="{!AND(regApp.Stage__c = 'Expected',AND(regApp.Programme_Type__c != 'Online Course',regApp.Programme_Type__c != 'Closed Course'))}">Register Online</apex:outputLink>
+              <apex:outputLink value="/PreRegistration?Id={!regApp.id}" rendered="{!AND(regApp.Stage__c = 'Expected',OR(regApp.Programme_Type__c = 'Online Course',regApp.Programme_Type__c = 'Closed Course'))}">View</apex:outputLink>
+
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!regApp.Name}" rendered="{!regApp.Stage__c = 'Expected'}" />
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <!-- <apex:outputfield value="{!draftApp.Programme__c}"/> -->
+                <apex:outputText value="{!regApp.Programme__r.Name}" rendered="{!regApp.Stage__c = 'Expected'}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!regApp.Programme_Type__c}" rendered="{!regApp.Stage__c = 'Expected'}"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Draft Applications Panel -->
+    
+    <!-- Draft Applications Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="draftApps" rendered="{!showDraft}">
+      <!-- <apex:outputText style="font-weight:bold;font-style:italic;" value="These are your current un-submitted applications.  Use this screen to carry on editing your application(s)." escape="false"/> -->
+        <apex:pageblock >
+          <apex:pageBlockSection title="Draft Applications (click Edit to continue with your application)" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!draftApplications}" var="draftApp" id="draftAppTable" rendered="{!(draftApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/applywizard?Id={!draftApp.Id}">Edit</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!draftApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <!-- <apex:outputfield value="{!draftApp.Programme__c}"/> -->
+                <apex:outputText value="{!draftApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!draftApp.Programme_Type__c}"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Draft Applications Panel -->
+    
+    <apex:outputText value="{!pageCopy.Body_Copy__c}" escape="false"/>
+    
+    <br/><br/>
+    
+    <h2>Helpful Links</h2>
+    
+    <br/><br/>
+    
+    <a href="{!pageCopy.Link_1_URL__c}">{!pageCopy.Link_1_Name__c}</a>
+    <br/><br/>
+    <a href="{!pageCopy.Link_2_URL__c}">{!pageCopy.Link_2_Name__c}</a>
+    <br/><br/>
+    <a href="{!pageCopy.Link_3_URL__c}">{!pageCopy.Link_3_Name__c}</a>
+    <br/><br/>
+    
+    <!-- <p>
+    <i>This is where a whole load of text will appear which will be controlled<br/>
+    by the LSTM Admin team and a custom object / record.  We can put all sorts of things here<br/>
+    such as term time messages, announcements, and other various information.</i>
+    </p> -->
+    
+    <br/><br/>
+    
+    <a href="http://www.lstmliverpool.ac.uk">LSTM Website</a>
+
+    
+    </apex:form>
+    
+    </apex:define>
+
+
+</apex:page>

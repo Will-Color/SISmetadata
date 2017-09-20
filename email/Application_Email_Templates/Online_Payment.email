@@ -1,0 +1,68 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<span lang="EN-US" style="font-family: arial;"><font face="Arial, sans-serif" size="2"><font><p class="MsoNormal">Dear {!Student_Programme__c.Student__c},<o:p></o:p></p><p class="MsoNormal" style="font-family: arial;"><o:p>&nbsp;</o:p></p><p class="MsoNormal">Student ID Number: <b>{!Contact.LSTM_No__c}</b><o:p></o:p></p><p class="MsoNormal">Programme: <b>{!Student_Programme__c.Programme__c}</b><o:p></o:p></p><p class="MsoNormal">Start Date: <b>{!Student_Programme__c.Programme_Start_Date__c}</b><o:p></o:p></p><p class="MsoNormal"><o:p>&nbsp;</o:p></p><p class="MsoNormal">We have partnered with Flywire to provide students with an
+easy and secure method of sending fee payments in your home currency. You can
+pay by bank transfer, credit/debit card and e-wallet methods.<o:p></o:p></p><p class="MsoNormal" style="font-family: arial;"><o:p>&nbsp;</o:p></p><p class="MsoNormal">The tuition fee in advance deposit payment for this
+programme is £1,000.<o:p></o:p></p><p class="MsoNormal" style="font-family: arial;">&nbsp;</p><p class="MsoNormal"><b>How to Pay:<o:p></o:p></b></p><p class="MsoNormal"><br></p><p class="MsoNormal">1. Visit
+<a href="http://lstmed.flywire.com">lstmed.flywire.com</a> and choose your country and input the amount you are paying in
+GBP</p><ul><li>Payment by international debit/credit card =&nbsp;<b>£1,000</b></li><li>Payment by UK bank transfer =&nbsp;<b>£1,000</b></li><li>Payment by UK credit/debit cards =&nbsp;<b>£1,020.41</b>&nbsp;(incl. 2% fee)</li></ul></font>2. Choose your
+payment method &amp; make your payment to Flywire</font></span><div style="font-family: arial;"><span lang="EN-US"><font face="Arial, sans-serif" size="2">3. Enter your
+details &amp; those of the student you are paying for</font></span></div><div><span lang="EN-US"><font face="Arial, sans-serif" size="2" style="font-family: arial;">4. Track &amp;
+confirm your payment by email, SMS or by logging into <a href="http://lstmed.flywire.com">lstmed.flywire.com</a></font><font><p class="MsoNormal" style="font-family: arial;"><font face="Arial, sans-serif" size="2"><o:p></o:p></font></p><p class="MsoNormal" style="font-family: arial;"><font face="Arial, sans-serif" size="2"><o:p></o:p></font></p><p class="MsoNormal" style="font-family: arial;"><font face="Arial, sans-serif" size="2"><o:p></o:p></font></p><p class="MsoNormal" style="font-family: arial;"><o:p><font face="Arial, sans-serif" size="2">&nbsp;</font></o:p></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2">Yours sincerely<o:p></o:p></font></p><p class="MsoNormal"><o:p><font face="Arial, sans-serif" size="2">&nbsp;</font></o:p></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2">Liverpool School of Tropical Medicine<o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2">Pembroke Place<o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif" size="2">Liverpool, L3 5QA<o:p></o:p></font></p><p align="left" class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal"><font face="Arial, sans-serif" size="2">United Kingdom</font><font face="arial" style="font-family: arial; font-size: 12pt;"><o:p></o:p></font></p></font></span></div>]]></td>
+</tr>
+</table>

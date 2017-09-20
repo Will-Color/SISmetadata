@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Registration Email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>DipUKMP Registration</name>
+    <style>freeForm</style>
+    <subject>DipUKMP Registration</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+Thank you for registering for the Diploma in UK Medical Practice.
+
+
+Your Student ID Number is: {!Student_Programme__c.LSTM_No__c}
+
+
+Your Username and Email Address is: {!Student_Programme__c.LSTM_Email__c}
+
+
+For security reasons, we are unable to include your LSTM password in this email. However, we have sent a copy of your password in a separate email to your personal email address.
+
+
+You can now use your new username and password to access a number of different LSTM systems. Watch the video guide or go to the student intranet to get started.
+
+
+Get Started video guide: https://goo.gl/nFEcp8
+
+
+Student intranet: http://mylstm.com
+
+
+The student intranet provides useful information on services and support for students. It also gives you access to Office 365 allowing you to download Microsoft Word, Excel and PowerPoint and access your LSTM email account. It is important you check your LSTM email account regularly, as we will send all future correspondence to this address.
+
+
+Brightspace: http://brightspace.lstmed.ac.uk
+
+
+Brightspace is LSTM&apos;s virtual learning environment (VLE). This is an online space dedicated to the DipUKMP, which contains all essential information for the programme. Here you will find educational material, key documents and updates on important NHS issues. There are resources to help you succeed in the programme and, in particular, in the written assignment. You can communicate with fellow MTI doctors on the programme through Brightspace and also with staff. Assignments are also submitted through Brightspace. Please start using it and familiarise yourself with its content.
+
+
+
+If you have any difficulty accessing any of our systems, please email dipukmp@lstmed.ac.uk
+
+
+Yours sincerely
+
+
+
+
+The Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Is this Org Unit relates to Staff Only. Either &quot;Is Student&quot; OR &quot;Is Staff&quot; should be selected --></help>
+        <label><!-- Available for Staff --></label>
+        <name>Available_for_Staff__c</name>
+    </fields><fields>
+        <help><!-- Is this Org Unit relates to Student Only. --></help>
+        <label><!-- Available for Student --></label>
+        <name>Available_for_Student__c</name>
+    </fields><fields>
+        <help><!-- VLE Course unique Code --></help>
+        <label><!-- Org Unit Code --></label>
+        <name>Org_Unit_Code__c</name>
+    </fields><fields>
+        <help><!-- Organisation Wide Unit VLE ID --></help>
+        <label><!-- Org Unit VLE ID --></label>
+        <name>Org_Unit_VLE_ID__c</name>
+    </fields><fields>
+        <label><!-- Staff Role VLE ID --></label>
+        <name>Staff_Role_VLE_ID__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>VLE Org Wide Units And Role Assignments</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>VLE Org Wide Units And Role Assignments</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

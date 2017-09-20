@@ -1,0 +1,12 @@
+<apex:page >
+<script type="text/javascript">
+window.onload = new function() { init(); };
+    function init() {
+        var link = document.createElement("a"); 
+        link.download = "Generated XML"; 
+        link.href = "xmlGeneration"; 
+        link.click();
+        window.location.href="FilterSisAuditsForXML";
+        }
+    </script>
+</apex:page>

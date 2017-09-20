@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>API_Host__c</fullName>
+        <description>Domain name of API host</description>
+        <externalId>false</externalId>
+        <label>API Host</label>
+        <length>64</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>App_ID__c</fullName>
+        <description>App ID from desire2learn</description>
+        <externalId>false</externalId>
+        <label>App ID</label>
+        <length>22</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>App_Key__c</fullName>
+        <description>App Key for desire2learn (secret)</description>
+        <externalId>false</externalId>
+        <label>App Key</label>
+        <length>22</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>BatchIsRunning__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates state of batch for synchronization</description>
+        <externalId>false</externalId>
+        <label>BatchIsRunning</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Default_Course_Template_VLE_ID__c</fullName>
+        <description>If VLE Template ID is not specified in Module Version, this value is used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If VLE Template ID is not specified in Module Version, this value is used.</inlineHelpText>
+        <label>Default Course Template VLE ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Default_Module_Reference__c</fullName>
+        <description>When Module being sent to VLE, it should contain 'Module Reference' field value in its Name. If blank - this value is used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When Module being sent to VLE, it should contain 'Module Reference' field value in its Name. If blank - this value is used.</inlineHelpText>
+        <label>Default Module Reference</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Default_Module_Suffix__c</fullName>
+        <description>When Module being sent to VLE, it should contain 'Module Suffix' field value in its Name and Code. If blank - this value is used.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When Module being sent to VLE, it should contain 'Module Suffix' field value in its Name and Code. If blank - this value is used.</inlineHelpText>
+        <label>Default Module Suffix</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Default_Staff_Role_VLE_ID__c</fullName>
+        <description>If Module Role has no matches for VLE Role Id - this value is used as default for Staff</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Module Role has no matches for VLE Role Id - this value is used as default for Staff</inlineHelpText>
+        <label>Default Staff Role VLE ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Default_Student_Role_VLE_ID__c</fullName>
+        <description>If Program Type has no matches for VLE Role Id - this value is used as default for Student</description>
+        <externalId>false</externalId>
+        <inlineHelpText>If Program Type has no matches for VLE Role Id - this value is used as default for Student</inlineHelpText>
+        <label>Default Student Role VLE ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Email_To_Staff__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Send welcome email to staff from VLE staff</description>
+        <externalId>false</externalId>
+        <label>Email To Staff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Email_To_Student__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Send welcome email to student from VLE side</description>
+        <externalId>false</externalId>
+        <label>Email To Student</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Enable_Programme_Homepage__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>Enroll Student to Programme Homepage Org Wide Unit.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Enroll Student to Programme Homepage Org Wide Unit.</inlineHelpText>
+        <label>Enable Programme Homepage</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>External_Examiner_Role_ID__c</fullName>
+        <description>ID of External Examiner role</description>
+        <externalId>false</externalId>
+        <label>External Examiner Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>External_Instructor_Role_ID__c</fullName>
+        <description>ID of External Instructor role</description>
+        <externalId>false</externalId>
+        <label>External Instructor Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Instructor_Role_ID__c</fullName>
+        <description>ID of Instructor role</description>
+        <externalId>false</externalId>
+        <label>Instructor Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>MSc_Student_Role_ID__c</fullName>
+        <description>ID of MSc Student  role</description>
+        <externalId>false</externalId>
+        <label>MSc Student Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Observer_Role_ID__c</fullName>
+        <description>ID of Observer role</description>
+        <externalId>false</externalId>
+        <label>Observer Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Prof_Dip_Student_Role_ID__c</fullName>
+        <description>Id if Prof Dip Student role</description>
+        <externalId>false</externalId>
+        <label>Prof Dip Student Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Short_Course_Student_Role_ID__c</fullName>
+        <description>Id of Short Course Student role</description>
+        <externalId>false</externalId>
+        <label>Short Course Student Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Role_ID__c</fullName>
+        <description>Identifier of "LSTM Student" role</description>
+        <externalId>false</externalId>
+        <label>Student Role ID</label>
+        <length>32</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_ID__c</fullName>
+        <description>User ID for API calls</description>
+        <externalId>false</externalId>
+        <label>User ID</label>
+        <length>22</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_Key__c</fullName>
+        <description>Key for API user (secret)</description>
+        <externalId>false</externalId>
+        <label>User Key</label>
+        <length>22</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><customSettingsType>List</customSettingsType><description>Credentials for VLE external service</description><enableFeeds>false</enableFeeds><label>VLE parameters</label><visibility>Protected</visibility></CustomObject>

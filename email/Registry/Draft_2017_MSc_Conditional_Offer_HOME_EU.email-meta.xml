@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>2017 MSc Conditional Offer HOME/EU</name>
+    <style>freeForm</style>
+    <subject>Conditional Offer: MSc in {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.Title} {!Contact.FirstName} {!Contact.LastName}
+
+{!Contact.MailingAddress}
+
+
+
+
+{!Today}
+
+
+
+
+Dear {!Contact.FirstName},
+
+
+Student ID Number: {!Contact.LSTM_No__c}
+
+
+On behalf of the Liverpool School of Tropical Medicine I would like to offer you a conditional place on the MSc in {!Student_Programme__c.Programme__c}. The programme runs from {!Student_Programme__c.Programme_Start_Date__c} to {!Student_Programme__c.Programme_End_Date__c}.
+
+
+
+Please note that fees for September 2017 are due to be revised in December.  We will automatically email you with this information. Fees for September 2016 are attached for reference purposes only.
+
+
+
+The conditions of this offer are:
+
+
+- You must provide evidence of your degree award and classification if applicable.
+
+
+- Receipt of one/two suitable references which are no more than two years old. References should be from senior academic and/ or professional persons who are currently responsible or have recently been responsible for supervising you; friends and family are not acceptable.  If you have given us permission to contact your referees on submitting your application then you do not need to take any further action. If you have not given us permission to contact your referees then you will need to ask your referees to email their references directly to MyLSTM@lstmed.ac.uk. Please note that for verification purposes references should be emailed from a business email address. If this is not possible, then references should appear on headed stationery and/ or bear the official stamp of the organisation.
+
+
+
+- You must provide evidence of how you are going to fund your studies. If you are self-funding (you or a family member are funding your studies), please sign and return the attached fees agreement letter. Please note that electronic signatures are not accepted. If you are sponsored by an organisation (for example, your home government, the British Council etc.), please provide a letter from your sponsor confirming these arrangements. The letter must include all of the information detailed in the template sponsor letter which you will find as an attachment to this offer.
+
+
+
+- You must meet the English language entry requirements. Further information on how to meet these requirements can be found on the website:
+
+http://www.lstmed.ac.uk/study/how-to-apply/english-language-requirements
+
+- Payment of £1000 tuition fee in advance must be made no later than 1st June 2017. Payment details can be requested from us once you have met all of the conditions detailed above. Payment constitutes a commitment to LSTM and as such is non-refundable.
+
+
+Demand for our programmes often exceeds the number of available places; therefore it is in your best interest to meet all the conditions of your offer as soon as possible in order to secure a place. If you think you will be unable to meet the conditions of your offer in time for the start date of the programme, you may be able to defer entry until the following year. Students may only defer entry once. For further details please see the LSTM Admissions policy which can be found on our website by clicking: http://www.lstmed.ac.uk/study/quality-manual
+
+
+Once you have met all of the conditions of this offer we will confirm your place on the programme and you will be invoiced for the remaining balance of your tuition fees. Attached to this email is information about the research project which you should read carefully.  If you are currently undecided about undertaking an overseas project you should let me know now so that I do not include the fee in the final invoice; you can reconsider this decision further into your studies. Sponsored students should be aware that it is difficult to request additional funds after they have commenced their studies. Tuition fees are normally due in full one week before the start of the programme.
+
+
+
+Scholarships
+
+
+LSTM is able to offer a limited number of scholarships to support applicants who already have some funding in place. Awards granted do not normally exceed 50% of the tuition fee and in most cases are considerably less. The deadline for applying is midnight on 30th April 2017 and in time applications will be considered at the Fellowships and Scholarships Committee in May.
+
+
+
+Occasionally, if there are unused funds we may hold a second Fellowships and Scholarships Committee so if you are receiving this offer after the deadline you may still wish to submit an application.
+
+
+
+Current Passport
+
+
+As part of the application process you were asked to provide details of your current passport. If you update your passport you must inform us by emailing us a copy of the photo ID page.
+
+
+May I offer my congratulations on gaining this offer. If you require any further information or advice then please do not hesitate to contact me.
+
+
+Yours sincerely
+
+
+
+
+
+
+{!User.FirstName} {!User.LastName}
+
+Administrator – Academic Registry
+
+Email: MyLSTM@lstmed.ac.uk
+
+Telephone: {!User.Phone}
+
+
+
+Encs:
+
+Tuition Fees 2016/17 - for guidance only
+
+Project Information
+
+Template Sponsor Letter
+
+Fees Agreement Letter
+
+LSTM Scholarship Information
+
+
+
+SPONSOR LICENCE NUMBER: WBN38URF9</textOnly>
+    <type>html</type>
+</EmailTemplate>

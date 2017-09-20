@@ -1,0 +1,146 @@
+<apex:page controller="ManageVleOrgWideUnitRolesController" title="VLE Role Assignmetns" >
+    
+    <apex:pageMessages id="pg_msg" />
+    
+    <apex:outputPanel rendered="{! isValid }">
+        <apex:form >
+            <apex:pageBlock >
+                
+                <apex:outputPanel id="student_panel" >
+                    
+                    <apex:pageBlockSection columns="1">
+                        <apex:variable value="{!0}" var="rowNumStud"/>
+                        <h1>Student Role Assignments</h1><br/>*Programme Type field value of Programme Version object defines what Role Student will be Enrolled to on VLE. <br/>New Roles can be added in Custom Settings 'Vle Roles'.
+                        <apex:pageBlockTable value="{! studentProgramType2VleRoleId }" var="studType" title="Student Product Type to VLE Role Assignment" >
+    
+                            <apex:column >
+                                <apex:facet name="header">Program Type</apex:facet>
+                                <apex:selectList size="1" value="{! studType.Programme_Type__c }">
+                                    <apex:selectOptions value="{! programTypes }"/>
+                                </apex:selectList>
+                            </apex:column>
+            
+                            <apex:column >
+                                <apex:facet name="header">Student VLE Role</apex:facet>
+                                <apex:selectList size="1" value="{! studType.Role_VLE_ID__c }">
+                                    <apex:selectOptions value="{! studentRoles }"/>
+                                </apex:selectList>
+                            </apex:column>
+            
+                            <apex:column >
+                                <apex:facet name="header">Action</apex:facet>
+                                 <apex:commandLink action="{! deleteRowStudent }" value="Delete">
+                                    <apex:param name="recId" assignTo="{! indexToDelete }" value="{! rowNumStud }"/>
+                                </apex:commandLink> 
+                                <apex:variable var="rowNumStud" value="{!rowNumStud + 1}"/>              
+                            </apex:column>
+                                  
+                        </apex:pageBlockTable>
+        
+                        <apex:commandButton value="Add Row" action="{! addRecord }" reRender="student_panel">
+                            <apex:param name="objname" assignTo="{! objName }" value="VLE_Program_Type_2_Role_VLE_ID_Mapping__c"/>
+                        </apex:commandButton>
+                        
+                        <apex:selectList size="1" value="{! vleParameters.Default_Student_Role_VLE_ID__c }" label="Default Student Role" >
+                            <apex:selectOptions value="{! studentRoles }"/>                            
+                        </apex:selectList>                        
+                        * If Program Type mapping is not specified for some Vle Role, this value is being used as <b>Default Vle Role</b> to Enroll Student for.
+                        
+                        <apex:inputField value="{! vleParameters.Enable_Programme_Homepage__c }" />
+                        
+                     </apex:pageBlockSection>
+                </apex:outputPanel>
+                
+                <br/><hr/>
+            
+                <apex:outputPanel id="staff_panel" >
+                
+                    <apex:pageBlockSection columns="1" collapsible="true">
+                        <apex:variable value="{!0}" var="rowNumStaff"/>
+                        
+                        <h1>Staff Role Assignments</h1><br/>*Module Role field value of Module Role object defines what Role Staff will be Enrolled to on VLE. <br/>New Roles can be added in Custom Settings 'Vle Roles'.
+                        <apex:pageBlockTable value="{! staffModuleRole2VleRoleId }" var="staffType" title="Staff Module Role to VLE Role Assignment" >
+                            <apex:column >
+                                <apex:facet name="header">Module Role</apex:facet>
+                                <apex:selectList size="1" value="{! staffType.Module_Role__c }">
+                                    <apex:selectOptions value="{! moduleRoles }"/>
+                                </apex:selectList>
+                            </apex:column>
+            
+                            <apex:column >
+                                <apex:facet name="header">Staff Vle Role</apex:facet>
+                                <apex:selectList size="1" value="{! staffType.Role_VLE_ID__c }">
+                                    <apex:selectOptions value="{! staffRoles }"/>
+                                </apex:selectList>
+                            </apex:column>
+            
+                            <apex:column >
+                                <apex:facet name="header">Action</apex:facet>
+                                <apex:commandLink action="{! deleteRowStaff }" value="Delete">
+                                    <apex:param name="recId" assignTo="{! indexToDelete }" value="{!rowNumStaff}" />
+                                </apex:commandLink> 
+                                <apex:variable var="rowNumStaff" value="{! rowNumStaff+ 1}"/>
+                            </apex:column>
+                            
+                        </apex:pageBlockTable>
+                        
+                        <apex:commandButton value="Add Row" action="{! addRecord }" reRender="staff_panel">
+                            <apex:param name="objname" assignTo="{! objName }" value="VLE_Staff_Module_Roles_And_Vle_Role_Ids__c"/>
+                        </apex:commandButton>
+                        
+                        <apex:selectList size="1" value="{! vleParameters.Default_Staff_Role_VLE_ID__c }" label="Default Staff Role">
+                            <apex:selectOptions value="{! staffRoles }"/>                            
+                        </apex:selectList>                        
+                        * If Module Role mapping is not specified for some Vle Role, this value is being used as <b>Default Vle Role</b> to Enroll Staff for.
+                        
+                    </apex:pageBlockSection>
+                </apex:outputPanel>
+                <br/><hr/>
+
+                <apex:outputPanel id="staff_org_unit_panel" >
+                    
+                    <apex:pageBlockSection columns="1">
+                        <apex:variable value="{!0}" var="rowNumStaff"/>
+                        
+                        <h1>Staff Org Wide Unit Role Assignments</h1><br/>* In order to add/remove Organisation-Wide Units go to Setup -> Custom Settings -> VLE Org Wide Units And Role Assignments.
+                        <apex:pageBlockTable value="{! staffOrgUnitsParameters }" var="stafOrgUnit"  >
+                            <apex:column >
+                                <apex:facet name="header">Org Unit Name</apex:facet>
+                                <apex:outputText value="{! stafOrgUnit.Name }" />
+                            </apex:column>
+
+                            <apex:column >
+                                <apex:facet name="header">Org Unit Code</apex:facet>
+                                <apex:outputText value="{! stafOrgUnit.Org_Unit_Code__c }" />
+                            </apex:column>
+                                        
+                            <apex:column >
+                                <apex:facet name="header">Org Unit Vle Id</apex:facet>
+                                <apex:outputText value="{! stafOrgUnit.Org_Unit_VLE_ID__c }" />
+                            </apex:column>
+
+                            <apex:column >
+                                <apex:facet name="header">Staff Vle Role</apex:facet>
+                                <apex:selectList size="1" value="{! stafOrgUnit.Staff_Role_VLE_ID__c}">
+                                    <apex:selectOptions value="{! staffRoles }"/>
+                                </apex:selectList>
+                            </apex:column>
+                            
+                        </apex:pageBlockTable>
+ 
+                    </apex:pageBlockSection>
+                    
+                </apex:outputPanel>
+                <br/>
+                                
+                <apex:pageBlockButtons location="bottom">
+                   <apex:commandButton value="Save" action="{! saveMappings }" rerender="student_panel, staff_panel, pg_msg"/> 
+                   <apex:commandButton value="Back" action="{! cancel }" immediate="true" />                    
+                </apex:pageBlockButtons>
+                
+            </apex:pageBlock>
+        </apex:form>
+        
+    </apex:outputPanel>
+    
+</apex:page>

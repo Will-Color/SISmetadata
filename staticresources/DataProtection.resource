@@ -1,0 +1,2 @@
+<h1>Data Protection</h1>
+<p>Your data will not be disclosed for other purposes without your consent, except where there is a legal obligation to do so or where exceptional issues of personal safety arise. The information will be processed and held in LSTM’s administration systems and used for the administration of your academic related support and any other legitimate LSTM purpose. In doing so, LSTM will observe at all times the data protection principles embodied in the Data Protection Act 1998.</p>

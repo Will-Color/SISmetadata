@@ -1,0 +1,278 @@
+<apex:page standardController="Programme_Version__c" showHeader="false" sidebar="false" extensions="ProgrammeVersionTabsExt">
+<apex:form >
+<style>
+.activeTab {background-color: #CE1126; color:white; background-image:none; font-weight:bold;}
+.inactiveTab { background-color: lightgrey; color:black; background-image:none; font-weight:bold;}
+</style>
+<apex:tabPanel switchType="client" tabClass="activeTab" inactiveTabClass="inactiveTab">
+
+<apex:tab label="Summary" switchType="client" title="Programme Summary">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Programme_Overview__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Summary_top}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Summary_bottom}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<!-- 2015-04-02 : SE : Adding new Awards tab -->
+
+<apex:tab label="Awards" switchType="client" title="Entry and Exit Awards">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+
+<apex:pageBlockSection title="Entry Awards" columns="2">
+<apex:outputField value="{!Programme_Version__c.XEntry_Award_1__c}"/>
+<apex:outputField value="{!Programme_Version__c.Entry_Award_1_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Entry_Award_1_Level__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2">
+<apex:outputField value="{!Programme_Version__c.XEntry_Award_2__c}"/>
+<apex:outputField value="{!Programme_Version__c.Entry_Award_2_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Entry_Award_2_Level__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2">
+<apex:outputField value="{!Programme_Version__c.XEntry_Award_3__c}"/>
+<apex:outputField value="{!Programme_Version__c.Entry_Award_3_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Entry_Award_3_Level__c}"/>
+</apex:pageBlockSection>
+
+<apex:pageBlockSection title="Exit Awards" columns="2">
+<apex:outputField value="{!Programme_Version__c.XExit_Award_1__c}"/>
+<apex:outputField value="{!Programme_Version__c.Exit_Award_1_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Exit_Award_1_Level__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2">
+<apex:outputField value="{!Programme_Version__c.XExit_Award_2__c}"/>
+<apex:outputField value="{!Programme_Version__c.Exit_Award_2_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Exit_Award_2_Level__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="2">
+<apex:outputField value="{!Programme_Version__c.XExit_Award_3__c}"/>
+<apex:outputField value="{!Programme_Version__c.Exit_Award_3_Credit__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Exit_Award_3_Level__c}"/>
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+</apex:tab>
+
+
+<!-- 2015-03-02 : SM : Replacing this tab with the AIMS related list -->
+<!-- 
+<apex:tab label="Aims" switchType="client" title="Aims of Programme">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Entrance}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+-->
+<apex:tab label="Aims" switchType="client" title="Aims of Programme">
+<apex:pageBlock mode="inlineEdit">
+<apex:pageBlockSection columns="1">
+<apex:outputField value="{!Programme_Version__c.Aims_of_Programme__c}"/>
+</apex:pageBlockSection>
+<table width="100%">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Programme_Aim__c.FieldSets.Aims}" var="f">
+        <td><b><apex:outputText value="{!f.Label}"/></b></td>
+    </apex:repeat>
+    </tr>
+<apex:repeat value="{!aimList}" var="aim">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Programme_Aim__c.FieldSets.Aims}" var="f">
+    <td><apex:outputText value="{!aim[f]}"/></td>
+    </apex:repeat>
+    </tr>
+</apex:repeat>
+</table>
+</apex:pageBlock>
+</apex:tab>
+
+<!-- apex:tab label="Outcomes" switchType="client" title="Subject-based Learning Outcomes">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Entrance}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab> -->
+<apex:tab label="Outcomes" switchType="client" title="Learning Outcomes of Programme">
+<apex:pageBlock mode="inlineEdit">
+<table width="100%">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Learning_Outcome__c.FieldSets.Outcomes}" var="f">
+        <td><b><apex:outputText value="{!f.Label}"/></b></td>
+    </apex:repeat>
+    </tr>
+<apex:repeat value="{!outcomeList}" var="outcome">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Learning_Outcome__c.FieldSets.Outcomes}" var="f">
+    <td><apex:outputText value="{!outcome[f]}"/></td>
+    </apex:repeat>
+    </tr>
+</apex:repeat>
+</table>
+</apex:pageBlock>
+</apex:tab>
+
+<!-- <apex:tab label="Skills" switchType="client" title="Skills & Other Attributes">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Entrance}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab> -->
+<apex:tab label="Skills" switchType="client" title="Skills & Other Attributes">
+<apex:pageBlock mode="inlineEdit">
+<table width="100%">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Skills_Attributes__c.FieldSets.Skills}" var="f">
+        <td><b><apex:outputText value="{!f.Label}"/></b></td>
+    </apex:repeat>
+    </tr>
+<apex:repeat value="{!skillsList}" var="skill">
+    <tr>
+    <apex:repeat value="{!$ObjectType.Skills_Attributes__c.FieldSets.Skills}" var="f">
+    <td><apex:outputText value="{!skill[f]}"/></td>
+    </apex:repeat>
+    </tr>
+</apex:repeat>
+</table>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="Entrance" switchType="client" title="Entrance Requirements">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Entrance}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="Structure" switchType="client" title="Programme Structure">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Structure}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="Modules" switchType="client" title="Module Options">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Semester}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="Timetable" switchType="client" title="Programme & Module Timetable">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Modular}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="LT&A" switchType="client" title="LT&A Strategies"> 
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.LT_A}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+</apex:pageBlock>
+</apex:tab>
+
+<apex:tab label="Other" switchType="client" title="Accreditation & Diversity">
+<apex:pageBlock mode="inlineEdit">
+<div align="center">
+<apex:commandLink target="_top" action="{!save}" styleClass="btn" style="text-decoration:none;" value="Save Update"/>
+<apex:commandLink target="_top" action="{!cancel}" styleClass="btn" style="text-decoration:none;" value="Cancel Update"/>
+</div>
+<apex:pageBlockSection columns="1">
+<apex:repeat value="{!$ObjectType.Programme_Version__c.FieldSets.Other}" var="f">
+    <apex:outputField value="{!Programme_Version__c[f]}"/>
+</apex:repeat>
+</apex:PageBlockSection>
+
+</apex:pageBlock>
+</apex:tab>
+<br/>
+</apex:tabPanel>
+
+</apex:form>
+</apex:page>

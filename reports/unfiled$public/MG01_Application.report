@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$HESA_Nationality__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Stage__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Name</column>
+            <operator>contains</operator>
+            <value>MG01</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Student_Programmes1__r$Programme__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MG01 Application</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Students_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

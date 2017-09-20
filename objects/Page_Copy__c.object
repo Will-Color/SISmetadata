@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Active_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Active Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Body_Copy__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the main page content to be displayed on the community page</inlineHelpText>
+        <label>Body Copy</label>
+        <length>32768</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>40</visibleLines>
+    </fields><fields>
+        <fullName>Copy_Location__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines where the copy will be used</inlineHelpText>
+        <label>Copy Location</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Applicant Homepage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conditional Offer page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Confirmation of Place page</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student Homepage</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Welcome</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Application Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Self Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Research Proposal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submission Confirmation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Registration Terms Conditions</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pre-Registration Data Protection</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New User Information</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Link_1_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Friendly name for Link 1 URL</inlineHelpText>
+        <label>Link 1 Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Link_1_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Link 1 URL</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields><fields>
+        <fullName>Link_2_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Friendly name for Link 2 URL</inlineHelpText>
+        <label>Link 2 Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Link_2_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Link 2 URL</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields><fields>
+        <fullName>Link_3_Name__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Friendly name for Link 3 URL</inlineHelpText>
+        <label>Link 3 Name</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Link_3_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Link 3 URL</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields><fields>
+        <fullName>Page_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Page Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>For Sys Admin defined content, to be used in specific Visualforce pages, such as home pages in Community portals.</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>Read</externalSharingModel><label>Page Copy</label><nameField>
+        <displayFormat>PC-{00000}</displayFormat>
+        <label>Page Copy Ref</label>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Page Copy</pluralLabel><recordTypeTrackHistory>true</recordTypeTrackHistory><searchLayouts>
+        <customTabListAdditionalFields>RECORDTYPE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Page_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Copy_Location__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER.ALIAS</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <lookupPhoneDialogsAdditionalFields>Active_Date__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Copy_Location__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Copy_Location__c</searchFilterFields>
+        <searchFilterFields>Page_Status__c</searchFilterFields>
+        <searchFilterFields>UPDATEDBY_USER</searchFilterFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>Page_Status__c</columns>
+        <columns>Copy_Location__c</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><recordTypes>
+        <fullName>Main_body_copy</fullName>
+        <active>true</active>
+        <description>Used for Welcome pages and similar, via Community</description>
+        <label>Main body copy</label>
+        <picklistValues>
+            <picklist>Copy_Location__c</picklist>
+            <values>
+                <fullName>Applicant Homepage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Application Welcome</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditional Offer page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmation of Place page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New User Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Registration Data Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Registration Terms Conditions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Research Proposal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Self Registration</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Homepage</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Multi_part_copy</fullName>
+        <active>true</active>
+        <description>Used for confirmation letters/emails when presented via Community</description>
+        <label>Multi-part copy</label>
+        <picklistValues>
+            <picklist>Copy_Location__c</picklist>
+            <values>
+                <fullName>Applicant Homepage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conditional Offer page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Confirmation of Place page</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New User Information</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Registration Data Protection</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pre-Registration Terms Conditions</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student Homepage</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submission Confirmation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Page_Status__c</picklist>
+            <values>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Suspended</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes></CustomObject>

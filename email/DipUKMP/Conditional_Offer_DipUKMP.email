@@ -1,0 +1,44 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="color: rgb(0, 0, 0);"><font face="Arial, sans-serif">Dear {!Student_Programme__c.Student__c},</font></p><p class="MsoNormal"><font face="Arial, sans-serif"><br></font></p><p class="MsoNormal"><font face="Arial, sans-serif">Student ID Number: {!Contact.LSTM_No__c}</font></p><p class="MsoNormal"><font face="Arial, sans-serif">Course: {!Student_Programme__c.Programme__c}</font></p><p class="MsoNormal" style="font-size: 12pt;"><br></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Thank you for your application to the Diploma in UK Medical
+Practice. This has been approved by the Director of Studies and is conditional
+on:<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoListParagraph" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial; text-indent: -18pt;"></p><ul style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><li><span style="text-indent: -18pt; font-size: 12pt;">Receipt of your MTI confirmation letter from the
+RCP. Please e-mail this to </span><a href="mailto:dipukmp@lstmed.ac.uk" style="text-indent: -18pt; font-size: 12pt;">dipukmp@lstmed.ac.uk</a><span style="text-indent: -18pt; font-size: 12pt;">
+if you have not already done so.</span></li><li><span style="text-indent: -18pt; font-size: 12pt;">Payment of the fee. You will be&nbsp;</span>able to access content at the start of the month following payment. You will receive a separate email with instructions on how to pay your tuition fee.</li></ul><p style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Once these things are done, you will receive a further
+e-mail with details of how to access the virtual learning environment
+(“BrightSpace”), where you will find the full programme specification and
+learning outcomes, details on what is expected for the written assignment and
+supporting resources. We will also tell you your written assignment deadline.<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Please do contact us with any questions in the meantime.<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Best wishes<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Natasha Sutton<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">DipUKMP Programme Administrator<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Liverpool School of Tropical Medicine<o:p></o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="font-size: 12pt; color: rgb(0, 0, 0); font-family: arial;">Tel: 0151 705 3754<o:p></o:p></p>]]></td>
+</tr>
+</table>

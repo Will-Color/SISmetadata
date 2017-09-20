@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Taken from Module level --></help>
+        <label><!-- Assessments Count --></label>
+        <name>Assessments_Count__c</name>
+    </fields><fields>
+        <help><!-- Check field for Audit Logs - Prog indicated available Audit Log on Programme record --></help>
+        <label><!-- Audit Check --></label>
+        <name>Audit_Check__c</name>
+    </fields><fields>
+        <help><!-- Whether Module is Required, Optional or Alternative; Solus is used to denote where a Programme only had a single Module. --></help>
+        <label><!-- Member Type --></label>
+        <name>Member_Type__c</name>
+        <picklistValues>
+            <masterLabel>Optional</masterLabel>
+            <translation><!-- Optional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Required</masterLabel>
+            <translation><!-- Required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specials</masterLabel>
+            <translation><!-- Specials --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Always taken from Module level --></help>
+        <label><!-- Module Credits --></label>
+        <name>Module_Credits__c</name>
+    </fields><fields>
+        <label><!-- Module Reference --></label>
+        <name>Module_Reference__c</name>
+    </fields><fields>
+        <help><!-- To find correct Module type first the few character of Module title then click magnifying glass for available options --></help>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+        <relationshipLabel><!-- Assigned Programmes --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Count of Students taking this module (via count of Student Modules) --></help>
+        <label><!-- Places Taken --></label>
+        <name>Places_Taken__c</name>
+    </fields><fields>
+        <help><!-- If Programme has a Type of &quot;MSc Programme&quot; then then takes credit from Module level, else gives zero --></help>
+        <label><!-- Programme Credits --></label>
+        <name>Programme_Credits__c</name>
+    </fields><fields>
+        <help><!-- Taken from Programme level --></help>
+        <label><!-- Programme Type --></label>
+        <name>Programme_Type__c</name>
+    </fields><fields>
+        <label><!-- Programme --></label>
+        <name>Programme__c</name>
+        <relationshipLabel><!-- Assigned Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Test Class Record --></label>
+        <name>Test_Class_Record__c</name>
+    </fields><fields>
+        <label><!-- Trigger Student Assessments --></label>
+        <name>Trigger_Student_Assessments__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Programme Module</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Programme Modules</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Programme Module Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><webLinks>
+        <label><!-- Create_Student_Assessments --></label>
+        <name>Create_Student_Assessments</name>
+    </webLinks></CustomObjectTranslation>

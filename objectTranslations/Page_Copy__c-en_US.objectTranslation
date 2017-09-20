@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Active Date --></label>
+        <name>Active_Date__c</name>
+    </fields><fields>
+        <help><!-- This is the main page content to be displayed on the community page --></help>
+        <label><!-- Body Copy --></label>
+        <name>Body_Copy__c</name>
+    </fields><fields>
+        <help><!-- Defines where the copy will be used --></help>
+        <label><!-- Copy Location --></label>
+        <name>Copy_Location__c</name>
+        <picklistValues>
+            <masterLabel>Applicant Homepage</masterLabel>
+            <translation><!-- Applicant Homepage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Review</masterLabel>
+            <translation><!-- Application Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application Welcome</masterLabel>
+            <translation><!-- Application Welcome --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional Offer page</masterLabel>
+            <translation><!-- Conditional Offer page --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Confirmation of Place page</masterLabel>
+            <translation><!-- Confirmation of Place page --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New User Information</masterLabel>
+            <translation><!-- New User Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Registration Data Protection</masterLabel>
+            <translation><!-- Pre-Registration Data Protection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Registration Terms Conditions</masterLabel>
+            <translation><!-- Pre-Registration Terms Conditions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research Proposal</masterLabel>
+            <translation><!-- Research Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Self Registration</masterLabel>
+            <translation><!-- Self Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Homepage</masterLabel>
+            <translation><!-- Student Homepage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submission Confirmation</masterLabel>
+            <translation><!-- Submission Confirmation --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Friendly name for Link 1 URL --></help>
+        <label><!-- Link 1 Name --></label>
+        <name>Link_1_Name__c</name>
+    </fields><fields>
+        <label><!-- Link 1 URL --></label>
+        <name>Link_1_URL__c</name>
+    </fields><fields>
+        <help><!-- Friendly name for Link 2 URL --></help>
+        <label><!-- Link 2 Name --></label>
+        <name>Link_2_Name__c</name>
+    </fields><fields>
+        <label><!-- Link 2 URL --></label>
+        <name>Link_2_URL__c</name>
+    </fields><fields>
+        <help><!-- Friendly name for Link 3 URL --></help>
+        <label><!-- Link 3 Name --></label>
+        <name>Link_3_Name__c</name>
+    </fields><fields>
+        <label><!-- Link 3 URL --></label>
+        <name>Link_3_URL__c</name>
+    </fields><fields>
+        <label><!-- Page Status --></label>
+        <name>Page_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Suspended</masterLabel>
+            <translation><!-- Suspended --></translation>
+        </picklistValues>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Page Copy</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Page Copy</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Page Copy Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Main body copy --></label>
+        <name>Main_body_copy</name>
+    </recordTypes><recordTypes>
+        <label><!-- Multi-part copy --></label>
+        <name>Multi_part_copy</name>
+    </recordTypes></CustomObjectTranslation>

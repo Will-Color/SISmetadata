@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <branding>
+        <loginFooterText>Liverpool School of Tropical Medicine</loginFooterText>
+        <loginLogo>Communities_Shared_Document_Folder/LSTM_Brand_Communities_jpg.jpg</loginLogo>
+        <pageHeader>Logos/LSTM_logo2.png</pageHeader>
+        <primaryColor>#CE1126</primaryColor>
+        <primaryComplementColor>#FFFFFF</primaryComplementColor>
+        <quaternaryColor>#FFFFFF</quaternaryColor>
+        <quaternaryComplementColor>#222222</quaternaryComplementColor>
+        <secondaryColor>#890043</secondaryColor>
+        <tertiaryColor>#CE1126</tertiaryColor>
+        <tertiaryComplementColor>#FFFFFF</tertiaryComplementColor>
+        <zeronaryColor>#FFFFFF</zeronaryColor>
+        <zeronaryComplementColor>#222222</zeronaryComplementColor>
+    </branding>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <description>For student portal including application process</description>
+    <emailSenderAddress>mylstm@lstmed.ac.uk</emailSenderAddress>
+    <emailSenderName>LSTM Community</emailSenderName>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableNicknameDisplay>false</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <navigationLinkSet>
+        <navigationMenuItem>
+            <label>Topics</label>
+            <position>1</position>
+            <publiclyAvailable>true</publiclyAvailable>
+            <target>Topics</target>
+            <type>NavigationalTopic</type>
+        </navigationMenuItem>
+    </navigationLinkSet>
+    <networkMemberGroups>
+        <profile>Admin</profile>
+        <profile>Customer Community Login User</profile>
+        <profile>LSTM Community User</profile>
+    </networkMemberGroups>
+    <picassoSite>LSTM_Community_C</picassoSite>
+    <selfRegProfile>lstm community user</selfRegProfile>
+    <selfRegistration>true</selfRegistration>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>LSTM_Community</site>
+    <status>Live</status>
+    <tabs>
+        <customTab>Welcome</customTab>
+        <customTab>Applications</customTab>
+        <customTab>My_Applications</customTab>
+        <defaultTab>01r20000000Ueia</defaultTab>
+    </tabs>
+    <urlPathPrefix>students</urlPathPrefix>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

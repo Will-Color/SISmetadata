@@ -1,0 +1,29 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false">
+    
+    <!-- Visualforce page to embedd in Staff COmmunity List View Section(s) to switch List view to Kanban View-->
+    <style>
+        body{
+        height:0% !important;
+        width:0% !important;
+        }
+    </style>
+   
+    <apex:includeScript value="{!$Resource.jQuery3}"/>
+    
+    <script>
+    $(document).ready(function(){
+        var p= window.setTimeout(function(){
+            $('.forceListViewManagerDisplaySwitcher .slds-dropdown-trigger button',parent.document).click();
+         }, 1);
+        //clearTimeout(p);
+        
+        
+
+        window.setTimeout(function(){
+              $('.kanban a span',parent.document).click();
+         }, 1);
+
+    });
+    </script>
+    
+</apex:page>

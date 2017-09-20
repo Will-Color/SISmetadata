@@ -1,0 +1,69 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal">Dear Doctor, <o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">We have received your registration fee for the DipUKMP and
+you can now begin study and access the relevant systems. As an off-site student
+of the Liverpool School of Tropical Medicine, you can access the Virtual
+Learning Environment (BrightSpace) and student intranet, plus the library
+e-resources. <o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Please use BrightSpace to access resources to help you
+achieve the learning outcomes for the DipUKMP, including:<o:p></o:p></p>
+
+<p class="MsoListParagraph" style="margin-left:20.25pt;text-indent:-18.0pt;
+mso-list:l0 level1 lfo1"><!--[if !supportLists]-->-<span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Student handbook<o:p></o:p></p>
+
+<p class="MsoListParagraph" style="margin-left:20.25pt;text-indent:-18.0pt;
+mso-list:l0 level1 lfo1"><!--[if !supportLists]-->-<span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->List of learning outcomes that you need to
+demonstrate that you have met<o:p></o:p></p>
+
+<p class="MsoListParagraph" style="margin-left:20.25pt;text-indent:-18.0pt;
+mso-list:l0 level1 lfo1"><!--[if !supportLists]-->-<span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Details of how you are assessed<o:p></o:p></p>
+
+<p class="MsoListParagraph" style="margin-left:20.25pt;text-indent:-18.0pt;
+mso-list:l0 level1 lfo1"><!--[if !supportLists]-->-<span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Resources to help with reflective writing for
+the written assignment<o:p></o:p></p>
+
+<p class="MsoListParagraph" style="margin-left:20.25pt;text-indent:-18.0pt;
+mso-list:l0 level1 lfo1"><!--[if !supportLists]-->-<span style="font-variant-numeric: normal; font-stretch: normal; font-size: 7pt; line-height: normal; font-family: &quot;Times New Roman&quot;;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><!--[endif]-->Guidance for you and your educational supervisor<o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Please also use BrightSpace to contact LSTM staff about any
+relevant matters and to network with each other. There are some introductory
+activities and a profile to complete when you first log on.<o:p></o:p></p>
+
+<p class="MsoNormal"><o:p><br></o:p></p><p class="MsoNormal"><o:p>Your Assessment Deadline: &nbsp;{!Student_Programme__c.Assessment_Deadline__c}</o:p></p><p class="MsoNormal"><o:p><br></o:p></p>
+
+<p class="MsoNormal">We hope you enjoy studying for the DipUKMP <o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">With best wishes<o:p></o:p></p>
+
+<p class="MsoNormal"><b>&nbsp;</b></p>
+
+<p class="MsoNormal"><b>Natasha Sutton<o:p></o:p></b></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">DipUKMP Programme Administrator<o:p></o:p></p>
+
+<p class="MsoNormal">Liverpool School of Tropical Medicine<o:p></o:p></p>
+
+<p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal">Tel: 0151 705 3754<o:p></o:p></p>]]></td>
+</tr>
+</table>

@@ -1,0 +1,97 @@
+<apex:page controller="VleAdminCont" title="VLE Admin page" action="{!runAsyncServices}" >
+    <style>
+        .allOk {
+            color: green;
+            font-weight: bold;
+        }
+        .errorFound {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <script type="text/javascript">
+        function gotoAuthToken() {
+            window.location = '{!JSENCODE(VleAuthTokenUrl)}';
+            return false;
+        }
+    </script>
+    <apex:sectionHeader title="Status of synchronization" subtitle="VLE (desire2learn)"/>
+    <apex:form >
+        <apex:pageBlock title="Connection" id="connectionBlock">
+            <apex:pageBlockButtons rendered="{!csFound}" >
+                <apex:commandButton action="{!checkContexts}" value="Check Contexts" reRender="connectionBlock"/>
+                <apex:commandButton onclick="return gotoAuthToken()" value="Update API User Context" title="Please, update user context if you know credentials of API user" />
+                <apex:commandButton action="{!gotoRoleAssignments}" value="Manage Student/Staff Role Assignments"/>                
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" showHeader="false">
+                <apex:pageBlockSectionItem helpText="Custom Settings type VLE__c and name 'main'">
+                    <apex:outputLabel >Custom settings was found</apex:outputLabel>
+                    <apex:outputPanel layout="none">
+                        <apex:outputLabel value="Yes" rendered="{!csFound}" styleClass="allOk"/>
+                        <apex:outputLabel value="No" rendered="{!NOT(csFound)}" styleClass="errorFound"/>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Application context</apex:outputLabel>
+                    <apex:outputLabel value="{!appContextState}" styleClass="{!IF(BEGINS(appContextState, 'Error'),'errorFound',IF(BEGINS(appContextState, 'OK'),'allOk ',''))}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >API user context</apex:outputLabel>
+                    <apex:outputLabel value="{!userContextState}" styleClass="{!IF(BEGINS(userContextState, 'Error'),'errorFound',IF(BEGINS(userContextState, 'OK'),'allOk ',''))}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Sync logs" id="syncBlock">
+            <div align="center" draggable="false" >
+            <apex:commandButton value="VLE Action Report" action="{!redirectToReport}" />
+            </div>
+            <apex:pageBlockTable value="{!lastSyncActions}" var="actionItem">
+                <apex:column >
+                    <apex:facet name="header">Sync Action</apex:facet>
+                    <apex:outputLink value="{!URLFOR($Action.VLE_Action__c.View, actionItem.Id, null)}">{!actionItem.Id}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Type</apex:facet>
+                    <apex:outputField value="{!actionItem.Action__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Last Modified</apex:facet>
+                    <apex:outputField value="{!actionItem.LastModifiedDate}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Status</apex:facet>
+                    <apex:outputField value="{!actionItem.Status__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Note</apex:facet>
+                    <apex:outputField value="{!actionItem.Note__c}"/>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Command</apex:facet>
+                    <apex:commandButton action="{!runActionManually}" value="Run Manually" rendered="{!actionItem.Status__c='Delayed'}" reRender="syncBlock">
+                        <apex:param name="idForAction" assignTo="{!actionIdForRun}" value="{!actionItem.Id}"/>
+                    </apex:commandButton>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="Email Settings" id="emailSettingsBlock">
+            <apex:pageBlockButtons rendered="{!csFound}" >
+                <apex:commandButton action="{!editEmailSettings}" value="Edit" rendered="{!NOT(emailSettingsEditMode)}" reRender="emailSettingsBlock"/>
+                <apex:commandButton action="{!saveEmailSettings}" value="Save" rendered="{!emailSettingsEditMode}" reRender="emailSettingsBlock"/>
+                <apex:commandButton action="{!cancelEmailSettings}" value="Cancel" rendered="{!emailSettingsEditMode}" reRender="emailSettingsBlock"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2" showHeader="false">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Send welcome email to student</apex:outputLabel>
+                    <apex:inputCheckbox value="{!sendWelcomeEmailToStudent}" disabled="{!NOT(emailSettingsEditMode)}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Send welcome email to staff</apex:outputLabel>
+                    <apex:inputCheckbox value="{!sendWelcomeEmailToStaff}" disabled="{!NOT(emailSettingsEditMode)}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

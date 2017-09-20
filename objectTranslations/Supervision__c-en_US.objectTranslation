@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Taken from Status on Research Period --></help>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields><fields>
+        <label><!-- Application Review Record --></label>
+        <name>Application_Review_Record__c</name>
+    </fields><fields>
+        <label><!-- Audit Log --></label>
+        <name>Audit_Log__c</name>
+        <relationshipLabel><!-- Supervisions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Audit Trigger --></label>
+        <name>Audit_Trigger__c</name>
+    </fields><fields>
+        <label><!-- HESA Collaborating Provider (temp) --></label>
+        <name>HESA_Collaborating_Provider_temp__c</name>
+    </fields><fields>
+        <help><!-- Manually created Supervision record for 15/16 HESA Student return. --></help>
+        <label><!-- HESA Legacy Record --></label>
+        <name>HESA_Legacy_Record__c</name>
+    </fields><fields>
+        <label><!-- HESA Unit of Assessment (temp) --></label>
+        <name>HESA_Unit_of_Assessment_temp__c</name>
+    </fields><fields>
+        <label><!-- Location of Supervision --></label>
+        <name>Location_of_Supervision__c</name>
+        <picklistValues>
+            <masterLabel>LSTM</masterLabel>
+            <translation><!-- LSTM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MLW</masterLabel>
+            <translation><!-- MLW --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Meeting Date/Time --></label>
+        <name>Meeting_Date_Time__c</name>
+    </fields><fields>
+        <label><!-- Meeting Date/Time --></label>
+        <name>Meeting_Date_Time_del__c</name>
+    </fields><fields>
+        <label><!-- Meeting Objectives --></label>
+        <name>Meeting_Objectives__c</name>
+    </fields><fields>
+        <label><!-- Other Location --></label>
+        <name>Other_Location__c</name>
+    </fields><fields>
+        <label><!-- Outcome/Next Steps --></label>
+        <name>Outcome_Next_Steps__c</name>
+    </fields><fields>
+        <help><!-- Tick to denote Supervisor will provide primary supervision of student --></help>
+        <label><!-- Primary Supervisor --></label>
+        <name>Primary_Supervisor__c</name>
+    </fields><fields>
+        <label><!-- Research Department --></label>
+        <name>Research_Department__c</name>
+        <picklistValues>
+            <masterLabel>Clinical Sources</masterLabel>
+            <translation><!-- Clinical Sources --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Public Health</masterLabel>
+            <translation><!-- International Public Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parasitology</masterLabel>
+            <translation><!-- Parasitology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vector Biology</masterLabel>
+            <translation><!-- Vector Biology --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Research Period_old --></label>
+        <name>Research_Period_Year__c</name>
+        <relationshipLabel><!-- Supervisions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Research Period --></label>
+        <name>Research_Period__c</name>
+        <relationshipLabel><!-- Supervisors --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Staff --></label>
+        <lookupFilter>
+            <errorMessage><!-- The person you are trying to look up is not a member of staff. Please check your spelling and try again. --></errorMessage>
+            <informationalMessage><!-- Find the name of your supervisor. --></informationalMessage>
+        </lookupFilter>
+        <name>Staff__c</name>
+        <relationshipLabel><!-- Students Supervising --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Cancelled</masterLabel>
+            <translation><!-- Cancelled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not passed</masterLabel>
+            <translation><!-- Not passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed</masterLabel>
+            <translation><!-- Passed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Passed with caveats</masterLabel>
+            <translation><!-- Passed with caveats --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Scheduled</masterLabel>
+            <translation><!-- Scheduled --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student Programme Stage --></label>
+        <name>Student_Programme_Stage__c</name>
+    </fields><fields>
+        <label><!-- Student Programme --></label>
+        <name>Student_Programme__c</name>
+        <relationshipLabel><!-- Supervisions --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Temporary field for 15/16 HESA PGR return. Allows manual checking against REFData sheet. --></help>
+        <label><!-- Supervisor Name (temp) --></label>
+        <name>Supervisor_Name_temp__c</name>
+    </fields><fields>
+        <help><!-- Temporary field for 15/16 HESA PGR return. --></help>
+        <label><!-- Supervisor Name (free text) --></label>
+        <name>Supervisor_Name_temp_del__c</name>
+    </fields><fields>
+        <label><!-- Supervisor Name (text) --></label>
+        <name>Supervisor_Name_text__c</name>
+    </fields><fields>
+        <help><!-- Supervisor name not found in list of Registered Supervisors. Check spelling or create/update Staff Member as Registered Supervisor. --></help>
+        <label><!-- Supervisor Registration Required --></label>
+        <name>Supervisor_Registration_Required__c</name>
+    </fields><fields>
+        <label><!-- Supervisor Weighting --></label>
+        <name>Supervisor_Weighting__c</name>
+    </fields><fields>
+        <label><!-- Supervisor --></label>
+        <lookupFilter>
+            <errorMessage><!-- The person you are trying to look up is not a registered supervisor or not a member of staff. --></errorMessage>
+            <informationalMessage><!-- Find the name of the Supervisor. --></informationalMessage>
+        </lookupFilter>
+        <name>Supervisor__c</name>
+        <relationshipLabel><!-- Students Supervising --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Supervision</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Supervisions</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Supervision Layout</layout>
+        <sections>
+            <label><!-- Admin Section (Hidden) --></label>
+            <section>Admin Section (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Collaborative Doctoral Provision --></label>
+            <section>Collaborative Doctoral Provision</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Supervision Details --></label>
+            <section>Supervision Details</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Approved Supervisors --></label>
+        <name>Approved_Supervisors</name>
+    </recordTypes><recordTypes>
+        <label><!-- Meeting --></label>
+        <name>Meeting</name>
+    </recordTypes><recordTypes>
+        <label><!-- PAP --></label>
+        <name>PAP</name>
+    </recordTypes><recordTypes>
+        <label><!-- Specials --></label>
+        <name>Specials</name>
+    </recordTypes><recordTypes>
+        <label><!-- Test --></label>
+        <name>Test</name>
+    </recordTypes><recordTypes>
+        <label><!-- Workshop --></label>
+        <name>Workshop</name>
+    </recordTypes><webLinks>
+        <label><!-- Delete_All --></label>
+        <name>Delete_All</name>
+    </webLinks><webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks></CustomObjectTranslation>

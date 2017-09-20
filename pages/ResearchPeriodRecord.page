@@ -1,0 +1,202 @@
+<apex:page standardController="Student_Programme__c" showHeader="true" sidebar="true" standardStylesheets="true" extensions="ResearchPeriodRecord" docType="html-5.0">
+    
+    <apex:includeScript value="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <style>
+        .name1{
+        padding:10px;
+        }
+        .label1{
+        padding-top: 2px;
+        padding-bottom: 2px;
+        padding-left: 20px;
+        text-align: right;
+        font-size: 91%;
+        font-weight: bold;
+        color: #333;
+        }
+        .inpClass{
+        background-color: white;
+        vertical-align: middle;
+        float: right;
+        padding: 1px;
+        width: 230px;
+        height: 20px;
+        outline: none;
+        }
+        .inpClass1{
+        background-color: white;
+        vertical-align: middle;
+        float: right;
+        padding: 1px;
+        width: 236px;
+        height: 20px;
+        outline: none;
+        }
+        .btn1{
+        margin-left: 155px !important;
+        }
+        .tbl td{
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+        text-align: center !important;
+        }
+        .tbl tr{
+         width:100%;
+        }
+        .tbl th{
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+        text-align: center !important;
+        }
+    </style>
+    <apex:form >
+        <br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Register Student">
+                <apex:outputPanel id="theForm" >
+                    <apex:outputPanel id="Weightingerror" rendered="{!WeightingError==true}">
+                        <div class="smsg">
+                            <apex:pageMessages ></apex:pageMessages>
+                        </div>               
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!second==false}">
+                        
+                        <div class="name1">
+                            <label class="label1">Mode of Study</label> 
+                            <apex:selectList size="1" value="{!Student.Mode_of_Study__c}" styleClass="inpClass1">
+                                <apex:selectOption itemLabel="Full Time" itemvalue="Full Time"></apex:selectOption>
+                                <apex:selectOption itemLabel="Part Time" itemvalue="Part Time"></apex:selectOption>
+                            </apex:selectList>   
+                        </div>
+                        
+                        <div class="name1">
+                            <label class="label1">Period Start Date</label>
+                            <apex:input type="date" value="{!dat}" styleClass="inpClass"/> 
+                        </div>
+                        
+                        <!--<div class="name1">
+                            <label class="label1">Period End Date</label>
+                            <apex:input type="date" value="{!enddat}" styleClass="inpClass"/> 
+                        </div>-->
+                        
+                        <!--<div class="name1">
+                            <label class="label1">Period Number</label>
+                            <apex:input type="number" value="{!num}" styleClass="inpClass"/> 
+                        </div>-->
+                        
+                        <div class="name1">
+                            <label class="label1">Supervisory Meetings Required</label>
+                            <apex:input type="number" value="{!Snum}" styleClass="inpClass"/> 
+                        </div>
+                        
+                        <div class="name1">            
+                            <label class="label1">Status</label>
+                            <apex:selectList size="1" value="{!Student.Status__c}" required="true" styleClass="inpClass1">
+                                <apex:selectOption itemLabel="Not Started" itemvalue="Not Started"></apex:selectOption>
+                                <apex:selectOption itemLabel="In Progress" itemvalue="In Progress"></apex:selectOption>
+                            </apex:selectList>   
+                        </div>
+                        <div class="name1" align="center" draggable="false" >
+                            <apex:commandButton value="Register Student" action="{!UpdateData}" reRender="theForm"/>
+                        </div>
+                    </apex:outputPanel>  
+                    
+                    <apex:outputPanel rendered="{!second==true}">   
+                        <apex:pageblocktable width="100%" cellpadding="1" cellspacing="3" value="{!superList}" var="super" styleClass="tbl">
+                            <apex:column >
+                                <apex:facet name="header">
+                                    <apex:inputCheckbox onclick="selectCheckboxes(this,'inputId')"/>
+                                </apex:facet>
+                                <apex:inputCheckbox value="{!super.checked}" id="inputId" />
+                            </apex:column>
+                            <apex:column headerValue="Supervisor Name">
+                                <apex:OutputText value="{!super.Name}"/> 
+                            </apex:column>
+                            <apex:column headerValue="Supervisor Weighting (%)">
+                                <apex:inputText styleclass="Weighting" value="{!super.Weight}"/> 
+                            </apex:column>
+                            <apex:column headerValue="Primary Supervisor">
+                                <apex:inputCheckbox value="{!super.Primary}" styleClass="sev_check" onchange="oneCheckbox(this);"/>
+                            </apex:column>
+                        </apex:pageblocktable> 
+                        <br/>
+                        
+                        <div align="center" draggable="false" >
+                            <apex:commandButton value="Save" action="{!SaveData}" />
+                            <apex:commandButton value="Cancel" action="{!Cancel}"/>
+                        </div>
+                        
+                    </apex:outputPanel>
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function () {
+
+    });
+    function oneCheckbox(obj)
+    {
+        if (obj.checked)
+        {
+            var inputs = document.getElementsByClassName("sev_check");
+            for (var i = 0; i < inputs.length; i++)
+            {
+                var otherInput = inputs[i];
+                if (otherInput.type == "checkbox" && otherInput.checked && otherInput != obj)
+                {
+                    otherInput.checked = false; 
+                }  
+            }
+        }
+        
+    }
+    function selectCheckboxes(inpt,receivedInptID)
+    {
+        var inputCheckBox = document.getElementsByTagName("input");                  
+        for(var i=0; i<inputCheckBox.length; i++)
+        {          
+            if(inputCheckBox[i].id.indexOf(receivedInptID)!=-1){                                     
+                inputCheckBox[i].checked = inpt.checked;
+            }
+        }
+    }
+    /*function checkChecked() 
+    {
+        if(j$(".chkSelected:checked").length >1)
+        {
+            alert('Only one Supervisor can be marked as Primary');
+            return false;
+        }
+    }*/
+    function validate(){
+        var totalWeightage =0;
+        $(".treated").each(function () {
+            if($(this).find('input[type="checkbox"]:checked')){
+                console.log('44');
+            }
+            // totalWeightage = parseInt(totalWeightage)+parseInt($(this).val());
+            //console.log(totalWeightage);
+        });
+        $(".dtTable").find('input[type="checkbox"][class^="treated"]:checked').each(function (){
+            //console.log($(this).find('.Weighting').text());
+            //console.log("td");
+            // var pp= $(this).parent().closest('tr');
+            //console.log($(this).parent().closest('tr').find("td:nth-child(3)").children().children());
+            //alert($(this).find(".Weighting").val());
+            
+        });
+        if({!WeightingError})
+        {
+            alert(error);
+        }
+        return null;
+    }
+    </script>
+</apex:page>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>MRC-DTP Interview Outcome RED</name>
+    <style>freeForm</style>
+    <subject>LSTM – Lancaster Medical Research Council Doctoral Training Partnership</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+Thank you for attending the interview for the LSTM - Lancaster Medical Research Council Doctoral Training Partnership scheme.
+
+We have now had the opportunity to consider all of the candidates. The decision has been a difficult one, as the overall standard of shortlisted candidates was extremely high. The panel discussed their views and assessments and jointly drew up a list of applicants in merit order.
+
+After careful consideration, we regret to inform you that, on this occasion, you have not been successful. If you are interested in studying at LSTM, you can still apply for a postgraduate research degree (which is not MRC-DTP). You will find all the information on the LSTM website. Applications and enquiries should be sent to the Research Degrees Administrator (pgr@lstmed.ac.uk).
+
+Should you wish to speak to someone regarding your application, please contact the MRC Doctoral Training Partnership team (mrcdtp@lstmed.ac.uk).
+
+Thank you for should in a interest in LSTM. We wish you all the best in your future endeavours.
+
+Yours sincerely,
+
+
+MRC DTP Team
+Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

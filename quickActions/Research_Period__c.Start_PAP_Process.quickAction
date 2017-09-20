@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Creates Progress Assessment record. Triggers Progress Assessment Process which invokes PAP Membership flow to parent PAP Member records.</description>
+    <fieldOverrides>
+        <field>Add_PAP_Members__c</field>
+        <formula>TRUE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Name</field>
+        <formula>&quot;PAP REF&quot;</formula>
+    </fieldOverrides>
+    <label>Start PAP Process</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Type_of_Review__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Progress Assessment record created</successMessage>
+    <targetObject>Progress_Assessment__c</targetObject>
+    <targetParentField>Assessed_Period__c</targetParentField>
+    <targetRecordType>Progress_Assessment__c.Pre_submission</targetRecordType>
+    <type>Create</type>
+</QuickAction>

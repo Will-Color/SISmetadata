@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Id</field>
+    </columns>
+    <columns>
+        <field>Contact$Email</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$LSTM_Email__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Personal_Email__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Programme_Type__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Stage__c</field>
+    </columns>
+    <columns>
+        <field>Contact$LastModifiedDate</field>
+    </columns>
+    <description>Used to for swap of Personal and LSTM email address</description>
+    <filter>
+        <booleanFilter>(1 OR 2) AND (3 OR 4 OR 5)</booleanFilter>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Programme__c</column>
+            <operator>equals</operator>
+            <value>Diploma in Tropical Medicine &amp; Hygiene - September 2015</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>MSc Programme</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Stage__c</column>
+            <operator>equals</operator>
+            <value>Conditional</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Stage__c</column>
+            <operator>equals</operator>
+            <value>Unconditional</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Stage__c</column>
+            <operator>equals</operator>
+            <value>Accepted</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Student_Programmes1__r$Programme__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Registration 15 Email Swap</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Students_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Contact.Student_Programmes1__r$LSTM_Email__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

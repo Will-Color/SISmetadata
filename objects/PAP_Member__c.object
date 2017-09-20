@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Date_of_Review__c</fullName>
+        <externalId>false</externalId>
+        <formula>Progress_Assessment__r.Date_of_Review__c</formula>
+        <inlineHelpText>From Progress Assessment record</inlineHelpText>
+        <label>Date of Review</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Narrative__c</fullName>
+        <description>Hyperlinked narrative field for use on Staff Community Home Page 'My Tasks' component</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("detail/"&amp;Progress_Assessment__c,Progress_Assessment__r.Name&amp;" - "&amp;
+IF(AND(
+Progress_Assessment__r.Submit_to_Supervisor__c=True,
+Progress_Assessment__r.Submit_to_Panel__c=True,
+NOT(ISBLANK(TEXT(Progress_Assessment__r.Panel_Recommendation__c))),
+Progress_Assessment__r.Release_to_Student__c=True,
+Progress_Assessment__r.Release_to_Supervisor__c=True
+),"Completed",
+IF(AND(
+Progress_Assessment__r.Submit_to_Supervisor__c=True,
+Progress_Assessment__r.Submit_to_Panel__c=True,
+NOT(ISBLANK(TEXT(Progress_Assessment__r.Panel_Recommendation__c))),
+Progress_Assessment__r.Release_to_Student__c=False,
+Progress_Assessment__r.Release_to_Supervisor__c=True
+),"Released to Supervisor",
+IF(AND(
+Progress_Assessment__r.Submit_to_Supervisor__c=True,
+Progress_Assessment__r.Submit_to_Panel__c=True,
+NOT(ISBLANK(TEXT(Progress_Assessment__r.Panel_Recommendation__c))),
+Progress_Assessment__r.Release_to_Student__c=False,
+Progress_Assessment__r.Release_to_Supervisor__c=False
+),"Awaiting Panel Release",
+IF(AND(
+Progress_Assessment__r.Submit_to_Supervisor__c=True,
+Progress_Assessment__r.Submit_to_Panel__c=True,
+ISBLANK(TEXT(Progress_Assessment__r.Panel_Recommendation__c))
+),"Ready for Panel Review",
+IF(AND(
+Progress_Assessment__r.Submit_to_Supervisor__c=True,
+Progress_Assessment__r.Submit_to_Panel__c=False
+),"Ready for Supervisor Review",
+"Awaiting completion by Student"))))))</formula>
+        <label>Narrative</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Panel_Member__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Panel Member</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>PAP Membership</relationshipLabel>
+        <relationshipName>PAP_Members1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Progress_Assessment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Progress Assessment</label>
+        <referenceTo>Progress_Assessment__c</referenceTo>
+        <relationshipLabel>PAP Members</relationshipLabel>
+        <relationshipName>PAP_Members1</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Research_Period__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assessed Period</label>
+        <referenceTo>Research_Period__c</referenceTo>
+        <relationshipLabel>PAP Members</relationshipLabel>
+        <relationshipName>PAP_Members</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>Progress_Assessment__r.Status__c</formula>
+        <inlineHelpText>From Progress Assessment record</inlineHelpText>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <externalId>false</externalId>
+        <formula>Research_Period__r.Student_Programme__r.Student__r.FirstName&amp;" "&amp;Research_Period__r.Student_Programme__r.Student__r.LastName</formula>
+        <label>Student</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Submit_to_Panel__c</fullName>
+        <externalId>false</externalId>
+        <formula>Progress_Assessment__r.Submit_to_Panel__c</formula>
+        <label>Submit to Panel</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Submit_to_Supervisor__c</fullName>
+        <externalId>false</externalId>
+        <formula>Progress_Assessment__r.Submit_to_Supervisor__c</formula>
+        <label>Submit to Supervisor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>User_is_PAP_Member__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF($User.ContactId=Panel_Member__r.Id,TRUE,FALSE)</formula>
+        <inlineHelpText>Used to drive List Views on Staff Community</inlineHelpText>
+        <label>User is PAP Member</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>User_is_Supervisor__c</fullName>
+        <description>Returns TRUE if Running User's Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Research_Period__r.Student_Programme__r.Assigned_Supervisors__c,$User.Id),TRUE,FALSE)</formula>
+        <label>User is Supervisor</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Join object between Contact and Research Period to record membership of PAPs (Performance Assessment Panels)</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>false</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>PAP Member</label><nameField>
+        <displayFormat>PAP-M{000000}</displayFormat>
+        <label>PAP Member Ref</label>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>PAP Members</pluralLabel><searchLayouts>
+        <listViewButtons>Mass_Delete</listViewButtons>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Panel_Member__c</columns>
+        <columns>Research_Period__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><listViews>
+        <fullName>PAPs_I_am_Assessing</fullName>
+        <columns>Progress_Assessment__c</columns>
+        <columns>Student__c</columns>
+        <columns>Date_of_Review__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_is_PAP_Member__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Research_Period__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <filters>
+            <field>Progress_Assessment__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>PAPs I am Assessing</label>
+    </listViews><listViews>
+        <fullName>PAPs_for_Panel_review</fullName>
+        <columns>Narrative__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_is_PAP_Member__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>User_is_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Submit_to_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Submit_to_Panel__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>PAPs for Panel review</label>
+    </listViews><listViews>
+        <fullName>PAPs_for_Supervisor_review</fullName>
+        <columns>Narrative__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_is_PAP_Member__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>User_is_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Submit_to_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Submit_to_Panel__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>PAPs for Supervisor review</label>
+    </listViews><validationRules>
+        <fullName>Prevent_Running_User_becoming_PAP_Member</fullName>
+        <active>true</active>
+        <errorConditionFormula>Panel_Member__r.Id=$User.ContactId</errorConditionFormula>
+        <errorDisplayField>Panel_Member__c</errorDisplayField>
+        <errorMessage>Sorry, you cannot add yourself as a PAP Member for this Student while you are an Assigned Supervisor.</errorMessage>
+    </validationRules><webLinks>
+        <fullName>Mass_Delete</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mass Delete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT("/soap/ajax/9.0/connection.js")} 
+
+var records = {!GETRECORDIDS( $ObjectType.PAP_Member__c )}; 
+
+if (records[0] == null) { 
+alert("Please select at least one record.") } 
+else { 
+
+var errors = []; 
+var result = sforce.connection.deleteIds(records); 
+if (result &amp;&amp; result.length){ 
+var numFailed = 0; 
+var numSucceeded = 0; 
+for (var i = 0; i &lt; result.length; i++){ 
+var res = result[i]; 
+if (res &amp;&amp; res.success == 'true'){ 
+numSucceeded++; 
+} else { 
+var es = res.getArray("errors"); 
+if (es.length &gt; 0) { 
+errors.push(es[0].message); 
+} 
+numFailed++; 
+} 
+} 
+if (numFailed &gt; 0){ 
+alert("Failed: " + numFailed + "\nSucceeded: " + numSucceeded + " \n Due to: " + errors.join("\n")); 
+} else { 
+alert("Number of records deleted: " + numSucceeded); 
+} 
+} 
+window.location.reload(); 
+}</url>
+    </webLinks></CustomObject>

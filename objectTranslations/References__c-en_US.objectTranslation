@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Applicant --></label>
+        <name>Applicant__c</name>
+        <relationshipLabel><!-- References --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Used in the email to referees --></help>
+        <label><!-- Applied Programme --></label>
+        <name>Applied_Programme__c</name>
+    </fields><fields>
+        <label><!-- Can Request Reference from Referee? --></label>
+        <name>Can_Request_Reference_from_Referee__c</name>
+    </fields><fields>
+        <label><!-- College / University or Employer --></label>
+        <name>College_University_or_Employer__c</name>
+    </fields><fields>
+        <label><!-- FA City --></label>
+        <name>FA_City__c</name>
+    </fields><fields>
+        <label><!-- FA Country --></label>
+        <name>FA_Country__c</name>
+    </fields><fields>
+        <label><!-- FA Email --></label>
+        <name>FA_Email__c</name>
+    </fields><fields>
+        <label><!-- FA First Name --></label>
+        <name>FA_First_Name__c</name>
+    </fields><fields>
+        <label><!-- FA Position --></label>
+        <name>FA_Position__c</name>
+    </fields><fields>
+        <label><!-- FA Postal Code --></label>
+        <name>FA_Postal_Code__c</name>
+    </fields><fields>
+        <label><!-- FA State/Province --></label>
+        <name>FA_State_Province__c</name>
+    </fields><fields>
+        <label><!-- FA Street --></label>
+        <name>FA_Street__c</name>
+    </fields><fields>
+        <label><!-- FA Surname --></label>
+        <name>FA_Surname__c</name>
+    </fields><fields>
+        <label><!-- FA Telephone Number --></label>
+        <name>FA_Telephone_Number__c</name>
+    </fields><fields>
+        <label><!-- FA Title --></label>
+        <name>FA_Title__c</name>
+    </fields><fields>
+        <label><!-- Has Attachment --></label>
+        <name>Has_Attachment__c</name>
+    </fields><fields>
+        <help><!-- Uses external programme type from Programme Version --></help>
+        <label><!-- Programme Type --></label>
+        <name>Programme_Type__c</name>
+    </fields><fields>
+        <label><!-- Referee Address --></label>
+        <name>Referee_Address__c</name>
+    </fields><fields>
+        <label><!-- Referee Email --></label>
+        <name>Referee_Email__c</name>
+    </fields><fields>
+        <help><!-- Full name with title (salutation) --></help>
+        <label><!-- Referee Name --></label>
+        <name>Referee_Name__c</name>
+    </fields><fields>
+        <help><!-- Set at programme level --></help>
+        <label><!-- Referee Override --></label>
+        <name>Referee_Override__c</name>
+    </fields><fields>
+        <label><!-- Referee Phone --></label>
+        <name>Referee_Phone__c</name>
+    </fields><fields>
+        <label><!-- Referee Position --></label>
+        <name>Referee_Position__c</name>
+    </fields><fields>
+        <help><!-- Link to referee Contact record --></help>
+        <label><!-- Referee --></label>
+        <name>Referee__c</name>
+        <relationshipLabel><!-- References (Referee) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Reference Status --></label>
+        <name>Reference_Status__c</name>
+        <picklistValues>
+            <masterLabel>Checked</masterLabel>
+            <translation><!-- Checked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replied</masterLabel>
+            <translation><!-- Replied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student Programme --></label>
+        <name>Student_Programme__c</name>
+        <relationshipLabel><!-- References --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Taken from Student (contact) record --></help>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <label><!-- Upload URL --></label>
+        <name>Upload_URL__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Reference</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>References</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Reference Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Referee Information --></label>
+            <section>Referee Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Fields --></label>
+            <section>System Fields</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Sys Admin Reference Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Form Assembly Fields --></label>
+            <section>Form Assembly Fields</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Referee Information --></label>
+            <section>Referee Information</section>
+        </sections>
+        <sections>
+            <label><!-- System Fields --></label>
+            <section>System Fields</section>
+        </sections>
+    </layouts><webLinks>
+        <label><!-- Checked --></label>
+        <name>Checked</name>
+    </webLinks><workflowTasks>
+        <name>Email_Reference_Request_Sent</name>
+        <subject><!-- Email: Reference Request Sent --></subject>
+    </workflowTasks></CustomObjectTranslation>

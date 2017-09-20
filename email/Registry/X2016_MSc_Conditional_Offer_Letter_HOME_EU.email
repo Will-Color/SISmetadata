@@ -1,0 +1,93 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style="font-family: Arial, sans-serif;"><font face="Arial,Sans-Serif" size="2">{!Contact.FirstName} {!Contact.LastName}</font></span></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font face="Arial,Sans-Serif" size="2">{!Contact.MailingAddress}</font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font size="2"><br><font face="Arial,Sans-Serif"></font></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style="color: rgb(51, 51, 51);"><font face="Arial,Sans-Serif" size="2">{!Today}</font></span></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style="mso-tab-count: 1;"><font face="Arial,Sans-Serif" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </font></span></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Dear {!Contact.FirstName},</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font face="Arial,Sans-Serif" size="2">&nbsp;</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Student ID Number: {!Contact.LSTM_No__c}&nbsp;</font></p><u><font face="Arial,Sans-Serif" size="2">
+
+</font></u><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><font face="Arial,Sans-Serif" size="2">&nbsp;</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: left; line-height: normal;"><font face="Arial,Sans-Serif" size="2">On behalf
+of the Liverpool School of Tropical Medicine, I would like to offer you a
+conditional place on the <w:sdt id="4540800" showingplchdr="t" docpart="385CD447661942FC9C7B95F1E225ED70" dropdown="t"><w:listitem listvalue="Choose an item."></w:listitem>MSc in {!Student_Programme__c.Programme__c}</w:sdt>.
+The programme commences on {!Student_Programme__c.Programme_Start_Date__c} and ends on {!Student_Programme__c.Programme_End_Date__c}</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: left; line-height: normal;"><font face="Arial,Sans-Serif" size="2">&nbsp;</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font face="Arial,Sans-Serif" size="2">The
+conditions of this offer are:</font></span></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">&nbsp;</font></p><font face="Arial,Sans-Serif" size="2">
+<span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- You must provide evidence
+of your degree award &lt;and classification if applicable&gt;.</span>
+
+</font><p style="margin: 0cm 0cm 0pt 36pt; text-align: justify; line-height: normal;"><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font face="Arial,Sans-Serif" size="2">&nbsp;</font></span></p><font face="Arial,Sans-Serif"><font size="2">
+<span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- Receipt
+of&nbsp;one/two&nbsp;suitable references which are no more than two years old.
+Referees should be from senior academic and/ or professional persons who are
+currently responsible or have recently been responsible for supervising you;
+friends and family are not acceptable. &nbsp;If you have given us permission to
+contact your referees on submitting your application then you do not need to
+take any further action. If you have not given us permission to contact your
+referees then you will need to ask your referees to email their references
+directly to MyLSTM@lstmed.ac.uk.</span></font></font><font face="Arial,Sans-Serif"><font size="2"><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>&nbsp;Please
+note that for verification purposes references should be emailed from a
+business email address. If this is not possible, then references should appear
+on headed stationery and/ or bear the official stamp of the organisation</span>
+
+</font></font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font face="Arial,Sans-Serif" size="2">&nbsp;</font></span></p><p><font face="Arial,Sans-Serif"><font size="2">
+
+<span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- You must provide evidence
+of how you are going to fund your studies. If you are self-funding (you or a
+family member are funding your studies), please sign and return the attached
+fees agreement letter. Please note that electronic signatures are not accepted.
+If you are sponsored by an organisation (for example, </span><em><span lang="EN" style="mso-ansi-language: EN;">your
+home government, the British Council etc.), </span></em><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>please
+provide a letter from your sponsor confirming these arrangements. The letter <u>must</u>
+include all of the information detailed in the template sponsor letter which
+you will find as an attachment to this offer.</span></font></font></p><p><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font size="2"><br><font face="Arial,Sans-Serif"></font></font></span></p><p><font face="Arial,Sans-Serif"><font size="2"><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- </span>You must meet the English language entry requirements. Further
+information on how to meet these requirements can be found on the website: </font></font></p><p><font face="Arial,Sans-Serif"><font size="2"><u><font color="#0066cc"><a href="http://www.lstmed.ac.uk/study/how-to-apply/english-language-requirements">http://www.lstmed.ac.uk/study/how-to-apply/english-language-requirements</a></font></u></font></font></p><p><span lang="EN-US" style='mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font size="2"><br><font face="Arial,Sans-Serif"></font></font></span></p><span lang="EN-US"><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font size="2"><span style="font-family: Arial, sans-serif;">&nbsp;</span><span lang="EN-US" style="font-family: Arial, sans-serif;">- Payment of £1000 tuition fee in advance must be made no later than 1<sup>st</sup> June 2016. Payment </span><span style="font-family: Arial, sans-serif;">details can be requested from us once&nbsp;you have met all of the conditions detailed above. Payment constitutes a commitment to LSTM and as such is non-refundable.</span></font></p></span><p><font size="2"><br><font face="Arial,Sans-Serif"></font></font></p><p><span lang="EN-US" style="color: black;"><font face="Arial,Sans-Serif" size="2">Demand for our
+programmes often exceeds the number of available places, therefore it is in
+your best interest to meet all
+the conditions of your offer as soon as possible in order to secure a place. If
+you think you will be unable to meet the conditions of your offer in time for
+the start date of the programme, you may be able to defer entry until the
+following year.&nbsp; Students may only defer
+entry once. For further details please see the LSTM Code of Practice on Admissions which can
+be found on our website by clicking: <a href="http://www.lstmed.ac.uk/study/quality-manual">http://www.lstmed.ac.uk/study/quality-manual</a></font></span></p><p><span lang="EN-US" style='color: black; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'><font size="2"><br><font face="Arial,Sans-Serif"></font></font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><font size="2"><span lang="EN-US" style="font-family: Arial, sans-serif;">Once you have met&nbsp;<u>all</u>&nbsp;of the
+conditions of this offer we will confirm your place on the programme and you
+will be</span><span style="font-family: Arial, sans-serif;">&nbsp;invoiced for the remaining balance of your tuition fees. Attached
+to this email is information about research projects which you should read
+carefully. If you do not know if you wish to undertake an overseas project then
+you should let me know now so that I do not include the fee in the final
+invoice; you can reconsider this decision further into your studies. Sponsored
+students should be aware that it is difficult to request additional funds after
+they have commenced their studies.</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></font></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2">&nbsp;</font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2">Tuition fees are normally due in full one week before the start of the
+programme. In exceptional circumstances students can be considered for a three
+part instalment plan but only if arranged in advance of the start of the
+programme.</font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><b><span style="font-family: Arial, sans-serif;"><font size="2"><br></font></span></b></p><p class="MsoNormal" style="margin-bottom: 0pt;"><b><span style="font-family: Arial, sans-serif;"><font size="2">Current Passport</font></span></b></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2"><br></font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2">As part of the application process you were asked to provide details of
+your current passport. If you update your passport then you must inform us by
+emailing us a copy of the photo ID page.</font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2"><br></font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2">May I offer my congratulations on gaining this offer. If you require any
+further information or advice then please do not hesitate to contact me.</font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2"><br></font></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;"><font size="2">Yours sincerely&nbsp;</font></span></p><p><font size="2"><br></font></p><p><font size="2"><br></font></p><p><font size="2"><br><font face="Arial,Sans-Serif"></font></font></p><div style="color: rgb(0, 0, 0);"><span style="text-align: justify;"><font face="Arial,Sans-Serif" size="2">{!User.FirstName}&nbsp;{!User.LastName}</font></span></div><div style="color: rgb(0, 0, 0);"><span style="text-align: justify;"><font face="Arial,Sans-Serif" size="2">Administrator – Academic Registry</font></span></div><div style="color: rgb(0, 0, 0);"><font face="Arial,Sans-Serif" size="2">Email: MyLSTM@lstmed.ac.uk</font></div><div style="color: rgb(0, 0, 0);"><font face="Arial,Sans-Serif"><font size="2"><span style="text-align: justify;">Telephone:</span><span style="text-align: justify; color: rgb(66, 66, 66);">&nbsp;</span><font style="text-align: justify;">{!User.Phone}</font></font></font></div><p><font size="2"><br><font face="Arial,Sans-Serif"></font></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Enc.</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Tuition Fees 2016/17</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Project Information</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Fees Agreement Letter</font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">Template Sponsor Letter</font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2"><br></font></p><p class="MsoNormal" style="color: rgb(0, 0, 0); margin-bottom: 0pt;"><font face="Arial,Sans-Serif"><font size="2"><b style="text-align: justify; background-color: rgb(255, 255, 255);">SPONSOR LICENCE NUMBER:&nbsp;</b><b style="text-align: justify; background-color: rgb(255, 255, 255);"><span lang="EN-US">WBN38URF9</span></b></font></font></p><font face="Arial,Sans-Serif" size="2">
+
+</font><p style="margin: 0cm 0cm 0pt; line-height: normal;"><font face="Arial,Sans-Serif" size="2">&nbsp;</font></p><font face="Times New Roman" size="2" style="font-size: 12pt;">
+
+</font>]]></td>
+</tr>
+</table>

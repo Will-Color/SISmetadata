@@ -1,0 +1,78 @@
+<apex:page controller="NewUserPageContExt" tabStyle="Applications__tab" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"/>
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <script>
+        function doConfirm(){
+            return window.confirm('Have you made a note of your new Username and Password?');
+        }
+         var j$ = jQuery.noConflict();
+          j$(document).ready(function(){ 
+              j$('.headerSearchContainer').hide();
+              });
+    </script>
+
+
+<!-- JS footer for ruler analytics BEGIN-->
+<script type="text/javascript">
+    var __raconfig = __raconfig || {};
+    __raconfig.uid = '582f0e86520ec';
+    __raconfig.action = 'track';
+    (function () {
+        var ra = document.createElement('script');
+        ra.type = 'text/javascript';
+        ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ra, s);
+    }());
+</script>
+<!-- JS footer for ruler analytics END-->
+
+
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+    </style>
+    
+    <style>
+        .centered { text-align: center; }
+        .middled { vertical-align: middle !important; }
+        textarea.wideField { min-width: 95%; }
+        .reqField { background-color: #c00; }
+    </style>
+    
+    
+    <apex:sectionHeader title="Student information"/>
+
+    <apex:form enctype="multipart/form-data" id="userInfoForm">
+
+        <apex:outputPanel id="wholePage">
+
+            <p><apex:outputText value="Thank you for completing Pre-Registration" escape="false"/></p>
+            
+            <p><apex:outputText value="IMPORTANT INFORMATION" escape="false" style="font-weight:bold;"/></p>
+            
+            <table width="50%">
+            <tr>
+                <td width="20%">Your new LSTM Email Address is : </td>
+                <!-- <td width="30%">{!sp.Student__r.LSTM_No__c}@lstmed.ac.uk</td> -->
+                <td width="30%">{!lstmEmail}</td>
+            </tr>
+            <tr>
+                <td width="20%">Your new LSTM Password is : </td>
+                <td width="30%">{!displayPassword}</td>
+            </tr>
+            </table>
+            
+            <p><apex:outputText value="{!pageCopy.Body_Copy__c}" escape="false"/></p>
+
+        <apex:commandButton value="Confirm" onclick="javascript: return doConfirm();" action="{!confirmDetails}"/>
+
+        </apex:outputPanel>
+
+    </apex:form>
+    
+</apex:page>

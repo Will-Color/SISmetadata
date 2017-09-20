@@ -1,0 +1,49 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[Dear&nbsp;{!References__c.Referee__c}]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<div><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" face="Arial, sans-serif">{!References__c.Applicant__c}&nbsp;</font><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">has applied to undertake the&nbsp;</span><font face="arial">{!References__c.Applied_Programme__c}&nbsp;</font><font face="Arial, sans-serif" size="3">at the Liverpool&nbsp;School of Tropical Medicine and has indicated you
+as their referee.</font></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;">We would
+appreciate your comments on the candidate’s professional and/or academic abilities
+and their suitability for their chosen course of study.&nbsp;</span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;"><br></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;"><b>References must be signed, dated and appear on headed paper, or bear an
+official stamp</b></span><b><span style="font-family:&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ansi-language:EN" lang="EN">.<o:p></o:p></span></b></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><b><span style="font-family:
+&quot;Arial&quot;,&quot;sans-serif&quot;;mso-ansi-language:EN" lang="EN">&nbsp;</span></b></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;">To upload a
+reference please click on the following link:<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;"><br></span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-size: 12pt;">{!References__c.Upload_URL__c}</span><span style="font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt; text-align: justify;"><span style="font-family: Arial, sans-serif;">Please note that under the Data Protection Act 1998, LSTM may have
+to provide the candidate with a copy of the reference you have written, if they
+formally request it.<o:p></o:p></span></p>
+
+<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt; text-align: justify;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p>
+
+<p class="MsoNormal" style="margin-bottom: 0.0001pt;"><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">If you are
+not able to provide a reference for&nbsp;</span><font face="Arial, sans-serif">{!References__c.Applicant__c},</font><span style="color: rgb(0, 0, 0); font-family: Arial, sans-serif; font-size: 12pt;">&nbsp;I would be grateful if
+you could&nbsp;reply to this email, stating your reasons.</span></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><span style="font-family: Arial, sans-serif;">
+<br>
+Yours sincerely<br>
+<br>
+Admissions Team<br>
+Liverpool School of Tropical Medicine</span><o:p></o:p></p></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><a href="http://www.lstmed.ac.uk">www.lstmed.ac.uk</a></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div><br><br>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<br><br><br>]]></td>
+</tr>
+</table>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>10</activeVersionNumber>
+    <description>Invoked by Process &apos;HESA Quals on Entry Audit Event&apos;, which is invoked by Audit Trigger checkbox; Exclude = True as Sue A advises QualsOnEntry not required for HESA return, though we are still recording as part of HESA audit process</description>
+    <masterLabel>HESA Quals on Entry XML Output</masterLabel>
+</FlowDefinition>

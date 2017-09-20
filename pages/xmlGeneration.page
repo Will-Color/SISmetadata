@@ -1,0 +1,21 @@
+<apex:page controller="XMLGenerationController"  contentType="text/xml" showHeader="false" sidebar="false" cache="false" title="Downloaded XML" readOnly="true" >
+    {!headerXmlOutput}
+    <apex:repeat value="{!Courses}" var="course">
+        <Course> 
+            {!course}
+        </Course>
+    </apex:repeat>
+    <apex:repeat value="{!Modules}" var="module">
+        <Module> 
+            {!module}
+        </Module>
+    </apex:repeat>
+    <apex:repeat value="{!studentDetails}" var="studentDetail">
+        <Student> 
+            <apex:repeat value="{!studentDetail}" var="c">
+                {!c}
+            </apex:repeat>
+        </Student>
+    </apex:repeat>
+    {!footerXmlOutput}
+</apex:page>

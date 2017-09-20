@@ -1,0 +1,43 @@
+<aura:component controller="PicklistBannerSPController" implements="force:appHostable,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,forceCommunity:availableForAllPageTypes" access="global">
+    <ltng:require scripts="/resource/jquery" afterScriptsLoaded="{!c.jsClick}" />    
+    <aura:attribute name="completedList" type="String[]" access="global" />
+    <aura:attribute name="incompleteList" type="String[]" access="global" />
+    <aura:attribute name="currentStage" type="String" access="global" />    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}" access="global" />     
+    <aura:dependency resource="markup://force:editRecord" type="EVENT" />
+    <aura:attribute name="recordId" type="String" default="{!recordId}"/>    
+    <aura:handler event="force:refreshView" action="{!c.doInit}" />
+    <div class="slds-grid">
+        <div class="slds-tabs--path" role="application">
+            <ul class="slds-tabs--path__nav" role="tablist">
+                <aura:iteration items="{!v.completedList}" var="x">
+                    <li class="slds-tabs--path__item slds-is-complete" role="presentation" id="{!x}">
+                        <a class="slds-tabs--path__link" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive" id="{!x}">
+                            <span class="slds-tabs--path__stage">
+                                <c:svgIcon svgPath="/resource/slds/assets/icons/utility-sprite/svg/symbols.svg#check" category="utility" size="small" name="check"/>              
+                                <span class="slds-assistive-text">Stage Complete</span>
+                            </span>
+                            <span class="slds-tabs--path__title" id="{!x}">{!x}</span>
+                        </a>
+                    </li>
+                </aura:iteration>
+                <li class="slds-tabs--path__item slds-is-current" role="presentation" id="{!v.currentStage}">
+                    <a class="slds-tabs--path__link" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive" id="{!v.currentStage}">
+                        <span class="slds-tabs--path__stage">
+                        </span>
+                        <span class="slds-tabs--path__title" id="{!v.currentStage}">{!v.currentStage}</span>
+                    </a>
+                </li>
+                <aura:iteration items="{!v.incompleteList}" var="x">        
+                    <li class="slds-tabs--path__item slds-is-incomplete" role="presentation" id="{!x}">
+                        <a class="slds-tabs--path__link" aria-controls="content-path-1" aria-selected="false" tabindex="-1" role="tab" href="javascript:void(0);" aria-live="assertive" id="{!x}">
+                            <span class="slds-tabs--path__stage">
+                            </span>
+                            <span class="slds-tabs--path__title" id="{!x}">{!x}</span>
+                        </a>
+                    </li>
+                </aura:iteration>   
+            </ul>
+        </div>
+    </div>
+</aura:component>

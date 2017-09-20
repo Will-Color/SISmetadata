@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>itservices@lstmed.ac.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>magenta.uatlstm@colorconsultancy.co.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>LSTM Admin Reports</name>
+</ReportFolder>

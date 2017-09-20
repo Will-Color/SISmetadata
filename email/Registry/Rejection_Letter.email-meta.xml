@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Rejection Letter</name>
+    <style>freeForm</style>
+    <subject>Application decision: {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.FirstName} {!Contact.LastName}
+
+{!Contact.MailingAddress}
+
+
+{!Today}
+
+
+Dear {!Contact.FirstName},
+
+
+Student ID Number: {!Contact.LSTM_No__c}
+
+
+Thank you for your application for the MSc in {!Student_Programme__c.Programme__c}.
+
+
+
+I regret to inform you that your application has not been successful.
+
+
+
+On reviewing your application the Director of Studies felt:
+
+
+
+&lt;Insert feedback&gt;.
+
+
+
+May I take this opportunity to thank you for your interest in the Liverpool School of Tropical Medicine and to wish you every success for your future endeavours.
+
+
+
+Yours sincerely
+
+
+
+
+{!User.FirstName} {!User.LastName}
+
+Administrator – Academic Registry
+
+Email: MyLSTM@lstmed.ac.uk
+
+
+Telephone: {!User.Phone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

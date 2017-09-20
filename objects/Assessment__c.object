@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Anon_Check__c</fullName>
+        <externalId>false</externalId>
+        <formula>If ( OR (  ISPICKVAL ( Assessment_Type__c , "Presentation"), ISPICKVAL ( Assessment_Type__c , "Practical"), ISPICKVAL ( Assessment_Type__c , "Dissertation")), FALSE, TRUE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Signifies that Anonymous Ref should be passed to markers in place of Student names</inlineHelpText>
+        <label>Anon Check</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Assessment_Category__c</fullName>
+        <description>Values dependent on selected Assessment Type value</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Specific Assessment Category</inlineHelpText>
+        <label>Assessment Category</label>
+        <picklist>
+            <controllingField>Assessment_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Case Study</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Critical Analysis</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Critical Reflection</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Critical Review</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dissertation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Dissertation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Essay</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Examination</fullName>
+                <default>false</default>
+                <controllingFieldValues>Examination</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Logical Framework</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MCQ</fullName>
+                <default>false</default>
+                <controllingFieldValues>Examination</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Oral Exam</fullName>
+                <default>false</default>
+                <controllingFieldValues>Examination</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Personal Reflection</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poster Presentation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Presentation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Practical Report</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+                <controllingFieldValues>Presentation</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Proposal</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Systematic Review</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Written Report</fullName>
+                <default>false</default>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <controllingFieldValues>Dissertation</controllingFieldValues>
+                <controllingFieldValues>Examination</controllingFieldValues>
+                <controllingFieldValues>Presentation</controllingFieldValues>
+                <controllingFieldValues>Written Assignment</controllingFieldValues>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Assessment_Period__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Module__r.Assessment_Period__c)</formula>
+        <inlineHelpText>Semester and Block in which Assessment falls. Set at Module level.</inlineHelpText>
+        <label>Assessment Period</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assessment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Examination</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Written Assignment</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dissertation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Criticality_Score__c</fullName>
+        <description>Hidden field to allow rollup of Pass Critical info at Assessment level to Module</description>
+        <externalId>false</externalId>
+        <formula>If ( TEXT (Pass_Critical__c) = "Pool Pass", 1, 
+   If ( TEXT (Pass_Critical__c) = "Mandatory", 100,
+   0)
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Criticality Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Marking_Cohort__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( ISPICKVAL( Marking_Type__c , "Double Marked"),
+   IF ( Anon_Check__c = True,
+      HYPERLINK("00O20000007D1Ak?pv0="&amp;Id,"Double Marked Anonymous"),
+      HYPERLINK("00O20000007D1Al?pv0="&amp;Id,"Double Marked Named")
+   ),
+   IF ( ISPICKVAL( Marking_Type__c , "Moderated"),
+      IF ( Anon_Check__c = True,
+         HYPERLINK("00O20000007D1Am?pv0="&amp;Id,"Moderated Anonymous"),
+         HYPERLINK("00O20000007D1An?pv0="&amp;Id,"Moderated Named")
+      ),
+   "Error")
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Links to report showing cohort sitting the assessment - if shows Error then remember to set Marking Type</inlineHelpText>
+        <label>Mark Sheet</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Marking_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Marking Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Moderated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Double Marked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Validated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Module_Reference__c</fullName>
+        <externalId>false</externalId>
+        <formula>Module__r.Module_Reference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Module Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module__c</fullName>
+        <externalId>false</externalId>
+        <label>Module</label>
+        <referenceTo>Module__c</referenceTo>
+        <relationshipLabel>Assessments</relationshipLabel>
+        <relationshipName>Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Pass_Critical__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines if this assessment needs to be passed for overall Module to be a pass. Pool Pass indicates this assessments is one of a Pool of assessments that have an individual threshold to reach per Module; Mandatory means this assessment must be passed.</inlineHelpText>
+        <label>Pass Critical?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Mean</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pool Pass</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mandatory</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Test_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>For Assessment testing but exclusion from live reports etc</inlineHelpText>
+        <label>Test Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Title__c</fullName>
+        <description>Might not be needed</description>
+        <externalId>false</externalId>
+        <label>Title</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Weighting_Variable__c</fullName>
+        <externalId>false</externalId>
+        <label>Weighting Variable</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Variable 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Variable 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Weighting_percent__c</fullName>
+        <externalId>false</externalId>
+        <formula>If (Text ( Weighting_Variable__c ) = "Variable 1",  Module__r.Assessment_Variable_1__c ,
+If (Text ( Weighting_Variable__c ) = "Variable 2",  Module__r.Assessment_Variable_2__c ,
+If (Text ( Weighting_Variable__c ) = "Variable 3",  Module__r.Assessment_Variable_3__c ,
+If (Text ( Weighting_Variable__c ) = "Variable 4",  Module__r.Assessment_Variable_4__c ,
+If (Text ( Weighting_Variable__c ) = "Variable 5",  Module__r.Assessment_Variable_5__c ,
+If (Text ( Weighting_Variable__c ) = "Variable 6",  Module__r.Assessment_Variable_6__c ,
+0))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Weighting %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Assessment</label><nameField>
+        <label>Assessment Name</label>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Assessments</pluralLabel><searchLayouts>
+        <lookupDialogsAdditionalFields>Module__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Assessment_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Weighting_Variable__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Weighting_percent__c</lookupDialogsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><startsWith>Vowel</startsWith><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Module__c</columns>
+        <columns>Assessment_Type__c</columns>
+        <columns>Description__c</columns>
+        <columns>Weighting_percent__c</columns>
+        <columns>Weighting_Variable__c</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Assessments</label>
+    </listViews></CustomObject>

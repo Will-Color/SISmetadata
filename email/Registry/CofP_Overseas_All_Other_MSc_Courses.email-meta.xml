@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Add exam number and edit fees paragraph</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>2016 CofP Overseas All Other MSc Courses</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Place: {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.FirstName} {!Contact.LastName}
+
+
+{!Contact.MailingAddress}
+
+
+{!Today}
+
+
+Dear {!Contact.FirstName},
+
+
+Re: Confirmation of Place
+
+Student ID Number: {!Contact.LSTM_No__c}
+
+Anonymous Exam Number:
+
+
+I am pleased to inform you that we would like to confirm your place on the MSc in {!Student_Programme__c.Programme__c} commencing on {!Student_Programme__c.Programme_Start_Date__c} and ending on  {!Student_Programme__c.Programme_End_Date__c}. Your expected graduation date is December 2017.
+
+
+Registration
+
+
+Registration will take place on Monday 12th September.  If, due to exceptional circumstances, you cannot register on this date you must inform me immediately. Any student who has not arrived by 9am on Monday 26th September will, under no circumstances, be permitted to register and will be reported to UKVI in line with LSTM’s sponsor licence duties.  Students unable to register by the deadline should not travel to the UK. Instead you are advised to defer your entry to the following academic year.  Students will only be permitted to defer entry once; further details can be found in our Code of Practice on Admissions: http://www.lstmed.ac.uk/study/quality-manual
+
+
+
+If you do wish to defer please contact me as soon as possible.
+
+
+Further information about registration will be sent to you approximately one month before the start of the programme.
+
+
+Applying for your visa
+
+
+Attached is your Confirmation of Acceptance of Studies (CAS) which is valid for six months from the date of issue.  This document contains important information which you will need when applying for your Tier 4 (General) Student visa. Please ensure that all of the details contained in your CAS are correct and that there are no omissions. If any of the details do need updating then it is vital that you contact me before you apply for your visa. Having a valid CAS does not guarantee that your visa application will be successful, you must meet all of the requirements of the Immigration Rules for Tier 4 (General) students. Please note that you cannot apply for your visa more than three months before the start of your course.
+
+
+If you have a Tier 4 (General) Student visa issued for study at another university, you must apply to the UK Visas and Immigration (UKVI) for a new visa before registration.  If, at registration, you cannot show that you have made a new visa application we will not be able to register you.
+
+
+As part of your visa application you will need to provide the UKVI with evidence that you have sufficient funds to pay for your tuition fees along with £1,015 per month for your living expenses (up to a maximum of 9 months). The experience of our students is that £7,800 to £9,000 per year is sufficient for a single person.
+
+
+Further information on how to apply for a visa can be found on the UKVI website: https://www.gov.uk/tier-4-general-visa; and in the enclosed information sheet “Applying for a Tier 4 (General) student visa”.
+
+
+Tuition fees
+
+
+Tuition fees for the programme are £&lt;insert programme fee&gt; as you are undertaking a desk-based/ overseas research project.
+
+
+
+As a intercalating medical student/  intercalating veterinary student / graduate of/ from the University of Liverpool who is self-funding their studies you are entitled to a tuition fee discount of £1,000/ £1,500. After applying this discount, the scholarship award of £&lt;insert award&gt;, and the £1000 advanced payment you have already made your remaining tuition fee balance of £&lt;insert balance&gt; is due one week prior to registration. Payment details for the balance of your tuition fee will follow shortly.  Please inform us at MyLSTM@lstmed.ac.uk once you have made your payment.
+
+
+May I take this opportunity to congratulate you on your successful application.  I look forward to meeting you in September when your programme begins.
+
+
+In the meantime if you have any further questions or queries then please do not hesitate to contact me.
+
+
+Yours sincerely
+
+
+
+
+{!User.FirstName} {!User.LastName}
+
+Administrator – Academic Registry
+
+Email: MyLSTM@lstmed.ac.uk
+
+Telephone: {!User.Phone}
+
+
+Encs:
+
+Confirmation of Acceptance of Studies details document
+
+Applying for a Tier 4 (General) visa
+
+Coming to Liverpool Guide
+
+
+SPONSOR LICENCE NUMBER: WBN38URF9</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<font face="Arial, sans-serif">An application for {!Student_Programme__c.Programme__c} has been checked and is ready for you to review.&nbsp;</font><div><font face="Arial, sans-serif"><br></font></div><div><span style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);">Click on the link below to login to the Student Information System and view the application:&nbsp;</span><br style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><br style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><span style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><b>{!Student_Programme__c.Link}&nbsp;</b></span></div><div><span style="font-family: Arial, sans-serif; background-color: rgb(255, 255, 255);"><b><br></b></span></div><div><br></div><div><img src="https://c.eu0.content.force.com/servlet/servlet.ImageServer?id=01520000002SZ1z&amp;oid=00D20000000lLXN" border="0" align="left" alt=""><br></div><div><font face="Arial, sans-serif"><br><br><br></font></div>]]></td>
+</tr>
+</table>

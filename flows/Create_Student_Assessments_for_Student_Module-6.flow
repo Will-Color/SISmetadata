@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Whenever new student modules created or updated, this process will create student assessments</description>
+    <label>Create Student Assessments for Student Module</label>
+    <processType>Workflow</processType>
+</Flow>

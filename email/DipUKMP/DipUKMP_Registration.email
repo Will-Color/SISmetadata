@@ -1,0 +1,118 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="500" style="width:375.0pt;mso-cellspacing:0cm;background:#CCCCCC;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 0cm 0cm 0cm">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:225.0pt">
+  <td valign="top" style="background:white;padding:0cm 0cm 0cm 0cm;height:225.0pt">
+  <table class="MsoNormalTable" border="0" cellspacing="5" cellpadding="0" width="550" style="width:412.5pt;mso-cellspacing:3.7pt;mso-yfti-tbllook:1184;mso-padding-alt:
+   3.75pt 3.75pt 3.75pt 3.75pt">
+   <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+    height:300.0pt">
+    <td valign="top" style="background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial; padding: 3.75pt; height: 300pt;">
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Dear&nbsp;{!Student_Programme__c.Student__c},<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Thank you for registering for the Diploma in UK Medical Practice.</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Your&nbsp;<b>Student ID Number</b>&nbsp;is:&nbsp;{!Student_Programme__c.LSTM_No__c}</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Your&nbsp;<b>Username and Email</b>&nbsp;<b>Address&nbsp;</b>is:&nbsp;{!Student_Programme__c.LSTM_Email__c}</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">For security reasons, we are unable to include your LSTM password in
+    this email. However, we have sent a copy of your password in a separate
+    email to your personal email address.</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif; background-image: initial; background-position: initial; background-size: initial; background-repeat: initial; background-attachment: initial; background-origin: initial; background-clip: initial;">You can now use your new username and password
+    to access a number of different LSTM systems. Watch the video guide or go
+    to the student intranet to get started.</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><b><span style="font-size: 12pt; font-family: Arial, sans-serif;">Get Started video guide:&nbsp;</span></b><a href="https://goo.gl/nFEcp8"><b><span style="font-size:12.0pt;font-family:
+    &quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#0000CC;
+    mso-fareast-language:EN-GB">https://goo.gl/nFEcp8</span></b></a><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><b><span style="font-size: 12pt; font-family: Arial, sans-serif;">Student intranet:&nbsp;</span></b><a href="http://mylstm.com/"><b><span style="font-size:12.0pt;font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:
+    &quot;Times New Roman&quot;;color:#0000CC;mso-fareast-language:EN-GB">http://mylstm.com</span></b></a><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">The student intranet provides useful information on services and
+    support for students.&nbsp;</span><span style="font-size:12.0pt;font-family:
+    &quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;color:#212121;
+    mso-fareast-language:EN-GB">It also gives you access to Office 365 allowing
+    you to download Microsoft Word, Excel and PowerPoint and access your LSTM
+    email account.&nbsp;It is important you&nbsp;<b>check</b>&nbsp;<b>your LSTM</b>&nbsp;<b>email
+    account regularly</b>, as we will send all future correspondence to this
+    address.</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><b><span style="font-size: 12pt; font-family: Arial, sans-serif;">Brightspace:&nbsp;</span></b><a href="http://brightspace.lstmed.ac.uk/"><b><span style="font-size:12.0pt;
+    font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+    color:#0000CC;mso-fareast-language:EN-GB">http://brightspace.lstmed.ac.uk</span></b></a><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Brightspace is LSTM's virtual learning environment (VLE). This is an
+    online space dedicated to the DipUKMP, which contains all essential
+    information for the programme. Here you will find educational material, key
+    documents and updates on important NHS issues. There are resources to help
+    you succeed in the programme and, in particular, in the written assignment.
+    You can communicate with fellow MTI doctors on the programme through
+    Brightspace and also with staff. Assignments are also submitted through
+    Brightspace. Please start using it and familiarise yourself with its
+    content. <o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">If you have any difficulty accessing any of our systems, please
+    email&nbsp;</span><a href="mailto:dipukmp@lstmed.ac.uk"><b><span style="font-size:12.0pt;
+    font-family:&quot;Arial&quot;,sans-serif;mso-fareast-font-family:&quot;Times New Roman&quot;;
+    mso-fareast-language:EN-GB">dipukmp@lstmed.ac.uk</span></b></a><span style="font-size: 12pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">Yours sincerely</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;<o:p></o:p></span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">&nbsp;</span></p>
+    <p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;
+    line-height:normal"><span style="font-size: 12pt; font-family: Arial, sans-serif;">The Liverpool School of Tropical Medicine</span><span style="font-size: 12pt; font-family: &quot;Times New Roman&quot;, serif;"><o:p></o:p></span></p>
+    </td>
+   </tr>
+  </tbody></table>
+  </td>
+ </tr>
+</tbody></table>
+
+<div><!--[if !supportAnnotations]-->
+
+<div><div id="_com_1" class="msocomtxt" language="JavaScript"><br>
+
+<!--[if !supportAnnotations]--></div>
+
+<!--[endif]--></div>
+
+</div>]]></td>
+</tr>
+</table>

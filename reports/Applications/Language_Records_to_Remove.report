@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Qualifications_Experience__c$Name</field>
+    </columns>
+    <columns>
+        <field>Qualifications_Experience__c$Contact__c</field>
+    </columns>
+    <columns>
+        <field>Qualifications_Experience__c$CreatedDate</field>
+    </columns>
+    <columns>
+        <field>Qualifications_Experience__c$LastModifiedDate</field>
+    </columns>
+    <description>For post go-live data cleansing</description>
+    <filter>
+        <criteriaItems>
+            <column>Qualifications_Experience__c$RecordType</column>
+            <operator>equals</operator>
+            <value>Qualifications_Experience__c.Language_Qualifications</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Qualifications_Experience__c$Contact__c.Test_Record__c</column>
+            <operator>notEqual</operator>
+            <value>Yes</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Language Records to Remove</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Quals_Exp__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Qualifications_Experience__c$CreatedDate</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Qualifications_Experience__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CURRENT</interval>
+    </timeFrameFilter>
+</Report>

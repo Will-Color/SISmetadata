@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Formula field that takes either the Module or Module Version, depending on which record is linked --></help>
+        <label><!-- Linked Module --></label>
+        <name>Linked_Module__c</name>
+    </fields><fields>
+        <label><!-- Module Active? --></label>
+        <name>Module_Active__c</name>
+    </fields><fields>
+        <label><!-- Module Role --></label>
+        <name>Module_Role__c</name>
+        <picklistValues>
+            <masterLabel>External Examiner</masterLabel>
+            <translation><!-- External Examiner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Teacher</masterLabel>
+            <translation><!-- External Teacher --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Convenor</masterLabel>
+            <translation><!-- Module Convenor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Module Moderator</masterLabel>
+            <translation><!-- Module Moderator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teaching</masterLabel>
+            <translation><!-- Teaching --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Version --></label>
+        <name>Module_Version__c</name>
+        <relationshipLabel><!-- Staff with Roles --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+        <relationshipLabel><!-- Staff with Roles --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Staff --></label>
+        <name>Staff__c</name>
+        <relationshipLabel><!-- My Module Roles --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Module Role</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Module Roles</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Module Role Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Linked Records --></label>
+            <section>Linked Records</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Please choose Module Role (this field cannot be left null if record is to be saved) --></errorMessage>
+        <name>Enforce_Valid_Role</name>
+    </validationRules></CustomObjectTranslation>

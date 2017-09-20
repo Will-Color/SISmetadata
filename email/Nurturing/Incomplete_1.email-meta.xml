@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Incomplete 1 email to MSc applicants</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Incomplete 1</name>
+    <style>freeForm</style>
+    <subject>Your LSTM Application</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+RE: Your application for MSc {!Student_Programme__c.Programme__c}
+
+Warm Greetings from all at LSTM.
+
+We noticed that you have nearly completed your application for MSc {!Student_Programme__c.Programme__c} but at the moment your application is still in INCOMPLETE status.  Is there anything we can help with to finish your application?  You can log into MyLSTM to check the progress of your application at any time. Your username is your email address. If you can&apos;t remember your password, please use the &apos;Forgot your password?&apos; facility on the MyLSTM login page.
+
+Exciting News – you may have seen on the news that we have just had a visit from Bill Gates, Co-founder of Microsoft and the Bill &amp; Melinda Gates Foundation along with Rt. Hon George Osborne MP to announce the Ross Fund.  This £3Billion fund will be used to support the global fight against Malaria and other infectious diseases. See more here.
+
+Fees Price Freeze – MSc fees for September 2016 have been set and we are delighted to confirm that there will be no increase on the fees from the previous year, and in some cases, there has actually been a small reduction!  All programme fees are on our website fees page.
+
+The Module Catalogue and the Programme Handbook for this year are on the course webpages to give you further information. http://www.lstmed.ac.uk/study/courses
+
+If you need any further information, we would be delighted to hear from you.
+
+Best wishes
+LSTM MSc Admissions Team</textOnly>
+    <type>html</type>
+</EmailTemplate>

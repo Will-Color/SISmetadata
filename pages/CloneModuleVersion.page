@@ -1,0 +1,67 @@
+<apex:page standardController="Module_Version__c" extensions="CloneModuleVersionController" showHeader="true" sidebar="true" standardStylesheets="true">
+<script type="text/javascript" src="{!URLFOR($Resource.library, 'library/js/jquery/jquery-1.8.2.min.js')}"></script>
+<script type="text/javascript" src="{!URLFOR($Resource.js, 'js/jquery/ui/jquery-ui-1.9.2.custom.min.js')}"></script>
+<script type="text/javascript" src="{!URLFOR($Resource.library, '/library/js/jquery/plugins/jquery.form.js')}"></script>
+<script type="text/javascript">
+
+function selectAll(){
+    var checkBoxList = $("[id$='selBox']");
+    for (var i = 0 ; i < checkBoxList.length ; i++){
+        checkBoxList[i].checked = true;
+    }
+}
+
+function uncheckOnSelect(whichField){
+    //This will make sure only one check box is selected
+    var checkBoxList = $("[id$='selBoxSC']");
+    for (var i = 0 ; i < checkBoxList.length ; i++){
+        if (whichField.getAttribute('Id') != checkBoxList[i].getAttribute('Id')){
+            checkBoxList[i].checked = false;
+        }
+    }
+    
+    
+}
+
+</script>
+<apex:form >
+    <br/>
+    <i><apex:outputText value="Review the information for the Module and enter the required values."/><br/>
+    <!-- <apex:outputText value="Then select the modules you wish to clone, or click Select All."/><br/> -->
+    <apex:outputText value="When you are ready, click Clone Module."/></i>
+    <br/><br/>
+    <apex:pageBlock >
+        <apex:pageBlockButtons location="top">
+            <apex:commandButton value="Clone Module" action="{!cloneModule}"/>
+            <apex:commandButton value="Cancel" action="{!cancel}"/>
+        </apex:pageBlockButtons>
+    
+    <apex:pageBlockSection title="Original Module Information" columns="2">
+        <apex:outputField value="{!originalModule.Name}"/>
+        <apex:outputLabel />
+        <apex:outputField value="{!originalModule.Version_Suffix__c}"/>
+        <!-- <apex:outputField value="{!originalProg.Overseas_Fee__c}"/> -->
+        <!-- <apex:outputField value="{!originalProg.Programme_Version__c}"/> -->
+        <!-- <apex:outputField value="{!originalProg.Capacity__c}"/> -->
+    </apex:pageBlockSection>
+    
+    
+    <!-- <apex:pageBlockSection title="Clone Module Information" columns="2"> -->
+        <!-- <apex:inputField value="{!cloneModule.Version_Suffix__c}"/> -->
+        <!-- <apex:inputField value="{!cloneProg.Overseas_Fee__c}"/> -->
+        <!-- <apex:inputField value="{!cloneProg.Programme_Version__c}"/> -->
+        <!-- <apex:inputField value="{!cloneProg.Capacity__c}"/> -->
+    <!-- </apex:pageBlockSection> -->
+    
+    <apex:pageBlockSection title="User Supplied Information">
+        <apex:inputField value="{!cloneModule.Version_Suffix__c}" required="true"/>
+        <apex:outputLabel /> 
+        <apex:inputField value="{!cloneModule.Start_Date__c}"/>       
+        <!-- <apex:inputField value="{!cloneModule.Academic_Year__c}" /> -->        
+        <apex:inputField value="{!cloneModule.End_Date__c}"/>
+    </apex:pageBlockSection>
+    
+    </apex:pageBlock>
+   
+</apex:form>
+</apex:page>

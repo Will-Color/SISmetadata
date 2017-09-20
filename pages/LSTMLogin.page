@@ -1,0 +1,180 @@
+<apex:page docType="html-5.0" controller="CustomLoginController" showHeader="false" sidebar="false" standardStylesheets="false">
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        
+        
+        <!-- JS footer for ruler analytics BEGIN-->
+        <script type="text/javascript">
+            var __raconfig = __raconfig || {};
+            __raconfig.uid = '582f0e86520ec';
+            __raconfig.action = 'track';
+            (function () {
+                var ra = document.createElement('script');
+                ra.type = 'text/javascript';
+                ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ra, s);
+            }());
+        </script>
+        <!-- JS footer for ruler analytics END-->
+        
+
+        
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+d.toGMTString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1);
+                    if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+                }
+                return "";
+            }
+            function deleteCookie(cname) {
+                document.cookie = cname + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+            }
+            
+            function pageInit() {
+                pageResize();
+                
+                // check for saved user login
+                var userNameCookie = 'savedUserName';
+                var username = getCookie(userNameCookie);
+                if ( username != "" ) {
+                    jQuery("#inputLogin").val(username);
+                    jQuery("#saveUserName").prop('checked', true);
+                }
+                
+                // attach click events
+                jQuery("#btnLogin").click(function() {
+                    username = jQuery("#inputLogin").val();
+                    // save user login
+                    if ( jQuery("#saveUserName").is(':checked') ) {
+                        setCookie(userNameCookie, username, 30);
+                    } else {
+                        deleteCookie(userNameCookie);
+                    }
+                    login(username, jQuery("#inputPassword").val());
+                    return false;
+                });
+                jQuery("#btnRegister").click(function() {
+                    window.location = "CommunitiesSelfReg?programmeid={!pgmId}";
+                });
+                jQuery("#btnForgotPass").click(function() {
+                    window.location = "secur/forgotpassword.jsp?locale=us";
+                });
+                jQuery("#btnSignHere").click(function() {
+                    window.location = "https://login.salesforce.com/";
+                });
+            }
+            
+            function pageResize() {
+                // dynamic positions
+                jQuery("#beforeNew").css("height", 0);
+                jQuery("#beforeEmployee").css("height", 0);
+                var beforeNewHeight = jQuery("#btnLogin").offset().top - jQuery("#btnRegister").offset().top;
+                jQuery("#beforeNew").css("height", ( beforeNewHeight < 0 ) ? 0 : beforeNewHeight);
+                var beforeEmployeeHeight = jQuery("#btnForgotPass").offset().top - jQuery("#btnSignHere").offset().top;
+                jQuery("#beforeEmployee").css("height", ( beforeEmployeeHeight< 0 ) ? 0 : beforeEmployeeHeight);
+                // change vertical line height
+                jQuery("#redLine").css("height", jQuery("#leftPanel").height()-2);
+            }
+            
+            jQuery(function() {
+                jQuery(window).resize(pageResize);
+                pageInit();
+            });
+        </script>
+    </head>
+    
+    <div class="visible-lg-block visible-md-block" style="height: 30px;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1 col-md-12">
+                <div style="border: solid 3px #DC002E; padding-left: 30px; padding-right: 30px; padding-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <apex:image value="{!$Resource.LSTM_Logo_HiRes}" alt="LSTM logo"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-5 col-md-5" id="leftPanel">
+                            <h4>Sign in to MyLSTM</h4>
+                            <form role="form" onsubmit="return false">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                                        <input type="email" class="form-control" id="inputLogin" placeholder="User Name"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password"/>
+                                    </div>
+                                </div>
+                                <apex:pageMessages id="errorMsgs"/>
+                                <div class="form-group">
+                                    <button id="btnLogin" class="btn btn-default btn-lg btn-block" style="color: white; background-color: #DC002E;">Log in</button>
+                                </div>
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="saveUserName"/> Remember User Name
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" id="btnForgotPass" class="btn btn-link">Forgot your password?</button>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                            <div id="redLine" class="visible-lg-block visible-md-block" style="width: 2px; height: 200px; background-color: #DC002E; margin: auto;"></div>
+                            <hr class="visible-sm-block visible-xs-block" style="height: 2px; border: 0; border-top: 2px solid #DC002E;"/>
+                        </div>
+                        <div class="col-lg-5 col-md-5">
+                            <div id="beforeNew"></div>
+                            <h4 class="text-center">New to LSTM?</h4>
+                            <button type="submit" id="btnRegister" class="btn btn-default btn-lg btn-block" style="color: white; background-color: #DC002E;">Register</button>
+                            <div id="beforeEmployee"></div>
+                            <p class="text-right">LSTM Employee? <button type="button" id="btnSignHere" class="btn btn-link">Sign in here</button></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                        <p class="text-center" style="padding-top: 10px;">Copyright &copy; 2014-16 Liverpool School of Tropical Medicine. All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <apex:form forceSSL="true">
+        <apex:actionFunction name="login" action="{!login}" reRender="afterLogin, errorMsgs">
+            <apex:param name="username" assignTo="{!username}" value=""/>
+            <apex:param name="password" assignTo="{!password}" value=""/>
+        </apex:actionFunction>
+        <apex:outputPanel id="afterLogin"></apex:outputPanel>
+    </apex:form>
+    
+</apex:page>

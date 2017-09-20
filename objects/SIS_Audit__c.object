@@ -1,0 +1,754 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <comment>Action override created by Lightning App Builder during activation.</comment>
+        <content>SIS_Audit_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Flexipage</type>
+    </actionOverrides><fields>
+        <fullName>Audit_Body__c</fullName>
+        <externalId>false</externalId>
+        <label>Audit Body</label>
+        <picklist>
+            <picklistValues>
+                <fullName>HESA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>LSTM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ANOther</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Audit_Event__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Defines the SIS event that triggers the audit log</inlineHelpText>
+        <label>Audit Event</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Active Programme</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active Module</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Registration</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student Module</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Qualification</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>REF Data</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Audit_Note__c</fullName>
+        <externalId>false</externalId>
+        <label>Audit Note</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Audit_Output2__c</fullName>
+        <description>Used for &lt;QualificationsAwarded&gt; HESA output, for Student Programme (HESA Instance) audit record only;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Set by Workflow rule and field update, both called HESA QualsAwarded</inlineHelpText>
+        <label>Audit Output2</label>
+        <length>1024</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields><fields>
+        <fullName>Audit_Output__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>In pseudo XML format</inlineHelpText>
+        <label>Audit Output</label>
+        <length>32768</length>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>10</visibleLines>
+    </fields><fields>
+        <fullName>Audit_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Audit Period</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Compiled_Missing_Fields__c</fullName>
+        <description>Stamped by WFR</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Stamped by WFR</inlineHelpText>
+        <label>Compiled Missing Fields</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Completion_Percentage__c</fullName>
+        <externalId>false</externalId>
+        <formula>1-(Missing_Field_Count__c /15)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Completion Percentage</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>Exclude__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Exclude from Audit report, for example if in error</inlineHelpText>
+        <label>Exclude</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Goal__c</fullName>
+        <defaultValue>100</defaultValue>
+        <externalId>false</externalId>
+        <label>Goal</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Instance_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( NOT( ISPICKVAL ( Audit_Event__c, "Registration")), "N/A",
+  Student_Programme__r.Programme__r.Instance_Code__c  )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Only shows where Audit Event = Registration, then takes Instance code from the related Programme (via Student Programme)</inlineHelpText>
+        <label>Instance Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>LSTM_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student__r.LSTM_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Taken from Student record</inlineHelpText>
+        <label>LSTM No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Listview_Flag__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>For isolating records for regular inline editing with a Listview</description>
+        <externalId>false</externalId>
+        <label>Listview Flag</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Missing_Data__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( NOT( ISPICKVAL ( Audit_Event__c, "Registration")),  "N/A", 
+IF ( ISBLANK ( Student__r.HUSID__c ) = TRUE, "HUSID, ","")
+&amp;
+IF ( ISBLANK ( TEXT(  Student__r.Birthdate )) = TRUE, "BIRTHDTE, ","")
+&amp;
+IF ( ISBLANK ( TEXT( Student_Programme__r.Disability__c )) = TRUE, "DISABLE, ","")
+&amp;
+IF ( ISBLANK ( TEXT(  Student_Programme__r.Ethnic_Origin__c )) = TRUE, "ETHNIC, ","")
+&amp;
+IF ( ISBLANK ( TEXT( Student_Programme__r.ELQ__c )) = TRUE, "ELQ, ","")
+&amp;
+IF ( ISBLANK ( TEXT( Student_Programme__r.TTA_Type__c )) = TRUE, "TTACCOM, ", "")
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Missing Data</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Missing_Field_Count__c</fullName>
+        <externalId>false</externalId>
+        <formula>LEN(Compiled_Missing_Fields__c ) - LEN( SUBSTITUTE(Compiled_Missing_Fields__c, ',', '') )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Missing Field Count</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Order__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Dictates order of report output, for testing</inlineHelpText>
+        <label>Order</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Other_ID__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>ID of additional host record if not Student or Student Programme</inlineHelpText>
+        <label>Other ID</label>
+        <length>25</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Other_Record__c</fullName>
+        <description>Hyperlink to record ID in Other Record field. Link display states object</description>
+        <externalId>false</externalId>
+        <formula>IF(LEFT(Other_ID__c,3)="a00",HYPERLINK("/"&amp;Other_ID__c, "Link to Programme"),
+IF(LEFT(Other_ID__c,3)="a01",HYPERLINK("/"&amp;Other_ID__c, "Link to Module"),
+IF(LEFT(Other_ID__c,3)="a0A",HYPERLINK("/"&amp;Other_ID__c, "Link to Qualification"),
+IF(LEFT(Other_ID__c,3)="a07",HYPERLINK("/"&amp;Other_ID__c, "Link to Student Module"),
+IF(LEFT(Other_ID__c,3)="a0q",HYPERLINK("/"&amp;Other_ID__c, "Link to Supervisor"),
+IF(ISBLANK(Other_ID__c),"No Other Record",
+HYPERLINK("/"&amp;Other_ID__c, "Link Unknown")))))))</formula>
+        <label>Other Record</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Output_Section__c</fullName>
+        <externalId>false</externalId>
+        <label>Output Section</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Special_Inclusion__c</fullName>
+        <description>Used for none standard HESA audit records, such as credit bearing short course. Picklist used to allow for extensions if required.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>eg credit bearing Short Courses that need to be included in audit output</inlineHelpText>
+        <label>Special Inclusion</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Credit Bearing Short Course</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Intercalating Students</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Student_Missing_Fields__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Student__r.HESA_Domicile__c),"HESA Domicile,","")&amp;
+IF(ISBLANK(Student__r.Birthdate),"Birthdate,","")&amp;
+IF(ISBLANK(Student__r.HESA_Nationality_Code__c),"HESA Nationality,","")&amp;
+IF(ISBLANK(Student__r.LSTM_No__c),"LSTM Number,","")&amp;
+IF(ISBLANK(Student__r.HUSID__c),"HUSID,","")</formula>
+        <label>Student Missing Fields</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Programme_Missing_Fiedls__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Output_Section__c="Instance",
+IF(ISBLANK(TEXT(Student_Programme__r.ELQ__c)), "ELQ,","") &amp;
+IF(ISBLANK(TEXT(Student_Programme__r.Disability__c )),"Disability,","")&amp;
+IF(ISBLANK(TEXT(Student_Programme__r.HESA_Fundable__c)),"HESA Fundable,","")&amp;
+IF(ISBLANK(Student_Programme__r.Amount__c),"Fee,","")&amp;
+IF(ISBLANK(TEXT(Student_Programme__r.Research_Mode_of_Study__c)),"Research Mode Of Study,","")&amp;
+IF(ISBLANK(TEXT(Student_Programme__r.Fees_and_Funding__c)),"Fees &amp; Funding,","")&amp;
+IF(ISBLANK(Student_Programme__r.QUALENT3_Code__c),"Qualent3,","")&amp;
+IF(ISBLANK(TEXT(Student_Programme__r.Ethnic_Origin__c)),"Ethnicity,","")&amp;
+IF(ISBLANK(TEXT(Student_Programme__r.TTA_Type__c)),"TTA Type,","") &amp;
+IF(ISBLANK(Student_Programme__r.TTA_Postcode__c),"TTA Postcode,","")
+,"")</formula>
+        <label>Student Programme Missing Fiedls</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Programme__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Student Programme</label>
+        <referenceTo>Student_Programme__c</referenceTo>
+        <relationshipLabel>SIS Audit</relationshipLabel>
+        <relationshipName>SIS_Audit</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Student</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>SIS Audit</relationshipLabel>
+        <relationshipName>SIS_Audit</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Test_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT ( Student__r.Test_Record__c ) = "Yes", TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Looks to related Student record for Test flag</inlineHelpText>
+        <label>Test Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Type_Code__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Student_Programme__r.Programme_Type__c = "MSc Programme", 
+   "MSc-ALL",
+    Student_Programme__r.Programme_Code__c 
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Field to allow Grouping by useful category; all MSc Programmes grouped and all PGR grouped</inlineHelpText>
+        <label>Type/Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Generic location for audit records such as for HESA</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ReadWrite</externalSharingModel><label>SIS Audit</label><nameField>
+        <displayFormat>SA-{0000000}</displayFormat>
+        <label>SIS Audit Name</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>SIS Audit</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Output_Section__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Student__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Student_Programme__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Audit_Body__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Audit_Period__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <listViewButtons>Download_XML_Output</listViewButtons>
+        <searchResultsAdditionalFields>Output_Section__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Student__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Student_Programme__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Audit_Period__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Exclude__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>UPDATEDBY_USER</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ReadWrite</sharingModel><listViews>
+        <fullName>All_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Audit Logs</label>
+    </listViews><listViews>
+        <fullName>All_Module_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Other_Record__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Module</value>
+        </filters>
+        <label>All Module Logs</label>
+    </listViews><listViews>
+        <fullName>All_Qualification_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Output2__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Qualification on Entry</value>
+        </filters>
+        <label>All Qualification Logs</label>
+    </listViews><listViews>
+        <fullName>All_Student_Instance_Logs</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Student</value>
+        </filters>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Instance</value>
+        </filters>
+        <label>All Student &amp; Instance Logs</label>
+    </listViews><listViews>
+        <fullName>All_Student_Module_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Student on Module</value>
+        </filters>
+        <filters>
+            <field>Exclude__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>All Student Module Logs</label>
+    </listViews><listViews>
+        <fullName>All_Student_Prog_Instance_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Instance</value>
+        </filters>
+        <label>All Student Prog (Instance) Logs</label>
+    </listViews><listViews>
+        <fullName>All_Unit_of_Assess_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Unit of Assessment</value>
+        </filters>
+        <label>All Unit of Assess Logs</label>
+    </listViews><listViews>
+        <fullName>Color_Test_View</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Special_Inclusion__c</columns>
+        <columns>Other_ID__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Student_Programme__c</field>
+            <operation>contains</operation>
+            <value>PHD</value>
+        </filters>
+        <filters>
+            <field>Exclude__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Color Test View</label>
+    </listViews><listViews>
+        <fullName>Color_Test_View2</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Other_ID__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Student__c</field>
+            <operation>equals</operation>
+            <value>Waleed Saleh Al Salem</value>
+        </filters>
+        <label>Color Test View2</label>
+    </listViews><listViews>
+        <fullName>Color_Test_View_1617</fullName>
+        <columns>NAME</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>UPDATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Output_Section__c</field>
+            <operation>equals</operation>
+            <value>Course</value>
+        </filters>
+        <filters>
+            <field>Audit_Period__c</field>
+            <operation>equals</operation>
+            <value>H1617</value>
+        </filters>
+        <label>Color Test View 1617</label>
+    </listViews><listViews>
+        <fullName>Credit_Bearing_Audit_Logs</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>Special_Inclusion__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Special_Inclusion__c</field>
+            <operation>equals</operation>
+            <value>Credit Bearing Short Course</value>
+        </filters>
+        <filters>
+            <field>Exclude__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Credit Bearing Audit Logs</label>
+    </listViews><listViews>
+        <fullName>Excluded_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Exclude__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Excluded Records</label>
+    </listViews><listViews>
+        <fullName>Intercalating_Students</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Audit_Output__c</columns>
+        <columns>Audit_Body__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>Special_Inclusion__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Special_Inclusion__c</field>
+            <operation>equals</operation>
+            <value>Intercalating Students</value>
+        </filters>
+        <filters>
+            <field>Exclude__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>Intercalating Students</label>
+    </listViews><listViews>
+        <fullName>Special_Inclusion_Records</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Output_Section__c</columns>
+        <columns>Special_Inclusion__c</columns>
+        <columns>Other_ID__c</columns>
+        <columns>Exclude__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Special_Inclusion__c</field>
+            <operation>notEqual</operation>
+        </filters>
+        <label>Special Inclusion Records</label>
+    </listViews><webLinks>
+        <fullName>Download_XML_Output</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <linkType>url</linkType>
+        <masterLabel>Download XML Output</masterLabel>
+        <openType>replace</openType>
+        <protected>false</protected>
+        <requireRowSelection>false</requireRowSelection>
+        <url>/apex/FilterSisAuditsForXML</url>
+    </webLinks><webLinks>
+        <fullName>Per_Record_XML_Output</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Per Record XML Output</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>var link = document.createElement("a");
+link.download = "Generated XML";
+link.href = "/apex/xmlGeneration";
+link.click();</url>
+    </webLinks><webLinks>
+        <fullName>Pseudo_Output</fullName>
+        <availability>online</availability>
+        <description>For test purposes</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Pseudo Output</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O11000000FvBb?pv0={!SIS_Audit__c.StudentId__c}</url>
+    </webLinks></CustomObject>

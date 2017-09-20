@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <fullName>Available_for_Staff__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this Org Unit relates to STAFF Only. Either "Is Student" OR "Is Staff" should be selected</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Org Unit relates to Staff Only. Either "Is Student" OR "Is Staff" should be selected</inlineHelpText>
+        <label>Available for Staff</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Available_for_Student__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Is this Org Unit relates to Student Only.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Is this Org Unit relates to Student Only.</inlineHelpText>
+        <label>Available for Student</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Org_Unit_Code__c</fullName>
+        <description>VLE Course unique Code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>VLE Course unique Code</inlineHelpText>
+        <label>Org Unit Code</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Org_Unit_VLE_ID__c</fullName>
+        <description>Organisation Wide Unit VLE ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Organisation Wide Unit VLE ID</inlineHelpText>
+        <label>Org Unit VLE ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Staff_Role_VLE_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>Staff Role VLE ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><customSettingsType>List</customSettingsType><enableFeeds>false</enableFeeds><label>VLE Org Wide Units And Role Assignments</label><visibility>Public</visibility></CustomObject>

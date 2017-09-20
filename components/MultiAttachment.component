@@ -1,0 +1,153 @@
+<apex:component controller="MultiAttachmentCont" layout="block" selfClosing="true" allowDML="true">
+
+    <style>
+        .middled {
+            vertical-align: middle !important;
+        }
+        
+        .errorMsg {
+            color: #d74c3b;
+        }
+        
+        .spinner {
+            margin: 5px 0;
+            width: 50px;
+            height: 40px;
+            text-align: center;
+            font-size: 10px;
+        }
+        
+        .spinner > div {
+            background-color: red;
+            height: 100%;
+            width: 6px;
+            display: inline-block;
+            -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+            animation: sk-stretchdelay 1.2s infinite ease-in-out;
+        }
+        
+        .spinner .rect2 {
+            -webkit-animation-delay: -1.1s;
+            animation-delay: -1.1s;
+        }
+        
+        .spinner .rect3 {
+            -webkit-animation-delay: -1.0s;
+            animation-delay: -1.0s;
+        }
+        
+        .spinner .rect4 {
+            -webkit-animation-delay: -0.9s;
+            animation-delay: -0.9s;
+        }
+        
+        .spinner .rect5 {
+            -webkit-animation-delay: -0.8s;
+            animation-delay: -0.8s;
+        }
+        
+        @-webkit-keyframes sk-stretchdelay {
+            0%,
+            40%,
+            100% {
+                -webkit-transform: scaleY(0.4)
+            }
+            20% {
+                -webkit-transform: scaleY(1.0)
+            }
+        }
+        
+        @keyframes sk-stretchdelay {
+            0%,
+            40%,
+            100% {
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+            }
+            20% {
+                transform: scaleY(1.0);
+                -webkit-transform: scaleY(1.0);
+            }
+        }
+        
+        a.lockclick {
+            pointer-events: none;
+        }
+    </style>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}" />
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            j$('.status').hide();
+        });
+
+        function uploadattachment(elem) {
+            var selected_file_name = j$(elem).val();
+            if (selected_file_name.length > 0) {
+                j$(elem).next().click();
+
+                j$('input[type="submit"]').not('.uploadButton').attr('disabled', 'disabled');
+                // j$('a').attr('disabled','disabled'); 
+                j$('a').addClass('lockclick');
+
+                j$(j$(elem).next()).next().toggle();
+                j$('.cancelButton').show();
+            } else {
+
+                j$('input[type="submit"]').not('.uploadButton').removeAttr('disabled');
+                j$('a').removeClass('lockclick');
+            }
+
+        }
+    </script>
+    <div styleClass="my_wrap">
+        <apex:attribute name="parentId" type="String" description="Id of parent object" assignTo="{!attachmentParentId}" required="true" />
+        <apex:attribute name="multiple" type="Boolean" description="Determines single attachment or multiple attachments" default="false" />
+        <apex:attribute name="description" type="String" description="Description for attachment object" assignTo="{!attachmentDescription}" />
+        <apex:attribute name="readOnlyMode" type="Boolean" description="read only mode" assignTo="{!readOnlyModeVal }" />
+        
+        <apex:outputPanel id="attachedFiles" rendered="{!hasAttachments}" layout="block">
+
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <apex:repeat var="file" value="{!recordAttachments}">
+                        <tr>
+                            <td class="middled">
+                                <apex:outputLink value="{!URLFOR($Action.Attachment.Download, file.id)}" target="_blank" style="margin-right:5px">{!file.name}</apex:outputLink>
+                            </td>
+                            <td class="middled">
+                                <apex:commandLink rendered="{! !readOnlyModeVal  }" action="{!removeAttachment}" type="image/png">
+                                    <apex:image value="/img/func_icons/remove12_on.gif" styleClass="middled" alt="Delete" title="Delete" />
+                                    <apex:param name="attachmentId" assignTo="{!attachmentIdToRemove}" value="{!file.Id}" />
+                                </apex:commandLink>
+                            </td>
+                        </tr>
+                    </apex:repeat>
+                </tbody>
+            </table>
+
+        </apex:outputPanel>
+
+        <apex:outputPanel id="uploadPanel" rendered="{!(multiple||(!hasAttachments&&!multiple)) && !readOnlyModeVal }" layout="block">
+            <apex:inputFile value="{!attachment.body}" filename="{!attachment.name}" styleclass="attachment" id="file" onchange="uploadattachment(this);" />
+            <apex:commandButton action="{!upload}" value="Upload file" id="uploadButton" style="display:none" styleClass="uploadButton" status="status" />
+
+            <div class="status" id="">
+                <div class="spinner">
+                    Uploading....
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+
+            <apex:outputPanel styleClass="errorMsg" layout="block" rendered="{!LEN(errorMessage)>0}">
+                <strong>Error: </strong>The file size is more than the maximum limit, please try a with a file with size less than 25MB.
+            </apex:outputPanel>
+        </apex:outputPanel>
+    </div>
+
+</apex:component>

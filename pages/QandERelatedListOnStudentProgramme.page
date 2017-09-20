@@ -1,0 +1,50 @@
+<!-- Viisul Force Page Q&ERelatedListOnStudentProgramme Created by Manu KM on 08-sep-2015 -->
+<!-- <summary>
+//Only Work as related list to Student programme
+// Page for showing Q and E fields as a related list on Student programme and pagination 
+// </summary> -->
+<apex:page StandardController="Student_Programme__c" extensions="QandERelatedlistControllerExt" docType="html-5.0">       
+    <apex:form >  
+        
+        <apex:pageBlock id="pb" >  
+            <apex:outputLabel rendered="{!QandE.size == 0}"><h1>No Records to Display! </h1> </apex:outputLabel>
+        <!--Apex table shows all the relevent Q&E fields -->          
+            <apex:pageBlockTable value="{!QandE}" var="a" rendered="{!QandE.size > 0}" >
+            <!-- Different columns Id, name, created date -->
+                <apex:column >
+                    <apex:facet name="header">Action </apex:facet>
+                    <a href= "/{!a.Id}/e?retURL={!studentPgmId}" Class="actionLink" target="_blank">Edit</a> |&nbsp;
+                    <apex:commandLink value="Del" onclick="if(!confirm('Are you sure?')) return false;" action="{!deleteRecord}" rerender="pb" oncomplete="page.refresh()" styleClass="actionLink">
+                    <apex:param name="deleteRecordId" assignTo="{!deleteRecordId}" value="{!a.id}"/>
+                </apex:commandLink>
+                </apex:column>                       
+                <apex:column >
+                   <apex:facet name="header"> <apex:outputLabel value="Q&E No"> </apex:outputLabel></apex:facet>
+                    <a href="/{!a.Id}" target="_t" >{!a.name} </a>
+                </apex:column>
+                <apex:column > 
+                    <apex:facet name="header">Record Type</apex:facet>
+                    {!a.RecordType.Name} 
+                </apex:column> 
+                <apex:column value="{!a.Narrative__c}"/>
+                <apex:column value="{!a.Status__c }"/>
+                <apex:column value="{!a.LastModifiedDate}"/>               
+            </apex:pageBlockTable>
+            <!-- Table Ends -->
+            <!-- pagination Controls -->
+            <apex:panelGrid columns="7" rendered="{!QandE.size > 0}">
+                <apex:commandButton status="fetchStatus" reRender="pb" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                <apex:commandButton status="fetchStatus" reRender="pb" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                <apex:outputText >{!(pageNumber * size)+1-size}-{!IF((pageNumber * size)>noOfRecords, noOfRecords,(pageNumber * size))} of {!noOfRecords}</apex:outputText>
+                <apex:commandButton status="fetchStatus" reRender="pb" value="Refresh" action="{!refresh}" title="Refresh Page"/>
+                <apex:outputPanel style="color:#4AA02C;font-weight:bold">
+                    <apex:actionStatus id="fetchStatus" startText="Fetching..." stopText=""/>
+                </apex:outputPanel>
+            </apex:panelGrid>
+          <!-- pagination Controls Ends -->
+            </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

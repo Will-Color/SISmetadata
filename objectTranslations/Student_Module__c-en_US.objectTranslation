@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Taken from Student Programme --></help>
+        <label><!-- Academic Year --></label>
+        <name>Academic_Year__c</name>
+    </fields><fields>
+        <label><!-- Anonymous Ref --></label>
+        <name>Anonymous_Ref__c</name>
+    </fields><fields>
+        <help><!-- Taken from Student Programme record --></help>
+        <label><!-- Application Stage --></label>
+        <name>Application_Stage__c</name>
+    </fields><fields>
+        <label><!-- Assessed --></label>
+        <name>Assessed__c</name>
+    </fields><fields>
+        <help><!-- Does not count previous sits if a resit has taken place --></help>
+        <label><!-- Assessment Count --></label>
+        <name>Assessment_Count__c</name>
+    </fields><fields>
+        <label><!-- Assessments Created --></label>
+        <name>Assessments_Created__c</name>
+    </fields><fields>
+        <label><!-- Attendances Created --></label>
+        <name>Attendances_Created__c</name>
+    </fields><fields>
+        <label><!-- Audit Log --></label>
+        <name>Audit_Log__c</name>
+        <relationshipLabel><!-- Student Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Audit Trigger --></label>
+        <name>Audit_Trigger__c</name>
+    </fields><fields>
+        <help><!-- Counts the Amount of capped Student Assessments --></help>
+        <label><!-- Capped Assessment Count --></label>
+        <name>Capped_Count__c</name>
+    </fields><fields>
+        <help><!-- Number of related Assessments with an Agreed Mark; ignores previous sits if resit has taken place --></help>
+        <label><!-- Completed Count --></label>
+        <name>Completed_Count__c</name>
+    </fields><fields>
+        <help><!-- Takes credit from Module --></help>
+        <label><!-- Credits --></label>
+        <name>Credits__c</name>
+    </fields><fields>
+        <label><!-- Criticality Rollup --></label>
+        <name>Criticality_Rollup__c</name>
+    </fields><fields>
+        <label><!-- Criticality Threshold --></label>
+        <name>Criticality_Threshold__c</name>
+    </fields><fields>
+        <help><!-- Final Module score taking resit capping into account --></help>
+        <label><!-- Final Module Score --></label>
+        <name>Final_Module_Score__c</name>
+    </fields><fields>
+        <label><!-- HESA Audit --></label>
+        <name>HESA_Audit__c</name>
+    </fields><fields>
+        <label><!-- HESA Module Status (temp) --></label>
+        <name>HESA_Module_Status_temp__c</name>
+    </fields><fields>
+        <label><!-- LSTM No --></label>
+        <name>LSTM_No__c</name>
+    </fields><fields>
+        <label><!-- Long Name --></label>
+        <name>Long_Name__c</name>
+    </fields><fields>
+        <label><!-- Master Name --></label>
+        <name>Master_Name__c</name>
+    </fields><fields>
+        <label><!-- Member Type --></label>
+        <name>Member_Type__c</name>
+    </fields><fields>
+        <help><!-- To be hidden --></help>
+        <label><!-- Module ID --></label>
+        <name>Module_ID__c</name>
+    </fields><fields>
+        <label><!-- Module Instance Code --></label>
+        <name>Module_Instance_Code__c</name>
+    </fields><fields>
+        <label><!-- Module Reference --></label>
+        <name>Module_Reference__c</name>
+    </fields><fields>
+        <help><!-- Ticked if Student Assessment was a resit. Used to calculate Classification based on Pass Mark of 50 instead of actual Student Assessment Agreed Mark. --></help>
+        <label><!-- Module Resat? --></label>
+        <name>Module_Resat__c</name>
+    </fields><fields>
+        <help><!-- Takes Module Score and gives Pass, Merit or Distinction, unless Completed Count less than Assessment Count, then says Not Completed. If Assessment Count = 0 then says Not Started --></help>
+        <label><!-- Module Result --></label>
+        <name>Module_Result__c</name>
+    </fields><fields>
+        <help><!-- Sum of Weighted Score on related Student Assessment records --></help>
+        <label><!-- Module Score --></label>
+        <name>Module_Score__c</name>
+    </fields><fields>
+        <help><!-- Taken from related Module --></help>
+        <label><!-- Module Type --></label>
+        <name>Module_Type__c</name>
+    </fields><fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+    </fields><fields>
+        <label><!-- Passmark --></label>
+        <name>Passmark__c</name>
+    </fields><fields>
+        <label><!-- Programme ID --></label>
+        <name>Programme_ID__c</name>
+    </fields><fields>
+        <label><!-- Programme Module --></label>
+        <name>Programme_Module__c</name>
+        <relationshipLabel><!-- Student Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Programme --></label>
+        <name>Programme__c</name>
+    </fields><fields>
+        <label><!-- Resit Count --></label>
+        <name>Resit_Count__c</name>
+    </fields><fields>
+        <label><!-- Student Module Ref --></label>
+        <name>Student_Module_Ref__c</name>
+    </fields><fields>
+        <label><!-- Student Programme --></label>
+        <name>Student_Programme__c</name>
+        <relationshipLabel><!-- Student Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+        <relationshipLabel><!-- My Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Test Class Record --></label>
+        <name>Test_Class_Record__c</name>
+    </fields><fields>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <label><!-- Trigger Student Assessment creation --></label>
+        <name>Trigger_Student_Assessment_creation__c</name>
+    </fields><fields>
+        <help><!-- (Module Credits / Programme Credits) x Final Module Score --></help>
+        <label><!-- Weighted Module Score --></label>
+        <name>Weighted_Module_Score__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Student Module</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Student Modules</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Student Module Layout</layout>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Curriculum Level --></label>
+            <section>Curriculum Level</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><webLinks>
+        <label><!-- Create_Student_Assessment --></label>
+        <name>Create_Student_Assessment</name>
+    </webLinks></CustomObjectTranslation>

@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Error_email</name>
+        <label>Error email</label>
+        <locationX>1233</locationX>
+        <locationY>24</locationY>
+        <actionName>emailSimple</actionName>
+        <actionType>emailSimple</actionType>
+        <inputParameters>
+            <name>emailBody</name>
+            <value>
+                <elementReference>fStudentXML</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailSubject</name>
+            <value>
+                <elementReference>cAuditPeriod</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>senderAddress</name>
+            <value>
+                <elementReference>sO_StudentProgramme.Current_User_Email__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>emailAddresses</name>
+            <value>
+                <elementReference>Tester_email</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
+        <name>Leg2_Confirmation_post</name>
+        <label>Leg2 Confirmation post</label>
+        <locationX>1225</locationX>
+        <locationY>540</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>sO_StudentProgramme.Audit_Log__c</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>fInstanceXML</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>vConfirmationPost</assignToReference>
+            <name>feedItemId</name>
+        </outputParameters>
+    </actionCalls>
+    <assignments>
+        <name>Assign_Qualification_to_Collection</name>
+        <label>Assign Qualification to Collection</label>
+        <locationX>473</locationX>
+        <locationY>279</locationY>
+        <assignmentItems>
+            <assignToReference>socQualificationstoUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>so_LoopVQualifications</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Qualifications</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Assign_Student_Modules_to_Update_Collection</name>
+        <label>Assign Student Modules to Update Collection</label>
+        <locationX>60</locationX>
+        <locationY>282</locationY>
+        <assignmentItems>
+            <assignToReference>socStudentModulestoUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>lvStudentModules</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Student_Modules</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Audit_Trigger_to_TRUE</name>
+        <label>Set Audit Trigger to TRUE</label>
+        <locationX>683</locationX>
+        <locationY>279</locationY>
+        <assignmentItems>
+            <assignToReference>so_LoopVQualifications.Audit_Trigger__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Qualification_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Audit_Trigger_to_True_Stud_Mod</name>
+        <label>Set Audit Trigger to True</label>
+        <locationX>262</locationX>
+        <locationY>280</locationY>
+        <assignmentItems>
+            <assignToReference>lvStudentModules.Audit_Trigger__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_Student_Modules_to_Update_Collection</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>cAuditBody</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>HESA</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cAuditEvent</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Registration</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cAuditPeriod</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>H1516</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cLSTMLabel</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>LSTM</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOrderInXML_3</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>3.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOrderInXML_4</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>4.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOutputSection_Instance</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Instance</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOutputSection_Student</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Student</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cProgrammeType</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>MSc Programme</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>SuccessfulUpdate</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Successful update of Audit record</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Tester_email</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>simon@colorconsultancy.co.uk</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>New_or_Existing_Registration</name>
+        <label>New or Existing Registration</label>
+        <locationX>1093</locationX>
+        <locationY>152</locationY>
+        <defaultConnector>
+            <targetReference>Error_email</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>New_Audit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>sO_StudentProgramme.Audit_Log__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Student_XML_Create</targetReference>
+            </connector>
+            <label>New Audit</label>
+        </rules>
+        <rules>
+            <name>Existing_Audit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>sO_StudentProgramme.Audit_Log__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Student_XML_Update</targetReference>
+            </connector>
+            <label>Existing Audit</label>
+        </rules>
+    </decisions>
+    <description>Invoked by Process &apos;HESA Registration Audit Event&apos;, or both Stage change to Registration and use of Audit Trigger checkbox; Exclusion set to False.
+With: 
+NETFEE in correct position
+INTERCALATE field
+
+Includes Loop to set Audit Trigger on all Academic record type Qualification records to TRUE.</description>
+    <formulas>
+        <description>Translates Birth date to YYYY-MM-DD</description>
+        <name>fBirthDate</name>
+        <dataType>String</dataType>
+        <expression>IF ( ISBLANK ({!sO_Student.Birthdate}) = TRUE, &quot;1989-11-09&quot;,
+TEXT (YEAR( {!sO_Student.Birthdate} )) &amp; 
+IF ( MONTH( {!sO_Student.Birthdate} ) &lt;10, &quot;-0&quot; &amp; TEXT (MONTH( {!sO_Student.Birthdate} )), &quot;-&quot; &amp; TEXT (MONTH( {!sO_Student.Birthdate} ))) &amp;
+IF ( DAY( {!sO_Student.Birthdate} ) &lt;10, &quot;-0&quot; &amp; TEXT (DAY( {!sO_Student.Birthdate} )), &quot;-&quot; &amp; TEXT (DAY( {!sO_Student.Birthdate} )))
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Translates Programme Start Date to YYYY-MM-DD format</description>
+        <name>fCommDate</name>
+        <dataType>String</dataType>
+        <expression>TEXT (YEAR( {!sO_StudentProgramme.Programme_Start_Date__c} )) &amp; 
+IF ( MONTH( {!sO_StudentProgramme.Programme_Start_Date__c} ) &lt;10, &quot;-0&quot; &amp; TEXT (MONTH( {!sO_StudentProgramme.Programme_Start_Date__c} )), &quot;-&quot; &amp; TEXT (MONTH( {!sO_StudentProgramme.Programme_Start_Date__c} ))) &amp;
+IF ( DAY( {!sO_StudentProgramme.Programme_Start_Date__c} ) &lt;10, &quot;-0&quot; &amp; TEXT (DAY( {!sO_StudentProgramme.Programme_Start_Date__c} )), &quot;-&quot; &amp; TEXT (DAY( {!sO_StudentProgramme.Programme_Start_Date__c} )))</expression>
+    </formulas>
+    <formulas>
+        <description>For Disabled Student Allowance:
+https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^DISALL.html</description>
+        <name>fDisAll</name>
+        <dataType>String</dataType>
+        <expression>Case ( {!sO_StudentProgramme.HESA_Disability__c}, &quot;00&quot;, &quot;&quot;, &quot;97&quot;, &quot;&quot;, &quot;98&quot;, &quot;&quot;, &quot;99&quot;, &quot;&quot;, &quot;&lt;DISALL&gt;5&lt;/DISALL&gt;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^ELQ.html
+Must not exist if FEEELIG=2 or, which means if HESA Fundable = Yes 
+02/08: changed from HESA Fundable to Fee Status = Home/EU as HESA Fundable not consistently used</description>
+        <name>fELQ</name>
+        <dataType>String</dataType>
+        <expression>IF ( TEXT ( {!sO_StudentProgramme.Fee_Status__c} ) = &quot;Home/EU&quot;,
+   IF ( ISBLANK ({!sO_StudentProgramme.ELQ_Code__c} ) = TRUE, 
+      IF ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;,
+         &quot;&lt;ELQ&gt;03&lt;/ELQ&gt;&quot;,
+         &quot;&lt;ELQ&gt;09&lt;/ELQ&gt;&quot;
+      ),
+   &quot;&lt;ELQ&gt;&quot; &amp; {!sO_StudentProgramme.ELQ_Code__c} &amp; &quot;&lt;/ELQ&gt;&quot;
+    ), 
+ &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>Translates Programme End Date to YYYY-MM-DD format</description>
+        <name>fEndDate</name>
+        <dataType>String</dataType>
+        <expression>IF (TEXT ({!sO_StudentProgramme.Stage__c}) = &quot;Completed&quot;,
+TEXT (YEAR( {!sO_StudentProgramme.Programme_End_Date__c} )) &amp; 
+IF ( MONTH( {!sO_StudentProgramme.Programme_End_Date__c} ) &lt;10, &quot;-0&quot; &amp; TEXT (MONTH( {!sO_StudentProgramme.Programme_End_Date__c} )), &quot;-&quot; &amp; TEXT (MONTH( {!sO_StudentProgramme.Programme_End_Date__c} ))) &amp;
+IF ( DAY( {!sO_StudentProgramme.Programme_End_Date__c} ) &lt;10, &quot;-0&quot; &amp; TEXT (DAY( {!sO_StudentProgramme.Programme_End_Date__c} )), &quot;-&quot; &amp; TEXT (DAY( {!sO_StudentProgramme.Programme_End_Date__c} ))),
+&quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fFeeEligibility</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!sO_StudentProgramme.Fee_Status__c})=&quot;Home/EU&quot;,&quot;1&quot;,&quot;2&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^FEEREGIME.html
+
+Not applicable for Overseas students</description>
+        <name>fFeeRegime</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!sO_StudentProgramme.Fee_Status__c})=&quot;Home/EU&quot;,
+    &quot;&lt;FEEREGIME&gt;20&lt;/FEEREGIME&gt;&quot;,
+    &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fFundCode</name>
+        <dataType>String</dataType>
+        <expression>IF ( TEXT({!sO_StudentProgramme.HESA_Fundable__c}) = &quot;Yes&quot;,&quot;1&quot;,
+    IF ( TEXT({!sO_StudentProgramme.HESA_Fundable__c}) = &quot;No&quot;,&quot;2&quot;,&quot;3&quot;
+    )
+)</expression>
+    </formulas>
+    <formulas>
+        <description>1 - Completed the current year of programme of study
+2 - Did not complete the current year of programme of study
+3 - Year of programme of study not yet completed, but has not failed to complete
+
+From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^FUNDCOMP.html</description>
+        <name>fFundComp</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;, &quot;3&quot;, &quot;1&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Values as agreed with SA/KF 19/09/16
+
+https://www.hesa.ac.uk/collection/c15051/a/fundlev/</description>
+        <name>fFundLev</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;, &quot;21&quot;, 
+   IF ( {!sO_StudentProgramme.Programme_Code__c} = &quot;DTM&amp;H&quot;, &quot;20&quot;, 
+         IF ( {!sO_StudentProgramme.Programme_Code__c} = &quot;DTN&quot;, &quot;20&quot;, &quot;20&quot;)))</expression>
+    </formulas>
+    <formulas>
+        <description>Evaluates SEXID field - https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^SEXID.html
+1 = Male; 2 = Female
+use of 3 for Other to be</description>
+        <name>fGender</name>
+        <dataType>String</dataType>
+        <expression>If (ISPICKVAL ({!sO_Student.Male_Female__c}, &quot;Male&quot;),Text(1),Text(2))</expression>
+    </formulas>
+    <formulas>
+        <description>To comvert currency to number</description>
+        <name>fGrossFee</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!sO_StudentProgramme.Fee_Status__c})=&quot;Home/EU&quot;,
+  &quot;&lt;GROSSFEE&gt;&quot; &amp; TEXT ({!sO_StudentProgramme.Amount__c}) &amp; &quot;&lt;/GROSSFEE&gt;&quot;,
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>To allow for no HUSIDs in test period</description>
+        <name>fHUSID</name>
+        <dataType>String</dataType>
+        <expression>IF ( ISBLANK ({!sO_Student.HUSID__c}) = FALSE, 
+     &quot;&lt;HUSID&gt;&quot; &amp; {!sO_Student.HUSID__c} &amp; &quot;&lt;/HUSID&gt;&quot;,
+     &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fInstanceXML</name>
+        <dataType>String</dataType>
+        <expression>&quot;&lt;NUMHUS&gt;01&lt;/NUMHUS&gt;&quot; &amp;  
+&quot;&lt;OWNINST&gt;&quot; &amp; {!sO_Student.LSTM_No__c} &amp; &quot;&lt;/OWNINST&gt;&quot; &amp;
+&quot;&lt;COURSEID&gt;&quot; &amp; {!sO_StudentProgramme.Instance_Code__c} &amp; &quot;&lt;/COURSEID&gt;&quot; &amp;
+&quot;&lt;BRIDGE&gt;0&lt;/BRIDGE&gt;&quot; &amp;
+&quot;&lt;CAMPID&gt;A&lt;/CAMPID&gt;&quot; &amp; 
+&quot;&lt;COMDATE&gt;&quot; &amp; {!fCommDate} &amp; &quot;&lt;/COMDATE&gt;&quot; &amp;
+{!fDisAll} &amp;
+{!fELQ} &amp;
+&quot;&lt;ENDDATE&gt;&quot; &amp; {!fEndDate} &amp; &quot;&lt;/ENDDATE&gt;&quot; &amp;
+&quot;&lt;EXCHANGE&gt;N&lt;/EXCHANGE&gt;&quot; &amp;
+&quot;&lt;FEEELIG&gt;&quot; &amp; {!fFeeEligibility} &amp; &quot;&lt;/FEEELIG&gt;&quot; &amp;
+{!fFeeRegime} &amp;
+&quot;&lt;FESTUMK&gt;2&lt;/FESTUMK&gt;&quot; &amp;
+&quot;&lt;FUNDCODE&gt;&quot; &amp; {!fFundCode} &amp; &quot;&lt;/FUNDCODE&gt;&quot; &amp;
+&quot;&lt;FUNDCOMP&gt;&quot; &amp; {!fFundComp} &amp; &quot;&lt;/FUNDCOMP&gt;&quot; &amp;
+&quot;&lt;FUNDLEV&gt;&quot; &amp; {!fFundLev} &amp; &quot;&lt;/FUNDLEV&gt;&quot; &amp;
+{!fGrossFee} &amp;
+{!fIntercalate} &amp;
+&quot;&lt;LOCSDY&gt;Z&lt;/LOCSDY&gt;&quot; &amp;
+&quot;&lt;MCDATE&gt;&lt;/MCDATE&gt;&quot; &amp;
+&quot;&lt;MODE&gt;&quot; &amp; {!fMode} &amp; &quot;&lt;/MODE&gt;&quot; &amp;
+&quot;&lt;MSTUFEE&gt;&quot; &amp; {!fMSTUFee} &amp; &quot;&lt;/MSTUFEE&gt;&quot; &amp;
+{!fNetFee} &amp;
+&quot;&lt;RCSTDNT&gt;99&lt;/RCSTDNT&gt;&quot; &amp;
+&quot;&lt;REDUCEDI&gt;00&lt;/REDUCEDI&gt;&quot; &amp;
+fRSNEND &amp;
+&quot;&lt;SPECFEE&gt;9&lt;/SPECFEE&gt;&quot; &amp;
+&quot;&lt;SPLENGTH&gt;&quot; &amp; {!fSPLength} &amp; &quot;&lt;/SPLENGTH&gt;&quot; &amp;
+&quot;&lt;STULOAD&gt;&quot; &amp; {!fStuLoad} &amp; &quot;&lt;/STULOAD&gt;&quot; &amp;
+&quot;&lt;TYPEYR&gt;&quot; &amp; {!fTypeYr} &amp; &quot;&lt;/TYPEYR&gt;&quot; &amp;
+&quot;&lt;UNITLGTH&gt;3&lt;/UNITLGTH&gt;&quot; &amp;
+&quot;&lt;YEARPRG&gt;1&lt;/YEARPRG&gt;&quot; &amp;
+&quot;&lt;YEARSTU&gt;1&lt;/YEARSTU&gt;&quot; &amp;
+&quot;&lt;EntryProfile&gt;&quot;&amp;
+     &quot;&lt;DOMICILE&gt;&quot; &amp; {!sO_Student.HESA_Domicile_Code__c} &amp; &quot;&lt;/DOMICILE&gt;&quot;  &amp;
+     {!fPostCode} &amp;
+     &quot;&lt;QUALENT3&gt;&quot; &amp; {!sO_StudentProgramme.QUALENT3_Code__c} &amp; &quot;&lt;/QUALENT3&gt;&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>fIntercalate</name>
+        <dataType>String</dataType>
+        <expression>IF({!sO_StudentProgramme.Intercalation__c}=TRUE,&quot;&lt;INTERCALATE&gt;01&lt;/INTERCALATE&gt;&quot;,&quot;&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>https://www.hesa.ac.uk/collection/c15051/a/mode/
+01 - Full-time according to funding council definitions
+02 - Other full-time
+Values given by KF/SA 20th Sept 16</description>
+        <name>fMode</name>
+        <dataType>String</dataType>
+        <expression>If ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;, &quot;01&quot;, &quot;02&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>Major Source of Tuition Fees - using simple formula until LSTM collect data</description>
+        <name>fMSTUFee</name>
+        <dataType>String</dataType>
+        <expression>IF ( TEXT ({!sO_StudentProgramme.Fees_and_Funding__c}) = &quot;Financed by self and/or family&quot;, &quot;01&quot;,
+    IF ( TEXT ( {!sO_StudentProgramme.Fees_and_Funding__c}) = &quot;Fully sponsored&quot;, &quot;44&quot;, &quot;97&quot;)
+)</expression>
+    </formulas>
+    <formulas>
+        <description>As per GROSSFEE</description>
+        <name>fNetFee</name>
+        <dataType>String</dataType>
+        <expression>IF(TEXT({!sO_StudentProgramme.Fee_Status__c})=&quot;Home/EU&quot;,
+  &quot;&lt;NETFEE&gt;&quot; &amp; TEXT ({!sO_StudentProgramme.Amount__c}) &amp; &quot;&lt;/NETFEE&gt;&quot;,
+  &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^POSTCODE.html
+02/08: corrected missing XF error</description>
+        <name>fPostCode</name>
+        <dataType>String</dataType>
+        <expression>UPPER ( Case ({!sO_Student.HESA_Domicile_Code__c},&quot;XF&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;XG&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;XH&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;XI&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;XK&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;XL&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;GG&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;JE&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;IM&quot;,&quot;&lt;POSTCODE&gt;&quot; &amp; {!sO_Student.MailingPostalCode} &amp; &quot;&lt;/POSTCODE&gt;&quot;,&quot;&quot;))</expression>
+    </formulas>
+    <formulas>
+        <description>Reason for Instance End
+https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^RSNEND.html
+For Yr1 of returns all MSc Progs have no RSNEND entry</description>
+        <name>fRSNEND</name>
+        <dataType>String</dataType>
+        <expression>IF ( TEXT ({!sO_StudentProgramme.Stage__c}) = &quot;Completed&quot;, 
+      &quot;&lt;RSNEND&gt;&quot; &amp; CASE ( TEXT ( {!sO_StudentProgramme.Agreed_Classification__c}), &quot;Pass&quot;, &quot;01&quot;, &quot;Distinction&quot;, &quot;01&quot;, &quot;Merit&quot;, &quot;01&quot;, &quot;Fail&quot;, &quot;02&quot;,&quot;98&quot;) &amp; &quot;&lt;/RSNEND&gt;&quot;,
+   &quot;&quot;
+)</expression>
+    </formulas>
+    <formulas>
+        <description>7/6/16: Amended to use actual End and Start dates per Student Programme; UnitLgth set to Months
+From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^SPLENGTH.html</description>
+        <name>fSPLength</name>
+        <dataType>String</dataType>
+        <expression>Text ( Ceiling ( ( {!sO_StudentProgramme.Programme_End_Date__c} -  {!sO_StudentProgramme.Programme_Start_Date__c} )/ 7))</expression>
+    </formulas>
+    <formulas>
+        <name>fStudentXML</name>
+        <dataType>String</dataType>
+        <expression>{!fHUSID}  &amp;
+&quot;&lt;OWNSTU&gt;&quot; &amp; {!sO_Student.LSTM_No__c} &amp; &quot;&lt;/OWNSTU&gt;&quot; &amp;
+&quot;&lt;BIRTHDTE&gt;&quot; &amp; {!fBirthDate} &amp; &quot;&lt;/BIRTHDTE&gt;&quot; &amp;
+&quot;&lt;DISABLE&gt;&quot; &amp; {!sO_StudentProgramme.HESA_Disability__c} &amp; &quot;&lt;/DISABLE&gt;&quot; &amp;
+&quot;&lt;ETHNIC&gt;&quot; &amp; {!sO_StudentProgramme.HESA_Ethnicity__c} &amp; &quot;&lt;/ETHNIC&gt;&quot; &amp;
+&quot;&lt;FNAMES&gt;&quot; &amp; {!sO_Student.FirstName} &amp; &quot;&lt;/FNAMES&gt;&quot; &amp;
+&quot;&lt;NATION&gt;&quot; &amp; {!sO_Student.HESA_Nationality_Code__c} &amp; &quot;&lt;/NATION&gt;&quot; &amp;
+&quot;&lt;SEXID&gt;&quot; &amp; {!fGender} &amp; &quot;&lt;/SEXID&gt;&quot; &amp;
+&quot;&lt;SURNAME&gt;&quot; &amp; {!sO_Student.LastName} &amp; &quot;&lt;/SURNAME&gt;&quot; &amp;
+&quot;&lt;TTACCOM&gt;&quot; &amp; {!sO_StudentProgramme.TTACCOM_Code__c} &amp; &quot;&lt;/TTACCOM&gt;&quot; &amp;
+&quot;&lt;TTPCODE&gt;&quot; &amp; UPPER({!sO_StudentProgramme.TTA_Postcode__c}) &amp; &quot;&lt;/TTPCODE&gt;&quot;</expression>
+    </formulas>
+    <formulas>
+        <description>From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^STULOAD.html
+For MSc Yr 1 = 90% of FTE; Yr 2 = 10% 
+DTM&amp;H &amp; DTN set by SA/KF 19th Sept 16
+Credit Bearing takes from HESA FTE input</description>
+        <name>fStuLoad</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;, &quot;90&quot;, 
+   IF ( {!sO_StudentProgramme.Programme_Code__c} = &quot;DTM&amp;H&quot;, &quot;44&quot;, 
+         IF ( {!sO_StudentProgramme.Programme_Code__c} = &quot;DTN&quot;, &quot;22&quot;, Text({!sO_StudentProgramme.HESA_FTE__c}))))</expression>
+    </formulas>
+    <formulas>
+        <description>1 - Course academic year contained within the HESA reporting year 1 August - 31 July
+2 - Course academic year not contained within the HESA reporting year 1 August - 31 July
+
+From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^TYPEYR.html</description>
+        <name>fTypeYr</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_StudentProgramme.Programme_Type__c} = &quot;MSc Programme&quot;, &quot;2&quot;, &quot;1&quot;)</expression>
+    </formulas>
+    <interviewLabel>HESA Registration XML Output {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>HESA Registration XML Output w Quals and Stud Mods</label>
+    <loops>
+        <name>Loop_through_Qualifications</name>
+        <label>Loop through Qualifications</label>
+        <locationX>681</locationX>
+        <locationY>153</locationY>
+        <assignNextValueToReference>so_LoopVQualifications</assignNextValueToReference>
+        <collectionReference>soc_queriedAcademicQualifications</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Audit_Trigger_to_TRUE</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Qualification_Audit_Trigger_to_TRUE</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Loop_through_Student_Modules</name>
+        <label>Loop through Student Modules</label>
+        <locationX>264</locationX>
+        <locationY>154</locationY>
+        <assignNextValueToReference>lvStudentModules</assignNextValueToReference>
+        <collectionReference>socStudentModules</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Audit_Trigger_to_True_Stud_Mod</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Student_Modules_Audit_Trigger</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Instance_XML_Log</name>
+        <label>Instance XML Log</label>
+        <locationX>914</locationX>
+        <locationY>398</locationY>
+        <assignRecordIdToReference>vInstanceXMLID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Log_ID_to_Student</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Audit_Body__c</field>
+            <value>
+                <elementReference>cAuditBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Event__c</field>
+            <value>
+                <elementReference>cAuditEvent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fInstanceXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Period__c</field>
+            <value>
+                <elementReference>cAuditPeriod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Order__c</field>
+            <value>
+                <elementReference>cOrderInXML_4</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Output_Section__c</field>
+            <value>
+                <elementReference>cOutputSection_Instance</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Student_Programme__c</field>
+            <value>
+                <elementReference>vApplicationID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Student__c</field>
+            <value>
+                <elementReference>sO_Student.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordCreates>
+    <recordCreates>
+        <name>Student_XML_Create</name>
+        <label>Student XML Create</label>
+        <locationX>916</locationX>
+        <locationY>281</locationY>
+        <assignRecordIdToReference>vStudentXMLID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Instance_XML_Log</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Audit_Body__c</field>
+            <value>
+                <elementReference>cAuditBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Event__c</field>
+            <value>
+                <elementReference>cAuditEvent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fStudentXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Period__c</field>
+            <value>
+                <elementReference>cAuditPeriod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Order__c</field>
+            <value>
+                <elementReference>cOrderInXML_3</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Output_Section__c</field>
+            <value>
+                <elementReference>cOutputSection_Student</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Student_Programme__c</field>
+            <value>
+                <elementReference>vApplicationID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Student__c</field>
+            <value>
+                <elementReference>sO_Student.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Academic_Qualifications</name>
+        <label>Academic Qualifications</label>
+        <locationX>683</locationX>
+        <locationY>23</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Qualifications</targetReference>
+        </connector>
+        <filters>
+            <field>Contact__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_Student.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>HESA_Audit__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Qualifications_Experience__c</object>
+        <outputReference>soc_queriedAcademicQualifications</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Audit_Trigger__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Student_Modules</name>
+        <label>Student Modules</label>
+        <locationX>265</locationX>
+        <locationY>23</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Student_Modules</targetReference>
+        </connector>
+        <filters>
+            <field>Student_Programme__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vApplicationID</elementReference>
+            </value>
+        </filters>
+        <object>Student_Module__c</object>
+        <outputReference>socStudentModules</outputReference>
+        <queriedFields>Audit_Trigger__c</queriedFields>
+        <queriedFields>Id</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Student_Programme</name>
+        <label>Student Programme</label>
+        <locationX>62</locationX>
+        <locationY>23</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Student_Modules</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vApplicationID</elementReference>
+            </value>
+        </filters>
+        <object>Student_Programme__c</object>
+        <outputReference>sO_StudentProgramme</outputReference>
+        <queriedFields>Programme_End_Date__c</queriedFields>
+        <queriedFields>Programme_Start_Date__c</queriedFields>
+        <queriedFields>Student__c</queriedFields>
+        <queriedFields>Programme__c</queriedFields>
+        <queriedFields>Audit_Log__c</queriedFields>
+        <queriedFields>Current_User_Email__c</queriedFields>
+        <queriedFields>ELQ_Code__c</queriedFields>
+        <queriedFields>Fee_Status__c</queriedFields>
+        <queriedFields>TTACCOM_Code__c</queriedFields>
+        <queriedFields>HESA_Fundable__c</queriedFields>
+        <queriedFields>Programme_Type__c</queriedFields>
+        <queriedFields>Programme_Code__c</queriedFields>
+        <queriedFields>Fees_and_Funding__c</queriedFields>
+        <queriedFields>TTA_Postcode__c</queriedFields>
+        <queriedFields>Amount__c</queriedFields>
+        <queriedFields>HESA_Disability__c</queriedFields>
+        <queriedFields>HESA_Ethnicity__c</queriedFields>
+        <queriedFields>QUALENT3_Code__c</queriedFields>
+        <queriedFields>Stage__c</queriedFields>
+        <queriedFields>Agreed_Classification__c</queriedFields>
+        <queriedFields>Classification__c</queriedFields>
+        <queriedFields>Instance_Code__c</queriedFields>
+        <queriedFields>HESA_FTE__c</queriedFields>
+        <queriedFields>Intercalation__c</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Student_Record</name>
+        <label>Student Record</label>
+        <locationX>474</locationX>
+        <locationY>24</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Academic_Qualifications</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_StudentProgramme.Student__c</elementReference>
+            </value>
+        </filters>
+        <object>Contact</object>
+        <outputReference>sO_Student</outputReference>
+        <queriedFields>HESA_Nationality__c</queriedFields>
+        <queriedFields>HESA_Domicile__c</queriedFields>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Birthdate</queriedFields>
+        <queriedFields>FirstName</queriedFields>
+        <queriedFields>LastName</queriedFields>
+        <queriedFields>LSTM_No__c</queriedFields>
+        <queriedFields>MailingPostalCode</queriedFields>
+        <queriedFields>Male_Female__c</queriedFields>
+        <queriedFields>Audit_Log__c</queriedFields>
+        <queriedFields>HESA_Domicile_Code__c</queriedFields>
+        <queriedFields>HESA_Nationality_Code__c</queriedFields>
+        <queriedFields>HUSID__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Instance_XML_Update</name>
+        <label>Instance XML Update</label>
+        <locationX>1227</locationX>
+        <locationY>400</locationY>
+        <connector>
+            <targetReference>Leg2_Confirmation_post</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_StudentProgramme.Audit_Log__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fInstanceXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Exclude__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <description>Update the Applcation (Student Programme) with the record ID of its Audit Log record</description>
+        <name>Log_ID_to_Application</name>
+        <label>Log ID to Application</label>
+        <locationX>917</locationX>
+        <locationY>618</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_StudentProgramme.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Log__c</field>
+            <value>
+                <elementReference>vInstanceXMLID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Student_Programme__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Log_ID_to_Student</name>
+        <label>Log ID to Student</label>
+        <locationX>918</locationX>
+        <locationY>509</locationY>
+        <connector>
+            <targetReference>Log_ID_to_Application</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_Student.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Log__c</field>
+            <value>
+                <elementReference>vStudentXMLID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Contact</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Qualification_Audit_Trigger_to_TRUE</name>
+        <label>Qualification Audit Trigger to TRUE</label>
+        <locationX>916</locationX>
+        <locationY>153</locationY>
+        <connector>
+            <targetReference>New_or_Existing_Registration</targetReference>
+        </connector>
+        <inputReference>socQualificationstoUpdate</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Student_Modules_Audit_Trigger</name>
+        <label>Student Modules Audit Trigger</label>
+        <locationX>473</locationX>
+        <locationY>155</locationY>
+        <connector>
+            <targetReference>Student_Record</targetReference>
+        </connector>
+        <inputReference>socStudentModulestoUpdate</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Student_XML_Update</name>
+        <label>Student XML Update</label>
+        <locationX>1227</locationX>
+        <locationY>286</locationY>
+        <connector>
+            <targetReference>Instance_XML_Update</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_Student.Audit_Log__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fStudentXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Exclude__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordUpdates>
+    <startElementReference>Student_Programme</startElementReference>
+    <variables>
+        <name>lvStudentModules</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <name>so_LoopVQualifications</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Qualifications_Experience__c</objectType>
+    </variables>
+    <variables>
+        <name>sO_Student</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Contact</objectType>
+    </variables>
+    <variables>
+        <name>sO_StudentProgramme</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Programme__c</objectType>
+    </variables>
+    <variables>
+        <name>soc_queriedAcademicQualifications</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Qualifications_Experience__c</objectType>
+    </variables>
+    <variables>
+        <name>socQualificationstoUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Qualifications_Experience__c</objectType>
+    </variables>
+    <variables>
+        <name>socStudentModules</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <name>socStudentModulestoUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <description>Set in the Process Builder that triggers this autorun (headless) Flow</description>
+        <name>vApplicationID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vConfirmationPost</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>End date of Student Programme</description>
+        <name>vEndDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vInstanceXMLID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <description>Start date of Student Programme</description>
+        <name>vStartDate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vStudentXMLID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

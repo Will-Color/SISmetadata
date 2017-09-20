@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$FirstName</field>
+    </columns>
+    <columns>
+        <field>Contact$LastName</field>
+    </columns>
+    <columns>
+        <field>Contact$Male_Female__c</field>
+    </columns>
+    <columns>
+        <field>Contact$LSTM_No__c</field>
+    </columns>
+    <columns>
+        <field>Contact$Country_of_Birth__c</field>
+    </columns>
+    <columns>
+        <field>Contact$HESA_Nationality__c</field>
+    </columns>
+    <description>MSc Scholarship Applications 2015</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Name</column>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Name</column>
+            <operator>contains</operator>
+            <value>MSc</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Scholarship__c</column>
+            <operator>equals</operator>
+            <value>1</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Student_Programmes1__r$Programme__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>MSc Scholarship Applications 2015</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Students_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

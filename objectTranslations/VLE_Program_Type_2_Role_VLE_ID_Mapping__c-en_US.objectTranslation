@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Programme Version&apos;s Programme Type, which defines what Role Student will be enrolled to VLE Courses --></help>
+        <label><!-- Programme Type --></label>
+        <name>Programme_Type__c</name>
+    </fields><fields>
+        <help><!-- VLE ID of Role Student will be assigned to --></help>
+        <label><!-- Role VLE ID --></label>
+        <name>Role_VLE_ID__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>VLE: Program Type to Role VLE ID Mapping</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>VLE: Program Type to Role VLE ID Mapping</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

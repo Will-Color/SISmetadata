@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Student_Module__c$LSTM_No__c</field>
+    </columns>
+    <columns>
+        <field>Student_Module__c$Student__c.LastName</field>
+    </columns>
+    <columns>
+        <field>Student_Module__c$Student__c.FirstName</field>
+    </columns>
+    <columns>
+        <field>Student_Module__c$Student_Programme__c</field>
+    </columns>
+    <description>A report to rectify the discrepancy between SIS optional modules and modules sat by MSc Students in 15/16. See how-to guide sent by Michael Allen to Karen Eves on 7 Sept 16</description>
+    <filter>
+        <criteriaItems>
+            <column>Student_Module__c$Student_Programme__c.Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>MSc Programme</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Module__c$Student_Programme__c.Stage__c</column>
+            <operator>equals</operator>
+            <value>Registered,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Module__c$Academic_Year__c</column>
+            <operator>equals</operator>
+            <value>15/16</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Student_Module__c$Module_Reference__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>15/16 MSc Optional Module Rectification</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CRT_Student_Modules_Student_Progs_Mods_and_Progs__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Student_Module__c$Student__c.LastName</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Student_Module__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

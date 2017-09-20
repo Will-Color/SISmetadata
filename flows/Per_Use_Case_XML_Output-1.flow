@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <interviewLabel>Per Use Case XML Output {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Per Use Case XML Output</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Lookup_all_SIS_Records</name>
+        <label>Lookup all SIS Records</label>
+        <locationX>335</locationX>
+        <locationY>52</locationY>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
+        <filters>
+            <field>Exclude__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>SIS_Audit__c</object>
+        <outputReference>sOcPerUseCaseRecords</outputReference>
+        <queriedFields>Audit_Period__c</queriedFields>
+        <queriedFields>Audit_Body__c</queriedFields>
+        <queriedFields>Audit_Event__c</queriedFields>
+        <queriedFields>Order__c</queriedFields>
+        <queriedFields>Other_ID__c</queriedFields>
+        <queriedFields>Output_Section__c</queriedFields>
+        <queriedFields>Student_Programme__c</queriedFields>
+        <queriedFields>Student__c</queriedFields>
+    </recordLookups>
+    <variables>
+        <name>sOcPerUseCaseRecords</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>SIS_Audit__c</objectType>
+    </variables>
+</Flow>

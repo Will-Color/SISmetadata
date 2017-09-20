@@ -1,0 +1,922 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Academic Credits --></label>
+        <name>Academic_Credits__c</name>
+    </fields><fields>
+        <label><!-- Academic Requirements --></label>
+        <name>Academic_Requirements__c</name>
+    </fields><fields>
+        <label><!-- Academic Year --></label>
+        <name>Academic_Year__c</name>
+        <picklistValues>
+            <masterLabel>14/15</masterLabel>
+            <translation><!-- 14/15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15/16</masterLabel>
+            <translation><!-- 15/16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16/17</masterLabel>
+            <translation><!-- 16/17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17/18</masterLabel>
+            <translation><!-- 17/18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18/19</masterLabel>
+            <translation><!-- 18/19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19/20</masterLabel>
+            <translation><!-- 19/20 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Status of Professional, Statutory or Regulatory Body Accreditation --></help>
+        <label><!-- Accreditation Status --></label>
+        <name>Accreditation_Status__c</name>
+    </fields><fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields><fields>
+        <help><!-- Additional Costs to the Student --></help>
+        <label><!-- Additional Costs --></label>
+        <name>Additional_Costs__c</name>
+    </fields><fields>
+        <label><!-- Aims of Programme --></label>
+        <name>Aims_of_Programme__c</name>
+    </fields><fields>
+        <help><!-- Criteria for the award of an alternative Qualification --></help>
+        <label><!-- Alternative Qualification --></label>
+        <name>Alternative_Qualification__c</name>
+    </fields><fields>
+        <label><!-- Applicable Framework --></label>
+        <name>Applicable_Framework__c</name>
+        <picklistValues>
+            <masterLabel>LSTM Regulations</masterLabel>
+            <translation><!-- LSTM Regulations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UoL Framework for FT or PT Postgraduate Programmes</masterLabel>
+            <translation><!-- UoL Framework for FT or PT Postgraduate Programmes --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Help text to set by LSTM --></help>
+        <label><!-- Application Form Type --></label>
+        <name>Application_Form_Type__c</name>
+        <picklistValues>
+            <masterLabel>FormAssembly</masterLabel>
+            <translation><!-- FormAssembly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short+</masterLabel>
+            <translation><!-- Short+ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short-</masterLabel>
+            <translation><!-- Short- --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Approval Stage --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approval</masterLabel>
+            <translation><!-- Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Full Development</masterLabel>
+            <translation><!-- Full Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L&amp;TC Full</masterLabel>
+            <translation><!-- L&amp;TC Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>L&amp;TC Initial</masterLabel>
+            <translation><!-- L&amp;TC Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Committee Full</masterLabel>
+            <translation><!-- Management Committee Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Management Committee Initial</masterLabel>
+            <translation><!-- Management Committee Initial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Programme Board</masterLabel>
+            <translation><!-- Programme Board --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>QMC Review</masterLabel>
+            <translation><!-- QMC Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Revision</masterLabel>
+            <translation><!-- Revision --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Assessment Schedule --></label>
+        <name>Assessment_Schedule__c</name>
+    </fields><fields>
+        <label><!-- Assessment Strategy --></label>
+        <name>Assessment_Strategy__c</name>
+    </fields><fields>
+        <label><!-- Board of Examiners --></label>
+        <name>Board_of_Examiners__c</name>
+        <picklistValues>
+            <masterLabel>Masters Board of Examiners</masterLabel>
+            <translation><!-- Masters Board of Examiners --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>tbc</masterLabel>
+            <translation><!-- tbc --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Board of Studies --></label>
+        <name>Board_of_Studies__c</name>
+        <picklistValues>
+            <masterLabel>Clinical Masters Board of Studies</masterLabel>
+            <translation><!-- Clinical Masters Board of Studies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humanitarian Board of Studies</masterLabel>
+            <translation><!-- Humanitarian Board of Studies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tropical Disease Biology Masters Board of Studies</masterLabel>
+            <translation><!-- Tropical Disease Biology Masters Board of Studies --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Career Opportunities --></label>
+        <name>Career_Opportunities__c</name>
+    </fields><fields>
+        <help><!-- Internal LSTM programme code --></help>
+        <label><!-- Code --></label>
+        <name>Code__c</name>
+    </fields><fields>
+        <label><!-- Compensation &amp; Resits --></label>
+        <name>Compensation_Resits__c</name>
+    </fields><fields>
+        <label><!-- Count of Aims --></label>
+        <name>Count_of_Aims__c</name>
+    </fields><fields>
+        <label><!-- Count of Outcomes A --></label>
+        <name>Count_of_OutcomesA__c</name>
+    </fields><fields>
+        <label><!-- Count of Outcomes B --></label>
+        <name>Count_of_Outcomes_B__c</name>
+    </fields><fields>
+        <label><!-- Count of Outcomes C --></label>
+        <name>Count_of_Outcomes_C__c</name>
+    </fields><fields>
+        <label><!-- Count of Skills --></label>
+        <name>Count_of_Skills__c</name>
+    </fields><fields>
+        <label><!-- Date Exemption Approved by QMC --></label>
+        <name>Date_Exemption_Approved_by_QMC__c</name>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields><fields>
+        <help><!-- Please provide a brief summary why a framework exemption is being requested --></help>
+        <label><!-- Details of Exemption --></label>
+        <name>Details_of_Exemption__c</name>
+    </fields><fields>
+        <help><!-- Director must be a User in system, not a Contact --></help>
+        <label><!-- Director of Studies --></label>
+        <name>Director_of_Studies__c</name>
+        <relationshipLabel><!-- Programme Versions --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Diversity &amp; Equality of Opportunity and Widening Participation --></help>
+        <label><!-- Diversity Statement --></label>
+        <name>Diversity_Statement__c</name>
+    </fields><fields>
+        <label><!-- Duration --></label>
+        <name>Duration__c</name>
+    </fields><fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields><fields>
+        <label><!-- English Language Requirements --></label>
+        <name>English_Language_Requirements__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 1 Credit --></label>
+        <name>Entry_Award_1_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Entry Award 1 Level --></label>
+        <name>Entry_Award_1_Level__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 1 --></label>
+        <name>Entry_Award_1__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 2 Credit --></label>
+        <name>Entry_Award_2_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Entry Award 2 Level --></label>
+        <name>Entry_Award_2_Level__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 2 --></label>
+        <name>Entry_Award_2__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 3 Credit --></label>
+        <name>Entry_Award_3_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Entry Award 3 Level --></label>
+        <name>Entry_Award_3_Level__c</name>
+    </fields><fields>
+        <label><!-- Entry Award 3 --></label>
+        <name>Entry_Award_3__c</name>
+    </fields><fields>
+        <help><!-- The Board of Examiners and the External Examiner --></help>
+        <label><!-- Examining --></label>
+        <name>Examining__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 1 Credit --></label>
+        <name>Exit_Award_1_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Exit Award 1 Level --></label>
+        <name>Exit_Award_1_Level__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 1 --></label>
+        <name>Exit_Award_1__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 2 Credit --></label>
+        <name>Exit_Award_2_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Exit Award 2 Level --></label>
+        <name>Exit_Award_2_Level__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 2 --></label>
+        <name>Exit_Award_2__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 3 Credit --></label>
+        <name>Exit_Award_3_Credit__c</name>
+        <picklistValues>
+            <masterLabel>120 Credits</masterLabel>
+            <translation><!-- 120 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>180 Credits</masterLabel>
+            <translation><!-- 180 Credits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60 Credits</masterLabel>
+            <translation><!-- 60 Credits --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Exit Award 3 Level --></label>
+        <name>Exit_Award_3_Level__c</name>
+    </fields><fields>
+        <label><!-- Exit Award 3 --></label>
+        <name>Exit_Award_3__c</name>
+    </fields><fields>
+        <label><!-- External Examiners --></label>
+        <name>External_Examiners__c</name>
+    </fields><fields>
+        <label><!-- Final Award --></label>
+        <name>Final_Award__c</name>
+    </fields><fields>
+        <help><!-- Denotes this Version information should be sent to website --></help>
+        <label><!-- For website --></label>
+        <name>For_website__c</name>
+    </fields><fields>
+        <help><!-- Please provide a brief summary why a framework exemption is being requested --></help>
+        <label><!-- Framework Exemption Summary --></label>
+        <name>Framework_Exemption_Summary__c</name>
+    </fields><fields>
+        <label><!-- Framework Exemption required --></label>
+        <name>Framework_Exemption_required__c</name>
+    </fields><fields>
+        <label><!-- Frequency of Intake --></label>
+        <name>Frequency_of_Intake__c</name>
+    </fields><fields>
+        <label><!-- Grading Scheme --></label>
+        <name>Grading_Scheme__c</name>
+    </fields><fields>
+        <help><!-- Defines whether child instance records are carried in XML output for HESA audit - should include all MSc programmes, DTM&amp;H and DTN --></help>
+        <label><!-- HESA Audit --></label>
+        <name>HESA_Audit__c</name>
+    </fields><fields>
+        <label><!-- Home EU Fee --></label>
+        <name>Home_EU_Fee__c</name>
+    </fields><fields>
+        <label><!-- Homepage VLE ID --></label>
+        <name>Homepage_VLE_ID__c</name>
+    </fields><fields>
+        <label><!-- Important Dates --></label>
+        <name>Important_Dates__c</name>
+    </fields><fields>
+        <label><!-- Introduction --></label>
+        <name>Introduction__c</name>
+    </fields><fields>
+        <help><!-- Used for HESA XML output report --></help>
+        <label><!-- JAC Code Label --></label>
+        <name>JAC_Code_Label__c</name>
+        <relationshipLabel><!-- Programme Versions --></relationshipLabel>
+    </fields><fields>
+        <help><!-- HESA Code related to subject choosen in JAC Code Label field --></help>
+        <label><!-- JAC Code --></label>
+        <name>JAC_Code__c</name>
+    </fields><fields>
+        <label><!-- Key Contacts --></label>
+        <name>Key_Contacts__c</name>
+    </fields><fields>
+        <label><!-- LT&amp;A Strategy --></label>
+        <name>LT_A_Strategies__c</name>
+    </fields><fields>
+        <label><!-- L&amp;T Methods --></label>
+        <name>LT_Methods__c</name>
+    </fields><fields>
+        <label><!-- L&amp;T Strategy --></label>
+        <name>L_T_Strategy__c</name>
+    </fields><fields>
+        <help><!-- If required for PDF ouput --></help>
+        <label><!-- Learning Outcome Notes --></label>
+        <name>Learning_Outcome_Notes__c</name>
+    </fields><fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <picklistValues>
+            <masterLabel>LSTM</masterLabel>
+            <translation><!-- LSTM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>WITS</masterLabel>
+            <translation><!-- WITS --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Marking Descriptors --></label>
+        <name>Marking_Descriptors__c</name>
+    </fields><fields>
+        <label><!-- Master Link --></label>
+        <lookupFilter>
+            <errorMessage><!-- Record must be a master --></errorMessage>
+        </lookupFilter>
+        <name>Master_Link__c</name>
+        <relationshipLabel><!-- Child Programme Versions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Mode of Study --></label>
+        <name>Mode__c</name>
+        <picklistValues>
+            <masterLabel>FT</masterLabel>
+            <translation><!-- FT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online</masterLabel>
+            <translation><!-- Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PT</masterLabel>
+            <translation><!-- PT --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- This is Table 3 in paper specification --></help>
+        <label><!-- Modular Structure --></label>
+        <name>Modular_Structure__c</name>
+    </fields><fields>
+        <help><!-- This is Table 1 in paper specification --></help>
+        <label><!-- Modules Included --></label>
+        <name>Modules_Included__c</name>
+    </fields><fields>
+        <help><!-- This is Table 2 in paper specification --></help>
+        <label><!-- Options --></label>
+        <name>Options__c</name>
+    </fields><fields>
+        <label><!-- Other Requirements --></label>
+        <name>Other_Requirements__c</name>
+    </fields><fields>
+        <label><!-- Overseas Fee --></label>
+        <name>Overseas_Fee__c</name>
+    </fields><fields>
+        <label><!-- Overview --></label>
+        <name>Overview__c</name>
+    </fields><fields>
+        <label><!-- PGR Type --></label>
+        <name>PGR_Type__c</name>
+        <picklistValues>
+            <masterLabel>MPhil</masterLabel>
+            <translation><!-- MPhil --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PhD</masterLabel>
+            <translation><!-- PhD --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Pass Mark --></label>
+        <name>Pass_Mark__c</name>
+    </fields><fields>
+        <help><!-- Free text field --></help>
+        <label><!-- Pre-requisites --></label>
+        <name>Pre_requisites__c</name>
+    </fields><fields>
+        <label><!-- Prizes --></label>
+        <name>Prizes__c</name>
+    </fields><fields>
+        <help><!-- Professional, Statutory or Regulatory body --></help>
+        <label><!-- Professional or Other Body --></label>
+        <name>Professional_or_Other_Body__c</name>
+    </fields><fields>
+        <help><!-- If note is required for PDF output --></help>
+        <label><!-- Programme Aims Notes --></label>
+        <name>Programme_Aims_Notes__c</name>
+    </fields><fields>
+        <label><!-- Programme Group --></label>
+        <name>Programme_Group__c</name>
+        <picklistValues>
+            <masterLabel>Clinical</masterLabel>
+            <translation><!-- Clinical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humanitarian</masterLabel>
+            <translation><!-- Humanitarian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Laboratory</masterLabel>
+            <translation><!-- Laboratory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Maternal &amp; Child Health</masterLabel>
+            <translation><!-- Maternal &amp; Child Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Planning, Management &amp; Personal Development</masterLabel>
+            <translation><!-- Planning, Management &amp; Personal Development --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Health &amp; Humanitarian</masterLabel>
+            <translation><!-- Public Health &amp; Humanitarian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sexual &amp; Reproductive Health</masterLabel>
+            <translation><!-- Sexual &amp; Reproductive Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel Health Courses</masterLabel>
+            <translation><!-- Travel Health Courses --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Programme Overview --></label>
+        <name>Programme_Overview__c</name>
+    </fields><fields>
+        <label><!-- Programme Structure --></label>
+        <name>Programme_Structure__c</name>
+    </fields><fields>
+        <help><!-- Used to combine Programme Type of Masters Module and (standalone) Short Courses, under External Type of of Short Courses; for display in MyLSTM Application form --></help>
+        <label><!-- Programme Type External --></label>
+        <name>Programme_Type_External__c</name>
+        <picklistValues>
+            <masterLabel>MSc Programme</masterLabel>
+            <translation><!-- MSc Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGR</masterLabel>
+            <translation><!-- PGR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Programme</masterLabel>
+            <translation><!-- Professional Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Research Programme</masterLabel>
+            <translation><!-- Research Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short Course</masterLabel>
+            <translation><!-- Short Course --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Programme Type --></label>
+        <name>Programme_Type__c</name>
+        <picklistValues>
+            <masterLabel>Closed Course</masterLabel>
+            <translation><!-- Closed Course --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSc Programme</masterLabel>
+            <translation><!-- MSc Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Masters Module</masterLabel>
+            <translation><!-- Masters Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Online Course</masterLabel>
+            <translation><!-- Online Course --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PG Cert</masterLabel>
+            <translation><!-- PG Cert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGR</masterLabel>
+            <translation><!-- PGR --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGT</masterLabel>
+            <translation><!-- PGT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Diploma</masterLabel>
+            <translation><!-- Professional Diploma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short Course</masterLabel>
+            <translation><!-- Short Course --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Programme Version Ref --></label>
+        <name>Programme_Version_Ref__c</name>
+    </fields><fields>
+        <label><!-- Recognition of Prior Learning --></label>
+        <name>Recognition_of_Prior_Learning__c</name>
+    </fields><fields>
+        <label><!-- Reference Points --></label>
+        <name>Reference_Points__c</name>
+    </fields><fields>
+        <label><!-- Research Project --></label>
+        <name>Research_Project__c</name>
+    </fields><fields>
+        <help><!-- This is Table 2 in paper specification --></help>
+        <label><!-- Semester Timetable --></label>
+        <name>Semester_Timetable__c</name>
+    </fields><fields>
+        <help><!-- Date of first Intake --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields><fields>
+        <help><!-- Student representation and feedback --></help>
+        <label><!-- Student Representation --></label>
+        <name>Student_Representation__c</name>
+    </fields><fields>
+        <label><!-- Template to Use --></label>
+        <name>Template_to_Use__c</name>
+    </fields><fields>
+        <help><!-- This is Table 1 in paper specification --></help>
+        <label><!-- Timetable --></label>
+        <name>Timetable__c</name>
+    </fields><fields>
+        <label><!-- Version Suffix --></label>
+        <name>Version_Suffix__c</name>
+    </fields><fields>
+        <label><!-- Work Experience --></label>
+        <name>Work_Experience__c</name>
+    </fields><fields>
+        <label><!-- Work Placement --></label>
+        <name>Work_Placement__c</name>
+    </fields><fields>
+        <label><!-- XEntry Award 1 --></label>
+        <name>XEntry_Award_1__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- XEntry Award 2 --></label>
+        <name>XEntry_Award_2__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- XEntry Award 3 --></label>
+        <name>XEntry_Award_3__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- XExit Award 1 --></label>
+        <name>XExit_Award_1__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- XExit Award 2 --></label>
+        <name>XExit_Award_2__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- XExit Award 3 --></label>
+        <name>XExit_Award_3__c</name>
+        <picklistValues>
+            <masterLabel>MSc</masterLabel>
+            <translation><!-- MSc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGCert</masterLabel>
+            <translation><!-- PGCert --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGDip</masterLabel>
+            <translation><!-- PGDip --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Programme Version</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Programme Versions</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Prog Version Pre Approved</layout>
+        <sections>
+            <label><!-- Aims of the Programme --></label>
+            <section>Aims of the Programme</section>
+        </sections>
+        <sections>
+            <label><!-- Awards --></label>
+            <section>Awards</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Entrance Requirements --></label>
+            <section>Entrance Requirements</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden --></label>
+            <section>Hidden</section>
+        </sections>
+        <sections>
+            <label><!-- Learning, Teaching and Assessment Strategies --></label>
+            <section>Learning, Teaching and Assessment Strategies</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Other --></label>
+            <section>Other</section>
+        </sections>
+        <sections>
+            <label><!-- PROGRAMME SPECIFICATION --></label>
+            <section>PROGRAMME SPECIFICATION</section>
+        </sections>
+        <sections>
+            <label><!-- Programme Structure --></label>
+            <section>Programme Structure</section>
+        </sections>
+        <sections>
+            <label><!-- Programme Summary --></label>
+            <section>Programme Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Timing --></label>
+            <section>Timing</section>
+        </sections>
+        <sections>
+            <label><!-- To Discuss with LSTM --></label>
+            <section>To Discuss with LSTM</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Programme Master Layout</layout>
+        <sections>
+            <label><!-- Admin --></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Programme Specification</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- PROGRAMME SPECIFICATION --></label>
+            <section>PROGRAMME SPECIFICATION</section>
+        </sections>
+        <sections>
+            <label><!-- Programme Specification Detail --></label>
+            <section>Programme Specification Detail</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Programme Version Layout</layout>
+        <sections>
+            <label><!-- Additional Costs --></label>
+            <section>Additional Costs</section>
+        </sections>
+        <sections>
+            <label><!-- Aims of the Programme - see related list --></label>
+            <section>Aims of the Programme - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Entry &amp; Exit Awards --></label>
+            <section>Entry &amp; Exit Awards</section>
+        </sections>
+        <sections>
+            <label><!-- PART A: Programme Summary Information --></label>
+            <section>PART A: Programme Summary Information</section>
+        </sections>
+        <sections>
+            <label><!-- PART B: Overview &amp; Programme Aims --></label>
+            <section>PART B: Overview &amp; Programme Aims</section>
+        </sections>
+        <sections>
+            <label><!-- PART C: Entrance Requirements --></label>
+            <section>PART C: Entrance Requirements</section>
+        </sections>
+        <sections>
+            <label><!-- PART D: Programme Structure --></label>
+            <section>PART D: Programme Structure</section>
+        </sections>
+        <sections>
+            <label><!-- PART E: Learning, Teaching &amp; Assessment Strategies --></label>
+            <section>PART E: Learning, Teaching &amp; Assessment Strategies</section>
+        </sections>
+        <sections>
+            <label><!-- PART F: Quality Assurance --></label>
+            <section>PART F: Quality Assurance</section>
+        </sections>
+        <sections>
+            <label><!-- PART G: Diversity and Equality of Opportunity and Widening Participation --></label>
+            <section>PART G: Diversity and Equality of Opportunity and Widening Participation</section>
+        </sections>
+        <sections>
+            <label><!-- PART H: Status of Professional, Statutory or Regulatory Body Accreditation --></label>
+            <section>PART H: Status of Professional, Statutory or Regulatory Body Accreditation</section>
+        </sections>
+        <sections>
+            <label><!-- Professional/Other Body &amp; Reference Points --></label>
+            <section>Professional/Other Body &amp; Reference Points</section>
+        </sections>
+        <sections>
+            <label><!-- Programme Handbook --></label>
+            <section>Programme Handbook</section>
+        </sections>
+        <sections>
+            <label><!-- Programme Monitoring --></label>
+            <section>Programme Monitoring</section>
+        </sections>
+        <sections>
+            <label><!-- Skills &amp; Other Attributes - see related list --></label>
+            <section>Skills &amp; Other Attributes - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Subject Based Learning Outcomes - see related list --></label>
+            <section>Subject Based Learning Outcomes - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Website Publication --></label>
+            <section>Website Publication</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Master Version --></label>
+        <name>Master_Version</name>
+    </recordTypes><recordTypes>
+        <label><!-- Specification --></label>
+        <name>Specification</name>
+    </recordTypes><recordTypes>
+        <label><!-- Specification Edit --></label>
+        <name>Specification_Edit</name>
+    </recordTypes><recordTypes>
+        <label><!-- Versions --></label>
+        <name>Versions</name>
+    </recordTypes><recordTypes>
+        <label><!-- Versions - Pre Approved --></label>
+        <name>Versions_Pre_Approved</name>
+    </recordTypes><webLinks>
+        <label><!-- Clone_Programme --></label>
+        <name>Clone_Programme</name>
+    </webLinks><webLinks>
+        <label><!-- Clone_Programme_Versions --></label>
+        <name>Clone_Programme_Versions</name>
+    </webLinks><webLinks>
+        <label><!-- Generate_Specification --></label>
+        <name>Generate_Specification</name>
+    </webLinks></CustomObjectTranslation>

@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Signifies that Anonymous Ref should be passed to markers in place of Student names --></help>
+        <label><!-- Anon Check --></label>
+        <name>Anon_Check__c</name>
+    </fields><fields>
+        <help><!-- Specific Assessment Category --></help>
+        <label><!-- Assessment Category --></label>
+        <name>Assessment_Category__c</name>
+        <picklistValues>
+            <masterLabel>Case Study</masterLabel>
+            <translation><!-- Case Study --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Analysis</masterLabel>
+            <translation><!-- Critical Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Reflection</masterLabel>
+            <translation><!-- Critical Reflection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Critical Review</masterLabel>
+            <translation><!-- Critical Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dissertation</masterLabel>
+            <translation><!-- Dissertation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Essay</masterLabel>
+            <translation><!-- Essay --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Examination</masterLabel>
+            <translation><!-- Examination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Logical Framework</masterLabel>
+            <translation><!-- Logical Framework --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MCQ</masterLabel>
+            <translation><!-- MCQ --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oral Exam</masterLabel>
+            <translation><!-- Oral Exam --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Personal Reflection</masterLabel>
+            <translation><!-- Personal Reflection --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poster Presentation</masterLabel>
+            <translation><!-- Poster Presentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practical Report</masterLabel>
+            <translation><!-- Practical Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation><!-- Presentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal</masterLabel>
+            <translation><!-- Proposal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systematic Review</masterLabel>
+            <translation><!-- Systematic Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Written Report</masterLabel>
+            <translation><!-- Written Report --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Semester and Block in which Assessment falls. Set at Module level. --></help>
+        <label><!-- Assessment Period --></label>
+        <name>Assessment_Period__c</name>
+    </fields><fields>
+        <label><!-- Assessment Type --></label>
+        <name>Assessment_Type__c</name>
+        <picklistValues>
+            <masterLabel>Dissertation</masterLabel>
+            <translation><!-- Dissertation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Examination</masterLabel>
+            <translation><!-- Examination --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation><!-- Presentation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Written Assignment</masterLabel>
+            <translation><!-- Written Assignment --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Criticality Score --></label>
+        <name>Criticality_Score__c</name>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields><fields>
+        <help><!-- Links to report showing cohort sitting the assessment - if shows Error then remember to set Marking Type --></help>
+        <label><!-- Mark Sheet --></label>
+        <name>Marking_Cohort__c</name>
+    </fields><fields>
+        <label><!-- Marking Type --></label>
+        <name>Marking_Type__c</name>
+        <picklistValues>
+            <masterLabel>Double Marked</masterLabel>
+            <translation><!-- Double Marked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Moderated</masterLabel>
+            <translation><!-- Moderated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Validated</masterLabel>
+            <translation><!-- Validated --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Reference --></label>
+        <name>Module_Reference__c</name>
+    </fields><fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+        <relationshipLabel><!-- Assessments --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Defines if this assessment needs to be passed for overall Module to be a pass. Pool Pass indicates this assessments is one of a Pool of assessments that have an individual threshold to reach per Module; Mandatory means this assessment must be passed. --></help>
+        <label><!-- Pass Critical? --></label>
+        <name>Pass_Critical__c</name>
+        <picklistValues>
+            <masterLabel>Mandatory</masterLabel>
+            <translation><!-- Mandatory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mean</masterLabel>
+            <translation><!-- Mean --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pool Pass</masterLabel>
+            <translation><!-- Pool Pass --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- For Assessment testing but exclusion from live reports etc --></help>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields><fields>
+        <label><!-- Weighting Variable --></label>
+        <name>Weighting_Variable__c</name>
+        <picklistValues>
+            <masterLabel>Variable 1</masterLabel>
+            <translation><!-- Variable 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable 2</masterLabel>
+            <translation><!-- Variable 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable 3</masterLabel>
+            <translation><!-- Variable 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable 4</masterLabel>
+            <translation><!-- Variable 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable 5</masterLabel>
+            <translation><!-- Variable 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Variable 6</masterLabel>
+            <translation><!-- Variable 6 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Weighting % --></label>
+        <name>Weighting_percent__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Assessment</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Assessments</value>
+    </caseValues><startsWith>Vowel</startsWith><layouts>
+        <layout>Assessment Layout</layout>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Assessment Setup --></label>
+            <section>Assessment Setup</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

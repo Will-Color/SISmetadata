@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Score returned from marking process outside of the SIS --></help>
+        <label><!-- Agreed Mark --></label>
+        <name>Agreed_Mark__c</name>
+    </fields><fields>
+        <help><!-- Denotes that a moderated agreement on mark has been reached --></help>
+        <label><!-- Agreement Reached --></label>
+        <name>Agreement_Reached__c</name>
+    </fields><fields>
+        <label><!-- Anonymous Ref --></label>
+        <name>Anonymous_Ref__c</name>
+    </fields><fields>
+        <label><!-- Assessment Record ID --></label>
+        <name>Assessment_Record_ID__c</name>
+    </fields><fields>
+        <label><!-- Assessment Record Name --></label>
+        <name>Assessment_Record_Name__c</name>
+    </fields><fields>
+        <label><!-- Assessment --></label>
+        <name>Assessment__c</name>
+        <relationshipLabel><!-- Student Assessments --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Criticality Score --></label>
+        <name>Criticality_Score__c</name>
+    </fields><fields>
+        <help><!-- Final unweighted mark taking manual marking into account --></help>
+        <label><!-- Final Mark --></label>
+        <name>Final_Mark__c</name>
+    </fields><fields>
+        <label><!-- Inactive --></label>
+        <name>Inactive__c</name>
+    </fields><fields>
+        <label><!-- LSTM No --></label>
+        <name>LSTM_No__c</name>
+    </fields><fields>
+        <label><!-- Manual Mark Note --></label>
+        <name>Manual_Mark_Note__c</name>
+    </fields><fields>
+        <help><!-- Used to provide reason for manual mark entries --></help>
+        <label><!-- Manual Mark Reason --></label>
+        <name>Manual_Mark_Reason__c</name>
+        <picklistValues>
+            <masterLabel>Exceeding Word Count</masterLabel>
+            <translation><!-- Exceeding Word Count --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Late Penalty</masterLabel>
+            <translation><!-- Late Penalty --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plagiarism Category A: Minor Error</masterLabel>
+            <translation><!-- Plagiarism Category A: Minor Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plagiarism Category B: Poor Academic Practice</masterLabel>
+            <translation><!-- Plagiarism Category B: Poor Academic Practice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plagiarism Category C: Plagiarism, Copying, Collusion or Dishonest use of Data</masterLabel>
+            <translation><!-- Plagiarism Category C: Plagiarism, Copying, Collusion or Dishonest use of Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plagiarism Category D: Second or Subsequent category C Offence(s) following a Written Warning</masterLabel>
+            <translation><!-- Plagiarism Category D: Second or Subsequent category C Offence(s) following a Written Warning --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Plagiarism Category E: Unfair and/or Dishonest Academic Practice</masterLabel>
+            <translation><!-- Plagiarism Category E: Unfair and/or Dishonest Academic Practice --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Used if additional manual override (eg for lateness, plagiarism and special circumstances appeals) needs to be applied in SIS, after the marking process outside of the SIS --></help>
+        <label><!-- Manual Mark --></label>
+        <name>Manual_Mark__c</name>
+    </fields><fields>
+        <label><!-- Manual Score --></label>
+        <name>Manual_Score__c</name>
+    </fields><fields>
+        <help><!-- Resolution if markers differ --></help>
+        <label><!-- Mark Resolution --></label>
+        <name>Mark_Resolution__c</name>
+    </fields><fields>
+        <help><!-- Mark from first marker --></help>
+        <label><!-- Marker 1 --></label>
+        <name>Marker_1__c</name>
+    </fields><fields>
+        <help><!-- Mark from second marker --></help>
+        <label><!-- Marker 2 --></label>
+        <name>Marker_2__c</name>
+    </fields><fields>
+        <label><!-- Mit Circ --></label>
+        <name>Mit_Circ__c</name>
+    </fields><fields>
+        <label><!-- Mitigating Circumstances Notes --></label>
+        <name>Mitigating_Circumstances_Notes__c</name>
+    </fields><fields>
+        <label><!-- Mitigating Circumstances --></label>
+        <name>Mitigating_Circumstances__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined</masterLabel>
+            <translation><!-- Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Capped --></label>
+        <name>Module_Capped__c</name>
+    </fields><fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+    </fields><fields>
+        <label><!-- Pass Critical? --></label>
+        <name>Pass_Critical__c</name>
+    </fields><fields>
+        <label><!-- Previous Sitting --></label>
+        <name>Previous_Sitting__c</name>
+        <relationshipLabel><!-- Student Assessments (Previous Sitting) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Prior Assessment --></label>
+        <name>Prior_Assessment__c</name>
+        <relationshipLabel><!-- Resit Assessments --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Programme ID --></label>
+        <name>Programme_ID__c</name>
+    </fields><fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+    </fields><fields>
+        <help><!-- False unless Final Mark is not blank. Used to exclude Student Assessments from reports calculating Module mark averages when Student Assessments have not been completed --></help>
+        <label><!-- Reportable --></label>
+        <name>Reportable__c</name>
+    </fields><fields>
+        <label><!-- Resit Level --></label>
+        <name>Resit_Level__c</name>
+    </fields><fields>
+        <help><!-- If true denotes that this mark has or will be moderated --></help>
+        <label><!-- Sample --></label>
+        <name>Sample__c</name>
+    </fields><fields>
+        <label><!-- Sit Level --></label>
+        <name>Sit_Level__c</name>
+    </fields><fields>
+        <label><!-- Sitting --></label>
+        <name>Sitting__c</name>
+    </fields><fields>
+        <label><!-- Student Last Name --></label>
+        <name>Student_Last_Name__c</name>
+    </fields><fields>
+        <label><!-- Student Module ID --></label>
+        <name>Student_Module_ID__c</name>
+    </fields><fields>
+        <label><!-- Student Module Record Name --></label>
+        <name>Student_Module_Record_Name__c</name>
+    </fields><fields>
+        <label><!-- Student Module --></label>
+        <name>Student_Module__c</name>
+        <relationshipLabel><!-- Student Assessments --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Student Record ID --></label>
+        <name>Student_Record_ID__c</name>
+    </fields><fields>
+        <label><!-- Student Record Name --></label>
+        <name>Student_Record_Name__c</name>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+        <relationshipLabel><!-- My Assessments --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>1st Resit</masterLabel>
+            <translation><!-- 1st Resit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1st Sitting</masterLabel>
+            <translation><!-- 1st Sitting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2nd Resit</masterLabel>
+            <translation><!-- 2nd Resit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3rd Resit</masterLabel>
+            <translation><!-- 3rd Resit --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- For Module score, by Weighted % --></help>
+        <label><!-- Weighted Score --></label>
+        <name>Weighted_Score__c</name>
+    </fields><fields>
+        <help><!-- This weighting % is taken from the related Assessment template record --></help>
+        <label><!-- Weighting % --></label>
+        <name>Weighting__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Student Assessment</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Student Assessments</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Copy of Student Assessment Sys Admin</layout>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marker Feedback --></label>
+            <section>Marker Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Marking Resolution --></label>
+            <section>Marking Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- Module Weighted Score --></label>
+            <section>Module Weighted Score</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Resits --></label>
+            <section>Resits</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Assessment with Resit</layout>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marker Feedback --></label>
+            <section>Marker Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Marking Resolution --></label>
+            <section>Marking Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- Module Weighted Score --></label>
+            <section>Module Weighted Score</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Resits --></label>
+            <section>Resits</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Assessment without Resit</layout>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marker Feedback --></label>
+            <section>Marker Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Marking Resolution --></label>
+            <section>Marking Resolution</section>
+        </sections>
+        <sections>
+            <label><!-- Module Weighted Score --></label>
+            <section>Module Weighted Score</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Resits --></label>
+            <section>Resits</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Resit Allowed --></label>
+        <name>Resit_Allowed</name>
+    </recordTypes><recordTypes>
+        <label><!-- Resit Disallowed --></label>
+        <name>Resit_Disallowed</name>
+    </recordTypes><validationRules>
+        <errorMessage><!-- Please specify a reason for the Manual Mark. --></errorMessage>
+        <name>Manual_Mark_Note_required</name>
+    </validationRules><validationRules>
+        <errorMessage><!-- Please provide a reason for providing or amending the Manual Score field --></errorMessage>
+        <name>Manual_Score_Reasons</name>
+    </validationRules><webLinks>
+        <label><!-- Resit --></label>
+        <name>Resit</name>
+    </webLinks></CustomObjectTranslation>

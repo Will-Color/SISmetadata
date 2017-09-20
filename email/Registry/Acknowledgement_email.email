@@ -1,0 +1,103 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Times New Roman">
+
+</font><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-bidi-font-size: 10.0pt;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 11pt; mso-bidi-font-size: 10.0pt;"><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Dear {!Contact.FirstName}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Thank you for submitting your application for the MSc
+in&nbsp;{!Student_Programme__c.Programme__c} at the Liverpool School of
+Tropical Medicine.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">I am currently processing your application and I notice that you have
+not provided a copy of your .......<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Please could I ask you to forward a copy of ....... so that I can upload
+it to your application.&nbsp; You can send this as an attachment to an email
+addressed to:&nbsp;<a href="http://www.mylstm@lstmed.ac.uk/"><span style="color:blue">MyLSTM@lstmed.ac.uk</span></a><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Your application will then be forwarded to the Director of Studies for
+consideration.&nbsp;&nbsp;The review process takes up to 15 working days but I
+will let you know the outcome of your application as soon as possible
+afterwards.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">In the meantime, although this is not required in order for your
+application to be considered,&nbsp;please may I draw your attention to our
+English language requirements:&nbsp;<a href="http://www.lstmed.ac.uk/study/how-to-apply/language-requirements"><span style="color:blue">http://www.lstmed.ac.uk/study/how-to-apply/language-requirements</span></a>&nbsp;&nbsp;Applications
+can be considered without an English certificate but, should your application
+be successful, then any offer made would be subject to you
+providing&nbsp;evidence of English at the required level.&nbsp;&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;"><o:p>&nbsp;</o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">If you already hold a certificate,&nbsp;<span style="background:yellow">such
+as a Tanzania Certificate of Secondary Education</span>&nbsp;at the required
+level, then please could you also forward a copy of this so I can add it to
+your application.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">If I can be of any further assistance please don't hesitate to contact
+me.<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Kind regards<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: &quot;Times New Roman&quot;, serif;">&nbsp;</span><span style="font-size: 10pt; font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">{!User.FirstName}&nbsp;{!User.LastName}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Administrator – Academic Registry<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Email: MyLSTM@lstmed.ac.uk<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal"><span style="font-size: 10pt; font-family: Arial, sans-serif;">Telephone:&nbsp;{!User.Phone}<o:p></o:p></span></p><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal"><span style="font-size:10.0pt;line-height:107%"><o:p>&nbsp;</o:p></span></p><font face="Times New Roman"></font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="mso-bookmark: _MailAutoSig;"><b style="mso-bidi-font-weight: normal;"><span style="font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><o:p><font face="Times New Roman">&nbsp;</font></o:p></span></b></span></p><font face="Times New Roman"></font><p class="MsoNormal" style="margin: 0cm 0cm 12pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="color: black; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;">Liverpool School of Tropical Medicine, Pembroke Place, Liverpool L3 5QA UK<br><b>T: </b>+44 (0)151 705 3757 &nbsp;&nbsp;<b>F:</b> +44 (0)151 705 3348&nbsp; <b>W: </b></span></span><a href="http://www.lstmed.ac.uk"><span style="mso-bookmark: _MailAutoSig;"><span style="color: blue; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;">www.lstmed.ac.uk</span></span><span style="mso-bookmark: _MailAutoSig;"></span></a><span style="mso-bookmark: _MailAutoSig;"><span style="color: rgb(31, 73, 125); font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"> &nbsp;</span></span><span style="mso-bookmark: _MailAutoSig;"><span style="color: black; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><o:p></o:p></span></span></p><font face="Times New Roman"></font><p class="MsoNormal" style="margin: 0cm 0cm 12pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="color: rgb(31, 73, 125); font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><!--?xml:namespace prefix = v ns = "urn:schemas-microsoft-com:vml" /--><v:shapetype id="_x0000_t75" stroked="f" filled="f" o:preferrelative="t" o:spt="75" coordsize="21600,21600" path="m@4@5l@4@11@9@11@9@5xe">  <v:stroke joinstyle="miter"><v:formulas><v:f eqn="if lineDrawn pixelLineWidth 0"><v:f eqn="sum @0 1 0"><v:f eqn="sum 0 0 @1"><v:f eqn="prod @2 1 2"><v:f eqn="prod @3 21600 pixelWidth"><v:f eqn="prod @3 21600 pixelHeight"><v:f eqn="sum @0 0 1"><v:f eqn="prod @6 1 2"><v:f eqn="prod @7 21600 pixelWidth"><v:f eqn="sum @8 21600 0"><v:f eqn="prod @7 21600 pixelHeight"><v:f eqn="sum @10 21600 0"></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:f></v:formulas>  <v:path o:connecttype="rect" gradientshapeok="t" o:extrusionok="f"><o:lock aspectratio="t" v:ext="edit"></o:lock></v:path></v:stroke></v:shapetype>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span><span style="mso-bookmark: _MailAutoSig;"><span style="color: black; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 8pt; mso-bidi-font-size: 9.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><o:p></o:p></span></span></p><font face="Times New Roman"></font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="color: black; font-family: &quot;Arial&quot;,&quot;sans-serif&quot;; font-size: 5pt; mso-bidi-font-size: 6.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;">DISCLAIMER: Any files attached to this e-mail will have been checked by virus detection software prior to transmission, but you should carry out your own virus check before opening any attachment. LSTM does not accept liability for any damage or loss that may be caused by software viruses.&nbsp; This e-mail message (and any attachments) is the property of LSTM and is protected by law. It may contain privileged and confidential information strictly for the use of the named addressee only.&nbsp; If you are not the intended recipient or an employee or agent &nbsp;responsible for delivering the message to the addressee, you must not copy, distribute or take any action in reliance upon it. If you have received this message in error, please contact us by returning the e-mail and delete/destroy all copies of the message and any attachments.<o:p></o:p></span></span></p><font face="Times New Roman"></font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="color: rgb(31, 73, 125); font-size: 10pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Calibri; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri;"><o:p><font face="Times New Roman" size="3">&nbsp;</font></o:p></span></span></p></span><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><br></p></span><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><br></p><p><br></p><font face="Times New Roman">
+
+</font><p><span style="mso-bookmark: _MailAutoSig;"><span style="color: rgb(31, 73, 125); font-size: 10pt; mso-bidi-font-size: 11.0pt; mso-bidi-font-family: Calibri; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes; mso-ascii-font-family: Calibri; mso-hansi-font-family: Calibri;"><o:p><font face="Times New Roman" size="3"><br></font></o:p></span></span></p><font face="Times New Roman">
+
+</font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="font-size: 10pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><o:p><font face="Times New Roman" size="3">&nbsp;</font></o:p></span></span></p><font face="Times New Roman">
+
+</font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><span style="mso-bookmark: _MailAutoSig;"><span style="font-size: 10pt; mso-bidi-font-size: 11.0pt; mso-fareast-font-family: &quot;Times New Roman&quot;; mso-fareast-language: EN-GB; mso-fareast-theme-font: minor-fareast; mso-no-proof: yes;"><o:p><font face="Times New Roman" size="3">&nbsp;</font></o:p></span></span></p><font face="Times New Roman">
+
+<span style="mso-bookmark: _MailAutoSig;"></span>
+
+</font><p class="MsoNormal" style="margin: 0cm 0cm 0pt;"><o:p><font face="Times New Roman">&nbsp;</font></o:p></p><font face="Times New Roman">
+
+</font>]]></td>
+</tr>
+</table>

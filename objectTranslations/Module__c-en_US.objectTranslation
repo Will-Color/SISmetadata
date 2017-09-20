@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- For reporting use academic year for this Instance, not from the Version --></help>
+        <label><!-- Academic Year --></label>
+        <name>Academic_Year__c</name>
+    </fields><fields>
+        <label><!-- Accreditation --></label>
+        <name>Accreditation__c</name>
+        <picklistValues>
+            <masterLabel>LSTM</masterLabel>
+            <translation><!-- LSTM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>University of Liverpool</masterLabel>
+            <translation><!-- University of Liverpool --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Active Date --></label>
+        <name>Active_Date__c</name>
+    </fields><fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields><fields>
+        <label><!-- Approved Date --></label>
+        <name>Approved_Date__c</name>
+    </fields><fields>
+        <label><!-- Assessment Period --></label>
+        <name>Assessment_Period__c</name>
+        <picklistValues>
+            <masterLabel>Semester 1</masterLabel>
+            <translation><!-- Semester 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semester 2 - Block 1</masterLabel>
+            <translation><!-- Semester 2 - Block 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semester 2 - Block 2</masterLabel>
+            <translation><!-- Semester 2 - Block 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semester 2 - Block 3</masterLabel>
+            <translation><!-- Semester 2 - Block 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semester 3</masterLabel>
+            <translation><!-- Semester 3 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- At least one variable should be added, with total of 100%; to assist this variable defaults to 100% --></help>
+        <label><!-- Assessment Variable 1 --></label>
+        <name>Assessment_Variable_1__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable 2 --></label>
+        <name>Assessment_Variable_2__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable 3 --></label>
+        <name>Assessment_Variable_3__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable 4 --></label>
+        <name>Assessment_Variable_4__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable 5 --></label>
+        <name>Assessment_Variable_5__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable 6 --></label>
+        <name>Assessment_Variable_6__c</name>
+    </fields><fields>
+        <label><!-- Assessment Variable Sum --></label>
+        <name>Assessment_Variable_Sum__c</name>
+    </fields><fields>
+        <label><!-- Assessments Count --></label>
+        <name>Assessments_Count__c</name>
+    </fields><fields>
+        <label><!-- Audit Log --></label>
+        <name>Audit_Log__c</name>
+        <relationshipLabel><!-- Modules --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Audit Trigger --></label>
+        <name>Audit_Trigger__c</name>
+    </fields><fields>
+        <label><!-- Av Attendance % --></label>
+        <name>Av_Attendance__c</name>
+    </fields><fields>
+        <label><!-- CRM Temp Id --></label>
+        <name>CRM_Temp_Id__c</name>
+    </fields><fields>
+        <help><!-- Formula shows Course Template VLE ID from Module Version&apos;s &apos;Master Version&apos; --></help>
+        <label><!-- Course Template VLE ID --></label>
+        <name>Course_Template_VLE_ID__c</name>
+    </fields><fields>
+        <label><!-- Credits --></label>
+        <name>Credits__c</name>
+    </fields><fields>
+        <help><!-- Rollup score of how &apos;critical&apos; related assessments are to overall pass/fail --></help>
+        <label><!-- Criticality Rollup --></label>
+        <name>Criticality_Rollup__c</name>
+    </fields><fields>
+        <help><!-- Number of Pooled assessments that must be passed --></help>
+        <label><!-- Criticality Threshold --></label>
+        <name>Criticality_Threshold__c</name>
+    </fields><fields>
+        <label><!-- Pass Definition --></label>
+        <name>Description__c</name>
+    </fields><fields>
+        <label><!-- HESA Audit --></label>
+        <name>HESA_Audit__c</name>
+    </fields><fields>
+        <help><!-- HESA Cost Centre COSTCN set at Master level --></help>
+        <label><!-- HESA Cost Centre --></label>
+        <name>HESA_Cost_Centre__c</name>
+    </fields><fields>
+        <label><!-- HESA FTE --></label>
+        <name>HESA_FTE__c</name>
+    </fields><fields>
+        <help><!-- Module parented to incorrect Version, comparing Instance/Version Suffix fields --></help>
+        <label><!-- Incorrect Version --></label>
+        <name>Incorrect_Version__c</name>
+    </fields><fields>
+        <label><!-- Instance Code --></label>
+        <name>Instance_Code__c</name>
+    </fields><fields>
+        <label><!-- Instance Suffix --></label>
+        <name>Instance_Suffix__c</name>
+    </fields><fields>
+        <label><!-- Module Code --></label>
+        <name>Module_Code__c</name>
+    </fields><fields>
+        <label><!-- Module Convenor --></label>
+        <name>Module_Convenor__c</name>
+        <relationshipLabel><!-- My Modules --></relationshipLabel>
+    </fields><fields>
+        <help><!-- LSTM reference for each course --></help>
+        <label><!-- Module Reference --></label>
+        <name>Module_Reference__c</name>
+    </fields><fields>
+        <label><!-- Module Status --></label>
+        <name>Module_Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retired</masterLabel>
+            <translation><!-- Retired --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Type --></label>
+        <name>Module_Type__c</name>
+        <picklistValues>
+            <masterLabel>MSc Module</masterLabel>
+            <translation><!-- MSc Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PGR Module</masterLabel>
+            <translation><!-- PGR Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Diploma</masterLabel>
+            <translation><!-- Professional Diploma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short Course</masterLabel>
+            <translation><!-- Short Course --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Version --></label>
+        <name>Module_Version__c</name>
+        <relationshipLabel><!-- Module Instances --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Defaults to 50%, can be amended by System Admins only --></help>
+        <label><!-- Passmark --></label>
+        <name>Passmark__c</name>
+    </fields><fields>
+        <label><!-- Retire Date --></label>
+        <name>Retire_Date__c</name>
+    </fields><fields>
+        <label><!-- Sessions Actual Sum --></label>
+        <name>Sessions_Actual_Sum__c</name>
+    </fields><fields>
+        <label><!-- Sessions Expected Sum --></label>
+        <name>Sessions_Expected_Sum__c</name>
+    </fields><fields>
+        <label><!-- Test Class Record --></label>
+        <name>Test_Class_Record__c</name>
+    </fields><fields>
+        <label><!-- VLE ID --></label>
+        <name>VLE_ID__c</name>
+    </fields><fields>
+        <help><!-- To prevent some records triggering actions in VLE --></help>
+        <label><!-- VLE Visibility --></label>
+        <name>VLE_Visibility__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Module</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Modules</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Module Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Admin (Hidden) --></label>
+            <section>Admin (Hidden)</section>
+        </sections>
+        <sections>
+            <label><!-- Assessments --></label>
+            <section>Assessments</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Assessment variables need to add up to 100% --></errorMessage>
+        <name>Assessment_Variable_Check</name>
+    </validationRules><webLinks>
+        <label><!-- Student_Intake --></label>
+        <name>Student_Intake</name>
+    </webLinks></CustomObjectTranslation>

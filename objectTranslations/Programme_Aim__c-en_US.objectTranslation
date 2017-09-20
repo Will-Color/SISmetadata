@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- Which entry awards are applicable to this Aim --></help>
+        <label><!-- Entry Awards --></label>
+        <name>Entry_Awards__c</name>
+        <picklistValues>
+            <masterLabel>All Awards</masterLabel>
+            <translation><!-- All Awards --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSc &amp; PGDip Only</masterLabel>
+            <translation><!-- MSc &amp; PGDip Only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSc Only</masterLabel>
+            <translation><!-- MSc Only --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Programme Version --></label>
+        <name>Programme_Version__c</name>
+        <relationshipLabel><!-- Aims --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Leave blank on record creation if automatic numbering is required (set by Workflow) --></help>
+        <label><!-- No. --></label>
+        <name>Record_No__c</name>
+    </fields><fields>
+        <label><!-- Specific Aim --></label>
+        <name>Specific_Aim__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Programme Aim</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Programme Aims</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Aims Layout</layout>
+        <sections>
+            <label><!-- Admin --></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label><!-- Aims --></label>
+            <section>Aims</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Aims, Outcomes &amp; Skills Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Outcomes Layout</layout>
+        <sections>
+            <label><!-- Admin --></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Subject-Based Learning Outcomes --></label>
+            <section>Subject-Based Learning Outcomes</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

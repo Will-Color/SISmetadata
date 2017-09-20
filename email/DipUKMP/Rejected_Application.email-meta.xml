@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Application rejected email</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Rejected Application</name>
+    <style>freeForm</style>
+    <subject>DipUKMP Application decision</subject>
+    <textOnly>Dear applicant,
+
+Thank you for your application to the Diploma in UK Medical Practice. Unfortunately your application was not approved. The Diploma in UK Medical Practice is open to those working, or soon to begin working, in an NHS post sponsored by the Medical Training Initiative (MTI) of the Royal College of Physicians. We accept applications from those within 24 months of starting NHS work. We are not able to accept applications from those working in posts outside of the MTI.
+
+If you wish to discuss your application further or to receive a more detailed explanation, please contact us on dipukmp@lstmed.ac.uk and we will do our best to answer your questions.
+
+With best wishes
+
+Natasha Sutton
+
+DipUKMP Programme Administrator
+Liverpool School of Tropical Medicine
+
+Tel: 0151 705 3754</textOnly>
+    <type>html</type>
+</EmailTemplate>

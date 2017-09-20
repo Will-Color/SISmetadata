@@ -1,0 +1,34 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Good News!<o:p></o:p></p>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">We have received an application for {!Student_Programme__c.Programme__c} from&nbsp;{!Student_Programme__c.Student__c}.<o:p></o:p></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Key application details:</p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Started: &nbsp; &nbsp; &nbsp; {!Student_Programme__c.CreatedDate}</p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Completed: &nbsp;{!Student_Programme__c.LastModifiedDate}</p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p><p class="MsoNormal" style="margin-bottom: 0.0001pt;"><font face="arial">National of English Speaking Nation: &nbsp; {!Student_Programme__c.National_of_Majority_English_Speaking__c}</font></p><p style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; background-color: rgb(255, 255, 255);">
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;"><br></p><p class="MsoNormal" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0.0001pt;">Yours
+sincerely<o:p></o:p></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">The
+Admissions Team<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">The
+Liverpool School of Tropical Medicine<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Pembroke
+Place<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Liverpool<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">L3 5QA<o:p></o:p></p>]]></td>
+</tr>
+</table>

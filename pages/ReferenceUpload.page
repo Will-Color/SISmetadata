@@ -1,0 +1,27 @@
+<apex:page controller="ReferenceUploadController" showHeader="false" sidebar="false">
+<apex:define name="body">
+<!-- <apex:image url="/servlet/servlet.FileDownload?file=01511000000DiiQ"/> -->
+<apex:image url="{!$Resource.LSTMLogo}"/>
+<apex:form >
+<apex:pageBlock title="Upload Reference">
+<apex:outputPanel rendered="{!!showError}">
+<apex:outputText value="Thank you for agreeing to provide a reference."/>
+<br/><br/>
+<apex:outputText value="Please upload your file using the field below, and then click 'Upload'"/>
+<br/><br/>
+<apex:inputFile value="{!inputFile}" fileName="{!inFileName}"/>
+<br/><br/><br/><br/>
+<apex:commandButton value="Upload" action="{!uploadAttachment}"/>
+</apex:outputPanel>
+<apex:outputPanel rendered="{!showError}">
+
+We are unable to find the required documents for you to upload your reference.
+
+Please contact the Liverpool School of Tropical Medicine.
+
+</apex:outputPanel>
+</apex:pageBlock>
+</apex:form>
+
+</apex:define>
+</apex:page>

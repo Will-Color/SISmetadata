@@ -1,0 +1,32 @@
+<apex:page controller="PreRegistrationTabController" >
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/> 
+<script type="text/javascript">
+    var j$ = jQuery.noConflict();
+        j$(document).ready(function(){
+            j$('.headerSearchContainer').hide();         
+    });
+    </script>  
+  <apex:define name="body">
+  
+  <apex:form >
+  <apex:outputPanel rendered="{!!showList}">
+  You do not have any applications that have been accepted.  Once you have an accepted application<br/>
+  you will be able to use the online check-in process here.
+  </apex:outputPanel>
+  
+  <apex:outputPanel rendered="{!showList}">
+      These are the applications that you have accepted, and can now pre-register for.  Please click the link to go to the Pre-Registration process.
+      <br/><br/>
+      <apex:repeat value="{!progList}" var="prog">
+          <apex:outputLink value="/PreRegistration?Id={!prog.Id}">Pre-Register for {!prog.Programme__r.Name}</apex:outputLink><br/><br/>
+      </apex:repeat>
+  
+  </apex:outputPanel>
+  
+  </apex:form>
+  
+  </apex:define>
+  
+</apex:page>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>EditAllContents</accessLevel>
+        <sharedTo>susan.reilly@lstmed.ac.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>LSTM Website Reports</name>
+</ReportFolder>

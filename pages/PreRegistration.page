@@ -1,0 +1,539 @@
+<apex:page action="{!init}" controller="PreRegistrationContExt" tabStyle="Applications__tab" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"/>
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+   
+    </style>
+
+
+<!-- Script for Ruler analytics app -->
+
+    <script type="text/javascript">
+        var __raconfig = __raconfig || {};
+        __raconfig.uid = '582f0e86520ec';
+        __raconfig.action = 'track';
+        (function () {
+            var ra = document.createElement('script');
+            ra.type = 'text/javascript';
+            ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ra, s);
+        }());
+    </script>
+    
+<!-- Ruler Analytics Script end -->
+
+
+    <script>
+      var j$ = jQuery.noConflict();
+      j$(document).ready(function() {
+       j$('.headerSearchContainer').hide(); 
+      });
+    </script>
+    
+    <apex:stylesheet value="{!URLFOR($Resource.CropImageUploader, 'css/jquery.Jcrop.min.css')}"/>
+    <style>
+        .centered { text-align: center; }
+        .middled { vertical-align: middle !important; }
+        textarea.wideField { min-width: 95%; }
+        .reqField { background-color: #c00; }
+    </style>
+    
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.CropImageUploader, 'js/jquery.Jcrop.min.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.CropImageUploaderJs)}" />
+    <!-- apex:includeScript value="{!URLFOR($Resource.CropImageUploader, 'js/cropImageUploader.js')}" /-->
+    <style>
+     .submitBtn{
+        height: 30px;
+        width: 52px;
+      
+      
+        
+        font-size: 14px !important;
+    }
+     .submitBtn:hover{
+     }
+     
+    </style>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        function makeRequired(obj) {
+            obj.wrap("<div class='requiredInput'></div>");
+            obj.parent().prepend("<div class='requiredBlock'></div>");
+        }
+        function addErrorMessage(obj) {
+            obj.parent().append("<div class=\"errorMsg\"><strong>Error:</strong> You must enter a value</div>");
+        }
+    </script>
+
+    <apex:variable value="{!sp.Student__c}" var="studId"/>
+    <apex:variable value="{!sp.Programme__c}" var="progId"/>
+    <apex:variable value="{!sp.Programme__r.Name}" var="progName"/>
+    <apex:variable value="{!sp.Stage__c}" var="progStage"/>
+
+    <apex:sectionHeader title="Student registration" subtitle="{!progName}"/>
+
+    <apex:form enctype="multipart/form-data" id="wizardForm">
+
+        <apex:outputPanel id="wholePage">
+
+            <apex:outputPanel id="wizardStep" rendered="{!NOT(validationStep)}">
+
+                <apex:pageBlock title="{!step.Title}" id="mainBlock">
+
+                    <apex:pageBlockButtons location="both" style="text-align: right;" id="pageButtons">
+                        <apex:commandButton value="Prev" action="{!gotoPreviousStep}" rendered="{!step.hasPreviousStep&&NOT(step.Name='personal name')}"/>
+                        <apex:commandButton value="Close" action="{!saveDraftApplication}" rendered="{!NOT(step.Name='welcome')}"/>
+                        <apex:commandButton value="Next" action="{!gotoNextStep}" rendered="{!step.hasNextStep&&NOT(step.Name='welcome')}"/>
+                        <!-- <apex:commandButton value="{!IF(requiredMode,'SUBMIT REGISTRATION','REVIEW')}" action="{!validate}" rendered="{!OR(step.Name='terms and conditions',requiredMode)}" id="submitBtn"/> -->
+                        <apex:commandButton value="REVIEW" action="{!validate}" rendered="{!OR(step.Name='terms and conditions',requiredMode)&&(showReviewButton)}" id="submitBtn"/>
+                    </apex:pageBlockButtons>
+
+                    <!-- welcome step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='welcome'}">
+                        <apex:outputPanel >
+                            <apex:outputPanel id="uploadImageStyleDetecter"></apex:outputPanel>
+                            <apex:actionFunction name="defineUploadImageStyle" reRender="uploadImageStyleDetecter">
+                                <apex:param name="firstParam" assignTo="{!oldUploadImageStyle}" value=""/>
+                            </apex:actionFunction>
+                            <script type="text/javascript">
+                                j$(function() {
+                                    var newStyle = (window.File && window.FileReader && window.FileList && window.Blob) ? true : false;
+                                    defineUploadImageStyle(!newStyle);
+                                });                                
+                            </script>
+                        </apex:outputPanel>
+                        <apex:outputText >
+                            <p>Academic and financial registration are necessary before you commence your studies.</p>
+                            <p>Please ensure that you complete all relevant sections of the online application form in full. Fields marked&nbsp;<span class="reqField">&nbsp;</span> are mandatory and will need to be need to be completed before you can save and continue to the next section or submit your application.</p>
+                            <p>You may save, exit and return to complete your online registration at any time prior to submission. Once your online registration has been submitted, you will be able to view your registration information, but you will not be able to edit the information you have provided.</p><br/>
+                        </apex:outputText>
+                        <apex:pageBlockTable value="{!studentProgrammes}" var="Results">
+                            <apex:column value="{!Results.programme.Code__c}"/>
+                            <apex:column headerValue="Instance Name">
+                                <apex:outputText >{!Results.programme.Name}</apex:outputText>
+                                <!-- <br/>second line (5 Credits)
+                                <br/>third line (10 Credits) -->
+                            </apex:column>
+                            <apex:column headerValue="Course Dates" value="{!Results.combinedDates}"/>
+                            <apex:column headerValue="Fee">
+                                <apex:outputPanel >
+                                    &pound;<apex:outputText value="{0,number,###,###,##0.00}"><apex:param value="{!Results.fee}"/></apex:outputText>
+                                </apex:outputPanel>
+                            </apex:column>
+                            <apex:column width="50px" styleClass="centered">
+                                <apex:commandButton value="Register Online" action="{!gotoNextStep}"></apex:commandButton>
+                            </apex:column>
+                        </apex:pageBlockTable>
+                    </apex:outputPanel>
+                    <!-- welcome step END -->
+
+                    <!-- personal name step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='personal name'}">
+                    <apex:outputText >
+                            <p>Please review the personal information you entered on your application form and click the Next button to continue.</p>
+                            <p>Please note: if any of these details are incorrect or need changing, please email MyLSTM@lstmed.ac.uk.</p><br/>
+                        </apex:outputText>             
+                    
+                    
+                    
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Personal details">
+                            <apex:outputField value="{!student.Salutation}" label="Title"/>
+                            <apex:outputField value="{!student.LastName}" label="Surname/Family Name"/>
+                            <apex:outputField value="{!student.FirstName}" label="First Name/Given Name"/>
+                            <apex:outputField value="{!student.Middle_Name_Other_Names__c}" label="Middle Name/Other Names"/>
+                            <apex:outputField value="{!student.Known_As__c}" label="Known As"/>
+                            <apex:outputField value="{!student.Previous_Surname__c}" label="Previous Surname (if applicable)"/>
+                            <apex:outputField value="{!student.Male_Female__c}" label="Male/Female"/>
+                            <apex:outputField value="{!student.Birthdate}" label="Date of Birth"/>
+                            <apex:outputField value="{!student.Country_of_Birth__c}" label="Country of Birth"/>
+                            <!-- <apex:outputField value="{!student.Nationality__c}" label="Nationality"/> -->
+                            <!-- <apex:outputField value="{!student.HESA_Nationality__c}" label="Nationality"/> -->
+                            <apex:outputText value="{!student.HESA_Nationality__r.Name}" label="Nationality"/>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Passport">
+                        <!-- Passport information is against the Student Programme not the Student
+                            <apex:outputField value="{!student.Passport_Number__c}" label="Passport Number"/>
+                            <apex:outputField value="{!student.Country_of_Issue__c}" label="Country of Issue"/>
+                            <apex:outputField value="{!student.Expiry_Date__c}" label="Expiry Date"/>
+                        -->
+                            <apex:outputField value="{!sp.Passport_Number__c}" label="Passport Number"/>
+                            <apex:outputField value="{!sp.Country_of_Issue__c}" styleClass="countryPicklist" label="Country of Issue"/>
+                            <apex:outputField value="{!sp.Expiry_Date__c}" label="Expiry Date"/>
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- personal name step END -->
+
+                    <!-- personal address step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='personal address'}">
+                        <apex:outputText >
+                            <p>Most of our correspondence with you will be via email. However occasionally, we may need to send correspondence to you via post. Your permanent home address is the address where you usually live. If you prefer correspondence to be sent to a different address, then please also complete the address for correspondence section. If your addresses change, please contact us immediately so that we can update our records. Note: if you are being sponsored, we still require a record of your permanent address.</p>
+                            <p>Please review the address information you entered on your application form and click the Next button to continue.</p><br/>
+                        </apex:outputText>
+
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Permanent Address" rendered="{!!readonlyMode}">
+                            <apex:inputField value="{!student.MailingStreet}" styleClass="wideField" label="Street" required="{!requiredMode}"/>
+                            <apex:inputField value="{!student.MailingCity}" label="City" required="{!requiredMode}"/>
+                            <apex:inputField value="{!student.MailingState}" label="State/Province" required="{!requiredMode}"/>
+                            <apex:inputField value="{!student.MailingPostalCode}" label="Postal code" required="{!requiredMode}"/>
+                            <apex:selectList value="{!student.MailingCountry}" id="MailingCountry" label="Country" multiselect="false" size="1">
+                                <apex:selectOptions value="{!countriesOptions}"/>
+                            </apex:selectList>
+                            <apex:inputField value="{!student.Phone}" label="Telephone Number"/>
+                            <apex:inputField value="{!student.MobilePhone}" label="Mobile Number "/>
+                            <!-- <apex:inputField value="{!student.Email}" label="Email Address"/> -->
+                            <apex:outputPanel rendered="{!requiredMode}"><script>makeRequired(j$("select[id$=MailingCountry]"));</script></apex:outputPanel>
+                            <apex:outputPanel rendered="false"><script>addErrorMessage(j$("select[id$=MailingCountry]"));</script></apex:outputPanel>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Permanent Address" rendered="{!readonlyMode}">
+                            <apex:outputField value="{!student.MailingStreet}" label="Street"/>
+                            <apex:outputField value="{!student.MailingCity}" label="City"/>
+                            <apex:outputField value="{!student.MailingState}" label="State/Province"/>
+                            <apex:outputField value="{!student.MailingPostalCode}" label="Postal code"/>
+                            <apex:outputField value="{!student.MailingCountry}" label="Country" />
+                            <apex:outputField value="{!student.Phone}" label="Telephone Number"/>
+                            <apex:outputField value="{!student.MobilePhone}" label="Mobile Number "/>
+                            <!-- <apex:outputField value="{!student.Email}" label="Email Address"/> -->
+                        </apex:pageBlockSection>
+
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Correspondence Address (if different)" rendered="{!!readonlyMode}">
+                            <apex:inputField value="{!student.OtherStreet}" styleClass="wideField" label="Street"/>
+                            <apex:inputField value="{!student.OtherCity}" label="City"/>
+                            <apex:inputField value="{!student.OtherState}" label="State/Province"/>
+                            <apex:inputField value="{!student.OtherPostalCode}" label="Postal code"/>
+                            <apex:selectList value="{!student.OtherCountry}" label="Country" multiselect="false" size="1">
+                                <apex:selectOptions value="{!countriesOptions}"/>
+                            </apex:selectList>
+                            <apex:inputField value="{!student.OtherPhone}" label="Telephone Number"/>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Correspondence Address (if different)" rendered="{!readonlyMode}">
+                            <apex:outputField value="{!student.OtherStreet}" styleClass="wideField" label="Street"/>
+                            <apex:outputField value="{!student.OtherCity}" label="City"/>
+                            <apex:outputField value="{!student.OtherState}" label="State/Province"/>
+                            <apex:outputField value="{!student.OtherPostalCode}" label="Postal code"/>
+                            <apex:outputField value="{!student.OtherCountry}" label="Country"/>
+                            <apex:outputField value="{!student.OtherPhone}" label="Telephone Number"/>
+                        </apex:pageBlockSection>
+                        
+                    </apex:outputPanel>
+                    <!-- personal address step END -->
+
+                    <!-- term time address step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='term time address'}">
+                        <apex:outputText >
+                            <p>Please provide a Term Time Address (if known) and the details of an Emergency Contact, then click the Next button to continue.</p><br/>
+                        </apex:outputText>                      
+                    
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Term Time Address" rendered="{!!readonlyMode}">
+                            <apex:outputText >
+                                <p>Your term time address is the address at which you will be living during your period of study.</p><br/>
+                            </apex:outputText>
+                            <apex:inputField value="{!sp.TTA_Street__c}" styleClass="wideField" label="Street" />
+                            <apex:inputField value="{!sp.TTA_City__c}" label="City" />
+                            
+                            <apex:inputField value="{!sp.TTA_Postcode__c}" label="Postal code" />
+                            <!--<apex:inputField value="{!student.TTA_MailingCountry__c}" label="Country" required="{!requiredMode}"/>-->
+                            <apex:selectList value="{!sp.TTA_Country__c}" id="studentTTAMailingCountry" label="Country" multiselect="false" size="1">
+                                <apex:selectOptions value="{!countriesOptions}"/>
+                            </apex:selectList>
+                            <apex:inputField value="{!sp.TTA_Phone__c}" label="Telephone Number"/>
+                            <apex:inputField value="{!sp.TTA_Mobile__c}" label="Mobile Number "/>
+                            <!--<apex:outputPanel rendered="{!requiredMode}"><script>makeRequired(j$("select[id$=studentTTAMailingCountry]"));</script></apex:outputPanel>-->
+                            <apex:outputPanel rendered="false"><script>addErrorMessage(j$("select[id$=studentTTAMailingCountry]"));</script></apex:outputPanel>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Term Time Address" rendered="{!readonlyMode}">
+                            <apex:outputText >
+                                <p>Your term time address is the address at which you will be living during your period of study.</p><br/>
+                            </apex:outputText>
+                            <apex:outputField value="{!sp.TTA_Street__c}" label="Street"/>
+                            <apex:outputField value="{!sp.TTA_City__c}" label="City"/>
+
+                            <apex:outputField value="{!sp.TTA_Postcode__c}" label="Postal code"/>
+                            <apex:outputField value="{!sp.TTA_Country__c}" label="Country"/>
+                            <apex:outputField value="{!sp.TTA_Phone__c}" label="Telephone Number"/>
+                            <apex:outputField value="{!sp.TTA_Mobile__c}" label="Mobile Number "/>
+                        </apex:pageBlockSection>
+                        
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Emergency Contact Details" rendered="{!!readonlyMode}">
+                            <apex:outputText >
+                                <p>Who would you like us to contact in the event of an emergency?</p><br/>
+                            </apex:outputText>
+                            <apex:inputField value="{!sp.ECD_Name__c}" label="Name" required="{!requiredMode}"/>
+                            <apex:inputField value="{!sp.ECD_Relationship__c}" label="Relationship" required="{!requiredMode}"/>
+                            <apex:inputField value="{!sp.ECD_Phone__c}" label="Telephone Number" required="{!requiredMode}"/>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Emergency Contact Details" rendered="{!readonlyMode}">
+                            <apex:outputText >
+                                <p>The emergency contact is the person that you wish us to contact in the unlikely event of you being involved in an accident.</p><br/>
+                            </apex:outputText>
+                            <apex:outputField value="{!sp.ECD_Name__c}" label="Name"/>
+                            <apex:outputField value="{!sp.ECD_Relationship__c}" label="Relationship"/>
+                            <apex:outputField value="{!sp.ECD_Phone__c}" label="Telephone Number"/>
+                        </apex:pageBlockSection>
+                        
+                    </apex:outputPanel>
+                    <!-- term time address step END -->
+
+                    <!-- academic qualifications step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='academic qualifications'}">
+                        <apex:outputText >
+                            <p>Please review the Academic and Professional Qualifications you entered on your application form, then click the Next button to continue.</p><br/>
+                        </apex:outputText>                     
+                    
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Submitted qualifications">
+                            <apex:outputPanel >
+                                <apex:outputText >
+                                    <p>Below is a list of the academic and professional qualifications submitted at application. Please update any expected qualifications with the actual Class/Grade achieved.</p><br/>
+                                </apex:outputText>
+                                <apex:pageBlockTable value="{!qeList}" var="Results">
+                                    <apex:column value="{!Results.Start_Date__c}"/>
+                                    <apex:column value="{!Results.End_Date__c}"/>
+                                    <apex:column value="{!Results.Qualification__c}"/>
+                                    <apex:column value="{!Results.Subject__c}"/>
+                                    <apex:column headerValue="Institution" value="{!Results.Name_of_College_University__c}"/>
+                                    <!-- <apex:column headerValue="Class/Grade" rendered="{!!readonlyMode}">
+                                        <apex:inputField value="{!Results.Class_Grade__c}"/>
+                                    </apex:column> -->
+                                    
+                                    <!-- <apex:column headerValue="Class/Grade" value="{!Results.Class_Grade__c}" rendered="{!readonlyMode}"/> -->
+                                    <apex:column headerValue="Class/Grade" value="{!Results.Class_Grade__c}"/>
+                                    <apex:column value="{!Results.Date_of_Award__c}"/>
+                                </apex:pageBlockTable>
+                            </apex:outputPanel>
+                        </apex:pageBlockSection>
+                        <apex:repeat value="{!newQeList}" var="qe">
+                            <apex:pageBlockSection columns="1" collapsible="false" title="{!qeLabels[qe.RecordTypeId]}">
+                                <apex:inputField value="{!qe.Name_of_College_University__c}" label="Name of College/University"/>
+                                <apex:inputField value="{!qe.Country__c}" label="Country"/>
+                                <apex:inputField value="{!qe.Start_Date__c}" label="Start Date"/>
+                                <apex:inputField value="{!qe.End_Date__c}" label="End Date"/>
+                                <apex:inputField value="{!qe.Qualification__c}" label="Qualification"/>
+                                <apex:inputField value="{!qe.Subject__c}" label="Subject"/>
+                                <apex:inputField value="{!qe.Class_Grade__c}" label="Class/Grade"/>
+                                <apex:inputField value="{!qe.Date_of_Award__c}" label="Date of Award"/>
+                                <apex:pageBlockSectionItem >
+                                    <apex:outputLabel >Click here to attach a certificate or transcript for this qualification</apex:outputLabel>
+                                    <c:MultiAttachment multiple="false" parentId="{!qe.Id}"/>
+                                </apex:pageBlockSectionItem>
+                            </apex:pageBlockSection>
+                        </apex:repeat>
+                        <br/><hr style="border:0; border-top:1px solid rgb(219, 219, 219);border-bottom:1px solid rgb(255, 255, 255);"/>
+                        <apex:outputPanel rendered="{!readonlyUpload}">
+                            <apex:outputLabel >Click here to add a new qualifications</apex:outputLabel>&nbsp;
+                            <apex:commandButton action="{!addAcademicQE}" value="Add Academic Qualification"/>&nbsp;
+                            <apex:commandButton action="{!addProfessionalQE}" value="Add Professional Qualification"/>
+                        </apex:outputPanel>
+                    </apex:outputPanel>
+                    <!-- academic qualifications step END -->
+
+                    <!-- fees and funding step BEGIN -->
+                    <!-- 2015-03-13 : SM : Removing FEES & FUNDING Step -->
+                    <!-- <apex:outputPanel rendered="{!step.Name='fees and funding'}">
+                        <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                            <apex:outputLabel >
+                                Please indicate how you intend to fund your studies.<br/><br/>
+                            </apex:outputLabel>
+                            <apex:inputField value="{!Student_Programme__c.Fees_and_Funding__c}" onchange="updateSponsorship(); return false;" label="How do you intend to fund your tuition fees and living costs whilst studying at LSTM?" rendered="{!!readonlyMode}"/>
+                            <apex:outputField value="{!Student_Programme__c.Fees_and_Funding__c}" label="How do you intend to fund your tuition fees and living costs whilst studying at LSTM?" rendered="{!readonlyMode}"/>
+                            <apex:inputField value="{!Student_Programme__c.If_Sponsored_applied_for_sponsorship__c}" onchange="updateSponsorship(); return false;" rendered="{!AND(Student_Programme__c.Fees_and_Funding__c='Sponsored',!readonlyMode)}" label="If you are sponsored, have you applied for a scholarship/sponsorship?"/>
+                            <apex:outputField value="{!Student_Programme__c.If_Sponsored_applied_for_sponsorship__c}" rendered="{!AND(Student_Programme__c.Fees_and_Funding__c='Sponsored',readonlyMode)}" label="If you are sponsored, have you applied for a scholarship/sponsorship?"/>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection rendered="{!AND(Student_Programme__c.Fees_and_Funding__c='Sponsored',Student_Programme__c.If_Sponsored_applied_for_sponsorship__c='Yes')}" columns="1" collapsible="false" showHeader="false">
+                            <apex:outputText >
+                                <p>If you have applied for a scholarship/sponsorship, please provide the following information:</p><br/>
+                            </apex:outputText>
+                            <apex:inputField value="{!Student_Programme__c.Name_of_Sponsor_Financial_Guarantor__c}" label="Name" rendered="{!!readonlyMode}"/>
+                            <apex:outputField value="{!Student_Programme__c.Name_of_Sponsor_Financial_Guarantor__c}" label="Name" rendered="{!readonlyMode}"/>
+                            <apex:inputField value="{!Student_Programme__c.Sponsor_Official_Position__c}" label="Position" rendered="{!!readonlyMode}"/>
+                            <apex:outputField value="{!Student_Programme__c.Sponsor_Official_Position__c}" label="Position" rendered="{!readonlyMode}"/>
+                            <apex:inputField value="{!Student_Programme__c.Sponsor_Address_for_Invoice__c}" styleClass="wideField" label="Address for Invoice" rendered="{!!readonlyMode}"/>
+                            <apex:outputField value="{!Student_Programme__c.Sponsor_Address_for_Invoice__c}" label="Address for Invoice" rendered="{!readonlyMode}"/>
+                            <apex:inputField value="{!Student_Programme__c.Sponsor_Email_Address__c}" label="Email Address" rendered="{!!readonlyMode}"/>
+                            <apex:outputField value="{!Student_Programme__c.Sponsor_Email_Address__c}" label="Email Address" rendered="{!readonlyMode}"/>
+                            <apex:pageBlockSectionItem rendered="{!!readonlyMode}">
+                                <apex:outputLabel >Click here to attach a proof of sponsorship:</apex:outputLabel>
+                                <c:MultiAttachment multiple="true" parentId="{!Student_Programme__c.Id}" description="proof of sponsorship"/>
+                            </apex:pageBlockSectionItem>
+                        </apex:pageBlockSection>
+                        <apex:actionFunction name="updateSponsorship"/>
+                    </apex:outputPanel> -->
+                    <!-- fees and funding step END -->
+
+                    <!-- upload photo step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='upload photo'}">
+                        <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                            <apex:outputText >
+                                <p>Please upload a <strong>passport quality</strong> picture of yourself, i.e. a close up of your head and shoulders, with your face clearly visible and a neutral background, then click the Next button to continue.</p>
+                                <p><strong>Please note:</strong> you will have the opportunity to crop and resize the photograph you upload.</p><br/>
+                            <apex:pageMessages /></apex:outputText>
+                            <apex:outputPanel rendered="{!NOT(ISBLANK(passportAttachmentId))}">
+                                <img src="data:image/png;base64,{!profilePicture}" alt="Passport Profile Picture" width="140"/>
+                            </apex:outputPanel>
+                            <!--apex:image value="{!URLFOR($Action.Attachment.Download, passportAttachmentId)}" width="140" rendered="{!NOT(ISBLANK(passportAttachmentId))}"/-->
+                            <apex:pageBlockSectionItem rendered="{!NOT(oldUploadImageStyle)}">
+                                <!-- 2015-03-20 : SM : There could be a sharing issue with this, so will try linking to Student Programme rather than Student -->
+                                
+                                <apex:outputPanel rendered="{!readonlyUpload}">
+                                <c:CropImageUploader parentId="{!sp.Id}" description="Passport photo 45:35" minX="350" minY="450" maxX="700" maxY="900" previewWidth="500" />
+                                </apex:outputPanel>
+                                <!-- <c:CropImageUploader parentId="{!student.Id}" description="Passport photo 45:35" minX="350" minY="450" maxX="700" maxY="900" previewWidth="500" /> -->
+                            </apex:pageBlockSectionItem>
+                            
+                            <apex:pageBlockSectionItem rendered="{!oldUploadImageStyle}">
+                                <apex:outputLabel >Click here to attach passport photo:</apex:outputLabel>
+                                <!--
+                                <c:MultiAttachment multiple="false" parentId="{!student.Id}" description="Passport photo 45:35"/>
+                                -->
+                            </apex:pageBlockSectionItem>
+                            
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- upload photo step END -->
+
+                    <!-- terms and conditions step BEGIN -->
+                    <apex:outputPanel rendered="{!step.Name='terms and conditions'}">
+                        <apex:outputPanel rendered="{!!readonlyMode}">
+                            <script>
+                                var btnTop, btnBottom, chTerms, chData;
+                                
+                                j$(document).ready(function() {
+                                    btnTop = document.getElementById('{!$Component.mainBlock.pageButtons.submitBtn}');
+                                    btnBottom = document.getElementById('{!$Component.mainBlock.pageButtons}:bottom:submitBtn');
+                                    chTerms = document.getElementById('{!$Component.termsBlock.checkboxTerms}');
+                                    chData = document.getElementById('{!$Component.dataBlock.checkboxData}');
+                                    if (!chTerms.checked || !chData.checked) {
+                                        btnTop.disabled = btnBottom.disabled = true;
+                                        btnTop.className = btnBottom.className = "btnDisabled";
+                                    }
+                                });
+
+                                function validate() {
+                                    if (chTerms.checked && chData.checked) {
+                                        btnTop.disabled = btnBottom.disabled = false;
+                                        btnTop.className = btnBottom.className = "btn";
+                                    } else {
+                                        btnTop.disabled = btnBottom.disabled = true;
+                                        btnTop.className = btnBottom.className = "btnDisabled";
+                                    }
+                                }
+                            </script>
+                        </apex:outputPanel>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Terms and Conditions" id="termsBlock">
+                            <apex:outputText value="{!textFromTermsAndConditions}" escape="false"/>
+                            <apex:outputPanel >
+                                <apex:outputLabel value="By submitting this online registration, I agree to the terms and conditions"/>
+                                <apex:inputCheckbox value="{!isTermsChecked}" styleClass="middled" onclick="validate();" id="checkboxTerms" rendered="{!!readonlyMode}"/>
+                                <apex:inputCheckbox value="{!isTermsChecked}" styleClass="middled" selected="true" disabled="true" rendered="{!readonlyMode}"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection columns="1" collapsible="false" title="Data Protection" id="dataBlock">
+                            <apex:outputText value="{!textFromDataProtection}" escape="false"/>
+                            <apex:outputPanel >
+                                <apex:outputLabel value="By submitting this registration agree to LSTM and its associates processing personal data contained in this form, or other data which LSTM may obtain from me or other sources. I agree to the processing of such data for any purpose connected with my studies or my health, welfare and safety, or for any other legitimate reason. I understand that my personal data will not be disclosed to third parties without my permission."/>
+                                <apex:inputCheckbox value="{!isDataProtectionChecked}" styleClass="middled" onclick="validate();" id="checkboxData" rendered="{!!readonlyMode}"/>
+                                <apex:inputCheckbox value="{!isDataProtectionChecked}" styleClass="middled" selected="true" disabled="true" rendered="{!readonlyMode}"/>
+                            </apex:outputPanel>
+                        </apex:pageBlockSection>
+                    </apex:outputPanel>
+                    <!-- terms and conditions step END -->
+
+                </apex:pageBlock>
+            </apex:outputPanel>
+
+            <!-- Validation BEGIN -->
+            <apex:pageBlock title="Registration details" rendered="{!validationStep}">
+
+                <apex:pageBlockButtons location="bottom" rendered="{!NOT(isValidationErrors)}" style="text-align: left;color: red; font-weight: bold;">              
+                <apex:image style="margin-bottom: -5px;" value="/img/msg_icons/error24.png"  />&nbsp;&nbsp;
+                PLEASE CLICK THE NEXT BUTTON TO CONFIRM YOUR PREREGISTRATION DETAILS&nbsp;&nbsp;
+                    <!-- <apex:commandButton action="{!gotoHomePage}" value="Done" rendered="{!step.hasPreviousStep}"/> -->
+                    <apex:commandButton action="{!gotoNewUserPage}" styleClass="submitBtn" value="Next" rendered="{!step.hasPreviousStep}"/>
+                </apex:pageBlockButtons>
+
+                <apex:outputPanel rendered="{!isValidationErrors}">
+                    <apex:outputText ><p>Some of the required fields are missing. Please, go to the steps with errors and fill values of required fields.</p><br/></apex:outputText>
+                </apex:outputPanel>
+
+                <apex:outputPanel rendered="{!NOT(isValidationErrors)}">
+                    <apex:outputText >
+                        <p>Please check you have supplied all the information we require before clicking the Done button.</p>
+                        <p>If you need to update any information, click on the links below to go to the relevant section.</p><br/>
+                    </apex:outputText>
+                </apex:outputPanel>
+
+                <apex:pageBlockSection columns="2" collapsible="false" title="Validation Results">
+
+                    <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel >
+                            <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['personal address'])}"/>
+                            <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['personal address']}"/>
+                        </apex:outputLabel>
+                        <apex:commandLink action="{!gotoStep}" value="Personal Details" reRender="wholePage" styleClass="middled">
+                            <apex:param assignTo="{!stepName}" value="personal address"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel >
+                            <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['term time address'])}"/>
+                            <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['term time address']}"/>
+                        </apex:outputLabel>
+                        <!-- <apex:commandLink action="{!gotoStep}" value="Term Time Address & Emergency Contact Details" reRender="wholePage"> -->
+                        <apex:commandLink action="{!gotoStep}" value="Emergency Contact Details" reRender="wholePage">
+                            <apex:param assignTo="{!stepName}" value="term time address"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+
+                    <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png"/></apex:outputLabel>
+                        <apex:commandLink action="{!gotoStep}" value="Academic and Professional Qualifications" reRender="wholePage">
+                            <apex:param assignTo="{!stepName}" value="academic qualifications"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+
+                    <!-- 2015-03-13 : SM : Removing FESS & FUNDING Section -->
+                    <!-- <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png"/></apex:outputLabel>
+                        <apex:commandLink action="{!gotoStep}" value="Fees and Funding" reRender="wholePage">
+                            <apex:param assignTo="{!stepName}" value="fees and funding"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem> -->
+
+                    <!-- 2015-04-02 : SM : Removing the Photo Upload review section -->
+                    <!-- <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel >
+                            <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['upload photo'])}"/>
+                            <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['upload photo']}"/>
+                        </apex:outputLabel>
+                        <apex:commandLink action="{!gotoStep}" value="Upload Photo" reRender="wholePage" styleClass="middled">
+                            <apex:param assignTo="{!stepName}" value="upload photo"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem> -->
+
+                    <apex:pageBlockSectionItem dataStyleClass="middled">
+                        <apex:outputLabel >
+                            <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['terms and conditions'])}"/>
+                            <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['terms and conditions']}"/>
+                        </apex:outputLabel>
+                        <apex:commandLink action="{!gotoStep}" value="Terms and Conditions" reRender="wholePage" styleClass="middled">
+                            <apex:param assignTo="{!stepName}" value="terms and conditions"/>
+                        </apex:commandLink>
+                    </apex:pageBlockSectionItem>
+
+                </apex:pageBlockSection>
+
+            </apex:pageBlock>
+            <!-- Validation END -->
+
+        </apex:outputPanel>
+
+    </apex:form>
+    
+</apex:page>

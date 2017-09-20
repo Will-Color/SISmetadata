@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>MRC-DTP Interview Invitation</name>
+    <style>freeForm</style>
+    <subject>LSTM – Lancaster Medical Research Council Doctoral Training Partnership</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+Thank you for your application to the LSTM - Lancaster Medical Research Council Doctoral Training Partnership scheme.
+
+We are pleased to invite you to attend a selection interview.
+
+Date: Monday 18th January 2016
+
+Time:
+
+The interview will take the following format:
+
+Short Presentation (5 minutes)
+You should prepare a 5 minute PowerPoint presentation (maximum 3 slides), explaining your motivation for applying to the MRC Doctoral Training Partnership scheme and outlining your reasons for choosing a specific project(s). Please bring a copy with you on a usb memory stick.
+
+Questions &amp; Discussion (25 minutes)
+There will be approximately 25 minutes for questions and discussion with the selection panel and you will be given the opportunity to ask questions yourself.
+
+Please note, we have contacted the referees you nominated in your application and the deadline for receiving references is 14th January 2014. We strongly recommend you liaise with your referees to make sure this deadline is met, as we are unable to process your application without references.
+
+LSTM will reimburse your travel costs for attendance at the interview in Liverpool. All travel should take advantage of the most economic fares available and receipts should be obtained for all journeys. Please complete the attached form and bring it with you. We will collect the form and receipts on the day of your interview.
+
+Upon arrival, please report to the LSTM main reception, in the glass building on Pembroke Place, Liverpool L3 5QA.
+
+If you are unable to attend the interview in Liverpool, please contact the MRC Doctoral Training Partnership Team (mrcdtp@lstmed.ac.uk) as soon as possible to discuss alternative options.
+
+Thank you for showing an interest in studying at LSTM and we look forward to meeting you.
+
+Yours sincerely,
+
+
+MRC DTP Team
+Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

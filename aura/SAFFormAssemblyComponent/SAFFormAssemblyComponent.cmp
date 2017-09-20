@@ -1,0 +1,6 @@
+<aura:component controller="SAFFormAssemblyController" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.getUserIdCall}"/>
+    <aura:attribute name="urlTag" type="string"/> 
+    <aura:attribute name="recordId" type="Id" />
+    <iframe src="{!v.urlTag}" width="100%" height="2963px" frameBorder="0"/>
+</aura:component>

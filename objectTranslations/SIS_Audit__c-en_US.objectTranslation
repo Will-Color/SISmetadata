@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Audit Body --></label>
+        <name>Audit_Body__c</name>
+        <picklistValues>
+            <masterLabel>ANOther</masterLabel>
+            <translation><!-- ANOther --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HESA</masterLabel>
+            <translation><!-- HESA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LSTM</masterLabel>
+            <translation><!-- LSTM --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Defines the SIS event that triggers the audit log --></help>
+        <label><!-- Audit Event --></label>
+        <name>Audit_Event__c</name>
+        <picklistValues>
+            <masterLabel>Active Module</masterLabel>
+            <translation><!-- Active Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Active Programme</masterLabel>
+            <translation><!-- Active Programme --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification</masterLabel>
+            <translation><!-- Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>REF Data</masterLabel>
+            <translation><!-- REF Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registration</masterLabel>
+            <translation><!-- Registration --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student Module</masterLabel>
+            <translation><!-- Student Module --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Audit Note --></label>
+        <name>Audit_Note__c</name>
+    </fields><fields>
+        <help><!-- Set by Workflow rule and field update, both called HESA QualsAwarded --></help>
+        <label><!-- Audit Output2 --></label>
+        <name>Audit_Output2__c</name>
+    </fields><fields>
+        <help><!-- In pseudo XML format --></help>
+        <label><!-- Audit Output --></label>
+        <name>Audit_Output__c</name>
+    </fields><fields>
+        <label><!-- Audit Period --></label>
+        <name>Audit_Period__c</name>
+    </fields><fields>
+        <help><!-- Stamped by WFR --></help>
+        <label><!-- Compiled Missing Fields --></label>
+        <name>Compiled_Missing_Fields__c</name>
+    </fields><fields>
+        <label><!-- Completion Percentage --></label>
+        <name>Completion_Percentage__c</name>
+    </fields><fields>
+        <help><!-- Exclude from Audit report, for example if in error --></help>
+        <label><!-- Exclude --></label>
+        <name>Exclude__c</name>
+    </fields><fields>
+        <label><!-- Goal --></label>
+        <name>Goal__c</name>
+    </fields><fields>
+        <help><!-- Only shows where Audit Event = Registration, then takes Instance code from the related Programme (via Student Programme) --></help>
+        <label><!-- Instance Code --></label>
+        <name>Instance_Code__c</name>
+    </fields><fields>
+        <help><!-- Taken from Student record --></help>
+        <label><!-- LSTM No --></label>
+        <name>LSTM_No__c</name>
+    </fields><fields>
+        <label><!-- Listview Flag --></label>
+        <name>Listview_Flag__c</name>
+    </fields><fields>
+        <label><!-- Missing Data --></label>
+        <name>Missing_Data__c</name>
+    </fields><fields>
+        <label><!-- Missing Field Count --></label>
+        <name>Missing_Field_Count__c</name>
+    </fields><fields>
+        <help><!-- Dictates order of report output, for testing --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields><fields>
+        <help><!-- ID of additional host record if not Student or Student Programme --></help>
+        <label><!-- Other ID --></label>
+        <name>Other_ID__c</name>
+    </fields><fields>
+        <label><!-- Other Record --></label>
+        <name>Other_Record__c</name>
+    </fields><fields>
+        <label><!-- Output Section --></label>
+        <name>Output_Section__c</name>
+    </fields><fields>
+        <help><!-- eg credit bearing Short Courses that need to be included in audit output --></help>
+        <label><!-- Special Inclusion --></label>
+        <name>Special_Inclusion__c</name>
+        <picklistValues>
+            <masterLabel>Credit Bearing Short Course</masterLabel>
+            <translation><!-- Credit Bearing Short Course --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Intercalating Students</masterLabel>
+            <translation><!-- Intercalating Students --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student Missing Fields --></label>
+        <name>Student_Missing_Fields__c</name>
+    </fields><fields>
+        <label><!-- Student Programme Missing Fiedls --></label>
+        <name>Student_Programme_Missing_Fiedls__c</name>
+    </fields><fields>
+        <label><!-- Student Programme --></label>
+        <name>Student_Programme__c</name>
+        <relationshipLabel><!-- SIS Audit --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+        <relationshipLabel><!-- SIS Audit --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Looks to related Student record for Test flag --></help>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <help><!-- Field to allow Grouping by useful category; all MSc Programmes grouped and all PGR grouped --></help>
+        <label><!-- Type/Code --></label>
+        <name>Type_Code__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>SIS Audit</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>SIS Audit</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>SIS Audit Layout</layout>
+        <sections>
+            <label><!-- Admin --></label>
+            <section>Admin</section>
+        </sections>
+        <sections>
+            <label><!-- Audit Log Detail --></label>
+            <section>Audit Log Detail</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><quickActions>
+        <label><!-- SiS Audit --></label>
+        <name>SiS_Audit</name>
+    </quickActions><webLinks>
+        <label><!-- Download_XML_Output --></label>
+        <name>Download_XML_Output</name>
+    </webLinks><webLinks>
+        <label><!-- Per_Record_XML_Output --></label>
+        <name>Per_Record_XML_Output</name>
+    </webLinks><webLinks>
+        <label><!-- Pseudo_Output --></label>
+        <name>Pseudo_Output</name>
+    </webLinks></CustomObjectTranslation>

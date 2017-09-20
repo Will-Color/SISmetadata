@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Command --></label>
+        <name>Command__c</name>
+    </fields><fields>
+        <label><!-- Error Count --></label>
+        <name>Error_Count__c</name>
+    </fields><fields>
+        <label><!-- Last Error Message --></label>
+        <name>Last_Error_Message__c</name>
+    </fields><fields>
+        <label><!-- Linked Record --></label>
+        <name>Linked_Record__c</name>
+    </fields><fields>
+        <label><!-- Obj Type --></label>
+        <name>Obj_Type__c</name>
+        <picklistValues>
+            <masterLabel>Contact</masterLabel>
+            <translation><!-- Contact --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Student_Programme__c</masterLabel>
+            <translation><!-- Student_Programme__c --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields><fields>
+        <label><!-- Params --></label>
+        <name>Params__c</name>
+    </fields><fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Done</masterLabel>
+            <translation><!-- Done --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error</masterLabel>
+            <translation><!-- Error --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- VLE Action --></label>
+        <name>VLE_Action__c</name>
+        <relationshipLabel><!-- VLE Sync Commands --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>VLE Sync Command</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>VLE Sync Commands</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>VLE Sync Command Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

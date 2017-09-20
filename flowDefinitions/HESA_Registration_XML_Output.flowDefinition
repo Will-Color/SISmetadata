@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>49</activeVersionNumber>
+    <description>Invoked by Process &apos;HESA Registration Audit Event&apos;, or both Stage change to Registration and use of Audit Trigger checkbox.
+
+Includes Loop to set Audit Trigger on all related Student Modules and Academic record type Qualification records to TRUE.</description>
+    <masterLabel>HESA Registration XML Output w Quals and Stud Mods</masterLabel>
+</FlowDefinition>

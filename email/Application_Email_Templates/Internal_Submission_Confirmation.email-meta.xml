@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Submission Confirmation (INTERNAL)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Internal Submission Confirmation</name>
+    <style>formalLetter</style>
+    <subject>INTERNAL Confirmation of Application Submission</subject>
+    <textOnly>Good News!
+We have received an application for {!Student_Programme__c.Programme__c} from {!Student_Programme__c.Student__c}.
+
+Key application details:
+
+Started:       {!Student_Programme__c.CreatedDate}
+Completed:  {!Student_Programme__c.LastModifiedDate}
+
+National of English Speaking Nation:   {!Student_Programme__c.National_of_Majority_English_Speaking__c}
+
+Yours sincerely
+The Admissions Team
+
+The Liverpool School of Tropical Medicine
+
+Pembroke Place
+
+Liverpool
+
+
+L3 5QA</textOnly>
+    <type>html</type>
+</EmailTemplate>

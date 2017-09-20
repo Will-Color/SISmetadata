@@ -1,0 +1,13 @@
+Hi {!Receiving_User.FirstName},
+
+Welcome to {!Community_Name}! To get started, go to https://mylstm.force.com/students/LSTMLogin
+
+Thanks,
+{!Organization.Name}
+
+
+This e-mail message is sent on behalf of the Liverpool School of Tropical Medicine, a charitable company limited by guarantee registered in England and Wales with company number 222655 and whose registered office is at Pembroke Place Liverpool L3 5QA ("LSTM")
+
+The contents of this e-mail are subject to LSTM’s email disclaimer found at:
+
+http://www.lstmed.ac.uk/disclaimer/email-disclaimer

@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Academic Year --></label>
+        <name>Academic_Year__c</name>
+        <picklistValues>
+            <masterLabel>2014/15</masterLabel>
+            <translation><!-- 2014/15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2015/16</masterLabel>
+            <translation><!-- 2015/16 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2016/17</masterLabel>
+            <translation><!-- 2016/17 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2017/18</masterLabel>
+            <translation><!-- 2017/18 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018/19</masterLabel>
+            <translation><!-- 2018/19 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019/20</masterLabel>
+            <translation><!-- 2019/20 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields><fields>
+        <help><!-- Programme(s) (including Year of Study) to which this module is available on a mandatory basis --></help>
+        <label><!-- As Mandatory (*) --></label>
+        <name>As_Mandatory__c</name>
+    </fields><fields>
+        <help><!-- Programme(s) (including Year of Study) to which this module is available on an optional basis --></help>
+        <label><!-- As Optional (*) --></label>
+        <name>As_Optional__c</name>
+    </fields><fields>
+        <help><!-- Programme(s) (including Year of Study) to which this module is available on an required basis --></help>
+        <label><!-- As Required (*) --></label>
+        <name>As_Required__c</name>
+    </fields><fields>
+        <label><!-- Assessment Hours --></label>
+        <name>Assessment_Hours__c</name>
+    </fields><fields>
+        <label><!-- Assessment Notes --></label>
+        <name>Assessment_Notes__c</name>
+    </fields><fields>
+        <label><!-- Board of Studies --></label>
+        <name>Board_of_Studies__c</name>
+        <picklistValues>
+            <masterLabel>Clinical Masters Board of Studies</masterLabel>
+            <translation><!-- Clinical Masters Board of Studies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Humanitarian</masterLabel>
+            <translation><!-- Humanitarian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>International Public Health</masterLabel>
+            <translation><!-- International Public Health --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tropical Disease Biology Masters Board of Studies</masterLabel>
+            <translation><!-- Tropical Disease Biology Masters Board of Studies --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Books For Purchase --></label>
+        <name>Books_For_Purchase__c</name>
+    </fields><fields>
+        <help><!-- Shows whether the Credit Value x 10 equals total hours for all teaching methods defined for this Module --></help>
+        <label><!-- Check --></label>
+        <name>Check__c</name>
+    </fields><fields>
+        <label><!-- Co-requisite Modules --></label>
+        <name>Co_requisite_Modules__c</name>
+    </fields><fields>
+        <label><!-- Count of Aims --></label>
+        <name>Count_of_Aims__c</name>
+    </fields><fields>
+        <label><!-- Count of Assessment Specs --></label>
+        <name>Count_of_Assessment_Specs__c</name>
+    </fields><fields>
+        <label><!-- Count of Outcomes --></label>
+        <name>Count_of_Outcomes__c</name>
+    </fields><fields>
+        <label><!-- Count of Skills --></label>
+        <name>Count_of_Skills__c</name>
+    </fields><fields>
+        <help><!-- Formula shows Course Template VLE ID from Master Version --></help>
+        <label><!-- Course Template VLE ID Reference --></label>
+        <name>Course_Template_VLE_ID_Reference__c</name>
+    </fields><fields>
+        <label><!-- Course Template VLE ID --></label>
+        <name>Course_Template_VLE_ID__c</name>
+    </fields><fields>
+        <label><!-- Credit Level --></label>
+        <name>Credit_Level__c</name>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>7</masterLabel>
+            <translation><!-- 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Credit Value --></label>
+        <name>Credit_Value__c</name>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- Modules for which this is a pre-requisite --></help>
+        <label><!-- Dependent Modules (*) --></label>
+        <name>Dependent_Modules__c</name>
+    </fields><fields>
+        <label><!-- Deputy Module Convenor --></label>
+        <name>Deputy_Module_Convenor__c</name>
+        <relationshipLabel><!-- Module Versions (Deputy Module Convenor) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields><fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields><fields>
+        <label><!-- Essential Reading --></label>
+        <name>Essential_Reading__c</name>
+    </fields><fields>
+        <label><!-- External Examiners --></label>
+        <name>External_Examiners__c</name>
+    </fields><fields>
+        <label><!-- Fieldwork Hours --></label>
+        <name>Fieldwork_Hours__c</name>
+    </fields><fields>
+        <label><!-- Fieldwork Notes --></label>
+        <name>Fieldwork_Notes__c</name>
+    </fields><fields>
+        <label><!-- Further Reading --></label>
+        <name>Further_Reading__c</name>
+    </fields><fields>
+        <help><!-- Defines whether child instance records are carried in XML output for HESA audit - should include all MSc programmes, DTM&amp;H and DTN --></help>
+        <label><!-- HESA Audit --></label>
+        <name>HESA_Audit__c</name>
+    </fields><fields>
+        <help><!-- Defaults to 101, as per SA/KF direction --></help>
+        <label><!-- HESA Cost Centre --></label>
+        <name>HESA_Cost_Centre__c</name>
+    </fields><fields>
+        <label><!-- Independent Study Hours --></label>
+        <name>Independent_Study_Hours__c</name>
+    </fields><fields>
+        <label><!-- Independent Study Notes --></label>
+        <name>Independent_Study_Notes__c</name>
+    </fields><fields>
+        <help><!-- Used for HESA XML output report --></help>
+        <label><!-- JAC Code Label --></label>
+        <name>JAC_Code_Label__c</name>
+        <relationshipLabel><!-- Module Versions --></relationshipLabel>
+    </fields><fields>
+        <help><!-- HESA Code related to subject choosen in JAC Code Label field --></help>
+        <label><!-- JAC Code --></label>
+        <name>JAC_Code__c</name>
+    </fields><fields>
+        <label><!-- Laboratory Hours --></label>
+        <name>Laboratory_Hours__c</name>
+    </fields><fields>
+        <label><!-- Laboratory Notes --></label>
+        <name>Laboratory_Notes__c</name>
+    </fields><fields>
+        <label><!-- Lecture Hours --></label>
+        <name>Lecture_Hours__c</name>
+    </fields><fields>
+        <label><!-- Lecture Notes --></label>
+        <name>Lecture_Notes__c</name>
+    </fields><fields>
+        <label><!-- Master Link --></label>
+        <lookupFilter>
+            <errorMessage><!-- Record must be a master --></errorMessage>
+        </lookupFilter>
+        <name>Master_Link__c</name>
+        <relationshipLabel><!-- Child Module Versions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Master Name --></label>
+        <name>Master_Name__c</name>
+    </fields><fields>
+        <label><!-- Module Convenor --></label>
+        <name>Module_Convenor__c</name>
+        <relationshipLabel><!-- Module Versions (Module Convenor) --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Module Description --></label>
+        <name>Module_Description__c</name>
+    </fields><fields>
+        <label><!-- Module Overview --></label>
+        <name>Module_Overview__c</name>
+    </fields><fields>
+        <label><!-- Module Reference --></label>
+        <name>Module_Reference__c</name>
+    </fields><fields>
+        <label><!-- Module Type --></label>
+        <name>Module_Type__c</name>
+        <picklistValues>
+            <masterLabel>Closed Course</masterLabel>
+            <translation><!-- Closed Course --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MSc Module</masterLabel>
+            <translation><!-- MSc Module --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Professional Diploma</masterLabel>
+            <translation><!-- Professional Diploma --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Short Course</masterLabel>
+            <translation><!-- Short Course --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>[PGR Module]</masterLabel>
+            <translation><!-- [PGR Module] --></translation>
+        </picklistValues>
+    </fields><fields>
+        <help><!-- For external integration such as to VLE --></help>
+        <label><!-- Module Version Ref --></label>
+        <name>Module_Version_Ref__c</name>
+    </fields><fields>
+        <label><!-- Online Hours --></label>
+        <name>Online_Hours__c</name>
+    </fields><fields>
+        <label><!-- Online Notes --></label>
+        <name>Online_Notes__c</name>
+    </fields><fields>
+        <label><!-- Other Hours --></label>
+        <name>Other_Hours__c</name>
+    </fields><fields>
+        <label><!-- Other Notes --></label>
+        <name>Other_Notes__c</name>
+    </fields><fields>
+        <help><!-- Other pre-requisites before taking this module ie. general educational/academic requirements. Please indicate if they are additional to any pre-requisite modules listed above, or will be accepted instead of taking the pre-requisite module. --></help>
+        <label><!-- Other Pre-requisites --></label>
+        <name>Other_Pre_requisites__c</name>
+    </fields><fields>
+        <label><!-- Other Staff --></label>
+        <name>Other_Staff__c</name>
+    </fields><fields>
+        <label><!-- Placement Hours --></label>
+        <name>Placement_Hours__c</name>
+    </fields><fields>
+        <label><!-- Placement Notes --></label>
+        <name>Placement_Notes__c</name>
+    </fields><fields>
+        <help><!-- Pre-requisite modules before taking this module --></help>
+        <label><!-- Pre-requisite Modules --></label>
+        <name>Pre_requisite_Modules__c</name>
+    </fields><fields>
+        <label><!-- Semester --></label>
+        <name>Semester__c</name>
+    </fields><fields>
+        <label><!-- Seminar Hours --></label>
+        <name>Seminar_Hours__c</name>
+    </fields><fields>
+        <label><!-- Seminar Notes --></label>
+        <name>Seminar_Notes__c</name>
+    </fields><fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields><fields>
+        <label><!-- Syllabus --></label>
+        <name>Syllabus__c</name>
+    </fields><fields>
+        <help><!-- Sum of stated hours per teaching method --></help>
+        <label><!-- Total Hours --></label>
+        <name>Total_Hours__c</name>
+    </fields><fields>
+        <label><!-- Tutorial Hours --></label>
+        <name>Tutorial_Hours__c</name>
+    </fields><fields>
+        <label><!-- Tutorial Notes --></label>
+        <name>Tutorial_Notes__c</name>
+    </fields><fields>
+        <label><!-- Version Name --></label>
+        <name>Version_Name__c</name>
+    </fields><fields>
+        <label><!-- Version Suffix --></label>
+        <name>Version_Suffix__c</name>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Module Version</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Module Versions</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Master Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Pre-Approved Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden --></label>
+            <section>Hidden</section>
+        </sections>
+        <sections>
+            <label><!-- MODULE DESCRIPTION --></label>
+            <section>MODULE DESCRIPTION</section>
+        </sections>
+        <sections>
+            <label><!-- MODULE SUMMARY --></label>
+            <section>MODULE SUMMARY</section>
+        </sections>
+        <sections>
+            <label><!-- Master --></label>
+            <section>Master</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+        <sections>
+            <label><!-- Scheduled Learning and Teaching --></label>
+            <section>Scheduled Learning and Teaching</section>
+        </sections>
+        <sections>
+            <label><!-- Section --></label>
+            <section>Section</section>
+        </sections>
+        <sections>
+            <label><!-- Version Level --></label>
+            <section>Version Level</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Versions Layout</layout>
+        <sections>
+            <label><!-- Assessment Strategy - see related list --></label>
+            <section>Assessment Strategy - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Associated Modules and Programmes --></label>
+            <section>Associated Modules and Programmes</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Key Module Roles --></label>
+            <section>Key Module Roles</section>
+        </sections>
+        <sections>
+            <label><!-- Learning Outcomes  - see related list --></label>
+            <section>Learning Outcomes  - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Learning and Teaching Strategy --></label>
+            <section>Learning and Teaching Strategy</section>
+        </sections>
+        <sections>
+            <label><!-- PART A: Module Summary Information --></label>
+            <section>PART A: Module Summary Information</section>
+        </sections>
+        <sections>
+            <label><!-- PART B: Programme Aims &amp; Outcomes --></label>
+            <section>PART B: Programme Aims &amp; Outcomes</section>
+        </sections>
+        <sections>
+            <label><!-- Section --></label>
+            <section>Section</section>
+        </sections>
+        <sections>
+            <label><!-- Skills and Attributes - see related list --></label>
+            <section>Skills and Attributes - see related list</section>
+        </sections>
+        <sections>
+            <label><!-- Syllabus &amp; Reading List --></label>
+            <section>Syllabus &amp; Reading List</section>
+        </sections>
+        <sections>
+            <label><!-- Website Publication --></label>
+            <section>Website Publication</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Master Version --></label>
+        <name>Master_Version</name>
+    </recordTypes><recordTypes>
+        <label><!-- Pre-Approved --></label>
+        <name>Pre_Approved</name>
+    </recordTypes><recordTypes>
+        <label><!-- Versions --></label>
+        <name>Versions</name>
+    </recordTypes><webLinks>
+        <label><!-- Clone_Module_Version --></label>
+        <name>Clone_Module_Version</name>
+    </webLinks><webLinks>
+        <label><!-- Generate_PDF --></label>
+        <name>Generate_PDF</name>
+    </webLinks><webLinks>
+        <label><!-- Generate_Spec_Conga --></label>
+        <name>Generate_Spec_Conga</name>
+    </webLinks><webLinks>
+        <label><!-- Module_Catalogue_Page --></label>
+        <name>Module_Catalogue_Page</name>
+    </webLinks></CustomObjectTranslation>

@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Entry_Award__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Which entry awards are applicable to this Aim</inlineHelpText>
+        <label>Entry Awards</label>
+        <picklist>
+            <picklistValues>
+                <fullName>All Awards</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MSc &amp; PGDip Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MSc Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Learning_Outcome__c</fullName>
+        <externalId>false</externalId>
+        <label>Learning Outcome</label>
+        <length>500</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>6</visibleLines>
+    </fields><fields>
+        <fullName>Mode_of_Assessing__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Mode of Assessing Achievement of skill or other attribute</inlineHelpText>
+        <label>Mode of Assessing</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Modules_Included__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Modules in which this will be delivered</inlineHelpText>
+        <label>Modules Included</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Outcome_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Outcome Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>A (Knowledge &amp; Understanding)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>B (Cognitive Skills)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>C (Practical/Professional Skills)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Programme_Version__c</fullName>
+        <externalId>false</externalId>
+        <label>Programme Version</label>
+        <referenceTo>Programme_Version__c</referenceTo>
+        <relationshipLabel>Learning Outcomes</relationshipLabel>
+        <relationshipName>Specification_Outcomes</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Record_No__c</fullName>
+        <description>Set by workflow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Leave blank on record creation if automatic numbering is required (set by Workflow)</inlineHelpText>
+        <label>No.</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Type__c</fullName>
+        <description>Hidden, populated by workflow and for RSF to Programme Version, for Outcome No workflow</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <length>5</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Learning Outcome</label><nameField>
+        <displayFormat>LO-{000000}</displayFormat>
+        <label>Outcome Ref</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>Learning Outcomes</pluralLabel><searchLayouts /><sharingModel>ControlledByParent</sharingModel><fieldSets>
+        <fullName>Outcomes</fullName>
+        <description>For Tabbed VF page on Programme Specification</description>
+        <displayedFields>
+            <field>Record_No__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Learning_Outcome__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Mode_of_Assessing__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Modules_Included__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Outcome_Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Outcomes</label>
+    </fieldSets><validationRules>
+        <fullName>Enforce_Outcome_Type_choice</fullName>
+        <active>true</active>
+        <errorConditionFormula>ISBLANK ( Text (Outcome_Type__c ))</errorConditionFormula>
+        <errorDisplayField>Learning_Outcome__c</errorDisplayField>
+        <errorMessage>An Outcome Type must be given</errorMessage>
+    </validationRules></CustomObject>

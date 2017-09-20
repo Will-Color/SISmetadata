@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+    <backgroundEndColor>#FFFFFF</backgroundEndColor>
+    <backgroundFadeDirection>TopToBottom</backgroundFadeDirection>
+    <backgroundStartColor>#CCFFFF</backgroundStartColor>
+    <dashboardType>SpecifiedUser</dashboardType>
+    <isGridLayout>false</isGridLayout>
+    <leftSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>true</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <header>Total Applications</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>for 15/16 by Programme Type</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning. Applications = Draft &gt; Pre-Registered.</footer>
+            <groupingColumn>BucketField_63147934</groupingColumn>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <header>Applications Analysis</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Stages by Programme Types</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>Trending__c.Registration_Status__c</groupingColumn>
+            <header>Planned vs Registered Applicants</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Week_2_Admissions_vs_Week</report>
+            <showPercentage>true</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Planned vs Registered</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA7</column>
+            </chartSummary>
+            <componentType>Gauge</componentType>
+            <displayUnits>Integer</displayUnits>
+            <footer>Shows difference in overall number of Applications for 15/16 compared to the same week in 14/15</footer>
+            <gaugeMax>1000.0</gaugeMax>
+            <gaugeMin>-1000.0</gaugeMin>
+            <header>Year on Year Comparison - this Week</header>
+            <indicatorBreakpoint1>-50.0</indicatorBreakpoint1>
+            <indicatorBreakpoint2>50.0</indicatorBreakpoint2>
+            <indicatorHighColor>#54C254</indicatorHighColor>
+            <indicatorLowColor>#C25454</indicatorLowColor>
+            <indicatorMiddleColor>#C2C254</indicatorMiddleColor>
+            <report>Trending_Reports/X15_16_Change_in_Applications</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>false</showValues>
+            <title>15/16 vs 14/15 Volumes</title>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA6</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillDownUrl>/00O20000007R4AE</drillDownUrl>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Shows difference between numbers of Applications between 14/15 and same week in 15/16 split by Application Status</footer>
+            <groupingColumn>BucketField_85113329</groupingColumn>
+            <groupingColumn>Trending__c.Academic_Year_lookup__c</groupingColumn>
+            <header>Year on Year Comparison</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_High_Level_Comparison</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 vs 14/15 Applications vs Offers</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </leftSection>
+    <middleSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning. Applications = Draft &gt; Pre-Registered.</footer>
+            <groupingColumn>BucketField_63147934</groupingColumn>
+            <header>Total Applications</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>for 15/16 by Stage</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>BucketField_63147934</groupingColumn>
+            <groupingColumn>Trending__c.Fee_Status_lookup__c</groupingColumn>
+            <header>Applications Analysis</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Stages by Fee Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <groupingColumn>Trending__c.Registration_Status__c</groupingColumn>
+            <header>Planned vs Registered Applicants</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Week_2_Admissions_vs_Week</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Programme Types by Reg Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA6</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillDownUrl>/00O20000007R4AE</drillDownUrl>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Shows difference in overall number of Applications for 15/16 compared to same week in 14/15 split by Programme Type</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <groupingColumn>Trending__c.Academic_Year_lookup__c</groupingColumn>
+            <header>Year on Year Comparison - this Week</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_High_Level_Comparison</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 vs 14/15 by Programme Type</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA5</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Shows difference between Non Offered Applications between 14/15 and same week in 15/16 split by Application Status</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <groupingColumn>Trending__c.Academic_Year_lookup__c</groupingColumn>
+            <header>Year on Year Comparison</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_vs_14_15_Non_Offered_Applications</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Non Offers Applications vs 14/15</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </middleSection>
+    <rightSection>
+        <columnSize>Wide</columnSize>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>Donut</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning. Blue section shows Applications where Nationality (and therefore Fee Status) not yet set.</footer>
+            <groupingColumn>Trending__c.Fee_Status_lookup__c</groupingColumn>
+            <header>Total Applications</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showTotal>true</showTotal>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>for 15/16 by Fee Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <groupingColumn>Trending__c.Fee_Status_lookup__c</groupingColumn>
+            <header>Applications Analysis</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Applications_Numbers</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Programme Types by Fee Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>RowCount</column>
+            </chartSummary>
+            <componentType>ColumnStacked</componentType>
+            <displayUnits>Auto</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Taken from latest snapshot on Monday morning</footer>
+            <groupingColumn>Trending__c.Fee_Status_lookup__c</groupingColumn>
+            <groupingColumn>Trending__c.Registration_Status__c</groupingColumn>
+            <header>Planned vs Registered Applicants</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_Week_2_Admissions_vs_Week</report>
+            <showPercentage>false</showPercentage>
+            <showValues>false</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Programme Types by Fee Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA6</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillDownUrl>/00O20000007R4AE</drillDownUrl>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Shows difference in overall number of Applications for 15/16 compared to same week in 14/15 split by Fee Status</footer>
+            <groupingColumn>Trending__c.Fee_Status_lookup__c</groupingColumn>
+            <groupingColumn>Trending__c.Academic_Year_lookup__c</groupingColumn>
+            <header>Year on Year Comparison - this Week</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_High_Level_Comparison</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 vs 14/15 by Fee Status</title>
+            <useReportChart>false</useReportChart>
+        </components>
+        <components>
+            <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+            <chartAxisRange>Auto</chartAxisRange>
+            <chartSummary>
+                <axisBinding>y</axisBinding>
+                <column>FORMULA5</column>
+            </chartSummary>
+            <componentType>ColumnGrouped</componentType>
+            <displayUnits>Integer</displayUnits>
+            <drillEnabled>false</drillEnabled>
+            <drillToDetailEnabled>false</drillToDetailEnabled>
+            <enableHover>true</enableHover>
+            <expandOthers>false</expandOthers>
+            <footer>Shows difference between Offered Applications between 14/15 and same week in 15/16 split by Application Status</footer>
+            <groupingColumn>Trending__c.Programme_Type__c</groupingColumn>
+            <groupingColumn>Trending__c.Academic_Year_lookup__c</groupingColumn>
+            <header>Year on Year Comparison</header>
+            <legendPosition>Bottom</legendPosition>
+            <report>Trending_Reports/X15_16_vs_14_15_Offered_Applications</report>
+            <showPercentage>false</showPercentage>
+            <showValues>true</showValues>
+            <sortBy>RowLabelAscending</sortBy>
+            <title>15/16 - Offers vs 14/15</title>
+            <useReportChart>false</useReportChart>
+        </components>
+    </rightSection>
+    <runningUser>magenta.uatlstm@colorconsultancy.co.uk</runningUser>
+    <textColor>#000000</textColor>
+    <title>Application Trend Analysis: 15/16 Applications</title>
+    <titleColor>#000000</titleColor>
+    <titleSize>12</titleSize>
+</Dashboard>

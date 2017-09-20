@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Student_Programme__c$Name</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$Status__c</field>
+    </columns>
+    <description>Report of Applicants (including Stage) since Online Course go-live</description>
+    <filter>
+        <criteriaItems>
+            <column>Student_Programme__c$Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>Online Course</value>
+        </criteriaItems>
+    </filter>
+    <format>Matrix</format>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Student_Programme__c$Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Student_Programme__c$EEAStudent__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Student_Programme__c$Programme__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Online Courses: Applicants since go-live</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CRT_Student_Programmes_with_Students_Programmes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Student_Programme__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2016-09-26</startDate>
+    </timeFrameFilter>
+</Report>

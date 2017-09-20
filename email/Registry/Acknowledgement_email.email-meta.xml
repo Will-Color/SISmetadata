@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Request for further information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Request for More Information</name>
+    <style>freeForm</style>
+    <subject>{!Student_Programme__c.Programme__c}</subject>
+    <textOnly>Dear {!Contact.FirstName}
+ 
+Thank you for submitting your application for the MSc in {!Student_Programme__c.Programme__c} at the Liverpool School of Tropical Medicine.
+ 
+I am currently processing your application and I notice that you have not provided a copy of your .......
+ 
+Please could I ask you to forward a copy of ....... so that I can upload it to your application.  You can send this as an attachment to an email addressed to: MyLSTM@lstmed.ac.uk
+ 
+Your application will then be forwarded to the Director of Studies for consideration.  The review process takes up to 15 working days but I will let you know the outcome of your application as soon as possible afterwards.
+ 
+In the meantime, although this is not required in order for your application to be considered, please may I draw your attention to our English language requirements: http://www.lstmed.ac.uk/study/how-to-apply/language-requirements  Applications can be considered without an English certificate but, should your application be successful, then any offer made would be subject to you providing evidence of English at the required level.  
+ 
+If you already hold a certificate, such as a Tanzania Certificate of Secondary Education at the required level, then please could you also forward a copy of this so I can add it to your application.
+ 
+If I can be of any further assistance please don&apos;t hesitate to contact me.
+ 
+Kind regards
+ 
+{!User.FirstName} {!User.LastName}
+Administrator – Academic Registry
+Email: MyLSTM@lstmed.ac.uk
+Telephone: {!User.Phone}
+ 
+ 
+Liverpool School of Tropical Medicine, Pembroke Place, Liverpool L3 5QA UK
+T: +44 (0)151 705 3757   F: +44 (0)151 705 3348  W: www.lstmed.ac.uk  
+
+                               
+DISCLAIMER: Any files attached to this e-mail will have been checked by virus detection software prior to transmission, but you should carry out your own virus check before opening any attachment. LSTM does not accept liability for any damage or loss that may be caused by software viruses.  This e-mail message (and any attachments) is the property of LSTM and is protected by law. It may contain privileged and confidential information strictly for the use of the named addressee only.  If you are not the intended recipient or an employee or agent  responsible for delivering the message to the addressee, you must not copy, distribute or take any action in reliance upon it. If you have received this message in error, please contact us by returning the e-mail and delete/destroy all copies of the message and any attachments.</textOnly>
+    <type>html</type>
+</EmailTemplate>

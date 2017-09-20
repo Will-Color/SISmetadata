@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Flywire Information</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Internal_Letterhead</letterhead>
+    <name>Online Payment Info</name>
+    <style>freeForm</style>
+    <subject>DipUKMP Fee Payment Information</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+Student ID Number: {!Contact.LSTM_No__c}
+Course: {!Student_Programme__c.Programme__c}
+
+LSTM have partnered with Flywire to provide you with an easy and secure method of sending fee payments in your home currency. You can pay by bank transfer, debit/credit card and e-wallet methods.
+
+The fee for this course is {!Student_Programme__c.Invoice_Amount__c}.
+
+How to pay:
+
+1. Visit  www.flywire.com/pay/lstmed and choose your country
+2. Input the amount you are paying in GBP
+
+Payment by bank transfer or international debit/credit card = {!Student_Programme__c.Invoice_Amount__c}
+Payment by domestic UK credit/debit cards in GBP = {!Student_Programme__c.UK_Card_Payment_Fee__c} (incl. 2% fee)
+
+3. Choose your payment method and make your payment to Flywire
+4. Enter your details and if you are paying on behalf of a student, the details of the student you are paying for
+5. Track and confirm your payment by email, SMS, or by logging into  www.flywire.com/pay/lstmed
+
+Yours sincerely
+
+Liverpool School of Tropical Medicine
+Pembroke Place
+Liverpool L3 5QA
+United Kingdom</textOnly>
+    <type>html</type>
+</EmailTemplate>

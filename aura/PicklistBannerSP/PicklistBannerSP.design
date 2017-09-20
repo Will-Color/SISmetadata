@@ -1,0 +1,4 @@
+<design:component label="Picklist Banner">
+    <design:attribute name="currentStage" label="currentStage" />   
+    <design:attribute name="recordId" label="recordId" description="Salesforce Id of the record" />    
+</design:component>

@@ -1,0 +1,43 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Dear
+{!Student_Programme__c.Student__c}<o:p></o:p></p>]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Thank you
+for submitting your application for the {!Student_Programme__c.Programme__c}, {!Student_Programme__c.Programme_Type__c}, and for your interest in studying at
+the Liverpool School of Tropical Medicine.<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><br></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">If we
+require further documentation in order to process your application then we will
+contact you within the next 5 working days to request this. <o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><br></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Once your
+application has been submitted for processing, you can normally expect a
+decision within 15 working days for taught programmes and short courses and 20
+working days for research programmes.<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><br></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">If you have
+any queries about your application, please e-mail MyLSTM@lstmed.ac.uk<o:p></o:p></p><p style="background-color: rgb(255, 255, 255);">
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt"><br></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Yours
+sincerely<o:p></o:p></p>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">The
+Admissions Team<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">The
+Liverpool School of Tropical Medicine<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Pembroke
+Place<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">Liverpool<o:p></o:p></p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt">L3 5QA<o:p></o:p></p>]]></td>
+</tr>
+</table>

@@ -1,0 +1,24 @@
+<apex:page controller="ExternalFormController" tabStyle="Applications__tab" sidebar="false" >
+<style>
+    .zen-pipedList {
+        display:none;
+    }
+</style>
+<script>
+    window.onload = function(){
+    document.getElementsByClassName('headerSearchContainer')[0].style.display='none';
+    };
+</script>
+<div class ="ImageContainer" style= "float:left; padding-top:28px">
+<apex:image id="theImage" value="https://c.cs84.content.force.com/servlet/servlet.ImageServer?id=01520000002PuIq&oid=00D5E0000008hUc&lastMod=1407343780000" width="30" height="30"/>
+  </div>
+  <div align="left">
+ <h4> Online application form</h4>  
+  <h5> {!instanceName}  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;   &nbsp;    <a href="/students/apex/StudentLandingPage">Return</a></h5>      
+  </div>
+  
+  <apex:outputText value="{!resBody}" escape="false" rendered="{!hasAccess}" style="width:1500px"/>
+  <div align="center">
+  <apex:outputText style="font-size:30px;" value="Error. You do not have access to the record" escape="false" rendered="{! !hasAccess}"/>   
+  </div>  
+</apex:page>

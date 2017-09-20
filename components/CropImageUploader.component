@@ -1,0 +1,32 @@
+<apex:component controller="CropImageUploaderCont" allowDML="true" >
+    <apex:attribute name="parentId" type="String" description="ID of parent sObject" required="true" assignTo="{!attParentId}" />
+    <apex:attribute name="description" type="String" description="Description for attachment" required="true" assignTo="{!attDescription}" />
+    <apex:attribute name="minX" type="Integer" description="Minimum width of cropped image" required="true"/>
+    <apex:attribute name="minY" type="Integer" description="Minimum height of cropped image" required="true"/>
+    <apex:attribute name="maxX" type="Integer" description="Maximum width of cropped image" required="true"/>
+    <apex:attribute name="maxY" type="Integer" description="Maximum height of cropped image" required="true"/>
+    <apex:attribute name="previewWidth" type="Integer" description="Width of preview image for cropping" required="false" default="300"/>
+    
+    <script type="text/javascript">
+        jQuery(function($) {
+            cropImageUploaderInit({!minX}, {!minY}, {!maxX}, {!maxY}, function(bodyBase64) {
+                $("input[id$=_imgBodyInput]").val(bodyBase64);
+                uploadImage();
+            });         
+        });
+    </script>
+    
+    <input type='file' id="imgSource"/>
+    <p id="errorContainer" style="color: red; display: none;"></p>
+    <div style="display: none">
+        <apex:inputText value="{!imageBody}" id="_imgBodyInput"/>
+    </div>
+    <apex:actionFunction name="uploadImage" action="{!uploadImage}" />
+    
+    <div id="cropContainer" style="max-width: {!previewWidth}px; padding-top: 10px; padding-bottom: 10px;"></div>
+    <input type="button" id="cropBtn" value="Crop & Save" style="display: none;"/>
+    <div id="hiddenResult" style="display: none">
+        <canvas id="imgOutput">Update your browser</canvas>
+    </div>
+    
+</apex:component>

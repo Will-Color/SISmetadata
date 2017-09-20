@@ -1,0 +1,21 @@
+<apex:page standardStylesheets="false" sidebar="false" showHeader="false" renderAs="pdf">
+
+    <body style="border: 2px solid black;">
+        <h1>About Tidalfire</h1>
+        <p>Tidalfire provides PDF business tools and services for desktop, web and mobile.</p>
+        
+        <h2>PDF Forms</h2>
+        <p>Let your business benefit from dynamic PDF forms. Mobile or desktop – convert your paper forms to intelligent, customer friendly documents.</p>
+        
+        <h2>PDF Studio</h2>
+        <p>PDF Studio&#8482; an all-in-one, easy to use PDF editor that provides all the features needed at a fraction of the cost of Adobe&reg; Acrobat&reg; and other editors.</p>
+        
+        <h2>PDF Automation Server</h2>
+        <p>PDF Automation Server (PAS) automates the receiving, processing and routing of documents helping to streamline your document workflows.</p>
+        
+        <h3>Contact Details</h3>
+        
+        <p>t: +44 (0)7834 163 304</p>
+        <p>e: info@tidalfire.com</p>
+    </body>
+    </apex:page>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- API Host --></label>
+        <name>API_Host__c</name>
+    </fields><fields>
+        <label><!-- App ID --></label>
+        <name>App_ID__c</name>
+    </fields><fields>
+        <label><!-- App Key --></label>
+        <name>App_Key__c</name>
+    </fields><fields>
+        <label><!-- BatchIsRunning --></label>
+        <name>BatchIsRunning__c</name>
+    </fields><fields>
+        <help><!-- If VLE Template ID is not specified in Module Version, this value is used. --></help>
+        <label><!-- Default Course Template VLE ID --></label>
+        <name>Default_Course_Template_VLE_ID__c</name>
+    </fields><fields>
+        <help><!-- When Module being sent to VLE, it should contain &apos;Module Reference&apos; field value in its Name. If blank - this value is used. --></help>
+        <label><!-- Default Module Reference --></label>
+        <name>Default_Module_Reference__c</name>
+    </fields><fields>
+        <help><!-- When Module being sent to VLE, it should contain &apos;Module Suffix&apos; field value in its Name and Code. If blank - this value is used. --></help>
+        <label><!-- Default Module Suffix --></label>
+        <name>Default_Module_Suffix__c</name>
+    </fields><fields>
+        <help><!-- If Module Role has no matches for VLE Role Id - this value is used as default for Staff --></help>
+        <label><!-- Default Staff Role VLE ID --></label>
+        <name>Default_Staff_Role_VLE_ID__c</name>
+    </fields><fields>
+        <help><!-- If Program Type has no matches for VLE Role Id - this value is used as default for Student --></help>
+        <label><!-- Default Student Role VLE ID --></label>
+        <name>Default_Student_Role_VLE_ID__c</name>
+    </fields><fields>
+        <label><!-- Email To Staff --></label>
+        <name>Email_To_Staff__c</name>
+    </fields><fields>
+        <label><!-- Email To Student --></label>
+        <name>Email_To_Student__c</name>
+    </fields><fields>
+        <help><!-- Enroll Student to Programme Homepage Org Wide Unit. --></help>
+        <label><!-- Enable Programme Homepage --></label>
+        <name>Enable_Programme_Homepage__c</name>
+    </fields><fields>
+        <label><!-- External Examiner Role ID --></label>
+        <name>External_Examiner_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- External Instructor Role ID --></label>
+        <name>External_Instructor_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- Instructor Role ID --></label>
+        <name>Instructor_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- MSc Student Role ID --></label>
+        <name>MSc_Student_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- Observer Role ID --></label>
+        <name>Observer_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- Prof Dip Student Role ID --></label>
+        <name>Prof_Dip_Student_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- Short Course Student Role ID --></label>
+        <name>Short_Course_Student_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- Student Role ID --></label>
+        <name>Student_Role_ID__c</name>
+    </fields><fields>
+        <label><!-- User ID --></label>
+        <name>User_ID__c</name>
+    </fields><fields>
+        <label><!-- User Key --></label>
+        <name>User_Key__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>VLE parameters</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>VLE parameters</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

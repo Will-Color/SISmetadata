@@ -1,0 +1,90 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">{!Contact.FirstName}
+{!Contact.LastName}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">{!Contact.MailingAddress}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">{!Today}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">Dear
+{!Contact.FirstName},<o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><u><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">Scholarship Application –&nbsp;</span></u><u><span style="font-family: Arial, sans-serif;">&nbsp;{!Student_Programme__c.Programme__c}&nbsp;</span></u><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">I refer to your recent application for financial
+assistance and am delighted to advise you that the Fellowships &amp;
+Scholarships Committee have awarded you a Mamco Selab scholarship award for the sum of £xxxx to assist with tuition
+fees for the course. This award will be made in the form of a deduction from
+your tuition fee invoice. If you require a visa to study in the UK then the
+award will be indicated in your Confirmation of&nbsp;Acceptance&nbsp;of
+Studies.</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">Please note that this award is tenable only for the
+course starting in September 2016 and is not transferable to any subsequent
+year, although if you do not locate sufficient additional funding to enable you
+to attend the course, you are, of course, free to re-apply to the Committee
+next year. Please confirm your acceptance of this award as soon as possible.</span><span style="font-family: Arial, sans-serif;">&nbsp;<span style="letter-spacing: -0.15pt;">If,
+for any reason, you are unable to accept the award, it is important that you
+advise us, in order that the it may be re-allocated if necessary.</span><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">I look forward to welcoming you at LSTM in
+September. If you would like reminding of
+any outstanding&nbsp;conditions&nbsp;of your offer then please do not
+hesitate&nbsp;to contact me.</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">Yours sincerely</span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="text-align: justify; margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">{!User.FirstName}
+{!User.LastName}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">Administrator –
+Academic Registry<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">Email:
+<a href="mailto:MyLSTM@lstmed.ac.uk">MyLSTM@lstmed.ac.uk</a><o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">Telephone:
+{!User.Phone}<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif;">SPONSOR LICENCE
+NUMBER: WBN38URF9<o:p></o:p></span></p><p class="MsoNormal" style="font-size: 12pt; margin-bottom: 0pt;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal"><o:p>&nbsp;</o:p></p>
+
+<p class="MsoNormal" style="text-align: justify; color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="text-align: justify; color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="text-align: justify; color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="text-align: justify; color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0pt;"><span style="letter-spacing: -0.15pt; font-family: Arial, sans-serif;">&nbsp;</span><span style="font-family: Arial, sans-serif;"><o:p></o:p></span></p>
+
+<p class="MsoNormal" style="text-align: justify; color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; margin-bottom: 0pt;"><br></p>]]></td>
+</tr>
+</table>

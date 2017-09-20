@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>2015 CofP Home/EU All Other MSc Courses</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Place: {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.FirstName} {!Contact.LastName}
+{!Contact.MailingAddress}
+
+{!Today}
+ 
+Dear {!Contact.FirstName},
+ 
+Re: Confirmation of Place 
+Student ID Number: {!Contact.LSTM_No__c}
+Anonymous Exam Number: 
+ 
+I am pleased to inform you that we would like to confirm your place on the MSc in {!Student_Programme__c.Programme__c} commencing on 14th September 2015 and ending on 13th September 2016. Your expected graduation date is December 2016.
+ 
+Registration
+ 
+Registration will take place on Monday 14th September. If, due to exceptional circumstances, you cannot register on this date you must inform me immediately; any student who has not arrived by 9am on Monday 28th September. will not normally be permitted to register and may be advised to defer their entry to the following academic year.  Students will only be permitted to defer entry once; further details can be found in our Code of Practice on Admissions. If you do wish to defer please contact me as soon as possible.
+ 
+Further information about registration will be sent to you approximately one month before the start of the programme.
+ 
+Tuition fees
+ 
+Tuition fees for the programme are £&lt;insert programme fee&gt; as you are undertaking a desk-based/ overseas research project.  
+ 
+As a intercalating medical student/  intercalating veterinary student / graduate of/ from the University of Liverpool who is self-funding their studies you are entitled to a tuition fee discount of £1,000/ £1,500. After applying this discount, the scholarship award of £&lt;insert award&gt;, and the £1000 advanced payment you have already made your remaining tuition fee balance of £&lt;insert balance&gt; is due one week prior to registration. Please inform us once payment has been made.
+ 
+May I take this opportunity to congratulate you on your successful application and I look forward to meeting you in September when your programme begins.
+ 
+In the meantime if you have any further questions or queries then please do not hesitate to contact me.
+ 
+Yours sincerely
+ 
+ 
+ 
+{!User.FirstName} {!User.LastName}
+Administrator – Academic Registry
+Email: msc@lstmed.ac.uk
+Telephone: {!User.Phone}
+ 
+Enc.
+Coming to Liverpool Guide
+Receipt for advanced fee
+Final Tuition Fee Invoice
+ 
+SPONSOR LICENCE NUMBER: WBN38URF9</textOnly>
+    <type>html</type>
+</EmailTemplate>

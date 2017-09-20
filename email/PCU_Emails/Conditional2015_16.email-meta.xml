@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <description>Conditional Offer 2015/16 courses</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Conditional Offer 2015/16</name>
+    <style>freeForm</style>
+    <subject>Your Conditional Offer</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+
+Student ID Number: {!Contact.LSTM_No__c}
+
+
+
+On behalf of the Liverpool School of Tropical Medicine, I would like to offer you a conditional place on {!Student_Programme__c.Programme__c}. The programme runs from {!Student_Programme__c.Programme_Start_Date__c} to {!Student_Programme__c.Programme_End_Date__c}.
+
+
+
+The tuition fee for attending this course is {!Student_Programme__c.Amount__c} .
+
+
+
+This is a conditional offer, and will only be confirmed subject to the following condition being met:
+
+
+
+In accordance with the fee schedule indicated in the attached document, payment of the full tuition fee must be paid by: XXX
+
+
+
+Once you have met the condition of this offer we will issue you a Confirmation of Place which, if necessary you can use in order to gain your Student Visitor visa.
+
+
+
+Demand for our programmes often exceeds the number of available places, therefore it is in your best interests to meet all the conditions of your offer as soon as possible in order to secure a place. If you think you will be unable to meet the conditions of your offer in time for the start date of the programme, you may be able to defer entry until the following year.  Students may only defer entry once. For further details please see the LSTM Admissions policy which can be found on our website by clicking here.
+
+
+
+Visas and immigration
+
+
+
+If you need a visa to come to the UK then you will be provided with further information once your place on the course is confirmed. If you already hold a valid UK visa please do not assume that you do not need to apply for a new one. Not all visa categories permit study, some restrict the type of study you can undertake or the institution you can study at. Some visas even prohibit study altogether. If you already hold a valid UK visa then it is vital that you check with us to ensure that it does not prohibit or restrict study. Under no circumstances can we enroll students with visas which prohibit or restrict study. It is your responsibility to check the status of your visa with us well in advance of the start of the course.
+
+
+
+May I take this opportunity to congratulate you on your successful application and I look forward to reserving your place on the course.
+
+
+
+
+
+
+Yours sincerely
+
+
+
+{!User.Name}
+
+Professional Courses Unit
+
+Liverpool School of Tropical Medicine
+
+Pembroke Place
+
+Liverpool, L3 5QA
+
+United Kingdom
+
+
+
+
+
+Enc:
+
+Tuition Fee Information
+
+LSTM Fees 2015-2016</textOnly>
+    <type>html</type>
+</EmailTemplate>

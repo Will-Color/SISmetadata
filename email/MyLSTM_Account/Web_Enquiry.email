@@ -1,0 +1,12 @@
+From:  {!Case.First_Name__c} {!Case.Last_Name__c}
+Email: {!Case.SuppliedEmail}
+Phone: {!Case.SuppliedPhone}
+Country: {!Case.Country__c}
+
+Programme: {!Case.Programme_Version_Name__c}
+
+Nature of Enquiry:  {!Case.Nature_of_Enquiry__c} 
+Subject: {!Case.Web_Subject__c}
+
+Description:
+{!Case.Description}

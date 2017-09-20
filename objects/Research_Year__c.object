@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Completion_of_year_of_instance__c</fullName>
+        <description>For HESA FundComp value, to be set per year/period</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For HESA return</inlineHelpText>
+        <label>Completion of year of instance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Completed the current year of programme of study</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did not complete the current year of programme of study</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Year of programme of study not yet completed, but has not failed to complete</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partially completed the year of study (HEFCW HESES rules)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not in HESES Population</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>FUNDCOMP__c</fullName>
+        <description>As per https://www.hesa.ac.uk/collection/c15051/a/fundcomp/</description>
+        <externalId>false</externalId>
+        <formula>IF ( TEXT (Completion_of_year_of_instance__c ) = "Completed the current year of programme of study", "1",
+   IF ( TEXT (Completion_of_year_of_instance__c) = "Did not complete the current year of programme of study", "2",
+      IF ( TEXT(Completion_of_year_of_instance__c) = "Year of programme of study not yet completed, but has not failed to complete", "3",
+         IF ( TEXT(Completion_of_year_of_instance__c) = "Partially completed the year of study (HEFCW HESES rules)", "4", 
+                     IF ( TEXT(Completion_of_year_of_instance__c) = "Not in HESES Population", "9",  
+                     Null)
+         )
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>For HESA return</inlineHelpText>
+        <label>FUNDCOMP</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Period_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Period_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Period_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Required_Supervisions__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of required Supervisions in this Research Period</inlineHelpText>
+        <label>Required Supervisions</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Programme__c</fullName>
+        <externalId>false</externalId>
+        <label>Student Programme</label>
+        <lookupFilter>
+            <active>false</active>
+            <errorMessage>You can only assign Research Periods to Student Programmes where Record Type = PGR Programme.</errorMessage>
+            <filterItems>
+                <field>Student_Programme__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>PGR Programme</value>
+            </filterItems>
+            <infoMessage>Oops... the Student Programme you have selected is not a PGR Programme.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Student_Programme__c</referenceTo>
+        <relationshipLabel>Research Years</relationshipLabel>
+        <relationshipName>Research_Years</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Transition_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Transition Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>true</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Child of Student Programme for the management of PGR Student progression. Each record corresponds to one 'year' or 'research period' of a PGR programme. Supervision records are related to this object.</description><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Research Year</label><nameField>
+        <label>Research Year Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Research Years</pluralLabel><searchLayouts /><sharingModel>ControlledByParent</sharingModel></CustomObject>

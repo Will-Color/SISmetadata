@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invitation to Pre-Register</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Pre-Registration Invitation (PCU)</name>
+    <style>formalLetter</style>
+    <subject>LSTM online Pre-Registration</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c}
+Please complete online Pre-Registration for the {!Student_Programme__c.Programme__c}
+
+
+
+We look forward to welcoming you as a student on the {!Student_Programme__c.Programme__c}. The programme runs from
+
+{!Student_Programme__c.Programme_Start_Date__c} until {!Student_Programme__c.Programme_End_Date__c}.
+
+
+
+Pre-Registration
+
+You need to Pre-Register before you arrive, to gain access to your LSTM email account and Brightspace (the Virtual Learning Environment).
+
+
+To Pre-Register, simply click here to log into your MyLSTM account, using the email address and password you used to set up your MyLSTM account and apply for the programme.
+Once you have logged in to MyLSTM, follow the &apos;Register Online&apos; link and enter the required pre-registration information to complete the process.
+You will need to provide your term time address (if known), your next of kin details and upload a photograph of yourself (there is an option to crop your photo).
+
+
+When you have completed Pre-Registration, you will be provided with your new LSTM email address and a new password to access LSTM systems. Please remember to keep a note of your new LSTM email address and password.
+
+{!Student_Programme__c.Programme__c} is a paperless course. This allows us to keep our costs as low as possible and is in line with LSTM&apos;s commitment to the principles of education for sustainable development - you will be able to access this material on Brightspace. All material is copyrighted to LSTM and is for your personal use only. You will require the use of a laptop/iPad to view teaching material during lectures, so please make sure you bring a reliable one with you.
+
+Failure to Pre-Register online before you arrive at LSTM will delay your access to LSTM systems and course materials.
+
+If you have any problems with the Pre-Registration process, please contact us via email at MyLSTM@lstmed.ac.uk.
+
+
+
+
+Yours sincerely
+Professional Courses Unit</textOnly>
+    <type>html</type>
+</EmailTemplate>

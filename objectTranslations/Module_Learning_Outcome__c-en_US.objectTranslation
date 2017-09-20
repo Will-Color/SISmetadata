@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Learning Outcome --></label>
+        <name>Learning_Outcome__c</name>
+    </fields><fields>
+        <label><!-- Method of Teaching --></label>
+        <name>Method_of_Teaching__c</name>
+    </fields><fields>
+        <label><!-- Mode of Assessment --></label>
+        <name>Mode_of_Assessment__c</name>
+    </fields><fields>
+        <label><!-- Module Version --></label>
+        <name>Module_Version__c</name>
+        <relationshipLabel><!-- Module Learning Outcomes --></relationshipLabel>
+    </fields><fields>
+        <help><!-- Leave blank on record creation if automatic numbering is required (set by Workflow) --></help>
+        <label><!-- No. --></label>
+        <name>Record_No__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Module Learning Outcome</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Module Learning Outcomes</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

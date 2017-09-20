@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><SharingRules xmlns="http://soap.sforce.com/2006/04/metadata"><sharingCriteriaRules>
+        <fullName>Share_SP_with_Staff_Profile_Based_on_Stage</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Share SP with Staff Profile Based on Stage</label>
+        <sharedTo>
+            <portalRole>LSTMCustomerUser</portalRole>
+        </sharedTo>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Draft</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Submitted</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Withdrawn</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stage__c</field>
+            <operation>notEqual</operation>
+            <value>Deferred</value>
+        </criteriaItems>
+    </sharingCriteriaRules></SharingRules>

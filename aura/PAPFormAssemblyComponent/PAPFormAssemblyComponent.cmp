@@ -1,0 +1,8 @@
+<aura:component controller="PAPFormAssemblyController" implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes">
+    <aura:handler name="init" value="{!this}" action="{!c.getUserDataCall}"/>
+    <aura:attribute name="urlTag" type="string"/> 
+    <aura:attribute name="recordId" type="Id" />
+    <body>
+        <iframe src="{!v.urlTag}" width="100%" height="4700px" frameborder="0"/>
+    </body>
+</aura:component>

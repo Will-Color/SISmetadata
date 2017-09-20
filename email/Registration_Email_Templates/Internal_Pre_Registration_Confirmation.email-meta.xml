@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Internal aletrt that onfirmation email sent, on completion of Pre-Registration</description>
+    <encodingKey>UTF-8</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>(Internal) Pre-Registration Confirmation</name>
+    <style>freeForm</style>
+    <subject>Student Pre-Registration Completed</subject>
+    <textOnly>GREAT NEWS!!
+
+
+
+A student has completed the Pre-Registration process:
+
+
+
+Student Name: {!Student_Programme__c.Student__c}
+
+
+
+Their LSTM Number: {!Student_Programme__c.LSTM_No__c}
+
+Their LSTM email: {!Student_Programme__c.LSTM_Email__c}
+
+
+
+Stage: {!Student_Programme__c.Stage__c}
+
+Status: {!Student_Programme__c.Status__c}
+
+
+
+Yours,
+
+
+
+
+
+The SIS Testing Team
+
+Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

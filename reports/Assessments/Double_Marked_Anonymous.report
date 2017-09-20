@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Id</field>
+    </columns>
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Anonymous_Ref__c</field>
+    </columns>
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Marker_1__c</field>
+    </columns>
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Marker_2__c</field>
+    </columns>
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Agreed_Mark__c</field>
+    </columns>
+    <columns>
+        <field>Assessment__c.Student_Assessments__r$Mark_Resolution__c</field>
+    </columns>
+    <description>Doe marking output</description>
+    <filter>
+        <criteriaItems>
+            <column>Assessment__c$Id</column>
+            <operator>equals</operator>
+            <value>a082000001DqZcp</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Assessment__c$Module__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Assessment__c$Name</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Double Marked Anonymous</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Assessments_with_Student_Assessments__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Assessment__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

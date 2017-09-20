@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SIS_Audit__c.Student__c</field>
+    </columns>
+    <columns>
+        <field>SIS_Audit__c.Student_Programme__c</field>
+    </columns>
+    <columns>
+        <field>SIS_Audit__c.Output_Section__c</field>
+    </columns>
+    <columns>
+        <field>CUST_LAST_UPDATE_NAME</field>
+    </columns>
+    <description>HESA unique Student Programmes, by Programme Code</description>
+    <filter>
+        <criteriaItems>
+            <column>SIS_Audit__c.Output_Section__c</column>
+            <operator>equals</operator>
+            <value>Instance</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SIS_Audit__c.Exclude__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SIS_Audit__c.Test_Record__c</column>
+            <operator>equals</operator>
+            <value>0</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SIS_Audit__c.Instance_Code__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>HESA Unique Instances</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SIS_Audit__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

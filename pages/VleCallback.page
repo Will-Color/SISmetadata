@@ -1,0 +1,13 @@
+<apex:page controller="VleCallbackCont" action="{!checkToken}" >
+    <apex:sectionHeader title="VLE (desire2learn)" subtitle="Service page"/>
+    <apex:form >
+        <apex:pageBlock title="Callback">
+            <apex:pageBlockSection title="Required parameters" columns="2">
+                <apex:outputText value="{!tokenId}" label="Token ID"/>
+                <apex:outputText value="{!tokenKey}" label="Token Key"/>
+                <apex:outputText value="{!tokenSig}" label="Token Signature"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageMessages />
+</apex:page>

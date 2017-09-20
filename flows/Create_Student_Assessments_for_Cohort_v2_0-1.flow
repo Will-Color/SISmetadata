@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Assign_to_Collection</name>
+        <label>Assign to Collection</label>
+        <locationX>354</locationX>
+        <locationY>304</locationY>
+        <assignmentItems>
+            <assignToReference>soc_StudentModulestoUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>so_StudentModuleLoopVariable</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_through_Student_Modules</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Set_Trigger_SA_to_True</name>
+        <label>Set Trigger SA to True</label>
+        <locationX>544</locationX>
+        <locationY>300</locationY>
+        <assignmentItems>
+            <assignToReference>so_StudentModuleLoopVariable.Trigger_Student_Assessment_creation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Assign_to_Collection</targetReference>
+        </connector>
+    </assignments>
+    <interviewLabel>Create Student Assessments for Cohort v2.0 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Student Assessments for Cohort</label>
+    <loops>
+        <name>Loop_through_Student_Modules</name>
+        <label>Loop through Student Modules</label>
+        <locationX>544</locationX>
+        <locationY>175</locationY>
+        <assignNextValueToReference>so_StudentModuleLoopVariable</assignNextValueToReference>
+        <collectionReference>soc_relatedStudentModules</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Set_Trigger_SA_to_True</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_all_Student_Modules</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Lookup_Student_Modules</name>
+        <label>Lookup Student Modules</label>
+        <locationX>352</locationX>
+        <locationY>177</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_through_Student_Modules</targetReference>
+        </connector>
+        <filters>
+            <field>Programme_Module__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>varTCohortId</elementReference>
+            </value>
+        </filters>
+        <object>Student_Module__c</object>
+        <outputReference>soc_relatedStudentModules</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Trigger_Student_Assessment_creation__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_all_Student_Modules</name>
+        <label>Update all Student Modules</label>
+        <locationX>735</locationX>
+        <locationY>171</locationY>
+        <inputReference>soc_StudentModulestoUpdate</inputReference>
+    </recordUpdates>
+    <startElementReference>Lookup_Student_Modules</startElementReference>
+    <variables>
+        <name>so_StudentModuleLoopVariable</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <name>soc_relatedStudentModules</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <name>soc_StudentModulestoUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Student_Module__c</objectType>
+    </variables>
+    <variables>
+        <description>Cohort (Programme Module Instance) Id from record</description>
+        <name>varTCohortId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

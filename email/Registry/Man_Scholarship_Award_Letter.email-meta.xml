@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Mamco Selab Scholarship Award</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Scholarship Award Letter: Mamco Selab</name>
+    <style>freeForm</style>
+    <subject>LSTM Fellowships and Scholarships Committee Decision</subject>
+    <textOnly>{!Contact.FirstName} {!Contact.LastName}
+
+{!Contact.MailingAddress}
+
+
+{!Today}
+
+
+Dear {!Contact.FirstName},
+
+
+Scholarship Application –  {!Student_Programme__c.Programme__c}
+
+
+I refer to your recent application for financial assistance and am delighted to advise you that the Fellowships &amp; Scholarships Committee have awarded you a Mamco Selab scholarship award for the sum of £xxxx to assist with tuition fees for the course. This award will be made in the form of a deduction from your tuition fee invoice. If you require a visa to study in the UK then the award will be indicated in your Confirmation of Acceptance of Studies.
+
+
+Please note that this award is tenable only for the course starting in September 2016 and is not transferable to any subsequent year, although if you do not locate sufficient additional funding to enable you to attend the course, you are, of course, free to re-apply to the Committee next year. Please confirm your acceptance of this award as soon as possible. If, for any reason, you are unable to accept the award, it is important that you advise us, in order that the it may be re-allocated if necessary.
+
+
+I look forward to welcoming you at LSTM in September. If you would like reminding of any outstanding conditions of your offer then please do not hesitate to contact me.
+
+
+Yours sincerely
+
+
+
+
+
+{!User.FirstName} {!User.LastName}
+
+Administrator – Academic Registry
+
+Email: MyLSTM@lstmed.ac.uk
+
+Telephone: {!User.Phone}
+
+
+SPONSOR LICENCE NUMBER: WBN38URF9</textOnly>
+    <type>html</type>
+</EmailTemplate>

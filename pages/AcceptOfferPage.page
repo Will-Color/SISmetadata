@@ -1,0 +1,60 @@
+<apex:page controller="StudentLandingPageController" tabStyle="My_Applications__tab" sidebar="false">
+    <!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+    </style>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+
+    <style>
+        .main-dialog-class .ui-widget-header{background: repeat-x scroll 34px 42px #FCF8E3;font-size:16px;border:0;}
+        .main-dialog-class .ui-widget-content{color:black;background:#E3E1E1;}
+    </style>
+    
+    <script>
+    
+        function confirmReject(){
+            return window.confirm('You are about to REJECT this offer.  Click OK to continue, or Cancel to quit');
+        }
+        
+        function confirmAccept(){
+            return window.confirm('You are about to ACCEPT this offer.  Click OK to continue, or Cancel to quit');
+        }
+        
+    </script>
+
+  <apex:define name="body">
+  <apex:form >
+  
+  <apex:pageBlock >
+  
+  <apex:pageBlockButtons location="bottom">
+      <!-- <apex:commandButton value="ACCEPT" action="{!acceptFromAcceptOffer}" onclick="javscript: return confirmAccept();" rerender="opAcceptOfferError" /> -->
+      <apex:commandButton value="ACCEPT" action="{!acceptFromAcceptOffer}" onclick="javscript: return confirmAccept();"/>
+      <apex:commandButton value="REJECT" action="{!rejectFromAcceptOffer}" onclick="javascript: return confirmReject();"/>
+      <apex:commandButton value="Cancel" action="{!cancelFromAcceptOffer}"/>
+  </apex:pageBlockButtons>
+  
+  <p><apex:outputText value="{!offerConditions.Body_Copy__c}" escape="false"/></p>
+  
+  <apex:outputPanel rendered="{!currentSP.Offer_Conditions__c != ''}">
+      <p><apex:outputText value="{!currentSP.Offer_Conditions__c}" escape="false"/></p>
+  </apex:outputPanel>
+  
+  <br/><br/>
+  <p>Do you accept these conditions : <apex:selectList value="{!currentSP.Conditions_Acceptance__c}" size="1">
+      <apex:selectOptions value="{!offerOptions}"/>
+  </apex:selectList>
+  </p>
+  <apex:outputPanel rendered="{!LEN(acceptOfferError) > 0}" id="opAcceptOfferError">
+      <apex:outputText value="{!acceptOfferError}"/>
+  </apex:outputPanel>
+  </apex:pageBlock>
+  
+  </apex:form>
+  
+  </apex:define>
+
+
+</apex:page>

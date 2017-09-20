@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>For internal use use only to notify users of applications awaiting approval.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Internal_Letterhead</letterhead>
+    <name>Internal Application Approval Notification</name>
+    <style>freeForm</style>
+    <subject>New application for review</subject>
+    <textOnly>An application for {!Student_Programme__c.Programme__c} has been checked and is ready for you to review.
+
+1. Click on the link below to login to the Student Information System and view the application:
+
+{!Student_Programme__c.Link}
+
+2. When you have reviewed the application, click on the Approve/Reject link in the Approval History section.
+
+3. To offer the applicant a place on the programme, please record your decision in the comments box and click the approve button.
+
+4. If you require further information before a decision can be made, of if you decide to reject the applicant, please record your decision in the comments box and click the approve button.</textOnly>
+    <type>html</type>
+</EmailTemplate>

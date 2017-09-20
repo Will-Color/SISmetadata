@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Reminder of Outstanding Conditions June 2015</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Chase up Email Michelle</name>
+    <style>freeForm</style>
+    <subject>MSc in {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>Dear {!Contact.FirstName}
+
+
+
+I am currently reviewing the status of applications for the MSc in {!Student_Programme__c.Programme__c} at the Liverpool School of Tropical Medicine and I notice that there are still conditions of your offer outstanding.
+
+
+
+
+The deadline for meeting the conditions of your offer has now passed but, if you could provide further information regarding any progress made in meeting the conditions of your offer, I may be able to grant an extension for you.
+
+
+
+
+I look forward to hearing from you.
+
+
+
+Kind regards
+
+
+
+Michelle
+
+
+
+
+
+
+
+
+
+Michelle Keers
+
+Administrator, Academic Registry
+
+
+Liverpool School of Tropical Medicine, Pembroke Place, Liverpool L3 5QA UK
+T: +44 (0)151 705 3730 F: +44 (0)151 705 3348 W: www.lstmliverpool.ac.uk
+
+DISCLAIMER: Any files attached to this e-mail will have been checked by virus detection software prior to transmission, but you should carry out your own virus check before opening any attachment. LSTM does not accept liability for any damage or loss that may be caused by software viruses.  This e-mail message (and any attachments) is the property of LSTM and is protected by law. It may contain privileged and confidential information strictly for the use of the named addressee only.  If you are not the intended recipient or an employee or agent  responsible for delivering the message to the addressee, you must not copy, distribute or take any action in reliance upon it. If you have received this message in error, please contact us by returning the e-mail and delete/destroy all copies of the message and any attachments.</textOnly>
+    <type>html</type>
+</EmailTemplate>

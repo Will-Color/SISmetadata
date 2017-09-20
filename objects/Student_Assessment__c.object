@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Agreed_Mark__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Score returned from marking process outside of the SIS</inlineHelpText>
+        <label>Agreed Mark</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Agreement_Reached__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Denotes that a moderated agreement on mark has been reached</inlineHelpText>
+        <label>Agreement Reached</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Anonymous_Ref__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student__r.Anonymous_Ref__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anonymous Ref</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assessment_Record_ID__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Assessment__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assessment Record ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assessment_Record_Name__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Assessment__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assessment Record Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assessment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Assessment</label>
+        <referenceTo>Assessment__c</referenceTo>
+        <relationshipLabel>Student Assessments</relationshipLabel>
+        <relationshipName>Student_Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Criticality_Score__c</fullName>
+        <description>Hidden field to allow rollup of Pass Critical info at Assessment level to Module</description>
+        <externalId>false</externalId>
+        <label>Criticality Score</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Final_Mark__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Manual_Mark__c),Agreed_Mark__c,Manual_Mark__c)</formula>
+        <inlineHelpText>Final unweighted mark taking manual marking into account</inlineHelpText>
+        <label>Final Mark</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Inactive__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To denote which Resit/Sit score should not b rolled up to Student Module</description>
+        <externalId>false</externalId>
+        <label>Inactive</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>LSTM_No__c</fullName>
+        <description>Hidden - only use for dataloading assessment marks</description>
+        <externalId>false</externalId>
+        <formula>Student__r.LSTM_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LSTM No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Manual_Mark_Note__c</fullName>
+        <description>Required by Validation rule</description>
+        <externalId>false</externalId>
+        <label>Manual Mark Note</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Manual_Mark_Reason__c</fullName>
+        <description>If Academic Integrity or Other is chosen will trigger validation rule that requires Manual Mark Note to be populated</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to provide reason for manual mark entries</inlineHelpText>
+        <label>Manual Mark Reason</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Late Penalty</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Exceeding Word Count</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plagiarism Category A: Minor Error</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plagiarism Category B: Poor Academic Practice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plagiarism Category C: Plagiarism, Copying, Collusion or Dishonest use of Data</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plagiarism Category D: Second or Subsequent category C Offence(s) following a Written Warning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Plagiarism Category E: Unfair and/or Dishonest Academic Practice</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Manual_Mark__c</fullName>
+        <description>Triggers validation rule that requires population of Manual Mark Reason picklist</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used if additional manual override (eg for lateness, plagiarism and special circumstances appeals) needs to be applied in SIS, after the marking process outside of the SIS</inlineHelpText>
+        <label>Manual Mark</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Manual_Score__c</fullName>
+        <description>Used for a variety of Administration stage which alter the raw score for lateness, plagiarism and special circumstances appeals. NB some of these steps may be automated in later dev phases. SE</description>
+        <externalId>false</externalId>
+        <label>Manual Score</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Mark_Resolution__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Resolution if markers differ</inlineHelpText>
+        <label>Mark Resolution</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Marker_1__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark from first marker</inlineHelpText>
+        <label>Marker 1</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Marker_2__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Mark from second marker</inlineHelpText>
+        <label>Marker 2</label>
+        <precision>9</precision>
+        <required>false</required>
+        <scale>3</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Mit_Circ__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Mit Circ</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Mitigating_Circumstances_Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Mitigating Circumstances Notes</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields><fields>
+        <fullName>Mitigating_Circumstances__c</fullName>
+        <externalId>false</externalId>
+        <label>Mitigating Circumstances</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Module_Capped__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by Process if there has been a resit with no mitigating circumstances</description>
+        <externalId>false</externalId>
+        <label>Module Capped</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Module__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assessment__r.Module__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Module</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Pass_Critical__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text (  Assessment__r.Pass_Critical__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Pass Critical?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Previous_Sitting__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Links to previous sitting of this Student Assessment, if resits are taken</description>
+        <externalId>false</externalId>
+        <label>Previous Sitting</label>
+        <referenceTo>Student_Assessment__c</referenceTo>
+        <relationshipLabel>Student Assessments (Previous Sitting)</relationshipLabel>
+        <relationshipName>Student_Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Prior_Assessment__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Prior Assessment</label>
+        <referenceTo>Student_Assessment__c</referenceTo>
+        <relationshipLabel>Resit Assessments</relationshipLabel>
+        <relationshipName>Resit_Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Programme_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Module__r.Student_Programme__r.Programme__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Programme ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Reason__c</fullName>
+        <description>Used to provide reason for manual score entries</description>
+        <externalId>false</externalId>
+        <label>Reason</label>
+        <length>120</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Reportable__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(Final_Mark__c),FALSE,TRUE)</formula>
+        <inlineHelpText>False unless Final Mark is not blank. Used to exclude Student Assessments from reports calculating Module mark averages when Student Assessments have not been completed</inlineHelpText>
+        <label>Reportable</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Resit_Level__c</fullName>
+        <defaultValue>0</defaultValue>
+        <externalId>false</externalId>
+        <label>Resit Level</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Sample__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>If true denotes that this mark has or will be moderated</inlineHelpText>
+        <label>Sample</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Sit_Level__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <label>Sit Level</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Sitting__c</fullName>
+        <externalId>false</externalId>
+        <formula>If ( Previous_Sitting__c = Null, 
+   "Sit 1",
+   If (  TEXT(Previous_Sitting__r.Mitigating_Circumstances__c) = "Accepted",
+       "Resit " &amp; Text ( Resit_Level__c ),
+       "Sit " &amp; Text (  Sit_Level__c )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Sitting</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Last_Name__c</fullName>
+        <description>For matching against Master file</description>
+        <externalId>false</externalId>
+        <formula>Student__r.LastName&amp;", "&amp;Student__r.FirstName</formula>
+        <label>Student Last Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Module_ID__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Student_Module__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Student Module ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Module_Record_Name__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Student_Module__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Student Module Record Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Module__c</fullName>
+        <externalId>false</externalId>
+        <label>Student Module</label>
+        <referenceTo>Student_Module__c</referenceTo>
+        <relationshipLabel>Student Assessments</relationshipLabel>
+        <relationshipName>Student_Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Student_Record_ID__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Student__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Student Record ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_Record_Name__c</fullName>
+        <description>Hidden field</description>
+        <externalId>false</externalId>
+        <formula>Student__r.FirstName &amp;" "&amp; Student__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Student Record Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Student</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Student Applicant, Full Student, Student Pre-Reg</value>
+            </filterItems>
+            <infoMessage>Contact record needs to have record type of Applicant or Student</infoMessage>
+            <isOptional>true</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>My Assessments</relationshipLabel>
+        <relationshipName>Student_Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Test_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Student__r.Test_Record__c,"Yes"),TRUE,FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Test Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1st Sitting</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1st Resit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2nd Resit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3rd Resit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Weighted_Score__c</fullName>
+        <description>Populated by workflow, so it can be rolled up by RSF</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For Module score, by Weighted %</inlineHelpText>
+        <label>Weighted Score</label>
+        <precision>11</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Weighting__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assessment__r.Weighting_percent__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>This weighting % is taken from the related Assessment template record</inlineHelpText>
+        <label>Weighting %</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields><fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Student Assessment</label><nameField>
+        <label>Student Assessment Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Student Assessments</pluralLabel><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts /><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Inactive__c</columns>
+        <columns>Mit_Circ__c</columns>
+        <columns>Manual_Score__c</columns>
+        <columns>Marker_1__c</columns>
+        <columns>Sit_Level__c</columns>
+        <columns>Resit_Level__c</columns>
+        <columns>RECORDTYPE</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><recordTypes>
+        <fullName>Resit_Allowed</fullName>
+        <active>true</active>
+        <description>Allows Resit button to show</description>
+        <label>Resit Allowed</label>
+        <picklistValues>
+            <picklist>Manual_Mark_Reason__c</picklist>
+            <values>
+                <fullName>Exceeding Word Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Penalty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category A%3A Minor Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category B%3A Poor Academic Practice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category C%3A Plagiarism%2C Copying%2C Collusion or Dishonest use of Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category D%3A Second or Subsequent category C Offence%28s%29 following a Written Warning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category E%3A Unfair and%2For Dishonest Academic Practice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>1st Resit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1st Sitting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2nd Resit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Resit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Resit_Disallowed</fullName>
+        <active>true</active>
+        <description>Does not allow Resit button</description>
+        <label>Resit Disallowed</label>
+        <picklistValues>
+            <picklist>Manual_Mark_Reason__c</picklist>
+            <values>
+                <fullName>Exceeding Word Count</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Late Penalty</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category A%3A Minor Error</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category B%3A Poor Academic Practice</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category C%3A Plagiarism%2C Copying%2C Collusion or Dishonest use of Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category D%3A Second or Subsequent category C Offence%28s%29 following a Written Warning</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Plagiarism Category E%3A Unfair and%2For Dishonest Academic Practice</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Mitigating_Circumstances__c</picklist>
+            <values>
+                <fullName>Accepted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>1st Resit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1st Sitting</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>2nd Resit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>3rd Resit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><validationRules>
+        <fullName>Manual_Mark_Note_required</fullName>
+        <active>true</active>
+        <description>Manual Mark Notes field required if Manual Mark Reason = Academic Integrity Cat A, B or C, or Other.</description>
+        <errorConditionFormula>AND(ISPICKVAL(Manual_Mark_Reason__c,"Other"),ISBLANK(Manual_Mark_Note__c))</errorConditionFormula>
+        <errorDisplayField>Manual_Mark_Note__c</errorDisplayField>
+        <errorMessage>Please specify a reason for the Manual Mark.</errorMessage>
+    </validationRules><validationRules>
+        <fullName>Manual_Score_Reasons</fullName>
+        <active>false</active>
+        <errorConditionFormula>AND( ISCHANGED( Manual_Score__c ) ,  ISBLANK( Reason__c ) )</errorConditionFormula>
+        <errorDisplayField>Reason__c</errorDisplayField>
+        <errorMessage>Please provide a reason for providing or amending the Manual Score field</errorMessage>
+    </validationRules><webLinks>
+        <fullName>Resit</fullName>
+        <availability>online</availability>
+        <description>Uses Flow method for user dialogue</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Resit</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/flow/Resits?vaCurrentStudAssessID={!Student_Assessment__c.Id}</url>
+    </webLinks></CustomObject>

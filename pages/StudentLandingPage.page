@@ -1,0 +1,615 @@
+<!--Modification -->
+<!-- <summury>Modification for c2 in 2C done by Manu KM Completed on 04-Nov-2015 </summury> -->
+<!--<Description>Changes for amending the Application panels to show the references status and applicatiopn status</description> -->
+<apex:page controller="StudentLandingPageController" cache="false" sidebar="false">
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <!--styles for Refrences Table and panel -->
+    <style>
+        .zen-pipedList {  display:none; }
+        .dataCell{border-bottom: 1px solid #e3deb8 !important; border-top: 1px solid #e3deb8 !important;}
+        .refTable{ border:solid #393998 2px !important;  width:100%; border-collapse: collapse;  }
+        .refTable th{  font-weight: bold;  }
+        .refTable th,td{ border:none !important;   }
+        .referenceShowhide{margin-top: -35px; }
+        #showHideMsg{font-weight: bold;}
+        .msg{margin-bottom: 10px; width: 120px; margin-left: 40px;}
+        .attachemnetSec{ width=50%; float:left;  padding: 0 0 0 10px;  margin-bottom: 10px;}
+        .attachmentText {padding: 15px 40px 0;}
+    </style>
+<apex:define name="body">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+<apex:form >
+
+      <!-- Completed Applications Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="completedApps" rendered="{!showCompleted}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Completed" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!completedApplications}" var="completedApp" id="completedAppTable" rendered="{!(completedApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/PreRegistration?Id={!completedApp.id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!completedApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!completedApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!completedApp.Programme_Type__c}"/>
+              </apex:column>
+               <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputfield value="{!completedApp.Stage__c }"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Completed Applications Panel --> 
+      
+      <!-- Registration Applications Panel -->
+      <!-- 2015-03-19 : SM : Registration type applications should be views via Pre-Reg, not Application page -->
+       <apex:outputPanel style="padding:10px 10px 50px 10px" id="registrationApps" rendered="{!showRegistration}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Registration" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!registrationApplications}" var="registrationApp" id="registrationAppTable" rendered="{!(registrationApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <!-- <apex:outputLink value="/applywizard?Id={!registrationApp.id}">View</apex:outputLink> -->
+                <apex:outputLink value="/PreRegistration?Id={!registrationApp.id}" rendered="{!OR(registrationApp.Stage__c = 'Pre-Registered', registrationApp.Stage__c = 'Registered')}">View</apex:outputLink>
+                <apex:outputLink value="/PreRegistration?Id={!registrationApp.id}" rendered="{!AND(registrationApp.Stage__c = 'Expected',AND(registrationApp.Programme_Type__c != 'Online Course',registrationApp.Programme_Type__c != 'Closed Course'))}">Register Online</apex:outputLink>
+                <apex:outputLink value="/PreRegistration?Id={!registrationApp.id}" rendered="{!AND(registrationApp.Stage__c = 'Expected',OR(registrationApp.Programme_Type__c = 'Online Course',registrationApp.Programme_Type__c = 'Closed Course'))}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!registrationApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!registrationApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!registrationApp.Programme_Type__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputfield value="{!registrationApp.Stage__c }"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+          
+        </apex:pageblock>   
+      </apex:outputpanel> 
+      <!-- End of Registration Applications Panel --> 
+      
+      <!-- Rejected Applications Panel -->
+      <!-- New Registerd Panel  Suyati Modificaion-->
+     <!-- <div class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette" id="pageBlockDiv" onload="applyIntialConditions();" style="padding:6px; 15px;" >
+     <div class="pbBody">
+    <div >
+        <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+            <h3>Registration</h3></div>
+        <div class="pbSubsection">
+            <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="data2Col  first  last " colspan="2">
+                            <table class="list" id="registrationAppTable" border="0" cellpadding="0" cellspacing="0">
+                                <colgroup span="4"></colgroup>
+                                <thead class="">
+                                    <tr class="headerRow">
+                                        <th class="headerRow" scope="col" colspan="1" id="j_id22header">
+                                            <div id="sortDiv"></div>
+                                        </th>
+                                        <th class="headerRow" scope="col" colspan="1" id="j_id27header">
+                                            <div id="sortDiv">Name</div>
+                                        </th>
+                                        <th class="headerRow" scope="col" colspan="1" id="j_id30header">
+                                            <div id="sortDiv">Programme</div>
+                                        </th>
+                                        <th class="headerRow" scope="col" colspan="1" id="j_id33header">
+                                            <div id="sortDiv">Programme Type</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tb">
+                                    <apex:repeat value="{!registrationApplications}" var="registrationApp">
+                                        <tr class="dataRow even  first  last" onmouseover="if (window.hiOn){hiOn(this);} " onmouseout="if (window.hiOff){hiOff(this);} " onblur="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}">
+                                        <td class="dataCell  " id="j_id22" colspan="1" width="50px"><a href="/students/PreRegistration?Id={!registrationApp.id}">View</a></td>
+                                        <td class="dataCell  " id="j_id27" colspan="1"><span id="">{!registrationApp.Name}</span></td>
+                                        <td class="dataCell  " id="j_id30" colspan="1">{!registrationApp.Programme__r.Name}</td>
+                                        <td class="dataCell  " id="j_id33" colspan="1"><span id="j_id35">{!registrationApp.Programme_Type__c}</span></td>
+                                    </tr>
+                                   
+                                    <tr>
+                                    
+                                        <td colspan="4">
+                                        <div style=" padding: 15px 40px 0;">
+                                            Application Status: {!registrationApp.Stage__c}
+                                        </div>
+                                            <div class="pbBody" style=" padding: 15px 40px 15px"> 
+                                                <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                                                    <h3>References</h3>
+                                                 </div>
+                                                 <table class="refTable">
+                                                     <thead>
+                                                         <tr>
+                                                             <th>Referee</th>    
+                                                             <th>Reference Status</th> 
+                                                         </tr>                                                                
+                                                    </thead>
+                                                    <tbody>                                                       
+                                                          <tr>
+                                                             <td>{!lstRefrerences[registrationApp.id][0].Referee_Name__c}</td>    
+                                                             <td>{!lstRefrerences[registrationApp.id][0].Reference_Status__c}</td>                                                                
+                                                         </tr>                                                       
+                                                         <tr>
+                                                              <td>{!lstRefrerences[registrationApp.id][1].Referee_Name__c}</td>     
+                                                              <td>{!lstRefrerences[registrationApp.id][1].Reference_Status__c} </td>                                                                    
+                                                         </tr>
+                                                     </tbody>
+                                                 </table>                                                                                       
+                                            </div> 
+                                            <div style=" padding: 15px 40px 0;">
+                                             If we have asked you to supply additional documentation in support of your application, click here to upload a file:
+                                            <apex:inputFile filename="{!fileName}" contentType="{!contentType}" filesize="1000" size="50" value="{!Docs}" /> 
+                                            <apex:commandButton action="{!SaveDocument}"  value="Save" >
+                                                <apex:param name="spId" value="a0B11000007syl4EAA" assignTo="{!spId}"/>
+                                             </apex:commandButton>
+                                            </div>
+                                        </td>
+                                       
+                                    </tr>
+                                   
+                                    </apex:repeat>
+                               
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+      
+    </div>
+    </div>-->
+      <!--New Panel ends -->
+      
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="rejectedApps" rendered="{!showRejected}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Rejected" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!rejectedApplications}" var="rejectedApp" id="rejectedAppTable" rendered="{!(rejectedApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/ApplyWizard?Id={!rejectedApp.id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!rejectedApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!rejectedApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!rejectedApp.Programme_Type__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputfield value="{!rejectedApp.Stage__c }"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Rejected Applications Panel --> 
+       
+       
+       <!-- Withdrawn Application End>                         
+      <!-- Offered Applications Panel -->
+      <!-- <apex:outputPanel style="padding:10px 10px 50px 10px" id="offeredApps" rendered="{!showOffered}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Offers" columns="1" collapsible="false">
+        
+            <apex:pageblocktable value="{!offeredApplications}" var="offeredApp" id="offeredAppTable" rendered="{!(offeredApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/AcceptOfferPage?Id={!offeredApp.id}" rendered="{!OR(offeredApp.Stage__c = 'Conditional',offeredApp.Stage__c = 'Unconditional')}">Accept / Reject</apex:outputLink>
+                <apex:outputLink value="/applywizard?Id={!offeredApp.id}" rendered="{!OR(offeredApp.Stage__c = 'Accepted',offeredApp.Stage__c = 'Expected')}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!offeredApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!offeredApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!offeredApp.Programme_Type__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputText value="{!IF(offeredApp.Stage__c == "Expected","Accepted",offeredApp.Stage__c)}"/>
+              </apex:column>
+            </apex:pageblocktable>            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel> -->
+      <!-- End of Offered Applications Panel --> 
+      <!--Suyati Modification offred Applications -->
+      <div class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette" id="offerdDivMain" onload="applyIntialConditions();" style="padding:6px; 15px;">
+        <div class="pbBody">
+            <div>
+                <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                    <h3>Offers</h3></div>
+                <div class="pbSubsection">  
+                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="data2Col  first  last " colspan="2">
+                                    <table class="list" id="registrationAppTable" border="0" cellpadding="0" cellspacing="0">
+                                        <colgroup span="4"></colgroup>
+                                        <thead class="">
+                                            <tr class="headerRow">
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id22header">
+                                                    <div id="sortDiv"></div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id27header">
+                                                    <div id="sortDiv">Name</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id30header">
+                                                    <div id="sortDiv">Programme</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id33header">
+                                                    <div id="sortDiv">Programme Type</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id33header">
+                                                    <div id="sortDiv">Status</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tb">
+                                            <apex:repeat value="{!offeredApplications}" var="offeredApp">
+                                                <tr class="dataRow even  first  last" onmouseover="if (window.hiOn){hiOn(this);} " onmouseout="if (window.hiOff){hiOff(this);} " onblur="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}">
+                                                    <td class="dataCell  " id="j_id22" colspan="1" width="50px">
+                                                    <apex:outputLink value="/AcceptOfferPage?Id={!offeredApp.id}" rendered="{!OR(offeredApp.Stage__c = 'Conditional',offeredApp.Stage__c = 'Unconditional')}">Accept / Reject</apex:outputLink>
+                                                    <apex:outputLink value="/ApplyWizard?Id={!offeredApp.id}" rendered="{!OR(offeredApp.Stage__c = 'Accepted',offeredApp.Stage__c = 'Expected')}">View</apex:outputLink>                                                                                                                                                           
+                                                    </td>
+                                                    <td class="dataCell  " id="j_id27" colspan="1"><span id="">{!offeredApp.Name}</span></td>
+                                                    <td class="dataCell  " id="j_id30" colspan="1">{!offeredApp.Programme__r.Name}</td>
+                                                    <td class="dataCell  " id="j_id33" colspan="1"><span id="j_id35">{!offeredApp.Programme_Type__c}</span></td>
+                                                    <td class="dataCell  " id="j_id33" colspan="1"><span id="j_id35">{!offeredApp.stage__c}</span></td>                                                   
+                                                </tr>        
+                                                <tr><div >    
+                                                    <td colspan="4">
+                                                        <div style=" padding: 15px 40px 0; margin-bottom: 15px;">
+                                                            Application Status: <b>{!offeredApp.Stage__c}</b> {!mapStatus[offeredApp.id]}
+                                                        </div>
+                                                        <apex:variable value="{!mapOfferRefrerences[offeredApp.id]}" var="sizeOfList" />
+                                                        <apex:outputPanel rendered="{!IF(sizeOfList.size == 0, false, true)}">
+                                                        <div class="msg" onClick="show(this);">                                                                                                          
+                                                             <img class="referenceShowhide" src="{!$Resource.showReference}"  alt="hide references" height="10" width="10" />
+                                                             <span id="showHideMsg"  >Hide references</span>
+                                                        </div>
+                                                        <div id="offerdPanel" >        
+                                                        <div class="pbBody" style=" padding: 0px 40px 15px" id="offredref">
+                                                            <div class="pbSubheader brandTertiaryBgr first tertiaryPalette" style="margin-bottom: 0;">
+                                                                <h3>References</h3>
+                                                            </div>
+                                                            <table class="refTable">
+                                                                <thead>
+                                                                    <tr style="border-bottom: solid black 1px;">
+                                                                        <th>Referee</th>
+                                                                        <th>Reference Status</th>
+                                                                      
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <apex:variable var="index" value="{!1}" />
+                                                                    <apex:repeat value="{!mapOfferRefrerences[offeredApp.id]}" var="SubAppRef">
+                                                                         <tr>
+                                                                          <td><b>{!index}.</b> &nbsp; {!SubAppRef.name}</td>          
+                                                                           <td><b>{!SubAppRef.refrence} </b>{!SubAppRef.status}</td> 
+                                                                          <apex:variable var="index" value="{!index + 1}" /> 
+                                                                        </tr>
+                                                                    </apex:repeat> 
+                                                                                                                                                                                                       
+                                                                </tbody>
+                                                            </table>
+                                                        </div>  
+                                                         <apex:outputPanel rendered="{!IF(offeredApp.Stage__c == 'Unconditional', false, true)}">                                             
+                                                           <div class="attachmentText" id="fileUploaderForOffer">
+                                                               <div style="width=50%;float: left;" >
+                                                                   If we have asked you to supply additional documentation in support of your application, click here to upload a file:
+                                                               </div>
+                                                               <div class="attachemnetSec" >
+                                                                 <c:MultiAttachment multiple="true" parentId="{!offeredApp.Id}" description="Doc" />                                                                                                                                                                             
+                                                               </div> 
+                                                           </div>
+                                                         </apex:outputPanel> 
+                                                      </div>
+                                                    </apex:outputPanel>   
+                                                    </td>
+                                                   </div> 
+                                                </tr>  
+                                            </apex:repeat>
+                                           
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>        
+        </div>
+        </div>   
+      <!--Suyati Modification offred Applications -->
+      <!-- Submitted Applications Panel -->
+     <!-- <apex:outputPanel style="padding:10px 10px 50px 10px" id="subbmitedApps" rendered="{!showSubmitted}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Submitted Applications" columns="1" collapsible="false">
+         
+            <apex:pageblocktable value="{!submittedApplications}" var="submittedApp" id="submittedAppTable" rendered="{!(submittedApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/applywizard?Id={!submittedApp.id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!submittedApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!submittedApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!submittedApp.Programme_Type__c}"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel> -->
+      <!-- End of Submitted Applications Panel -->             
+      <!--Suyati Modified New Submitted Applications Panel -->
+        <div class="bPageBlock brandSecondaryBrd apexDefaultPageBlock secondaryPalette" id="submitedappPanel" style="padding:6px; 15px;">
+        <div class="pbBody">
+            <div>
+                <div class="pbSubheader brandTertiaryBgr first tertiaryPalette">
+                    <h3>Submitted Applications</h3></div>
+                <div class="pbSubsection">
+                    <table class="detailList" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                            <tr>
+                                <td class="data2Col  first  last " colspan="2">
+                                    <table class="list" id="registrationAppTable" border="0" cellpadding="0" cellspacing="0">
+                                        <colgroup span="4"></colgroup>
+                                        <thead class="">
+                                            <tr class="headerRow">
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id22header">
+                                                    <div id="sortDiv"></div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id27header">
+                                                    <div id="sortDiv">Name</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id30header">
+                                                    <div id="sortDiv">Programme</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id33header">
+                                                    <div id="sortDiv">Programme Type</div>
+                                                </th>
+                                                <th class="headerRow" scope="col" colspan="1" id="j_id33header">
+                                                    <div id="sortDiv">Status</div>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tb">
+                                            <apex:repeat value="{!submittedApplications}" var="submittedApp">
+                                                <tr class="dataRow even  first  last" onmouseover="if (window.hiOn){hiOn(this);} " onmouseout="if (window.hiOff){hiOff(this);} " onblur="if (window.hiOff){hiOff(this);}" onfocus="if (window.hiOn){hiOn(this);}">
+                                                    <td class="dataCell  " id="j_id22" colspan="1" width="50px"><a href="/students/ApplyWizard?Id={!submittedApp.id}">View</a></td>
+                                                    <td class="dataCell  " id="j_id27" colspan="1"><span id="">{!submittedApp.Name}</span></td>
+                                                    <td class="dataCell  " id="j_id30" colspan="1">{!submittedApp.Programme__r.Name}</td>
+                                                    <td class="dataCell  " id="j_id33" colspan="1"><span id="j_id35">{!submittedApp.Programme_Type__c}</span></td>
+                                                    <td class="dataCell  " id="j_id33" colspan="1"><span id="j_id35">{!submittedApp.Stage__c }</span></td>
+                                                </tr>        
+                                                <tr>        
+                                                    <td colspan="4">
+                                                        <div style=" padding: 15px 40px 0; margin-bottom: 15px;">
+                                                            Application Status: <b>{!submittedApp.Stage__c}</b>{!mapStatus[submittedApp.id]}
+                                                           <apex:variable var="a" value="{!(lstRefrerences1[submittedApp.id])}" />                                                         
+                                                        </div>
+                                                        <apex:outputPanel rendered="{!IF(a.size == 0, false, true)}">  
+                                                        <div class="msg" onClick="show(this);" >                                                                                                          
+                                                             <img class="referenceShowhide" src="{!$Resource.showReference}"  alt="hide" height="10" width="10" />
+                                                             <span id="showHideMsg">Hide references</span>
+                                                        </div>
+                                                       <div id="submittedApplocationDivId" >
+                                                        <div  class="pbBody" style=" padding: 0px 40px 15px;" >
+                                                            <div class="pbSubheader brandTertiaryBgr first tertiaryPalette" style="margin-bottom: 0;">
+                                                                <h3>References</h3>
+                                                            </div>
+                                                            <table class="refTable">
+                                                                <thead>
+                                                                    <tr style="border-bottom: solid black 1px;">
+                                                                        <th>Referee</th>
+                                                                        <th>Reference Status</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                  <apex:variable var="index" value="{!1}" />
+                                                                <apex:repeat value="{!lstRefrerences1[submittedApp.id]}" var="mapref">                                                                     
+                                                                         <tr>
+                                                                          <td><b>{!index}.</b> &nbsp; {!mapref.name}</td>                                                                                   
+                                                                           <td><b>{!mapref.refrence} </b>{!mapref.status}</td>
+                                                                              <apex:variable var="index" value="{!index + 1}" /> 
+                                                                         </tr>                                                                                                                                             
+                                                                    </apex:repeat>                                                                                                                                                                                               
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                       <apex:outputPanel rendered="{!IF(submittedApp.Stage__c == 'Unconditional', false, true)}"> 
+                                                           <div class="attachmentText" id="fileUploaderForOffer">
+                                                               <div style="width=50%;float: left;" >
+                                                                   If we have asked you to supply additional documentation in support of your application, click here to upload a file:
+                                                               </div>
+                                                               <div class="attachemnetSec" >
+                                                                 <c:MultiAttachment multiple="true" parentId="{!submittedApp.Id}" description="Doc" />                                                                                                                                                                             
+                                                               </div> 
+                                                            </div> 
+                                                        </apex:outputPanel>
+                                                        </div>
+                                                        </apex:outputPanel>
+                                                    </td> 
+                                                </tr>  
+                                            </apex:repeat>
+                                           
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>        
+        </div>
+        </div>                              
+      <!--End ofSuyati Modified New Submitted Applications Panel -->
+      <!-- Draft Applications Panel -->
+      <apex:outputPanel style="padding:10px 10px 50px 10px" id="draftApps" rendered="{!showDraft}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Draft Applications" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!draftApplications}" var="draftApp" id="draftAppTable" rendered="{!(draftApplications.size != null)}">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/applywizard?Id={!draftApp.Id}">Edit</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!draftApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <!-- <apex:outputfield value="{!draftApp.Programme__c}"/> -->
+                <apex:outputText value="{!draftApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!draftApp.Programme_Type__c}"/>
+              </apex:column>  
+               <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputfield value="{!draftApp.Stage__c }"/>
+              </apex:column>              
+            </apex:pageblocktable>            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+      <!-- End of Draft Applications Panel --> 
+      <!--Withdrawn Application Start Suyati Modified 21-04-2016 -->   
+       <apex:outputPanel style="padding:10px 10px 50px 10px" id="withdrawnApps" rendered="{!showWithdrawn}">
+        <apex:pageblock >
+          <apex:pageBlockSection title="Withdrawn" columns="1" collapsible="false">
+          <!-- rendered value added to handle when list returned is null to hide pageblocktabel -->
+            <apex:pageblocktable value="{!withdrawnApplications}" var="withdrawnApp" id="withdrawnAppTable" rendered="true">﻿
+              <apex:column width="50px">
+                <apex:facet name="header"></apex:facet>
+                <apex:outputLink value="/ApplyWizard?Id={!withdrawnApp.id}">View</apex:outputLink>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Name</apex:facet>
+                <apex:outputfield value="{!withdrawnApp.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme</apex:facet>
+                <apex:outputText value="{!withdrawnApp.Programme__r.Name}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Programme Type</apex:facet>
+                <apex:outputfield value="{!withdrawnApp.Programme_Type__c}"/>
+              </apex:column>
+              <apex:column >
+                <apex:facet name="header">Status</apex:facet>
+                <apex:outputfield value="{!withdrawnApp.Stage__c }"/>
+              </apex:column>
+            </apex:pageblocktable>
+            
+          </apex:pageBlockSection>
+        </apex:pageblock>   
+      </apex:outputpanel>
+
+</apex:form>
+
+</apex:define>
+<script>
+     var j$ = jQuery.noConflict();
+      j$(document).ready(function() {
+        j$('.headerSearchContainer').hide();
+      });
+               
+    if({!(registrationApplications.size == null)}){      
+        document.getElementById("registrationAppTable").setAttribute("hidden", "true");  
+    }
+    if({!showSubmitted} == false){
+           document.getElementById("submitedappPanel").setAttribute("hidden", "true");  
+    }     
+     if({!showOffered} == false){
+           document.getElementById("offerdDivMain").setAttribute("hidden", "true");  
+    }
+   
+    function show(elem)
+    { 
+        var childrens = elem.children;        
+        $(elem).next().slideToggle().togle; 
+        var msgText = childrens[1].innerHTML;
+        if( msgText == 'Hide references' ){                
+          childrens[0].src = "{!$Resource.showReferenceUp}" ;                     
+          childrens[1].innerHTML = 'Show references';       
+        }
+        else{
+          childrens[0].src = "{!$Resource.showReference}" ;
+         childrens[1].innerHTML = 'Hide references';         
+       } 
+    }
+       
+</script>
+ 
+ 
+<!-- Script for Ruler analytics app -->
+
+    <script type="text/javascript">
+        var __raconfig = __raconfig || {};
+        __raconfig.uid = '582f0e86520ec';
+        __raconfig.action = 'track';
+        (function () {
+            var ra = document.createElement('script');
+            ra.type = 'text/javascript';
+            ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ra, s);
+        }());
+    </script>
+    
+<!-- Ruler Analytics Script end -->
+ 
+</apex:page>

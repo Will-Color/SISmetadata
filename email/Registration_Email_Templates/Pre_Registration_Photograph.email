@@ -1,0 +1,14 @@
+<table height="400" width="600" cellpadding="5" border="0" cellspacing="5" >
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[Dear&nbsp;{!Student_Programme__c.Student__c},]]></td>
+</tr>
+<tr height="300" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r2" locked="0" aEditID="c1r2" >
+<![CDATA[Please upload a photograph so that we can print a Student Card to give you when you arrive at LSTM.<div><br></div><div>Your Student Card will give you access to LSTM buildings and services and confirm your status as a student whilst you are studying at LSTM.</div><div><br></div><div>Click <b>here</b>&nbsp;to log into MyLSTM, using your personal email address and password, to upload a photograph.</div><div><br></div><div>Alternatively, click <b>here</b>&nbsp;to email a passport style photograph.</div><div><br></div><div>If you do not provide a passport sized photograph, your registration may be delayed.</div><div><br></div><div>Regards,</div><div><br></div><div><br></div><div>LSTM</div>]]></td>
+</tr>
+<tr height="50" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r3" locked="0" aEditID="c1r3" >
+<![CDATA[]]></td>
+</tr>
+</table>

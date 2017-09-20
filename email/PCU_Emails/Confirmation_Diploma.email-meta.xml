@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Confirmation Diploma</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Place</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+
+Student ID Number:  {!Contact.LSTM_No__c}
+
+
+
+I am pleased confirm your place on the {!Student_Programme__c.Programme__c} course. This professional Diploma commences on {!Student_Programme__c.Programme_Start_Date__c} and ends on {!Student_Programme__c.Programme_End_Date__c}.
+
+Enrolment for your programme will take place on {!Student_Programme__c.Programme_Start_Date__c} at 8.30 am. If, for any reason, you are unable to arrive on this date, you must inform your Programme Administrator as soon as possible. You may be able to defer entry onto the next intake of the course if you are not able to attend. Students may only defer entry once. For further details please see the LSTM Admissions policy which can be found on our website by clicking here, or contact your Programme Administrator.
+
+
+Applying for a Visa
+
+Comprehensive information on immigration is included with this letter. Please read the information carefully. If you have any questions or queries please address them with us before you travel (if you are a non-visa national) or before you apply for a visa (If you are a visa-national).
+
+Whether you are a visa-national and it is compulsory for you to apply for a visa from outside the UK or if you are a non-visa national and you qualify for the visa waiver scheme, you need to ensure that your immigration permission to enter the UK is Short-term study visa; all other categories of visitor visa (Including General, Family and Business Visitor visas) prohibit or restrict study therefore we maybe unable to enrol you if you have any other type of visitor permission.
+
+If you are already in the UK with leave to enter or remain in any other capacity then you must seek advice before registration to ensure that the type of visa you hold permits study.
+
+All visa and immigration queries should be directed to:
+
+Student Experience Officer
+
+Email: studentsupport@lstmed.ac.uk
+
+
+Tuition fee information
+
+
+The fees for this programme are {!Student_Programme__c.Amount__c} which you have paid in full.
+
+
+Details concerning enrolment will be sent to you before the start of your programme.
+
+
+
+May I take this opportunity to congratulate you on your successful application and I look forward to meeting you when your programme begins.
+
+
+Yours sincerely
+
+
+
+
+
+{!User.Name}
+
+Liverpool School of Tropical Medicine
+
+Pembroke Place
+
+Liverpool, L3 5QA
+
+United Kingdom
+
+Email: {!User.Email}
+
+
+
+Enc:
+
+Accommodation information
+
+Guide to applying for a Visa
+
+Coming to Liverpool guide</textOnly>
+    <type>html</type>
+</EmailTemplate>

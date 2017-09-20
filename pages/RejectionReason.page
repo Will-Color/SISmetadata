@@ -1,0 +1,36 @@
+<apex:page controller="StudentLandingPageController" sidebar="false">
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+  <apex:define name="body">
+
+  <script>
+      var j$ = jQuery.noConflict();
+      j$(document).ready(function() {
+          j$('.headerSearchContainer').hide();  
+      });
+    </script>
+    
+  <apex:form >
+  
+  <apex:pageBlock >
+  
+  <apex:pageBlockButtons location="bottom">
+      <apex:commandButton value="Submit" action="{!createCaseFromRejection}"/>
+  </apex:pageBlockButtons>
+  
+  <p>
+      <apex:outputText value="Please take a moment to provide us with the reason you have chosen to reject our offer"/>
+  </p>
+  
+  <br/><br/>
+  <p>Reason : <br/>
+  <apex:inputTextarea rows="5" cols="50" value="{!caseRejectReason}" /></p>
+
+  </apex:pageBlock>
+  
+  </apex:form>
+  
+  </apex:define>
+</apex:page>

@@ -1,0 +1,27 @@
+<apex:page controller="QuickCreateProgrammeCont" tabStyle="Programme__c" title="Quick Create">
+    <apex:sectionHeader title="Automation" subtitle="Programme and Module"/>
+    <apex:form >
+        <apex:pageBlock title="Quick Create">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="Create" action="{!create}" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Required fields">
+                <apex:inputField value="{!prog.Name}" label="Programme Name" required="true"/>
+                <apex:inputField value="{!prog.Instance_Suffix__c}" label="Suffix" required="true"/>
+                <apex:inputField value="{!prog.Start_Date__c}" label="Start Date" required="true"/>
+                <apex:inputField value="{!prog.End_Date__c}" label="End Date" required="true"/>
+                <apex:inputField value="{!progVersion.Programme_Type__c}" label="Programme Type" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Optional fields">
+                <apex:inputField value="{!prog.Active__c}" label="Active"/>
+                <apex:inputField value="{!progVersion.Mode__c}" label="Mode"/>
+                <apex:inputField value="{!progVersion.Code__c}" label="Code"/>
+                <apex:inputField value="{!progVersion.Programme_Group__c}" label="Programme Group"/>
+                <apex:inputField value="{!prog.Home_EU_Fee__c}" label="Home/EU Fee"/>
+                <apex:inputField value="{!progModule.Module__c}" label="Module Reference"/>                
+                <apex:inputField value="{!prog.Overseas_Fee__c}" label="Overseas Fee"/>
+                <apex:inputField value="{!prog.Capacity__c}" label="Capacity"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

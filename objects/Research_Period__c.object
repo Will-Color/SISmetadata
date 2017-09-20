@@ -1,0 +1,610 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Drives list view visibility</description>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Attendance_at_PGR_Conference__c</fullName>
+        <externalId>false</externalId>
+        <label>Attendance at PGR Conference</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Attendee</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Poster</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Did Not Attend</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Completed_Supervisory_Meetings__c</fullName>
+        <description>Roll up of Interactions where RT = Supervision and Status = Completed</description>
+        <externalId>false</externalId>
+        <label>Completed Supervisory Meetings</label>
+        <summaryFilterItems>
+            <field>Interaction__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Supervisory Meeting</value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Interaction__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Interaction__c.Research_Period__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Future_Required_Supervisory_Meetings__c</fullName>
+        <description>Served up by Lightning Action 'Re-register'. Populates 'Required Supervisions' on subsequent Research Period record by Research Period Process.</description>
+        <externalId>false</externalId>
+        <label>Future Required Supervisory Meetings</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Narrative__c</fullName>
+        <description>Hyperlinked narrative field for use on Staff Community Home Page 'My Tasks' component</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("detail/"&amp;Id,Name&amp;" - "&amp; 
+IF(TEXT(Status__c)="Completed","Ready for Re-Registration",TEXT(Status__c)))</formula>
+        <label>Narrative</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>PAP_Completed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>PAP Completed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>PAP_Members__c</fullName>
+        <description>Holds string of User IDs for associated PAP Members</description>
+        <externalId>false</externalId>
+        <label>PAP Members</label>
+        <length>180</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>PAP_Outcome__c</fullName>
+        <description>Number field written to by 'Set PAP to Completed' workflow based on Panel Recommendation picklist. Research Period Process then sets Status of Research Period accordingly. Used to overcome limitations of setting picklists via Process and Workflow.</description>
+        <externalId>false</externalId>
+        <label>PAP Outcome</label>
+        <precision>1</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>PAP_Window_Open__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by Javascript button 'Open PAP Window'. Referenced in JavaScript to conditionally render 'Start PAP Process' in Student Community.</description>
+        <externalId>false</externalId>
+        <label>PAP Window Open</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Period_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Period_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Period_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Period Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Period__c</fullName>
+        <description>Picklist of Period Number. Drives Kanban view of Research Periods on Staff Community. Updated by Period Number</description>
+        <externalId>false</externalId>
+        <label>Period</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Period 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Period 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Period 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Period 4</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Period 5</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Period 6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Previous_Period__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Previous Period</label>
+        <referenceTo>Research_Period__c</referenceTo>
+        <relationshipLabel>Next Period</relationshipLabel>
+        <relationshipName>Research_Periods</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Re_register__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by Lightning Action 'Re-Register'. Triggers 'Research Period Process' to create follow-up Research Period for next academic research period, and relates new record to this record via 'Previous Period' lookup.</description>
+        <externalId>false</externalId>
+        <label>Re-register</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Required_Supervisory_Meetings__c</fullName>
+        <description>Previously Required_Supervisions</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of required Supervisions in this Research Period</inlineHelpText>
+        <label>Required Supervisory Meetings</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Status of Research Period</inlineHelpText>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Special Measures</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Student_Programme__c</fullName>
+        <externalId>false</externalId>
+        <label>Student Programme</label>
+        <lookupFilter>
+            <active>true</active>
+            <booleanFilter>1 OR 2</booleanFilter>
+            <errorMessage>You can only assign Research Periods to Student Programmes where Record Type = PGR Programme.</errorMessage>
+            <filterItems>
+                <field>Student_Programme__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>PGR Student</value>
+            </filterItems>
+            <filterItems>
+                <field>Student_Programme__c.RecordType.Name</field>
+                <operation>equals</operation>
+                <value>PGR Application</value>
+            </filterItems>
+            <infoMessage>Oops... the Student Programme you have selected is not a PGR Programme.</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Student_Programme__c</referenceTo>
+        <relationshipLabel>Research Periods</relationshipLabel>
+        <relationshipName>Research_Periods</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.Student__r.FirstName&amp;" "&amp;Student_Programme__r.Student__r.LastName&amp;" ("&amp;Student_Programme__r.Student__r.LSTM_No__c&amp;")"</formula>
+        <label>Student</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Study_Location__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Student_Programme__r.Location_of_Study__c)</formula>
+        <inlineHelpText>Set at Student Programme</inlineHelpText>
+        <label>Study Location</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>User_is_PAP_Member__c</fullName>
+        <description>Returns TRUE if Running User's Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community.</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(PAP_Members__c,$User.Id),TRUE,FALSE)</formula>
+        <label>User is PAP Member</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>User_is_Supervisor__c</fullName>
+        <description>Returns TRUE if Running User's Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Student_Programme__r.Assigned_Supervisors__c,$User.Id),TRUE,FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User is Supervisor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Research Period</label><nameField>
+        <label>Research Period Name</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Research Periods</pluralLabel><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts>
+        <listViewButtons>Delete_All_Periods</listViewButtons>
+        <searchResultsCustomButtons>Delete_All_Periods</searchResultsCustomButtons>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><listViews>
+        <fullName>Research_Periods_for_Re_registration</fullName>
+        <columns>Narrative__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>PAP_Completed__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>PAP_Outcome__c</field>
+            <operation>equals</operation>
+            <value>1,2,3,4</value>
+        </filters>
+        <filters>
+            <field>User_is_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Research Periods for Re-registration</label>
+    </listViews><listViews>
+        <fullName>Students_I_am_Supervising</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Status__c</columns>
+        <columns>Study_Location__c</columns>
+        <columns>Required_Supervisory_Meetings__c</columns>
+        <columns>Completed_Supervisory_Meetings__c</columns>
+        <columns>Period_End_Date__c</columns>
+        <columns>PAP_Completed__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_is_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Period_End_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>PGR Students I am Supervising</label>
+    </listViews><recordTypes>
+        <fullName>Full_Time</fullName>
+        <active>true</active>
+        <description>Full Time Students</description>
+        <label>Full Time</label>
+        <picklistValues>
+            <picklist>Attendance_at_PGR_Conference__c</picklist>
+            <values>
+                <fullName>Attendee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Did Not Attend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Period__c</picklist>
+            <values>
+                <fullName>Period 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 4</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Measures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Part_Time</fullName>
+        <active>true</active>
+        <description>Part Time Student Research Years</description>
+        <label>Part Time</label>
+        <picklistValues>
+            <picklist>Attendance_at_PGR_Conference__c</picklist>
+            <values>
+                <fullName>Attendee</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Did Not Attend</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Poster</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Presentation</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Period__c</picklist>
+            <values>
+                <fullName>Period 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 3</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 4</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 5</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Period 6</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Special Measures</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><validationRules>
+        <fullName>Prevent_Reregistration_if_PAP_incomplete</fullName>
+        <active>true</active>
+        <description>Prevents Copy PAP Members being set to TRUE if PAP Completed = FALSE. 
+Lightning Action 'Re-Register' sets Copy PAP Members to True, thus triggering Research Period Process to create new record. Validation prevents  use of action before PAP completed.</description>
+        <errorConditionFormula>AND(PAP_Completed__c=FALSE,Re_register__c=TRUE,OR(PAP_Outcome__c=0,PAP_Outcome__c=5,PAP_Outcome__c=6,ISNULL(PAP_Outcome__c)))</errorConditionFormula>
+        <errorMessage>You cannot re-register this Student until a Progress Assessment has been completed and the Panel has allowed the Student to re-register</errorMessage>
+    </validationRules><webLinks>
+        <fullName>Delete_All_Periods</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Delete All Periods</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT("/soap/ajax/9.0/connection.js")} 
+
+var records = {!GETRECORDIDS( $ObjectType.Research_Period__c )}; 
+
+if (records[0] == null) { 
+alert("Please select at least one record.") } 
+else { 
+
+var errors = []; 
+var result = sforce.connection.deleteIds(records); 
+if (result &amp;&amp; result.length){ 
+var numFailed = 0; 
+var numSucceeded = 0; 
+for (var i = 0; i &lt; result.length; i++){ 
+var res = result[i]; 
+if (res &amp;&amp; res.success == 'true'){ 
+numSucceeded++; 
+} else { 
+var es = res.getArray("errors"); 
+if (es.length &gt; 0) { 
+errors.push(es[0].message); 
+} 
+numFailed++; 
+} 
+} 
+if (numFailed &gt; 0){ 
+alert("Failed: " + numFailed + "\nSucceeded: " + numSucceeded + " \n Due to: " + errors.join("\n")); 
+} else { 
+alert("Number of records deleted: " + numSucceeded); 
+} 
+} 
+window.location.reload(); 
+}</url>
+    </webLinks></CustomObject>

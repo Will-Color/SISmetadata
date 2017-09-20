@@ -1,0 +1,579 @@
+<apex:page standardController="Student_Programme__c" extensions="ModuleRegistrationContExt" sidebar="true">
+    <!-- Created By Suyati to Provide functionality for choice of optional module by either staff (main SF UI) or students (via Community)-->
+    <meta name="viewport" contentLeft="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <style>
+#select,
+        #Deselect,
+        #selectUser,
+        #DeselectUser {
+            background-color: #CE1126;
+            border: none;
+            color: #FFF;
+            width: 40px;
+            height: 20px;
+            border-radius: 5px;
+        }
+        
+        #ValidateSelection,
+        #Upload {}
+        
+        #ValidateSelection:hover,
+        #select:hover,
+        #Deselect:hover,
+        #selectUser:hover,
+        #DeselectUser:hover {
+            background-color: #F38E2E;
+            cursor: pointer;
+        }
+        /*
+        .checkBox
+        {
+            background-color: #CE1126;
+            color:#FFF;
+            padding:5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        */
+        /*Override Navbar margin */
+        
+        .navbar {
+            margin: top: -10px;
+        }
+        /* STRUCTURE */
+        
+        #pagewrap {
+            padding: 5px;
+            width: 1040px;
+            margin: 20px auto;
+        }
+        
+        #HeaderLine {
+            clear: both;
+        }
+        
+        #contentLeft,
+        #contentRight {
+            width: 98%;
+            float: left;
+            padding: 5px 15px;
+            text-align: center;
+            //background: #42A0DA;
+            border-radius: 5px;
+        }
+        
+        #contentLeft select,
+        #contentRight select {
+            //border:2px solid #FFF;
+            border: 1px solid #CE1126;
+            //border-radius:5px;
+            padding: 3px;
+            //margin:5px 0px 5px 0px;
+        }
+        
+        #contentMiddle {
+            width: 100%;
+            /* Account for margins + border values */
+            float: left;
+            padding: 5px 15px;
+            margin: 0px 5px 5px 5px;
+            text-align: center;
+        }
+        
+        #contentRight {
+            padding: 5px 15px;
+            float: left;
+            text-align: center;
+        }
+        
+        #buttonsContainer {
+            width: 100%;
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        #footerLine {
+            clear: both;
+            border-bottom: 1px solid #CE1126;
+        }
+        
+        .mainHeading {
+            color: #CE1126;
+            font-size: 46px;
+            margin: 40px 0 35px;
+            width: 100%;
+            float: left;
+            text-align: center;
+            line-height: normal;
+        }
+        /************************************************************************************
+        MEDIA QUERIES
+        *************************************************************************************/
+        /* for 800px or less */
+        
+        @media screen and (max-width: 800px) {
+            #pagewrap {
+                width: 100%;
+            }
+            #contentLeft {
+                width: 100%;
+                clear: both;
+                padding: 1% 4%;
+            }
+            #contentMiddle {
+                clear: both;
+                width: 100%;
+                padding: 1% 4%;
+                margin: 0px 0px 5px 5px;
+                float: right;
+            }
+            #contentRight {
+                clear: both;
+                padding: 1% 4%;
+                width: auto;
+                float: none;
+            }
+            #buttonsContainer {
+                clear: both;
+                text-align: center;
+            }
+            #HeaderLine,
+            #footerLine {
+                //padding: 1% 4%;
+            }
+        }
+        /* for 700px or less */
+        
+        @media screen and (max-width: 600px) {
+            #contentLeft {
+                width: auto;
+                float: none;
+            }
+            #contentMiddle {
+                width: auto;
+                float: none;
+                margin-left: 0px;
+            }
+            #contentRight {
+                width: auto;
+                float: none;
+            }
+            #buttonsContainer input[type=button] {
+                margin-top: 10px;
+            }
+        }
+        /* for 480px or less */
+        
+        @media screen and (max-width: 480px) {
+            #HeaderLine {
+                height: auto;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            #contentRight {
+                width: auto;
+                float: none;
+            }
+        }
+        
+        #HeaderLine,
+        #contentLeft,
+        #contentMiddle,
+        #contentRight {
+            margin-bottom: 5px;
+        }
+        
+        #pagewrap,
+        #HeaderLine,
+        #contentLeft,
+        #contentMiddle,
+        #contentRight,
+        #footerLine {
+            //border: solid 1px #ccc;
+        }
+        
+        select {
+            display: table-cell;
+            width: 100%;
+        }
+        
+        .border-bottom {
+            border-bottom-width: 3px!important;
+        }
+        
+        .reswrap {
+            width: 100%;
+        }
+        
+        @media screen and (min-width: 1000px) {
+            .reswrap {
+                width: 70%;
+            }
+        }
+        
+        .social-link {
+            width: 31px;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: left;
+            margin: 0 5px;
+        }
+        
+        ) no-repeat;
+    }
+    /*============================ comman header style==============================================*/
+    .rounded-button {}
+    .rounded-button:hover {
+        text-decoration: none !important;
+    }
+    .shop-button:hover {
+        background: #337C9F !important
+    }
+    .social-link {
+        width: 31px;
+        height: 30px;
+        margin: 0;
+        padding: 0;
+        display: block;
+        float: left;
+        margin: 0 5px;
+    }
+    ) no-repeat;
+}
+.top-btn-wrapp {
+    float: right;
+    margin: 21px 15px 10px;
+}
+.orange-clr {
+    color: #F38E2E !important
+}
+.orange-bgclr {
+    background-color: #F38E2E !important
+}
+.orange-clr:hover {
+    color: #42A0DA !important
+}
+.linkedin {
+    background-position: 0 0;
+    margin-left: 15px;
+}
+.linkedin:hover {
+    background-position: 0 -30px;
+}
+.rss {
+    background-position: -31px 0;
+}
+.rss:hover {
+    background-position: -31px -30px;
+}
+.list-plain li {
+    margin-left: 0
+}
+
+#Upload {
+    color: #FFFFFF;
+    width: 152px;
+    height: 28px;
+    background-color: #CE1126;
+    border-radius: 5px;
+    border: none;
+}
+#select,
+#Deselect {
+    -webkit-transform: rotate(90deg);
+    /* Safari and Chrome */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -o-transform: rotate(90deg);
+    /* Opera */
+    transform: rotate(90deg);
+}
+.boxHeading {
+    font-size: 15px;
+    /* font-weight: bold; */
+    padding: 0 0 10px 0;
+}
+.saveButton {
+    width: 100%;
+    text-align: center;
+    color: #FBFBFB;
+}
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <div>
+        <div id="">
+            <div>
+                <apex:form id="mainForm" >
+                    <apex:pageMessages id="errorMessage"></apex:pageMessages>
+                    <apex:pageBlock title="">
+                        <apex:pageBlockSection collapsible="false" title="Module Registration">
+                            <apex:outputLabel value="Programme" />
+                            <a href="/{!application.Programme__r.id}" target="_t">{!application.Programme__r.Name}</a>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection >
+                            <apex:outputLabel value="Student" />
+                            <a href="/{!application.Student__r.id}" target="_t">{!application.Student__r.Name} </a >                                                                       
+                        </apex:pageBlockSection>                                                        
+                        <apex:pageBlockSection > 
+                             <apex:outputLabel value="Student Programme" /> 
+                             <a href="/{!application.Id}" target="_t">{!application.name}</a>
+                        </apex:pageBlockSection>
+                        <apex:pageBlockSection > 
+                             <apex:outputLabel value="Unassigned Credits" />                                                         
+                             <span id="totalUsedCredits"></span>                        
+                        </apex:pageBlockSection>
+                    </apex:pageBlock>
+                </apex:form>
+            </div>
+            <div id="footerLine">
+            </div>
+            <apex:outputPanel rendered="{!lsstageRegister}">
+                <apex:pageBlock title="">
+                    <apex:pageBlockSection collapsible="false" title="Select Optional Modules"> </apex:pageBlockSection>
+                    <span class="checkBox">               
+                        <input type="checkbox" id="chkselectall" name="selectall" >Select All</input></span>
+                    <br/>
+                    <!-- new slect box -->
+                    <div id="contentLeft">
+                        <div class="boxHeading"> Available Optional Modules </div>
+                        <select multiple="true" id="selectBundle" size="10">
+                        </select>
+                        <input type="hidden" value="{!count}" id="count" />
+                    </div>
+                    <!-- new slect box ends-->
+                    <div id="contentMiddle">
+                        <br/> add
+                        <input type="button" value=">>" id="select" />
+                        <input type="button" value="<<" id="Deselect"> </input>
+                        remove
+                    </div>
+                    <div id="contentRight">
+                        <br/>
+                        <br/>
+                        <div class="boxHeading"> Selected Optional Modules </div>
+
+                        <select multiple="true" size="10" id="deselectBundle">
+                        </select>                       
+                    </div>
+                    <apex:pageBlockSection columns="1">
+                        <div class="saveButton">
+                            <input type="button" value="Save" id="Upload"> </input>
+                        </div>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:outputPanel>
+        </div>
+    </div>
+    <script>
+        var modules = [];
+        var i = 0;
+        var ExistingModules = [];
+    </script>
+    <apex:repeat value="{!lstExtModules}" var="extModule">
+        <script>
+            var tempExtModules = new Array();
+            tempExtModules.push('{!extModule.Module_Credits__c}');
+            tempExtModules.push('{!extModule.Module__r.Name}');
+            tempExtModules.push('{!extModule.Module__r.Module_Reference__c}');
+            tempExtModules.push('{!extModule.Id}');
+            ExistingModules.push(tempExtModules);
+        </Script>
+    </apex:repeat>
+    <apex:repeat value="{!lstModules}" var="moduleformlist">
+        <script>
+            var modulestemp = new Array();
+            modulestemp.push('{!moduleformlist.Module_Credits__c}');
+            modulestemp.push('{!moduleformlist.Module__r.Name}');
+            modulestemp.push('{!moduleformlist.Module__r.Module_Reference__c}');
+            modulestemp.push('{!moduleformlist.Id}');
+            modules.push(modulestemp);
+        </script>
+    </apex:repeat>
+    <Script>
+        function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        };
+        $(document).ready(function() {      
+            $AlreadyUsedCreditd = {!totalUsedCredits};
+            $totalUsedCredits = {!application.Required_Credits__c}-$AlreadyUsedCreditd - {!sumOfRequiredModuled}; 
+            if({!lsstageRegister} != false ){
+                document.getElementById('totalUsedCredits').innerHTML = $totalUsedCredits;
+             }
+            //this is by suyati            
+            var index = 0;
+            if (modules.length == 0) {
+              //  alert("No Module is Available");
+            } else {
+                for (index = 0; index < modules.length; index++) {
+                    $('#selectBundle').append('<option value=' + modules[index][3] + '>' + modules[index][2] + ' (' + modules[index][0] + ' Credits) - ' + ' ' + modules[index][1] + '</option>');
+                }
+            }
+            if (ExistingModules.length == 0) {
+               // alert("No Existing Moduless");
+            } else {
+                for (index = 0; index < ExistingModules.length; index++) {
+                    $('#deselectBundle').append('<option value=' + ExistingModules[index][3] + '>' + ExistingModules[index][2] + ' (' + ExistingModules[index][0] + ' Credits) - ' + ' ' + ExistingModules[index][1] + '</option>');
+                }
+            }
+            //code ends            
+            $('#chkselectall').click(function() {
+                if(document.getElementById('chkselectall').checked == true){
+                $("#selectBundle option").each(function() {
+                    this.selected = true;
+                });
+                }
+                else{
+                 $("#selectBundle option").each(function() {
+                    this.selected = false;
+                });
+                }
+
+            });
+            $('#selectBundle').click(function(){
+                document.getElementById('chkselectall').checked = false;
+            });
+            $('#Deselect').click(function() {
+                var selectedValues = document.getElementById('selectBundle');
+                var deselectBundle1 = document.getElementById('deselectBundle');
+                var count = document.getElementById('count');
+                if (deselectBundle1.length > 0) {
+                    for (var x = 0; x < deselectBundle1.length; x++) {
+                        if (deselectBundle1.options[x].selected == true) {
+                            // recaluculating credit values
+                            var str = deselectBundle1.options[x].text;
+                            var str1 = str.split("(");
+                            var str2 = str1[1];
+                            var str3 = str2.split(" ");
+                            $totalUsedCredits = parseFloat($totalUsedCredits) + parseFloat(str3[0]);
+                            document.getElementById('totalUsedCredits').innerHTML = $totalUsedCredits;
+                            //recaluculating credit values ends 
+                            selectedValues.add(deselectBundle1.options[x]);
+                            x--;
+                        }
+                    }
+                }
+            });
+            $('#select').click(function() {
+                var creditStore = [];
+                var selectedValues = document.getElementById('selectBundle');
+                // alert(selectedValues );              
+                var deselectBundle1 = document.getElementById('deselectBundle');
+                var count = document.getElementById('count');
+                var flag = false;
+                if (selectedValues.length > 0) {
+                //modification for do not add any option if do not have suffient credits 
+                var totalSelectedCredits = 0.0;
+                for (var x = 0; x < selectedValues.length; x++) {              
+                        if (selectedValues.options[x].selected == true) {
+                            //recaluculating credit values
+                            var str = selectedValues.options[x].text; var str1 = str.split("("); var str2 = str1[1];
+                            var str3 = str2.split(" ");                           
+                            totalSelectedCredits = totalSelectedCredits +   parseFloat(str3[0]) ;
+                        }
+                  }
+                
+                //modification for do not add any option if do not have suffient credits ends              
+                if(totalSelectedCredits <= parseFloat($totalUsedCredits) ){
+                    for (var x = 0; x < selectedValues.length; x++) {
+                        if (selectedValues.options[x].selected == true) {
+                            //recaluculating credit values
+                            var str = selectedValues.options[x].text;
+                            var str1 = str.split("(");
+                            var str2 = str1[1];
+                            var str3 = str2.split(" ");
+                          if(parseFloat($totalUsedCredits) >= parseFloat(str3[0]) ){
+                                $totalUsedCredits = parseFloat($totalUsedCredits)-parseFloat(str3[0]);                            
+                                document.getElementById('totalUsedCredits').innerHTML = $totalUsedCredits;
+                                //recaluculating credit values ends                     
+                                deselectBundle1.add(selectedValues.options[x]);
+                                x--;
+                          }
+                           else{
+                               flag= true;
+                          }
+                                                   
+                        }
+                    }
+                    }
+                    else{
+                        flag= true;
+                    }
+                    if(flag == true){
+                         alert("You do not have sufficient credits to add the options!");
+                        flag= false;
+                    }
+                }
+            });
+            $('#Upload').click(function() {
+
+
+
+                var deselectBundle1 = document.getElementById('deselectBundle');
+
+                var count = document.getElementById('count');
+
+                var bundle = [];
+
+                var selectBundle = document.getElementById('selectBundle');
+                var selectbundle = [];
+
+                if (deselectBundle1.options != null) {
+                    for (x = 0; x < deselectBundle1.length; x++) {
+                        bundle.push(deselectBundle1.options[x].value);
+
+                    }
+                }
+
+                if (selectBundle.options != null) {
+                    for (x = 0; x < selectBundle.length; x++) {
+                        selectbundle.push(selectBundle.options[x].value);
+
+                    }
+                }
+
+
+
+
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.ModuleRegistrationContExt.saveOptionalModules}',
+                    bundle.toString(), getUrlParameter("id"), selectbundle.toString(),
+                    function(result) {
+
+                        if (result != 'Errormsg ') {
+
+
+
+                            if (result.toString() == 'Success') {
+
+                                alert("Your selection has been Successfully Saved");
+                                location.reload();
+
+                            } else {
+
+                            }
+                        } else {
+
+                        }
+                    }, {
+                        escape: true
+                    }
+                );
+            });
+
+
+
+        });
+    </script>
+</apex:page>

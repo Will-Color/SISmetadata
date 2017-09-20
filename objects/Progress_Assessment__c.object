@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Action_Required__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK("detail/"&amp;Id,Student__c&amp;" - "&amp;Name)</formula>
+        <inlineHelpText>Narrative field for use on Staff Community Home page list views</inlineHelpText>
+        <label>Action Required</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Add_PAP_Members__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by 'Create PAP' lightning actions. Triggers 'Progress Assessment Process' to invoke 'PAP Membership' flow. Hidden on page layouts.</description>
+        <externalId>false</externalId>
+        <label>Add PAP Members</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Assessed_Period__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessed Period</label>
+        <referenceTo>Research_Period__c</referenceTo>
+        <relationshipName>Progress_Assessments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Attendance_at_PGR_Conference__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(TEXT(Assessed_Period__r.Attendance_at_PGR_Conference__c)),"Not Specified",TEXT(Assessed_Period__r.Attendance_at_PGR_Conference__c))</formula>
+        <inlineHelpText>Specified on Research Period</inlineHelpText>
+        <label>Attendance at PGR Conference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Completed_Supervisions__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Assessed_Period__r.Completed_Supervisory_Meetings__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Completed Supervisions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Date_of_Last_Panel__c</fullName>
+        <externalId>false</externalId>
+        <formula>Previous_Panel__r.Date_of_Review__c</formula>
+        <inlineHelpText>Taken from Previous Panel</inlineHelpText>
+        <label>Date of Last Panel</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Date_of_Registration__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assessed_Period__r.Student_Programme__r.Enrolment_Date__c</formula>
+        <inlineHelpText>From Student Programme</inlineHelpText>
+        <label>Date of Registration</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Date_of_Review__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Date on which PAP takes place</inlineHelpText>
+        <label>Date of Review</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields><fields>
+        <fullName>Difficulties_experienced__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Difficulties experienced with facilities or resources needed to undertake research</inlineHelpText>
+        <label>Difficulties experienced</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Idenification_of_development_needs_PAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Panel's assessment of the Student's engagement with identification of training and development needs, and actions to meet needs.</inlineHelpText>
+        <label>Identification of development needs(PAP)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Idenification_of_development_needs_Sup__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary Supervisor's assessment of the Student's engagement with identification of training and development needs, and actions to meet needs.</inlineHelpText>
+        <label>Idenification of development needs (Sup)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Location_of_Study__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Assessed_Period__r.Student_Programme__r.Location_of_Study__c)</formula>
+        <label>Location of Study</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Mode_of_Study__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(Assessed_Period__r.RecordType.DeveloperName="Full Time","Full Time","Part Time")</formula>
+        <label>Mode of Study</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>PAP_Form__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK ("https://color.tfaforms.net/47?PAID=" &amp;  Id , "Click here")</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>PAP Form</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Panel_Recommendation__c</fullName>
+        <description>~~~ !!!!! Picklist values hard referenced in 'Set PAP Outcome on Assessed Research Period' workflow and must be updated in both places !!!! ~~~</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Not seen by Student until  'Released to Student' is ticked.</inlineHelpText>
+        <label>Panel Recommendation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Student has made satisfactory progress and should be permitted to re-register.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Minor concerns have been raised and these will be brought to attention of DPR and may require further action.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student has not made sufficient satisfactory academic progress but is permitted a further period under review. Academic progress will be assessed further by the PAP.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student's initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student has not made satisfactory academic progress, and their studies should be terminated.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes.</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Panel_s_Confidential_Issues__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Information given here will not be visible to the Student or Assigned Supervisors, but will remain visible to all PAP Members.</inlineHelpText>
+        <label>Panel's Confidential Issues</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Period_of_Study__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Assessed_Period__r.Period_Number__c)</formula>
+        <label>Period of Study</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Previous_Panel__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to last Progress Assessment Panel record</inlineHelpText>
+        <label>Previous Panel</label>
+        <referenceTo>Progress_Assessment__c</referenceTo>
+        <relationshipLabel>Subsequent PAPs</relationshipLabel>
+        <relationshipName>Progress_Assessments</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Programme__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISBLANK(TEXT(Assessed_Period__r.Student_Programme__r.Exit_Option__c)),TEXT(Assessed_Period__r.Student_Programme__r.Entry_Option__c),TEXT(Assessed_Period__r.Student_Programme__r.Entry_Option__c))</formula>
+        <inlineHelpText>Taken from Entry/Exit Options on Student Programme</inlineHelpText>
+        <label>Programme</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Project_management_and_resources__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Panel's assessment of the project, its management and the availability of resources</inlineHelpText>
+        <label>Project, management and resources</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Prospect_of_timely_quality_submission_Su__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary Supervisor's assessment of Student's prospects for delivering a timely and high-quality thesis.</inlineHelpText>
+        <label>Prospect of timely/quality submit (Sup)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Prospect_of_timely_quality_submit_PAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Panel's assessment of Student's prospects for delivering a timely and high-quality thesis.</inlineHelpText>
+        <label>Prospect of timely/quality submit (PAP)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Release_to_Student__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Once ticked, Student will be able to review the outcome of the PAP.</inlineHelpText>
+        <label>Release to Student</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Release_to_Supervisor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Release to Supervisor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Required_Supervisions__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Assessed_Period__r.Required_Supervisory_Meetings__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Set on Assessed Research Period record</inlineHelpText>
+        <label>Required Supervisions</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Research_Outputs_PAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Panel's assessment of research outputs, eg papers, conference papers, etc</inlineHelpText>
+        <label>Research Outputs (PAP)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Research_Outputs_Student__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>e.g papers, conference papers</inlineHelpText>
+        <label>Research Outputs (Student)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Research_Period_Active__c</fullName>
+        <description>Drives List View visibility</description>
+        <externalId>false</externalId>
+        <formula>Assessed_Period__r.Active__c</formula>
+        <label>Research Period Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Self_management_effort_commitment_Sup_vi__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Primary Supervisor's assessment of student's self-management skills; their grasp of their work; their effort and commitment.</inlineHelpText>
+        <label>Self-management, effort &amp; commitmt (Sup)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Self_management_effort_commitmt_PAP__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Panel's assessment of student's self-management skills; their grasp of their work; their effort and commitment.</inlineHelpText>
+        <label>Self-management, effort &amp; commitmt (PAP)</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Status__c</fullName>
+        <description>Narrative field</description>
+        <externalId>false</externalId>
+        <formula>IF(
+AND(NOT(ISBLANK(TEXT(Panel_Recommendation__c))),Release_to_Student__c=TRUE,Release_to_Supervisor__c=TRUE),"Completed",
+IF(
+AND(NOT(ISBLANK(TEXT(Panel_Recommendation__c))),Release_to_Student__c=FALSE,Release_to_Supervisor__c=TRUE),"Released to Supervisor",
+IF(
+AND(NOT(ISBLANK(TEXT(Panel_Recommendation__c))),Release_to_Student__c=FALSE,Release_to_Supervisor__c=FALSE),"Awaiting Panel Release",
+IF(
+AND(NOT(ISBLANK(TEXT(Panel_Recommendation__c))),Release_to_Student__c=FALSE),"Awaiting Panel Release",
+IF(AND(Submit_to_Supervisor__c=TRUE,Submit_to_Panel__c=TRUE),"Ready for Panel Review",
+IF(AND(Submit_to_Supervisor__c=TRUE,Submit_to_Panel__c=FALSE),
+"Supervisor yet to complete",
+"Student yet to complete"))))))</formula>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <externalId>false</externalId>
+        <formula>Assessed_Period__r.Student__c</formula>
+        <label>Student</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Student_s_Confidential_Issues__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Information given here will not be visible by your Supervisor, but will be visible to all PAP Members.</inlineHelpText>
+        <label>Student's Confidential Issues</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields><fields>
+        <fullName>Submit_to_Panel__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Once ticked, the Panel will be alerted to review.</inlineHelpText>
+        <label>Submit to Panel</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Submit_to_Supervisor__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Once ticked, your Primary Supervisor will be alerted to complete their sections.</inlineHelpText>
+        <label>Submit to Supervisor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Supervisor_s_Confidential_Issues__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Information given here will not be shown to the Student, but will be visible to all PAP Members and all Assigned Supervisors</inlineHelpText>
+        <label>Supervisor's Confidential Issues</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Teaching_demonstration_undertaken__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>To be completed by Student</inlineHelpText>
+        <label>Teaching/demonstration undertaken</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>25</visibleLines>
+    </fields><fields>
+        <fullName>Type_of_Review__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Review</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Annual Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Interim Review</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Uploaded_Development_Needs_Analysis__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uploaded Development Needs Analysis</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Uploaded_Project_Plan__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uploaded Project Plan</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Uploaded_Project_Report__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uploaded Project Report</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Uploaded_Timeline_for_Data_Collection__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Uploaded Timeline for Data Collection</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>User_is_PAP_Member__c</fullName>
+        <description>Returns TRUE if Running User's Contact ID is contained in PAP Members string on Research Period parent record. Used to drive List Views on Staff Community</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Assessed_Period__r.PAP_Members__c,$User.Id),TRUE,FALSE)</formula>
+        <inlineHelpText>Returns TRUE if Running User's Contact ID is contained in PAP Members string on Research Period parent record. Used to drive List Views on Staff Community</inlineHelpText>
+        <label>User is PAP Member</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>User_is_Supervisor__c</fullName>
+        <description>Returns TRUE if Running User's Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community</description>
+        <externalId>false</externalId>
+        <formula>IF(CONTAINS(Assessed_Period__r.Student_Programme__r.Assigned_Supervisors__c,$User.Id),TRUE,FALSE)</formula>
+        <inlineHelpText>Returns TRUE if Running User's Contact ID is contained in Assigned Supervisors string on Student Programme parent record. Used to drive List Views on Staff Community</inlineHelpText>
+        <label>User is Supervisor</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Object for recording of Progress Assessment Panel outcomes</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>false</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Progress Assessment</label><nameField>
+        <label>PAP Reference</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Progress Assessments</pluralLabel><recordTypeTrackHistory>false</recordTypeTrackHistory><searchLayouts /><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><listViews>
+        <fullName>My_Students_PAP_Meetings</fullName>
+        <columns>NAME</columns>
+        <columns>Type_of_Review__c</columns>
+        <columns>Date_of_Review__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>User_is_Supervisor__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Research_Period_Active__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>My Students' PAP Meetings</label>
+    </listViews><recordTypes>
+        <fullName>Pre_submission</fullName>
+        <active>true</active>
+        <description>PAPs prior to submission to Supervisor</description>
+        <label>Pre-submission</label>
+        <picklistValues>
+            <picklist>Panel_Recommendation__c</picklist>
+            <values>
+                <fullName>Minor concerns have been raised and these will be brought to attention of DPR and may require further action%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has made satisfactory progress and should be permitted to re-register%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made satisfactory academic progress%2C and their studies should be terminated%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made sufficient satisfactory academic progress but is permitted a further period under review%2E Academic progress will be assessed further by the PAP%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%27s initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Review__c</picklist>
+            <values>
+                <fullName>Annual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interim Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Released</fullName>
+        <active>true</active>
+        <description>PAPs released to Student</description>
+        <label>Released</label>
+        <picklistValues>
+            <picklist>Panel_Recommendation__c</picklist>
+            <values>
+                <fullName>Minor concerns have been raised and these will be brought to attention of DPR and may require further action%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has made satisfactory progress and should be permitted to re-register%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made satisfactory academic progress%2C and their studies should be terminated%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made sufficient satisfactory academic progress but is permitted a further period under review%2E Academic progress will be assessed further by the PAP%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%27s initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Review__c</picklist>
+            <values>
+                <fullName>Annual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interim Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><recordTypes>
+        <fullName>Submitted</fullName>
+        <active>true</active>
+        <description>PAPs submitted to Supervisor/Panel</description>
+        <label>Submitted</label>
+        <picklistValues>
+            <picklist>Panel_Recommendation__c</picklist>
+            <values>
+                <fullName>Minor concerns have been raised and these will be brought to attention of DPR and may require further action%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has been found guilty of serious academic malpractice in accordance with the Procedure of Academic Integrity of Postgraduate Research Programmes%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has made satisfactory progress and should be permitted to re-register%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made satisfactory academic progress%2C and their studies should be terminated%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student has not made sufficient satisfactory academic progress but is permitted a further period under review%2E Academic progress will be assessed further by the PAP%2E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Student%27s initial PhD registration is downgraded to MPhil and they are permitted to re-register under the revised qualification aim%2E</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Review__c</picklist>
+            <values>
+                <fullName>Annual Review</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Interim Review</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes><validationRules>
+        <fullName>Attendance_at_Conference_not_set</fullName>
+        <active>false</active>
+        <description>Prevents Submission to Panel if Attendance at PGR Conference not set.</description>
+        <errorConditionFormula>AND(Submit_to_Panel__c=TRUE,Attendance_at_PGR_Conference__c="Not Specified")</errorConditionFormula>
+        <errorMessage>You have not specified whether Student has attended a PGR Conference. Untick 'Submit to Panel' and update Attendance of PGR Conference on Research Period record.</errorMessage>
+    </validationRules></CustomObject>

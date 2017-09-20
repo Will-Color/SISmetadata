@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QuickAction xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Sets &apos;Re-register&apos; field to True which triggers Research Period process to create follow-up Research Period for next year. Will not trigger Flow if PAP Completed = False</description>
+    <fieldOverrides>
+        <field>Active__c</field>
+        <formula>FALSE</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Future_Required_Supervisory_Meetings__c</field>
+        <formula>Research_Period__c.Required_Supervisory_Meetings__c</formula>
+    </fieldOverrides>
+    <fieldOverrides>
+        <field>Re_register__c</field>
+        <formula>TRUE</formula>
+    </fieldOverrides>
+    <label>Re-Register</label>
+    <optionsCreateFeedItem>false</optionsCreateFeedItem>
+    <quickActionLayout>
+        <layoutSectionStyle>TwoColumnsLeftToRight</layoutSectionStyle>
+        <quickActionLayoutColumns>
+            <quickActionLayoutItems>
+                <emptySpace>false</emptySpace>
+                <field>Future_Required_Supervisory_Meetings__c</field>
+                <uiBehavior>Edit</uiBehavior>
+            </quickActionLayoutItems>
+        </quickActionLayoutColumns>
+        <quickActionLayoutColumns/>
+    </quickActionLayout>
+    <successMessage>Student successfully re-registered. A new Research Period record has been created for next year.</successMessage>
+    <type>Update</type>
+</QuickAction>

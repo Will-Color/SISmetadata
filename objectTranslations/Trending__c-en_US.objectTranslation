@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Academic Year --></label>
+        <name>Academic_Year_lookup__c</name>
+    </fields><fields>
+        <label><!-- Application --></label>
+        <name>Application__c</name>
+        <relationshipLabel><!-- Trending Records --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Fee Status --></label>
+        <name>Fee_Status_lookup__c</name>
+    </fields><fields>
+        <help><!-- Indicates this record was created via dataloader in historic data mining exercise and not via the Snapshot process --></help>
+        <label><!-- Historic Data --></label>
+        <name>Historic_Data__c</name>
+    </fields><fields>
+        <label><!-- Programme --></label>
+        <name>Programme_Id__c</name>
+    </fields><fields>
+        <label><!-- Programme Type --></label>
+        <name>Programme_Type__c</name>
+    </fields><fields>
+        <label><!-- Record Count --></label>
+        <name>Record_Count__c</name>
+    </fields><fields>
+        <label><!-- Records from this Week Number --></label>
+        <name>Records_from_this_Week_Number__c</name>
+    </fields><fields>
+        <label><!-- Registration Status --></label>
+        <name>Registration_Status__c</name>
+    </fields><fields>
+        <label><!-- SIS Snapshot Event --></label>
+        <name>SIS_Snapshot_Event__c</name>
+    </fields><fields>
+        <label><!-- SIS Week Number --></label>
+        <name>SIS_Week_Number__c</name>
+    </fields><fields>
+        <label><!-- SIS Year --></label>
+        <name>SIS_Year__c</name>
+    </fields><fields>
+        <label><!-- Snapshot Date --></label>
+        <name>Snapshot_Date__c</name>
+    </fields><fields>
+        <label><!-- Stage --></label>
+        <name>Stage__c</name>
+        <picklistValues>
+            <masterLabel>Accepted</masterLabel>
+            <translation><!-- Accepted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Checked</masterLabel>
+            <translation><!-- Checked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conditional</masterLabel>
+            <translation><!-- Conditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deferred</masterLabel>
+            <translation><!-- Deferred --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expected</masterLabel>
+            <translation><!-- Expected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incomplete</masterLabel>
+            <translation><!-- Incomplete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pre-Registered</masterLabel>
+            <translation><!-- Pre-Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered</masterLabel>
+            <translation><!-- Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reject</masterLabel>
+            <translation><!-- Reject --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reviewed</masterLabel>
+            <translation><!-- Reviewed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unconditional</masterLabel>
+            <translation><!-- Unconditional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Withdrawn</masterLabel>
+            <translation><!-- Withdrawn --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student_Id__c</name>
+    </fields><fields>
+        <label><!-- Submission Date --></label>
+        <name>Submission_Date__c</name>
+    </fields><fields>
+        <label><!-- Test Record --></label>
+        <name>Test_Record__c</name>
+    </fields><fields>
+        <help><!-- Shows week number within Calendar year --></help>
+        <label><!-- Week Number --></label>
+        <name>Week_Number__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Trending Record</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Trending Records</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Trending Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

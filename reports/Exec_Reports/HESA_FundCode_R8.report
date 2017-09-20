@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Student_Programme__c$Id</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$Name</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$LSTM_No__c</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$Highest_qualification_on_entry__c</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$QUALENT3_Code__c</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$HESA_Fundable__c</field>
+    </columns>
+    <columns>
+        <field>Student_Programme__c$Audit_Trigger__c</field>
+    </columns>
+    <description>Records that break rule 8</description>
+    <filter>
+        <booleanFilter>1 AND 2 AND 3 AND ((4 AND 5) OR (6 AND 7))</booleanFilter>
+        <criteriaItems>
+            <column>Student_Programme__c$Stage__c</column>
+            <operator>equals</operator>
+            <value>Registered,Completed</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$Academic_Year__c</column>
+            <operator>equals</operator>
+            <value>15/16</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$HESA_Fundable__c</column>
+            <operator>equals</operator>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$QUALENT3_Code__c</column>
+            <operator>equals</operator>
+            <value>M2X,MZZ,MUK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>MSc Programme</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$QUALENT3_Code__c</column>
+            <operator>startsWith</operator>
+            <value>D,M2X,MZZ,MUK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Student_Programme__c$Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>Professional Diploma</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Student_Programme__c$Programme_Type__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>HESA FundCode R8</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CRT_Student_Programmes_with_Students_Programmes__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Student_Programme__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

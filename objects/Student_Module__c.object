@@ -1,0 +1,672 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Academic_Year__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.Academic_Year__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Taken from Student Programme</inlineHelpText>
+        <label>Academic Year</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Anonymous_Ref__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student__r.Anonymous_Ref__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Anonymous Ref</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Application_Stage__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT ( Student_Programme__r.Stage__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Taken from Student Programme record</inlineHelpText>
+        <label>Application Stage</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Assessed__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+OR( 
+Student_Programme__r.Programme__r.Type__c = "MSc Programme", 
+Student_Programme__r.Programme__r.Type__c = "Professional Diploma", 
+AND(Student_Programme__r.Programme__r.Type__c = "Masters Module" , Student_Programme__r.academic_credit__c=TRUE)), 
+TRUE, 
+FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Assessed</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Assessment_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Does not count previous sits if a resit has taken place</inlineHelpText>
+        <label>Assessment Count</label>
+        <summaryFilterItems>
+            <field>Student_Assessment__c.Inactive__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Assessments_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Assessments Created</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Attendances_Created__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Attendances Created</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Audit_Log__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Audit Log</label>
+        <referenceTo>SIS_Audit__c</referenceTo>
+        <relationshipLabel>Student Modules</relationshipLabel>
+        <relationshipName>Student_Modules</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Audit_Trigger__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>To retrigger SIS Audit record after change to Module status, to be triggered by change to child Student Assessment record via a Process (builder)</description>
+        <externalId>false</externalId>
+        <label>Audit Trigger</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Capped_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Counts the Amount of capped Student Assessments</inlineHelpText>
+        <label>Capped Assessment Count</label>
+        <summaryFilterItems>
+            <field>Student_Assessment__c.Module_Capped__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Completed_Count__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of related Assessments with an Agreed Mark; ignores previous sits if resit has taken place</inlineHelpText>
+        <label>Completed Count</label>
+        <summaryFilterItems>
+            <field>Student_Assessment__c.Agreed_Mark__c</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </summaryFilterItems>
+        <summaryFilterItems>
+            <field>Student_Assessment__c.Inactive__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Credits__c</fullName>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Credits__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Takes credit from Module</inlineHelpText>
+        <label>Credits</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Criticality_Rollup__c</fullName>
+        <externalId>false</externalId>
+        <label>Criticality Rollup</label>
+        <summarizedField>Student_Assessment__c.Criticality_Score__c</summarizedField>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Criticality_Threshold__c</fullName>
+        <externalId>false</externalId>
+        <label>Criticality Threshold</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Final_Module_Score__c</fullName>
+        <description>Final Module score taking resit caps into account</description>
+        <externalId>false</externalId>
+        <formula>IF(AND(Capped_Count__c&gt;0,NOT(Student_Programme__r.Programme_Type__c="Professional Diploma")),
+IF( Module_Score__c &lt;49.50,Module_Score__c,50),
+Module_Score__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Final Module score taking resit capping into account</inlineHelpText>
+        <label>Final Module Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>HESA_Audit__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.Programme__r.Programme_Version__r.Master_Link__r.HESA_Audit__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>HESA Audit</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>HESA_Module_Status_temp__c</fullName>
+        <description>Temporary field for 15/16 HESA PGR return</description>
+        <externalId>false</externalId>
+        <label>HESA Module Status (temp)</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>LSTM_No__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.LSTM_No__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>LSTM No</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Long_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Module_Reference__c  &amp; " (" &amp;  Text ( Credits__c ) &amp; " credits) - " &amp;  Programme_Module__r.Module__r.Module_Version__r.Master_Link__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Long Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Master_Name__c</fullName>
+        <description>Used by Conga Query for UoL format transcript output</description>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Module_Version__r.Master_Link__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Master Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Member_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT( Programme_Module__r.Member_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Member Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_ID__c</fullName>
+        <description>Hidden field for invoking Flow for Module HESA XML output</description>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>To be hidden</inlineHelpText>
+        <label>Module ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Instance_Code__c</fullName>
+        <description>Used for HESA reporting to unique code per Module instance</description>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Instance_Code__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Module Instance Code</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Reference__c</fullName>
+        <externalId>false</externalId>
+        <formula>Programme_Module__r.Module__r.Module_Reference__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Module Reference</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Resat__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set by 'Student Module - Resit flag' workflow</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Ticked if Student Assessment was a resit. Used to calculate Classification based on Pass Mark of 50 instead of actual Student Assessment Agreed Mark.</inlineHelpText>
+        <label>Module Resat?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Module_Result__c</fullName>
+        <externalId>false</externalId>
+        <formula>If ( Assessment_Count__c = 0, "Not Started", 
+   IF ( Completed_Count__c &lt;&gt; Assessment_Count__c , "Not Completed",
+      IF ( Final_Module_Score__c  &lt;  49.5, "Fail",
+         IF ( Final_Module_Score__c  &lt;  59.5, "Pass",
+            IF ( Final_Module_Score__c  &lt;  69.5, "Merit","Distinction")
+         )
+      )
+   )
+)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Takes Module Score and gives Pass, Merit or Distinction, unless Completed Count less than Assessment Count, then says Not Completed. If Assessment Count = 0 then says Not Started</inlineHelpText>
+        <label>Module Result</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module_Score__c</fullName>
+        <description>NB: Weighted score excludes previous sittings if resits present</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Sum of Weighted Score on related Student Assessment records</inlineHelpText>
+        <label>Module Score</label>
+        <summarizedField>Student_Assessment__c.Weighted_Score__c</summarizedField>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Module_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Programme_Module__r.Module__r.Module_Type__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Taken from related Module</inlineHelpText>
+        <label>Module Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Module__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK ( Programme_Module__r.Module__r.Id, Programme_Module__r.Module__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Module</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Passmark__c</fullName>
+        <defaultValue>50</defaultValue>
+        <externalId>false</externalId>
+        <label>Passmark</label>
+        <precision>6</precision>
+        <required>false</required>
+        <scale>1</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Programme_ID__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.Programme__r.Id</formula>
+        <label>Programme ID</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Programme_Module__c</fullName>
+        <externalId>false</externalId>
+        <label>Programme Module</label>
+        <referenceTo>Programme_Module__c</referenceTo>
+        <relationshipLabel>Student Modules</relationshipLabel>
+        <relationshipName>Student_Modules</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Programme__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK (  Programme_Module__r.Programme__r.Id , Programme_Module__r.Programme__r.Name)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Programme</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Resit_Count__c</fullName>
+        <description>Count of number of resit records against this module</description>
+        <externalId>false</externalId>
+        <label>Resit Count</label>
+        <summaryFilterItems>
+            <field>Student_Assessment__c.Resit_Level__c</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </summaryFilterItems>
+        <summaryForeignKey>Student_Assessment__c.Student_Module__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields><fields>
+        <fullName>Student_Module_Ref__c</fullName>
+        <displayFormat>SMI-{00000000}</displayFormat>
+        <externalId>true</externalId>
+        <label>Student Module Ref</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields><fields>
+        <fullName>Student_Programme__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Link to (new) Student Programme object</description>
+        <externalId>false</externalId>
+        <label>Student Programme</label>
+        <referenceTo>Student_Programme__c</referenceTo>
+        <relationshipLabel>Student Modules</relationshipLabel>
+        <relationshipName>Student_Modules</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Student__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Student</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Contact.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Student Applicant, Full Student, Student Pre-Reg</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>My Modules</relationshipLabel>
+        <relationshipName>Student_Modules</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Test_Class_Record__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Test Class Record</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Test_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>If ( TEXT(Student__r.Test_Record__c) = "Yes", TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Test Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Trigger_Student_Assessment_creation__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>When this field is set to true it will fire flow to create student assessments</description>
+        <externalId>false</externalId>
+        <label>Trigger Student Assessment creation</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Weighted_Module_Score__c</fullName>
+        <description>(Module Credits / Programme Credits) x Final Module Score</description>
+        <externalId>false</externalId>
+        <formula>IF( Student_Programme__r.Programme_Type__c = "MSc Programme",((Credits__c /   Programme_Module__r.Programme__r.Academic_Credits__c  ) *  Final_Module_Score__c),Final_Module_Score__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>(Module Credits / Programme Credits) x Final Module Score</inlineHelpText>
+        <label>Weighted Module Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>4</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>sfxId__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <externalId>true</externalId>
+        <label>sfxId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Join table between Student (contact) and Program Module join table, with link up to Student Programme</description><enableActivities>false</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Student Module</label><nameField>
+        <label>Student Module Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <type>Text</type>
+    </nameField><pluralLabel>Student Modules</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Module_Score__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Module_Result__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Application_Stage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>UPDATEDBY_USER</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Programme_Module__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Student__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Module__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Programme__c</lookupDialogsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Student__c</columns>
+        <columns>Programme__c</columns>
+        <columns>Module__c</columns>
+        <columns>Module_Type__c</columns>
+        <columns>Module_Result__c</columns>
+        <columns>Credits__c</columns>
+        <columns>Passmark__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews><listViews>
+        <fullName>All_Diploma_Assessments_15_16</fullName>
+        <columns>NAME</columns>
+        <columns>Module_Score__c</columns>
+        <columns>Module_Result__c</columns>
+        <columns>Application_Stage__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Type__c</field>
+            <operation>equals</operation>
+            <value>Professional Diploma</value>
+        </filters>
+        <filters>
+            <field>Academic_Year__c</field>
+            <operation>equals</operation>
+            <value>15/16</value>
+        </filters>
+        <label>All Diploma Assessments 15/16</label>
+    </listViews><listViews>
+        <fullName>All_Diploma_Assessments_HESA_15_16</fullName>
+        <booleanFilter>1 AND 2 AND 3 AND (4 OR 5)</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Module_Score__c</columns>
+        <columns>Module_Result__c</columns>
+        <columns>Application_Stage__c</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Module_Type__c</field>
+            <operation>equals</operation>
+            <value>Professional Diploma</value>
+        </filters>
+        <filters>
+            <field>Academic_Year__c</field>
+            <operation>equals</operation>
+            <value>15/16</value>
+        </filters>
+        <filters>
+            <field>HESA_Audit__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>Application_Stage__c</field>
+            <operation>equals</operation>
+            <value>Registration</value>
+        </filters>
+        <filters>
+            <field>Application_Stage__c</field>
+            <operation>equals</operation>
+            <value>Completed</value>
+        </filters>
+        <label>All Diploma Assessments (HESA Only)15/16</label>
+    </listViews><webLinks>
+        <fullName>Create_Student_Assessment</fullName>
+        <availability>online</availability>
+        <description>OnClick Javascript sets 'Trigger SA' field to TRUE for this record if user confirms action via popup dialogue box. Process and Flow triggered from Retrigger field.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Student Assessment</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT("/soap/ajax/36.0/connection.js")} 
+
+var newRecords = [];  
+
+var SM = new sforce.SObject("Student_Module__c"); 
+SM.id ="{!Student_Module__c.Id}"; 
+SM.Trigger_Student_Assessment_creation__c=true; 
+
+if (confirm('Do you want to create Student Assessment records for this Student Module?\n\nNote that Student Assessments will only be created if there is an Assessment for the Module')) {
+window.location = 'APEX URL/?id={!Student_Module__c.Id}';
+
+newRecords.push(SM); 
+
+result = sforce.connection.update(newRecords);
+window.location.reload(); // reload the page
+
+} else {
+window.location = 'APEX URL/?id={!Student_Module__c.Id}';
+
+window.location.reload(); // reload the page
+}</url>
+    </webLinks></CustomObject>

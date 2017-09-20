@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Offer letter conditional on payment of course fee</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Conditional Offer</name>
+    <style>freeForm</style>
+    <subject>Conditional Offer: {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.Title} {!Contact.FirstName} {!Contact.LastName}
+{!Contact.MailingAddress}
+ 
+{!Today}
+
+Dear {!Contact.FirstName},
+
+Student ID Number: {!Contact.LSTM_No__c}
+Course:  {!Student_Programme__c.Programme__c}
+ 
+Thank you for applying for a place on {!Student_Programme__c.Programme__c}.
+ 
+I am please to inform you that your application has been approved and is conditional on receipt of the course fee which must be paid by 13th December.
+ 
+LSTM have partnered with Flywire to provide you with an easy and secure method of sending fee payments in your home currency. You can pay by bank transfer, debit/credit card and e-wallet methods. 
+How to pay: 
+
+1. Visit lstmed.flywire.com and choose your country 
+2. Input the amount you are paying in GBP 
+ 
+Payment by bank transfer or international debit/credit card = {!Student_Programme__c.Invoice_Amount__c}
+Payment by domestic UK credit/debit cards in GBP = {!Student_Programme__c.UK_Card_Payment_Fee__c} (incl. 2% fee) 
+ 
+3. Choose your payment method and make your payment to Flywire 
+4. Enter your details and if you are paying on behalf of a student, the details of the student you are paying for 
+5. Track and confirm your payment by email, SMS, or by logging into lstmed.flywire.com 
+ 
+Registration will open a week before the official start date of the course when you will receive a further e-mail from us containing details of how to access the virtual learning environment (“BrightSpace”).
+ 
+Please do contact us with any questions in the meantime. 
+ 
+Best wishes
+ 
+ 
+ 
+{!User.FirstName} {!User.LastName}
+Administrator – Academic Registry
+Email: MyLSTM@lstmed.ac.uk
+Telephone: {!User.Phone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

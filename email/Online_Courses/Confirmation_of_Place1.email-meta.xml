@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Confirmation of Place</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Place:  {!Student_Programme__c.Programme__c}</subject>
+    <textOnly>{!Contact.Title} {!Contact.FirstName} {!Contact.LastName}
+{!Contact.MailingAddress}
+ 
+{!Today}
+
+Dear {!Contact.FirstName},
+
+Student ID Number: {!Contact.LSTM_No__c}
+Course:  {!Student_Programme__c.Programme__c}
+ 
+We are now in receipt of your course fee and I am pleased to confirm your place on the {!Student_Programme__c.Programme__c}.
+ 
+Registration will open a week before the official start date of the course when you will receive a further e-mail from us containing details of how to access the virtual learning environment (“BrightSpace”).
+ 
+Please do contact us with any questions in the meantime. 
+ 
+Best wishes
+ 
+ 
+ 
+{!User.FirstName} {!User.LastName}
+Administrator – Academic Registry
+Email: MyLSTM@lstmed.ac.uk
+Telephone: {!User.Phone}</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <buckets>
+        <bucketType>picklist</bucketType>
+        <developerName>BucketField_51525895</developerName>
+        <masterLabel>TTA Postcode</masterLabel>
+        <nullTreatment>n</nullTreatment>
+        <sourceColumnName>SIS_Audit__c.Audit_Body__c</sourceColumnName>
+        <useOther>false</useOther>
+        <values>
+            <value>Other</value>
+        </values>
+    </buckets>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>SIS_Audit__c.Compiled_Missing_Fields__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>SIS_Audit__c.Compiled_Missing_Fields__c</column>
+            <operator>contains</operator>
+            <value>TTA</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>BucketField_51525895</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Missing TTA Postcode</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SIS_Audit__c@SIS_Audit__c.Student__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

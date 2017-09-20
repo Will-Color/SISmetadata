@@ -1,0 +1,200 @@
+<apex:page controller="FilterSisAuditsForXMLcontroller">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" />
+    <style>
+        .setWidth{
+        width:50%;
+        }  
+        .responstable {
+        margin: 1em 0;
+        width: 50%;
+        overflow: hidden;
+        background: #FFF;
+        color: #024457;
+        border-radius: 10px;
+        border: 1px solid #167F92;
+        }
+        .responstable tr {
+        border: 1px solid #D9E4E6;
+        }
+        .responstable tr:nth-child(odd) {
+        background-color: #EAF3F3;
+        }
+        .responstable th {
+        display: none;
+        border: 1px solid #FFF;
+        background-color: #167F92;
+        color: #FFF;
+        padding: 1em;
+        }
+        .responstable th:first-child {
+        display: table-cell;
+        text-align: center;
+        }
+        .responstable th:nth-child(2) {
+        display: table-cell;
+        }
+        .responstable th:nth-child(2) span {
+        display: none;
+        }
+        .responstable th:nth-child(2):after {
+        content: attr(data-th);
+        }
+        @media (min-width: 480px) {
+        .responstable th:nth-child(2) span {
+        display: block;
+        }
+        .responstable th:nth-child(2):after {
+        display: none;
+        }
+        }
+        .responstable td {
+        display: block;
+        word-wrap: break-word;
+        max-width: 3em;
+        }
+        .responstable td:first-child {
+        display: table-cell;
+        text-align: center;
+        border-right: 1px solid #D9E4E6;
+        }
+        @media (min-width: 480px) {
+        .responstable td {
+        border: 1px solid #D9E4E6;
+        }
+        }
+        .responstable th, .responstable td {
+        text-align: left;
+        margin: .5em 1em;
+        }
+        @media (min-width: 480px) {
+        .responstable th, .responstable td {
+        display: table-cell;
+        padding: .5em;
+        }
+        }
+        
+        body {
+        padding: 0 2em;
+        font-family: Arial, sans-serif;
+        color: #024457;
+        background: #f2f2f2;
+        }
+        
+        h1 {
+        font-family: Verdana;
+        font-weight: normal;
+        color: #024457;
+        }
+        h1 span {
+        color: #167F92;
+        }
+    </style>
+    <script type="text/javascript">
+    var j$ = jQuery.noConflict();
+    function selectAllCheckboxes(obj,receivedInputID)
+    {
+        var inputCheckBox = document.getElementsByTagName("input");
+        for(var i=0; i<inputCheckBox.length; i++)
+        {
+            if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1)
+            {
+                inputCheckBox[i].checked = obj.checked;
+            }
+        }
+    }
+    
+    function checkChecked() 
+    {
+        if(j$(".chkSelected1:checked").length == 0)
+        {
+            if(j$(".chkSelected3:checked").length == 0)
+            {   
+                alert('Select atleast one Programme Type before submitting');
+                return false;
+            }
+        }
+        if(j$(".chkSelected2:checked").length == 0)
+        {
+            if(j$(".chkSelected3:checked").length == 0)
+            {           
+                alert('Select atleast one Programme before submitting');
+                return false;
+            }
+        }
+        
+    }
+    
+    </script>
+    
+    <apex:form >
+        <apex:pageBlock title="Select filter values" > 
+            <apex:pageblockButtons style="setWidth" >
+                <div align="left">
+                    <apex:commandButton action="{!saveMethod}" html-download="XMLgeneration.xml" title="Generate XML" onClick="return checkChecked()" value="Generate XML"/></div>
+            </apex:pageblockButtons>
+            
+            
+            <table class="responstable">
+                <tr>
+                    <th>Academic Year</th>
+                </tr>  
+                <tr>
+                    <td>
+                        <apex:selectList value="{!year}" size="1" >
+                            <apex:selectOptions value="{!options}" />
+                            <apex:actionSupport event="onchange" action="{!onSelect}" rerender="pros"/>
+                        </apex:selectList>
+                    </td>
+                </tr>
+            </table>
+            
+            <table class="responstable">
+                <tr>
+                    <th width="50px"></th>
+                    <th>Programme Type </th>
+                </tr>  
+                <apex:repeat value="{!programmeTypes}" var="pt" >
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!mpChckBxProgrammeType[pt] }" id="pts" styleClass="chkSelected1" >
+                                <apex:actionSupport event="onchange" action="{!onSelect}" rerender="pros"/>
+                            </apex:inputCheckbox>
+                        </td>   
+                        <td>{!pt}</td>
+                    </tr>  
+                </apex:repeat>  
+            </table>  
+            
+            <table class="responstable">
+                <tr>
+                    <th width="50px"></th>
+                    <th>Special Inclusions</th>
+                </tr>  
+                <apex:repeat value="{!specialinclusions}" var="si" >
+                    <tr>
+                        <td>
+                            <apex:inputCheckbox value="{!mpChckBxspecialinclusions[si] }" id="spincs" styleClass="chkSelected3"/>
+                        </td>   
+                        <td>{!si}</td>
+                    </tr>  
+                </apex:repeat>  
+            </table>
+            
+            <apex:outputPanel id="pros">
+                <table class="responstable">
+                    <tr>
+                        <th width="50px"><apex:inputCheckbox onclick="selectAllCheckboxes(this,'progIds')"/></th>
+                        <th>Programme </th>
+                    </tr>  
+                    <apex:repeat value="{!programmes}" var="progr">
+                        <tr>
+                            <td><apex:inputCheckbox value="{!mpChckBxProgramme[progr.id] }" id="progIds" styleClass="chkSelected2"/></td>   
+                            <td>{!progr.Name}</td>
+                        </tr>  
+                    </apex:repeat>  
+                </table>  
+            </apex:outputPanel>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>

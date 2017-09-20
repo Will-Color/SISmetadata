@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Payment received - confirmed place, how to register</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Confirmation of Place</name>
+    <style>freeForm</style>
+    <subject>Confirmation of Place - DipUKMP</subject>
+    <textOnly>Dear Doctor,
+
+
+We have received your registration fee for the DipUKMP and you can now begin study and access the relevant systems. As an off-site student of the Liverpool School of Tropical Medicine, you can access the Virtual Learning Environment (BrightSpace) and student intranet, plus the library e-resources.
+
+
+Please use BrightSpace to access resources to help you achieve the learning outcomes for the DipUKMP, including:
+
+- Student handbook
+
+- List of learning outcomes that you need to demonstrate that you have met
+
+- Details of how you are assessed
+
+- Resources to help with reflective writing for the written assignment
+
+- Guidance for you and your educational supervisor
+
+
+Please also use BrightSpace to contact LSTM staff about any relevant matters and to network with each other. There are some introductory activities and a profile to complete when you first log on.
+
+
+
+Your Assessment Deadline:  {!Student_Programme__c.Assessment_Deadline__c}
+
+
+
+We hope you enjoy studying for the DipUKMP
+
+
+With best wishes
+
+
+Natasha Sutton
+
+
+DipUKMP Programme Administrator
+
+Liverpool School of Tropical Medicine
+
+
+Tel: 0151 705 3754</textOnly>
+    <type>html</type>
+</EmailTemplate>

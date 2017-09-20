@@ -1,0 +1,16 @@
+<apex:page showHeader="false" sidebar="false">
+<!--  <apex:image url="/servlet/servlet.FileDownload?file=01511000000DiiQ"/> -->
+  <apex:image url="{!$Resource.LSTMLogo}"/>
+  <br/><br/>
+  
+  <apex:define name="body">
+  
+  <apex:form >
+  
+  Thank you for uploading your reference.
+  
+  </apex:form>
+  
+  </apex:define>
+  
+</apex:page>

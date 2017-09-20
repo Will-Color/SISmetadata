@@ -1,0 +1,158 @@
+<apex:page controller="ChooseProgrammeCont" showHeader="true" sidebar="false" tabStyle="Programme__c" title="Choose your programme/course" >
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+    </style>
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>  
+<apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>  
+<apex:includeScript value="{!URLFOR($Resource.jqPlugin, '/jquery.blockUI.js')}"/>   
+<apex:stylesheet value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+
+<style>
+    .buttonSearch {
+        background-image: url('/img/func_icons/util/search20.gif') !important;
+        width: 21px;
+        height: 20px;
+        background-position: 0px 0px !important;
+        background-repeat: no-repeat !important;
+    }
+    .centered {
+        text-align: center;
+    }
+    .middled {
+        vertical-align: middle !important;
+    }
+</style>
+
+<script>
+    $j = jQuery.noConflict();
+
+      $j(document).ready(function() {
+        $j('.headerSearchContainer').hide();
+      });
+    //function to block the whole page
+    function blockPage() {
+        $j.blockUI({
+            message: '<div><img class="middled" src="/img/loading32.gif"/>&nbsp;&nbsp;&nbsp;<h1>Loading...</h1></div>',
+            css: {
+                border: 'none',
+                padding: '15px',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: .9
+            }
+        });
+        return false;
+    }
+    //function to unblock the page  
+    function unblockPage() {
+        $j.unblockUI();
+    }        
+</script>
+    <script>
+      window.intercomSettings = {
+        app_id: "khm70sxu",
+        name: '{!$User.FirstName} {!$User.LastName}', // Current User Full name
+        email: "{!$User.Email}", // Current User Email address
+        created_at: 1312182000 // Signup date as a Unix timestamp
+      };
+    </script>
+    <script>(function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',intercomSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Intercom=i;function l(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/nck7barr';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()</script>
+
+    <apex:pageMessages id="errorMessage" escape="false" />
+
+    <apex:sectionHeader title="Programmes" subtitle="Search"/>
+
+    <apex:form id="ChooseProgrammeForm">
+    
+    <apex:pageBlock title="Choose your programme/course">
+        
+        <apex:pageBlockButtons location="both">
+            <apex:commandButton value="Search" action="{!search}" reRender="searchResults" status="blockUI"/>
+            <apex:commandButton value="Reset" action="{!resetSearch}" reRender="searchResults, searchInput" status="blockUI"/>
+        </apex:pageBlockButtons>
+
+        <apex:outputPanel id="searchInput">
+        <apex:pageBlockSection columns="1">
+            <apex:pageBlockSectionItem labelStyleClass="middled">
+                <apex:outputLabel value="Search"/>
+                <apex:inputText id="searchTerm" value="{!searchTerm}" onkeydown="if(event.keyCode==13){this.blur();}"/>
+            </apex:pageBlockSectionItem>
+
+            <apex:pageBlockSectionItem labelStyleClass="middled">
+                <!-- <apex:commandButton action="{!search}"  id="searchButton" reRender="searchResults" styleClass="buttonSearch" /> -->
+                <apex:outputLabel value="Filter by Type"/>
+                <apex:selectList id="ProgrammeType" value="{!searchProgrammeType}" size="1">
+                    <apex:selectOptions value="{!ProgrammeTypesExternal}"/>
+                </apex:selectList>
+            </apex:pageBlockSectionItem>
+        </apex:pageBlockSection> 
+        </apex:outputPanel>
+    </apex:pageBlock>
+
+    <apex:outputPanel id="hiddenBlock"/>
+    <apex:actionStatus onstart="blockPage()" onstop="unblockPage()" id="blockUI"/>  
+
+    <apex:outputPanel id="searchResults">
+        <apex:pageBlock title="Results" rendered="{!hasResults}">
+            
+            <apex:pageBlockSection columns="1">
+                
+                <apex:pageBlockTable value="{!FoundProgrammes}" var="Results">
+                    <apex:column headerValue="Programme Type" value="{!Results.programme.Programme_Type_External__c}"/>
+                    <apex:column headerValue="Programme Name">
+                        <apex:outputText value="{!Results.Programme.Name}"/>
+                        <!--                         
+                        <apex:commandLink action="{!processApply}" value="{!Results.programme.Name}" status="blockUI" reRender="hiddenBlock">
+                            <apex:param name="programmeId" assignTo="{!programmeId}" value="{!Results.programme.Id}" />
+                        </apex:commandLink>
+                        -->
+                        <!-- <br/>second line (5 Credits)
+                        <br/>third line (10 Credits) -->
+                    </apex:column>
+                    <apex:column headerValue="Course Dates" value="{!Results.combinedDates}"/>
+                    <apex:column headerValue="Home/EU Fee">
+                        <apex:outputPanel rendered="{!NOT(Results.displayTBC)}">
+                            &pound;<apex:outputText value="{0,number,###,###,##0.00}"><apex:param value="{!Results.displayFee}"/></apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!Results.displayTBC}">
+                            T.B.C
+                        </apex:outputPanel>
+                    </apex:column>
+                    <apex:column headerValue="International Fee">
+                        <apex:outputPanel rendered="{!NOT(Results.displayTBC)}">
+                            &pound;<apex:outputText value="{0,number,###,###,##0.00}"><apex:param value="{!Results.displayOverseasFee}"/></apex:outputText>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="{!Results.displayTBC}">
+                            T.B.C
+                        </apex:outputPanel>
+                    </apex:column>
+                    <apex:column width="50px" styleClass="centered">
+                        <apex:commandButton value="Apply" action="{!processApply}" reRender="hiddenBlock, errorMessage" status="blockUI">
+                            <apex:param name="programmeId" assignTo="{!programmeId}" value="{!Results.programme.Id}" />
+                        </apex:commandButton>
+                    </apex:column>
+                </apex:pageBlockTable>
+
+                <apex:panelGrid columns="5" columnClasses="middled" style="float:right">
+                    <apex:commandButton status="blockUI" reRender="searchResults" value="|<" action="{!first}" disabled="{!!hasPrevious}" title="First Page"/>
+                    <apex:commandButton status="blockUI" reRender="searchResults" value="<" action="{!previous}" disabled="{!!hasPrevious}" title="Previous Page"/>
+                    <apex:commandButton status="blockUI" reRender="searchResults" value=">" action="{!next}" disabled="{!!hasNext}" title="Next Page"/>
+                    <apex:commandButton status="blockUI" reRender="searchResults" value=">|" action="{!last}" disabled="{!!hasNext}" title="Last Page"/>
+                    <apex:outputText >Records {!(pageNumber * resultsPageSize)+1-resultsPageSize}-{!IF((pageNumber * resultsPageSize)>resultsSize, resultsSize,(pageNumber * resultsPageSize))} of {!resultsSize}</apex:outputText>
+                </apex:panelGrid>
+
+            </apex:pageBlockSection>
+
+        </apex:pageBlock>
+
+        <apex:pageBlock title="Results" rendered="{!!hasResults}">
+            <apex:outputText >No results found.</apex:outputText>
+        </apex:pageBlock>
+    </apex:outputPanel>
+
+    </apex:form>
+</apex:page>

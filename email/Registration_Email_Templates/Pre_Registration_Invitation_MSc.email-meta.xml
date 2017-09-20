@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Invitation to Pre-register and pre-arrival information for MSc students, including attachments.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Pre-Registration Invitation (MSc)</name>
+    <style>freeForm</style>
+    <subject>Welcome to the Liverpool School of Tropical Medicine</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+
+
+
+Student ID Number: {!Student_Programme__c.LSTM_No__c}
+
+
+Programme: MSc in {!Student_Programme__c.Programme__c}
+
+
+
+
+I am delighted that you will be joining us as a student at the Liverpool School of Tropical Medicine.
+
+
+
+
+Pre-registration
+
+
+
+
+All students are required to pre-register for their programme on-line. It is important that you complete this process as soon as possible as it will grant you access to various LSTM systems vital to your learning, e.g. email, library services and the Virtual Learning Environment (BrightSpace), which contains lots of useful programme and module information. BrightSpace will also enable you to connect with both staff and students before you arrive and we strongly encourage you to do so.
+
+
+
+
+- To pre-register, simply click here and log into your MyLSTM account, using the personal email address and password you set up when you initially applied for the programme.
+
+
+
+
+- Once you have logged in to MyLSTM, follow the &apos;Register Online&apos; link and enter the required information to complete the process. You will be asked to upload a photograph of yourself as part of this process, which we will use to produce your student card.
+
+
+
+
+Once you have completed pre-registration, you will be provided with your LSTM email address and password. For security reasons your password will also be emailed to your personal email address.
+
+
+
+
+All of our programmes are paperless. This allows us to keep our costs as low as possible and is in line with our commitment to the principles of education for sustainable development - you will be able to access programme/ module material electronically via Brightspace. All material is copyrighted to LSTM and is for your personal use only. You will require the use of a laptop/iPad to view teaching material during lectures, so please make sure you bring a reliable one with you.
+
+
+If you have any problems with the pre-registration process, please contact us via email at MyLSTM@lstmed.ac.uk.
+
+
+
+
+Please note that if you do not complete the pre-registration process before you arrive at LSTM you will experience a delay accessing LSTM systems and programme/ module material.
+
+
+
+
+Attached to this email is important information about registration, a list of key dates for the academic year and guidance on how to access support should you have a disability, long-term or mental health condition. Please note, that there are two separate attachments regarding registration; one for the MSc in Biology and Control of Parasites and Disease Vectors/ Molecular Biology of Parasites and Disease Vectors and one for all other MSc programmes.
+
+
+
+
+You will receive a detailed teaching timetable once you arrive. Teaching is scheduled Monday to Friday between 9am and 5pm. Some of this time will be for self-study but please bear in mind that you have registered for a full-time programme so expect to have timetabled classes most days.
+
+
+There is a small task that we would like you to carry out before you come to Liverpool. We would also like you to take the time to look at some resources to help you prepare for your programme.
+
+
+
+
+The task:
+
+
+
+
+Students come to study at LSTM from many different parts of the globe, and our students value learning about health issues in different countries from their peers.  We would like you to write a short essay (no more than 400 words, including references) to describe an “emerging issue in a low income country” looking at a specific health challenge or humanitarian issue in a country of your choice, preferably your own if appropriate.  We are looking forward to hearing what you have to say and we will ask you to share these essays and your insights with other students during the early stages of the course. Your essay should be fully referenced using the Harvard referencing system – you will find a brief guide attached in case you are not familiar with this. In particular, when preparing your essay we would like you to pay attention to the important issue of Academic Integrity.  In all its activities, including teaching, LSTM embraces the values of honesty, integrity, responsibility, trust, respect and fairness. A common breach of academic integrity is ‘plagiarism’, for example when a student copies word for word from a published source without acknowledgement, or closely paraphrases it (i.e. changes just a few words). The penalties for LSTM students who submit plagiarised work can be serious, so it is important that you understand how to avoid it.  We will be talking more about this when you arrive but in the meantime have a quick look at the resources below and bear them in mind when writing your essay:
+
+
+
+
+http://www.indiana.edu/~wts/pamphlets/plagiarism.shtml
+
+
+
+
+https://lo.unisa.edu.au/course/view.php?id=6751
+
+
+
+
+You will be asked to upload your essay in to LSTM’s Virtual Learning
+
+
+Environment (BrightSpace) by 12th September. You will receive more information on BrightSpace (and other LSTM systems) once you have completed the pre-registration process.
+
+
+
+
+The resources fall into four areas.  We appreciate that you may be in full-time employment and have other commitments, however, any small amount of time that you can devote to these will be helpful.
+
+
+
+
+1. Epidemiology and Statistics
+
+
+
+
+During the first semester, there will be a module on ‘Research Methods’. Please try to find some time to look through the attached reading/watching list as a “refresher” course on basic epidemiology and statistics. To help you assess your strengths and weaknesses, we will make available a short on-line MCQ “test” and ask you to do this during induction week at a time that suits you.  Although you should take the test seriously, you should not worry at all about it. The marks will not ‘count’ – the aim is to help you, and us, to identify what you do (and, more importantly, don’t!) know so that we can teach you in the most effective way. You will be given the opportunity to sit the test again later in the Semester and hopefully see the benefit of the teaching on the module.
+
+
+
+
+2. Programme-specific reading
+
+
+
+
+Students often ask us for general reading to help them prepare for their MSc programme, so attached are some suggestions from the Directors of Studies of each of the programmes.  Just do what you can in the time and with the resources available to you – you will also have some spare time during induction week to look at this material so do not worry if you cannot get hold of the books and / or do not have good internet access.
+
+
+
+
+3. Learning skills
+
+
+
+
+The following link takes you to a useful resource from Palgrave Macmillan.
+
+http://www.skills4studycampus.com/taster/An_introduction.html
+
+
+
+
+It would be very useful if you could work your way through this introduction to study skills.
+
+
+
+
+The UKCISA website also has some great study tips for international students:
+
+
+
+
+http://www.ukcisa.org.uk/Information--Advice/Preparation-and-Arrival/Study-skills-for-success
+
+
+
+
+4. IT skills
+
+
+
+
+During your studies at LSTM we aim to engage you through a variety of ways in your learning, and many of these will rely upon the use of technology. We hope this will not only engage you in your studies but also give life skills that support you in your future career.
+
+
+
+
+To take full advantage of these varied learning opportunities it is beneficial if students have a baseline level of skill in the use of computers and IT (Information Technology). The main software packages that you will be expected to be familiar with are Outlook (email) 2013; PowerPoint 2013; Excel 2013: and Word 2013. If you are not familiar with any of these, you can find quick start guides available to download from Microsoft via the following link: http://tinyurl.com/OfficeGuides
+
+
+
+
+We have also compiled a selection of self-paced study resources that can be found at the following link http://tinyurl.com/TELresources
+
+
+
+
+You will also be using our VLE (Virtual Learning Environment) which is known as Brightspace. We recommend that you access the site using Chrome or Firefox browsers. Please make sure you test your computer’s readiness to use the site by clicking on our system check.
+
+
+
+
+http://tinyurl.com/LSTMEDBS
+
+
+
+
+If you would like to know more about the technologies used in teaching at LSTM please follow @LSTMTEL on twitter.
+
+
+
+
+Finally, LSTM is committed to the principles of education for sustainable development and we attempt to minimise the amount of printed resources we produce. Therefore, teaching materials, hand-outs and other resources will be provided online as much as possible rather than in hard copy.  We encourage you to bring your own laptop which you may use during lectures provided you do not introduce viruses onto the network and do not disturb or distract other students. Most resources will be accessible with a tablet computer or smart phone but there may be some applications that will only work on a Microsoft Windows or Mac OS computing device.
+
+
+
+
+I look forward to personally welcoming you to LSTM very shortly.
+
+
+
+
+Kind regards
+
+
+
+
+
+
+
+
+
+
+Dr Susan Assinder
+Director of Education
+
+
+
+Enc.
+Registration Information
+MSc Key Dates
+Disability Support
+LSTM Harvard Referencing Guide
+Pre-course Reading List</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Cohort Affected --></label>
+        <name>Cohort_Affected__c</name>
+    </fields><fields>
+        <label><!-- Date Approved by QMC --></label>
+        <name>Date_Approved_by_QMC__c</name>
+    </fields><fields>
+        <label><!-- Modification Description --></label>
+        <name>Modification_Description__c</name>
+    </fields><fields>
+        <label><!-- Modification Type --></label>
+        <name>Modification_Type__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation><!-- Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Module Version --></label>
+        <name>Module_Version__c</name>
+        <relationshipLabel><!-- Module Version Modifications --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Module Version Modification</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Module Version Modifications</value>
+    </caseValues><startsWith>Consonant</startsWith></CustomObjectTranslation>

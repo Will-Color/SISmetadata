@@ -1,0 +1,298 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'><br></span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Dear&nbsp;<span style="background: white;">{!Student_Programme__c.Student__c},</span></span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Student
+ID Number:&nbsp;{!Student_Programme__c.LSTM_No__c}</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Programme:
+MSc in {!Student_Programme__c.Programme__c}</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>I
+am delighted that you will be joining us as a student at the Liverpool School
+of Tropical Medicine.&nbsp; </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><b><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Pre-registration</span></b></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>All
+students are required to pre-register for their programme on-line. It is
+important that you complete this process as soon as possible as it will grant
+you access to various LSTM systems vital to your learning, e.g. email, library
+services and the Virtual Learning Environment (BrightSpace), which contains
+lots of useful programme and module information. BrightSpace will also enable you
+to connect with both staff and students before you arrive and we strongly
+encourage you to do so.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>-
+To pre-register, simply click </span><a href="https://mylstm.force.com/students/LSTMLogin"><b><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">here</font></span></b></a><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'> and log
+into your MyLSTM account, using the personal email address and password you set
+up when you initially applied for the programme.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>-
+Once you have logged in to MyLSTM, follow the '<b>Register Online</b>' link and
+enter the required information to complete the process. You will be asked to
+upload a photograph of yourself as part of this process, which we will use to
+produce your student card.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Once
+you have completed pre-registration, you will be provided with your LSTM email
+address and password. For security reasons your password will also be emailed
+to your personal email address.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>All
+of our programmes are paperless. This allows us to keep our costs as low as
+possible and is in line with our commitment to the principles of education for
+sustainable development - you will be able to access programme/ module material
+electronically via Brightspace. All material is copyrighted to LSTM and is for
+your personal use only. You will require the use of a laptop/iPad to view
+teaching material during lectures, so please make sure you bring a reliable one
+with you.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>If
+you have any problems with the pre-registration process, please contact us via
+email at </span><a href="mailto:MyLSTM@lstmed.ac.uk"><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">MyLSTM@lstmed.ac.uk</font></span></a><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Please
+note that if you do not complete the pre-registration process before you arrive
+at LSTM you will experience a delay accessing LSTM systems and programme/
+module material.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Attached
+to this email is important information about registration, a list of key dates
+for the academic year and guidance on how to access support should you have a
+disability, long-term or mental health condition. Please note, that there are
+two separate attachments regarding registration; one for the MSc in Biology and
+Control of Parasites and Disease Vectors/ Molecular Biology of Parasites and
+Disease Vectors and one for all other MSc programmes.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>You
+will receive a detailed teaching timetable once you arrive. Teaching is
+scheduled Monday to Friday between 9am and 5pm. Some of this time will be for
+self-study but please bear in mind that you have registered for a full-time
+programme so expect to have timetabled classes most days.&nbsp;&nbsp; <br>
+&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>There
+is a small task that we would like you to carry out before you come to
+Liverpool. We would also like you to take the time to look at some resources to
+help you prepare for your programme.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>The
+task:</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Students
+come to study at LSTM from many different parts of the globe, and our students
+value learning about health issues in different countries from their
+peers.&nbsp; We would like you to write a short essay (no more than 400 words,
+including references) to describe an “emerging issue in a low income country”
+looking at a specific health challenge or humanitarian issue in a country of
+your choice, preferably your own if appropriate.&nbsp; We are looking forward
+to hearing what you have to say and we will ask you to share these essays and
+your insights with other students during the early stages of the course. Your
+essay should be fully referenced using the Harvard referencing system – you
+will find a brief guide attached in case you are not familiar with this.&nbsp;
+In particular, when preparing your essay we would like you to pay attention to
+the important issue of Academic Integrity.&nbsp; In all its activities,
+including teaching, LSTM embraces the values of honesty, integrity, responsibility,
+trust, respect and fairness. A common breach of academic integrity is
+‘plagiarism’, for example when a student copies word for word from a published
+source without acknowledgement, or closely paraphrases it (i.e. changes just a
+few words). The penalties for LSTM students who submit plagiarised work can be
+serious, so it is important that you understand how to avoid it.&nbsp; We will
+be talking more about this when you arrive but in the meantime have a quick
+look at the resources below and bear them in mind when writing your essay:</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><a href="http://www.indiana.edu/~wts/pamphlets/plagiarism.shtml"><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">http://www.indiana.edu/~wts/pamphlets/plagiarism.shtml</font></span></a></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><a href="https://lo.unisa.edu.au/course/view.php?id=6751"><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">https://lo.unisa.edu.au/course/view.php?id=6751</font></span></a></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>You
+will be asked to upload your essay in to LSTM’s Virtual Learning </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Environment
+(BrightSpace) by 12th September. You will receive more information on
+BrightSpace (and&nbsp;other LSTM systems)&nbsp;once you have completed the
+pre-registration process.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>The
+resources fall into four areas.&nbsp; We appreciate that you may be in
+full-time employment and have other commitments, however, any small amount of
+time that you can devote to these will be helpful.&nbsp; </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>1.
+Epidemiology and Statistics</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>During
+the first semester, there will be a module on ‘Research Methods’. Please try to
+find some time to look through the attached reading/watching list as a
+“refresher” course on basic epidemiology and statistics. To help you assess
+your strengths and weaknesses, we will make available a short on-line MCQ
+“test” and ask you to do this during induction week at a time that suits
+you.&nbsp; Although you should take the test seriously, you should not worry at
+all about it. The marks will not ‘count’ – the aim is to help you, and us, to
+identify what you do (and, more importantly, don’t!) know so that we can teach
+you in the most effective way. You will be given the opportunity to sit the
+test again later in the Semester and hopefully see the benefit of the teaching
+on the module. </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>2.
+Programme-specific reading</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Students
+often ask us for general reading to help them prepare for their MSc programme,
+so attached are some suggestions from the Directors of Studies of each of the
+programmes.&nbsp; Just do what you can in the time and with the resources
+available to you – you will also have some spare time during induction week to
+look at this material so do not worry if you cannot get hold of the books and /
+or do not have good internet access.&nbsp;&nbsp; </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>3.
+Learning skills&nbsp; </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>The
+following link takes you to a useful resource from Palgrave Macmillan.<br>
+&nbsp;<br>
+</span><a href="http://www.skills4studycampus.com/taster/An_introduction.html"><span style='font-family: "Arial",sans-serif;'><font color="#0000ff">http://www.skills4studycampus.com/taster/An_introduction.html</font></span></a></p><p><font face="Times New Roman">
+
+</font></p><p><span style='font-family: "Arial",sans-serif; font-size: 10pt;'><u><font color="#0000ff">&nbsp;</font></u></span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>It
+would be very useful if you could work your way through this introduction to
+study skills. </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>The
+UKCISA website also has some great study tips for international students:</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><a href="http://www.ukcisa.org.uk/Information--Advice/Preparation-and-Arrival/Study-skills-for-success"><span style='font-family: "Arial",sans-serif;'><font color="#0000ff">http://www.ukcisa.org.uk/Information--Advice/Preparation-and-Arrival/Study-skills-for-success</font></span></a></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>4.
+IT skills</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>During
+your studies at LSTM we aim to engage you through a variety of ways in your
+learning, and many of these will rely upon the use of technology. We hope this
+will not only engage you in your studies but also give life skills that support
+you in your future career.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>To
+take full advantage of these varied learning opportunities it is beneficial if
+students have a baseline level of skill in the use of computers and IT
+(Information Technology).<span style="mso-spacerun: yes;">&nbsp; </span>The main
+software packages that you will be expected to be familiar with are Outlook
+(email) 2013; PowerPoint 2013; Excel 2013: and Word 2013. If you are not
+familiar with any of these, you can find quick start guides available to
+download from Microsoft via the following link: </span><a href="http://tinyurl.com/OfficeGuides"><span style='font-family: "Arial",sans-serif;'><font color="#0000ff">http://tinyurl.com/OfficeGuides</font></span></a><span style='font-family: "Arial",sans-serif;'> </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>We
+have also compiled a selection of self-paced study resources that can be found
+at the following link </span><a href="http://tinyurl.com/TELresources"><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">http://tinyurl.com/TELresources</font></span></a><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'> </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'><span style="mso-spacerun: yes;">&nbsp;</span></span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>You
+will also be using our VLE (Virtual Learning Environment) which is known as
+Brightspace. We recommend that you access the site using Chrome or Firefox browsers.
+Please make sure you test your computer’s readiness to use the site by clicking
+on our system check.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><a href="http://tinyurl.com/LSTMEDBS"><span style='font-family: "Arial",sans-serif; font-size: 11pt;'><font color="#0000ff">http://tinyurl.com/LSTMEDBS</font></span></a></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>If
+you would like to know more about the technologies used in teaching at LSTM
+please follow @LSTMTEL on twitter.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Finally,
+LSTM is committed to the principles of education for sustainable development
+and we attempt to minimise the amount of printed resources we produce.&nbsp;
+Therefore, teaching materials, hand-outs and other resources will be provided
+online as much as possible rather than in hard copy.&nbsp; We encourage you to
+bring your own laptop which you may use during lectures provided you do not
+introduce viruses onto the network and do not disturb or distract other students.
+Most resources will be accessible with a tablet computer or smart phone but
+there may be some applications that will only work on a Microsoft Windows or
+Mac OS computing device.&nbsp; </span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>I
+look forward to personally welcoming you to LSTM very shortly.</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font></p><p><span style='color: black; font-family: "Arial",sans-serif; font-size: 11pt;'>Kind
+regards </span></p><p><font face="Times New Roman">
+
+</font><br></p><p><img align="left" alt="" src="https://c.eu0.content.force.com/servlet/servlet.ImageServer?id=01520000003I26N&amp;oid=00D20000000lLXN" border="0"><br></p><p>&nbsp;</p><p><br></p><p><br></p><p>Dr Susan Assinder<br>Director of Education&nbsp;&nbsp; </p><p><br></p><p>Enc.<br>Registration Information<br>MSc Key Dates<br>Disability Support<br>LSTM Harvard Referencing Guide<br>Pre-course Reading List</p><p><br></p>]]></td>
+</tr>
+</table>

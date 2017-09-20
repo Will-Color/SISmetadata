@@ -1,0 +1,1020 @@
+<apex:page controller="ApplyWizardContExt"  action="{!init}" tabStyle="Applications__tab" sidebar="false" title="Online application form" >
+<apex:stylesheet value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/css/ui-lightness/jquery-ui-1.10.4.custom.min.css')}"/>
+<script src="{!URLFOR($Resource.CharCounter)}" type="text/javascript"></script>
+<!-- 2014-07-28 : CSL : This overridden style hides the Salesforce copyright message at the bottom of the page -->
+    <style>
+    .zen-pipedList {
+        display:none;
+    }
+    </style>
+    <style>
+        textarea.wideField {
+            min-width: 95%;
+        }
+        textarea.countable2 {
+            min-width: 95%;
+        }
+        select.countryPicklist {
+            width: 70%;
+        }
+        table.tableHolder td {
+            vertical-align: top;
+        }
+        a.leftMenuLink {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .wideTextField {
+            width: 400px;
+        }
+        div.ui-tooltip {
+            max-width: 600px;
+            background-color: #fefdb9;
+            border: 1px solid orange;
+            color: #000;
+            padding: 5px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+        .ui-widget-content {
+            background: #fefdb9;
+        }
+        .ui-corner-all,
+        .ui-corner-top,
+        .ui-corner-left,
+        .ui-corner-tl {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+      /*  .doneButton
+        {
+        
+        }
+        */
+    </style>
+
+  
+    
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-1.10.2.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery, 'jquery-ui-1.10.4.custom/js/jquery-ui-1.10.4.custom.min.js')}"/>
+    <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+        function makeRequired(obj) {
+            obj.wrap("<div class='requiredInput'></div>");
+            obj.parent().prepend("<div class='requiredBlock'></div>");
+        }
+        j$.widget("ui.tooltip", j$.ui.tooltip, {
+            options: {
+                content: function () {
+                    return j$(this).prop('title');
+                }
+            }
+        });
+        j$(function () { j$(document).tooltip({position:{ my: "left+15 top", at: "right center", collision: "fit" } }); });
+    </script> 
+    <script type="text/javascript">
+        j$(document).ready(function(){
+            j$('.headerSearchContainer').hide();
+            j$('.countable1').jqEasyCounter({
+                'maxChars': 75,
+                'maxCharsWarning': 70
+            });
+            
+            j$('.countable2').jqEasyCounter({
+                'maxChars': 1000,
+                'maxCharsWarning': 990,
+                'msgFontSize': '12px',
+                'msgFontColor': '#000',
+                'msgFontFamily': 'Verdana',
+                'msgTextAlign': 'left',
+                'msgWarningColor': '#F00',
+                'msgAppendMethod': 'insertAfter'               
+            });
+           
+    });
+    </script>    
+    
+    <script>
+        function toggleAcademicCredit(){
+            var totalPage = j$('.totalPageNumber').html();
+            //var newPage = 0;
+            if(j$('.checkAcademicCredit').prop("checked") == true){
+                //newPage = parseInt(totalPage)+1;
+                j$('.totalPageNumber').html(" 6");
+            }
+            else{
+                //newPage = parseInt(totalPage)-1;
+                j$('.totalPageNumber').html(" 5");
+            }
+            
+            
+        }
+    </script>
+   <apex:variable value="{!sp.Student__c}" var="studId" />
+     <apex:sectionHeader title="Online application form" subtitle="{!sp.Programme__r.Name}"/>
+    <apex:form enctype="multipart/form-data" forceSSL="true"  >
+        <apex:outputPanel id="wholePage">
+            <!--
+            Suyati Modified
+            <apex:outputPanel id="wizardStep" rendered="{!validationStep}">
+            -->
+            <apex:outputPanel id="wizardStep" rendered="{!(validationStep == FALSE && shortCourseSaved == FALSE)}">                
+                <table width="100%" class="tableHolder">
+                    <tr>
+                        <!--
+                        Suyati Modified
+                        <span style="font-size:1.2em">&nbsp;&nbsp;&nbsp;&nbsp;<b>Page <apex:outputLabel value="{!step.stepIndex+1}"></apex:outputLabel> of <apex:outputLabel value="{!innerSteps.size}"></apex:outputLabel></b></span>
+                        -->
+                        
+                        <!--Standard-->
+                        <apex:outputPanel rendered="{!applicationType == 'Standard' }">
+                            <span style="font-size:1.2em">&nbsp;&nbsp;&nbsp;&nbsp;<b>Page&nbsp;<apex:outputLabel value="{!step.stepIndex+1}" />&nbsp;of<apex:outputLabel value="{!innerSteps.size}"/></b></span>
+                        </apex:outputPanel>
+                        <!--Standard-->
+                        
+                        <!--Short+ -->
+                        <apex:outputPanel rendered="{!applicationType == 'Short+' }">
+                            <span style="font-size:1.2em">&nbsp;&nbsp;&nbsp;&nbsp;<b>Page&nbsp;<apex:outputLabel value="{!step.stepIndex}" />&nbsp;of<apex:outputLabel value="{!innerSteps.size-1}"/></b></span>
+                        </apex:outputPanel>
+                        <!--Short+ -->
+                        
+                        <!-- Short- -->
+                        <apex:outputPanel rendered="{!applicationType == 'Short-' }">
+                            <span style="font-size:1.2em">&nbsp;&nbsp;&nbsp;&nbsp;<b>Page<apex:outputLabel styleClass="currentPageNo" value="{!if(sp.academic_credit__c == FALSE,if(step.stepIndex < 3,step.stepIndex+1,if(step.stepIndex > 4,step.stepIndex-1,step.stepIndex)),if(step.stepIndex < 4,step.stepIndex+1,step.stepIndex))}" />&nbsp;of<apex:outputLabel styleClass="totalPageNumber" value="{!if(sp.academic_credit__c == FALSE,(innerSteps.size-2),(innerSteps.size-1))}"/></b></span>
+                        </apex:outputPanel>
+                        <!-- Short- -->
+                        <!-- Left menu BEGIN -->
+ 
+                        <td width="{!IF((applicationType == 'Short-' || applicationType == 'Short+'),'0%','20%')}"  >
+                            <apex:pageBlock rendered="{!applicationType != 'Short-' && applicationType != 'Short+'}">
+                                <apex:commandLink action="{!gotoStep}" value="Welcome" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="welcome"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Personal Details" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="personal name"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Address Details" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="personal address"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Academic Qualifications" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="academic qualifications"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="English Language" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="language qualifications"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Professional Qualifications" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="professional qualifications"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Experience/Employment" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="experience"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Personal Statement" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="personal statement"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Research Application Details" rendered="{!isPGR}" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="research proposal"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="References" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="references"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Fees and Funding" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="fees and funding"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Visa and Immigration" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="visa history"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Equal Opportunities" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="equal opportunities"/>
+                                </apex:commandLink>
+                                <apex:commandLink action="{!gotoStep}" value="Declaration" styleClass="leftMenuLink">
+                                    <apex:param assignTo="{!stepName}" value="declaration"/>
+                                </apex:commandLink>
+                            </apex:pageBlock>
+                        </td>
+                        <!-- Left menu END -->
+                        
+                        <!-- Step section BEGIN -->
+                        <td>
+                            <apex:pageBlock title="{!step.Title}">                                                                
+                                <apex:pageBlockButtons location="both" style="text-align: right;">
+                                    <apex:commandButton value="Previous" action="{!gotoPreviousStep}" rendered="{!(step.hasPreviousStep) && !(applicationtype = 'Short+' && step.stepIndex=1)}"/>                                    
+                                    <!--
+                                        Suyati Modified Start
+                                    -->
+                                    <apex:commandButton value="Save & Proceed" action="{!saveAndProceed}" rendered="{!step.hasNextStep}" />                                    
+                                    <!--
+                                    --old code--
+                                    <apex:commandButton value="Next" action="{!gotoNextStep}" rendered="{!step.hasNextStep}"/>
+                                    
+                                        Suyati Modified End
+                                    -->
+                                    <apex:commandButton value="Save & Close" action="{!saveDraftApplication}"/>
+                                    <apex:commandButton value="{!IF(requiredMode,'SUBMIT APPLICATION','REVIEW')}" action="{!validate}" rendered="{!OR(step.Name='declaration',requiredMode)}"/>
+                                    <apex:commandButton value="Submit" action="{!doSubmit}" rendered="{!step.Name='regulatory short'}"/>
+                                    <!-- <apex:commandButton value="Review" action="{!validate}" rendered="{!OR(step.Name='declaration', !readyToSubmit)}"/> -->
+                                    
+                                </apex:pageBlockButtons>
+                                
+                                <!-- Welcome step BEGIN -->
+                                
+                                <apex:outputPanel rendered="{!(step.Name='welcome' || step.Name='welcome short')}" id="welcomePanel">
+                                    <apex:outputLabel >
+                                    <!-- 2014-08-08 : CSL : New code to show 'Page Copy' for welcome text
+                                    <apex:outputText value="{!welcomePageCopy.Body_Copy__c}" escape="false"/> -->
+                                        <!-- 
+                                        Thank you for your interest in studying at the Liverpool School of Tropical Medicine (LSTM).<br/><br/>
+                                        Please ensure that you complete all relevant sections of the online application form in full.  Fields marked <span style="background-color: red">&nbsp;</span> are mandatory and will need to be need to be completed before you can save and continue to the next section or submit your application.<br/><br/>
+                                        You may save, exit and return to complete your application at any time prior to submission. Once your application has been submitted, you will be able to view your application information, but you will not be able to edit the information you have provided.<br/><br/>
+                                        When submitting your application you should attach any relevant supporting documentation, as directed within the online application. Only complete applications that have all the required supporting documentation will be put forward for consideration by the Director of Studies.<br/><br/>
+                                        The deadline for submitting new applications is one week before the start of the programme but we do not advise students to apply at such a late stage as there may not be places available and/ or we may not be able to process your application in time. All applications will be acknowledged by email within 5 working days. Complete applications will receive a decision within 20 working days.<br/><br/>
+                                        -->
+                                        Fields marked <span style="background-color: red">&nbsp;</span> are mandatory and will need to be completed before you can save and proceed to the next section or submit your application.<br/><br/>
+                                    </apex:outputLabel>
+                                    <apex:outputPanel rendered="{!(step.Name='welcome short' && applicationType == 'Short-')}">
+                                        <table>
+                                         <apex:outputPanel rendered="{!(step.Name='welcome short' && applicationType == 'Short-'&& programVersionType == 'Masters Module' )}">
+                                            <tr>
+                                                <td style="width:75%">
+                                                    <p>
+                                                        For an additional fee of £95, students on some Short Cources can be entered for full Academic Credits for this course (awarded by the University of Liverpool). Please check this box if you wish to pay this additional fee (there will be additional information requirements later in the application form). 
+                                                    </p>
+                                                </td>
+                                                <td style="vertical-align:middle">
+                                                    <apex:inputField value="{!sp.academic_credit__c}" label="Passport Number" onchange="toggleAcademicCredit();" styleClass="checkAcademicCredit" />
+                                                </td>
+                                            </tr>
+                                             </apex:outputPanel>
+                                            
+                                           
+                                        </table>
+                                        
+                                        
+                                                                                
+                                    
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                <apex:outputPanel rendered="{!(step.Name='welcome' || step.Name='regulatory short')}">                                  
+                                    <apex:pageBlockSection id="leadSource" columns="1" collapsible="false" showHeader="false">
+                                        <apex:inputField value="{!sp.How_did_you_hear_about_this_Course__c}" onchange="updateLeadSource(); return false;" label="How did you hear about this programme/course?" id="LeadSource"/>
+                                        <apex:inputField value="{!sp.How_did_you_hear_about_Course_Specify__c}" styleClass="wideField" rendered="{!needLeadSourceSpecify}" label="Specify"/>
+                                    </apex:pageBlockSection>
+                                    <apex:actionFunction name="updateLeadSource" reRender="leadSource"/>
+                                </apex:outputPanel>
+                                <!-- Welcome step END -->
+                                
+                                <!-- Personal Details "names" BEGIN -->
+                                <apex:outputPanel rendered="{!(step.Name='personal name' || step.Name='personal details short')}" id="personalDetailsPanel">
+                                    <apex:outputPanel rendered="true" id="aboutYouPanel">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="About You">
+                                            <apex:inputField value="{!student.Salutation}" label="Title" required="{!requiredMode}"/>
+                                            <apex:inputField value="{!student.LastName}" label="Surname/Family Name" required="{!requiredMode}"/>
+                                            <apex:inputField value="{!student.FirstName}" label="First Name/Given Name" required="{!requiredMode}" />
+                                            <apex:inputField value="{!student.Middle_Name_Other_Names__c}" label="Middle Name/Other Names"/>
+                                            <apex:inputField value="{!student.Previous_Surname__c}" label="Previous Surname (if applicable)"/>
+                                            <apex:inputField value="{!student.Known_As__c}" label="Known As"/>
+                                            <apex:inputField value="{!student.Male_Female__c}" label="Male/Female" required="{!requiredMode}"/>
+                                            <apex:inputField value="{!student.Birthdate}" label="Date of Birth" required="{!requiredMode}"/>
+                                            <apex:inputField value="{!student.Country_of_Birth__c}" label="Country of Birth" required="{!requiredMode}" styleClass="countryPicklist"/>
+                                            <apex:selectList size="1" value="{!student.HESA_Nationality__c}" id="pdHesaNationality" required="{!requiredMode}" label="Nationality">
+                                                <apex:selectOptions value="{!hesaNationalityCountries}"/>
+                                            </apex:selectList>
+                                            <!-- <apex:inputField value="{!student.Nationality__c}" label="Nationality 1" required="{!requiredMode}"/> -->
+                                        </apex:pageBlockSection>
+                                    </apex:outputPanel>                                                                        
+                                </apex:outputPanel>
+                                <!-- Personal Details "names" END -->
+                                                                                                
+                                <!-- Personal Details "addresses" BEGIN -->
+                                <apex:outputPanel rendered="{!(step.Name='personal address' || step.Name='personal details short')}" id="addressPanel">
+                                    <apex:outputLabel id="addressInformationPanel" rendered="{!step.Name='personal address'}">
+                                        Most of our contact with you will be via email but occasionally we may need to send correspondence to you via post. Your permanent home address is the address where you usually live. If you prefer correspondence to be sent to a different address, please also complete the ‘Correspondence Address’ section. If your addresses change, please contact us immediately so that we can update our records.<br/><br/>
+                                        Where applicable, please include international dialling codes for telephone numbers.<br/><br/>
+                                    </apex:outputLabel>
+                                    <apex:outputPanel id="permanentAddressPanel">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="{!IF(applicationType=='Standard','Permanent Address','Your Address')}">
+                                        <!-- 2014-08-14 : CSL : Removing mandatory flags from all fields except Street, Postcode and Country as per client request -->
+                                        <apex:inputField value="{!Student.MailingStreet}" styleClass="wideField" label="Street" required="{!requiredMode}"/>
+                                        <apex:inputField value="{!Student.MailingCity}" label="City"/>
+                                        <apex:inputField value="{!Student.MailingState}" label="State/Province"/>
+                                        <apex:inputField value="{!Student.MailingPostalCode}" label="Postal code" required="{!requiredMode}"/>
+                                        <!-- <apex:inputField value="{!Student.MailingCountry}" label="Country" required="{!requiredMode}"/> -->
+                                        <apex:selectList size="1" value="{!student.HESA_Domicile__c}" required="{!requiredMode}" id="addrHesaDomicile" label="Country">
+                                            <apex:selectOptions value="{!hesaDomicileCountries}"/>
+                                        </apex:selectList>
+                                        <apex:inputField value="{!Student.Phone}" label="Telephone Number (including international dialling code)"/>
+                                        <apex:inputField value="{!Student.MobilePhone}" label="Mobile Number "/>
+                                        <apex:inputField value="{!Student.Email}" label="Email Address"/>
+                                    </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel id="correspondenceAddressPanel" rendered="{!step.Name='personal address'}">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="Correspondence Address (if different)">
+                                        <apex:inputField value="{!Student.OtherStreet}" styleClass="wideField" label="Street"/>
+                                        <apex:inputField value="{!Student.OtherCity}" label="City"/>
+                                        <apex:inputField value="{!Student.OtherState}" label="State/Province"/>
+                                        <apex:inputField value="{!Student.OtherPostalCode}" label="Postal code"/>
+                                        <!-- <apex:inputField value="{!Student.OtherCountry}" label="Country"/> -->
+                                        <apex:selectList size="1" value="{!student.OtherCountry}" label="Country">
+                                            <apex:selectOptions value="{!hesaDomicileCountriesByName}"/>
+                                        </apex:selectList>
+                                        <apex:inputField value="{!Student.OtherPhone}" label="Telephone Number"/>
+                                    </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                    <hr/>
+                                    <apex:outputPanel id="residentCountriesPanel" rendered="{!step.Name='personal address'}">
+                                        <apex:actionRegion >
+                                            <apex:pageBlockSection id="residentCountries" columns="1" collapsible="false" showHeader="false">
+                                                <apex:inputField value="{!Student.Gaps_in_Residence__c}" onchange="updateResidentCountries(); return false;" label="Have you continued to live in your country of birth up to the present day, with no gaps in residence?"/>
+                                                <!-- <apex:inputField id="mostRecentCountry" value="{!Student.Country_Most_Recent_Previous__c}" rendered="{!Student.Gaps_in_Residence__c='No'}" styleClass="countryPicklist" label="Most recent previous country"/>
+                                                <apex:inputField value="{!Student.Country_Second_Recent_Previous__c}" rendered="{!Student.Gaps_in_Residence__c='No'}" styleClass="countryPicklist" label="Second recent previous country"/>
+                                                <apex:inputField value="{!Student.Country_Third_Recent_Previous__c}" rendered="{!Student.Gaps_in_Residence__c='No'}" styleClass="countryPicklist" label="Third recent previous country"/> -->
+                                                <apex:inputField value="{!Student.Previous_Country__c}" id="previousCountry" styleClass="wideField" rendered="{!Student.Gaps_in_Residence__c='No'}" label="Previous Countries (last 3 years)"/>
+                                              
+                                                <apex:outputPanel rendered="{!requiredMode}">
+                                                    <script type="text/javascript">
+                                                        // substitution for standard required field
+                                                        makeRequired(j$("select[id$=addrHesaDomicile]"));
+                                                    </script>
+                                                </apex:outputPanel>
+                                            </apex:pageBlockSection>
+                                        </apex:actionRegion>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                <apex:actionFunction name="updateResidentCountries" reRender="residentCountries"/>
+                                <!-- Personal Details "addresses" END -->
+                                
+                                <!-- Passport Details "names" END -->
+                                <apex:outputPanel rendered="{!(step.Name='personal name' || step.Name='personal details short')}" id="passportDetailsPanel">
+                                    <apex:outputPanel rendered="true">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="Passport">
+                                            <apex:outputLabel >
+                                                In order to verify your identity, please provide your passport details and upload a copy of the photo page of your passport.  If you do not have a passport, please upload an alternative photo ID, e.g. driving licence.                                    
+                                            </apex:outputLabel>
+                                            <!-- 2014-08-08 : CSL : Passport information to be stored against Student Programmme rather than Student -->
+                                            <apex:inputField value="{!sp.Passport_Number__c}" label="Passport Number"/>
+                                            <apex:inputField value="{!sp.Country_of_Issue__c}" styleClass="countryPicklist" label="Country of Issue"/>
+                                            <apex:inputField value="{!sp.Expiry_Date__c}" label="Expiry Date"/>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel >Please upload a copy of passport</apex:outputLabel>
+                                                <c:MultiAttachment multiple="true" parentId="{!sp.Id}" description="passport" />
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                        <apex:outputPanel rendered="{!requiredMode}">
+                                            <script type="text/javascript">
+                                            // substitution for standard required field
+                                            makeRequired(j$("select[id$=pdHesaNationality]"));
+                                            </script>
+                                        </apex:outputPanel>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                <!-- Passport Details "names" END -->
+                                
+                                <!-- Academic QE BEGIN -->
+                                <apex:outputPanel id="AcademicQE" rendered="{!(step.Name='academic qualifications')}">
+                                    <apex:outputPanel id="academicQualificationsPanel" rendered="true">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="Academic Qualifications">
+                                        <apex:outputLabel >
+                                            Please enter all university qualifications achieved to date (including those that are pending) and where available upload copies of your award certificates and transcripts. For qualifications that are pending a partial transcript will suffice at this stage. Documents that are not in English must be accompanied by an official translation.  Should your application be successful we will require you to produce your original documents at  registration.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:repeat value="{!qeMap['Academic_University_Qualifications']}" var="acQE">
+                                            <apex:pageBlockSectionItem >
+                                             <apex:commandLink value="Delete this qualification" action="{!deleteQual}" styleClass="btn" style="text-decoration:none;" rendered="{!applicationType == 'Standard'}">
+                                                 <apex:param assignTo="{!deleteQualId}" value="{!acQE.item.Id}" name="deleteQualId"/>
+                                             </apex:commandLink>   
+                                            </apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!acQE.item.Name_of_College_University__c}" label="Name of College/University" styleClass="wideTextField"/>
+                                            <apex:inputField value="{!acQE.item.Country__c}" styleClass="countryPicklist" label="Country" />
+                                            <apex:inputField value="{!acQE.item.Start_Date__c}" label="Start Date" />
+                                            <apex:inputField value="{!acQE.item.End_Date__c}" label="End Date" />
+                                            <apex:inputField value="{!acQE.item.Qualification__c}" label="Qualification" styleClass="wideTextField"/>
+                                            <apex:inputField value="{!acQE.item.Subject__c}" label="Subject" styleClass="wideTextField"/>
+                                            <apex:inputField value="{!acQE.item.Class_Grade__c}" label="Actual or Expected Class/Grade" styleClass="wideTextField"/>
+                                            <apex:inputField value="{!acQE.item.Date_of_Award__c}" label="Actual or Expected Date of Award" />
+                                            <apex:pageBlockSectionItem rendered="{!((applicationType == 'Short-' || applicationType == 'Short+') && sp.academic_credit__c == true) || (applicationType != 'Short-' && applicationType != 'Short+')}">
+                                                <apex:outputLabel >Click here to attach a certificate or transcript for this qualification</apex:outputLabel>
+                                                <c:MultiAttachment multiple="true" parentId="{!acQE.item.Id}" />
+                                            </apex:pageBlockSectionItem>
+                                            <hr/>
+                                        </apex:repeat>
+                                        <apex:pageBlockSectionItem rendered="{!applicationType == 'Standard'}" >
+                                            <apex:outputLabel >Click here to add another qualification</apex:outputLabel>
+                                            <apex:commandButton action="{!addAcademicQE}" value="Add" />
+                                        </apex:pageBlockSectionItem>
+                                        
+                                    </apex:pageBlockSection>
+                                    </apex:outputPanel>
+                                </apex:outputPanel>
+                                
+                                <!--QE for Short Courses-->
+                                <apex:outputPanel dir="QE Short" rendered="{!(step.Name='qualification employment short')&&(applicationType == 'Short-' || applicationType == 'Short+')}">
+                                    <apex:pageBlockSection title="Qualification/Experience" columns="1" collapsible="false">
+                                        <apex:inputTextarea rows="4" styleClass="countable2" value="{!sp.Qualification_Experience__c}" label="Please give details of your highest academic qualification and most recent professional experience" />
+                                        <apex:pageBlockSectionItem rendered="{!(applicationType == 'Short+' || sp.academic_credit__c == true)}">
+                                            <apex:outputLabel >Click here to attach file</apex:outputLabel>
+                                            <c:MultiAttachment multiple="false" parentId="{!sp.Id}" description="Qualification/Experience" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <!--
+                                    <apex:pageBlockSection title="Professional Qualification" columns="1" collapsible="false">
+                                        <apex:inputTextarea rows="4" styleClass="countable2" label="Professional Qualification" />
+                                        <apex:pageBlockSectionItem rendered="{!(applicationType  == 'Short+' || sp.academic_credit__c == true)}">
+                                            <apex:outputLabel >Click here to attach file</apex:outputLabel>
+                                            <c:MultiAttachment multiple="false" parentId="{!sp.Id}" description="Professional Qualification" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    -->
+                                    <apex:pageBlockSection title="Current Employment" columns="1" collapsible="false">
+                                        <apex:inputTextarea rows="4" styleClass="countable2" value="{!sp.Employment__c}" label="Please give details of your current or most recent employment" />                                        
+                                    </apex:pageBlockSection>                                    
+                                </apex:outputPanel>
+                                <!-- Academic QE END -->
+                                
+                                <!-- Language QE BEGIN -->
+                                <apex:outputPanel id="LanguageQE" rendered="{!(step.Name='language qualifications' || step.Name='language qualifications short') && (applicationType == 'Standard' || applicationType == 'Short+' || (applicationType == 'Short-' && sp.academic_credit__c == true))}">                                    
+                                        <apex:outputPanel id="languageQualificationsPanel" rendered="true" >
+                                            <apex:pageBlockSection columns="1" collapsible="false" title="Language Qualifications">
+                                            <apex:outputLabel >
+                                                All courses delivered by the Liverpool School of Tropical Medicine are taught in English. In order to equip you with the skills to successfully pursue your chosen course of study and to enable you to participate in all aspects of academic life you must ensure that you meet LSTM’s English language entry requirements. <br/><br/>
+                                                Further details on how you can meet these requirements are available on the LSTM website: <a href="http://www.lstmed.ac.uk/learning--teaching/applying-to-lstm/english-language/" target="_blank">http://www.lstmed.ac.uk/learning--teaching/applying-to-lstm/english-language/</a><br/><br/> 
+                                                Meeting LSTM’s requirements will also satisfy the English language requirements for a Tier 4 (General) visa.
+                                            </apex:outputLabel>
+                                            <apex:pageMessage rendered="{!ISBLANK(studentNationality)}" severity="error" strength="3" summary="Please return to the Personal Details page and update your nationality to continue."/>
+                                        </apex:pageBlockSection>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel id="britishIrishPanel" rendered="true">
+                                            <apex:pageBlockSection rendered="{!OR(studentNationality=='United Kingdom', studentNationality=='Ireland')}" columns="1" collapsible="false" showHeader="false">
+                                                <apex:pageBlockSectionItem >
+                                                    <apex:outputLabel >You have previously told us you are a British or Irish national, is this correct?</apex:outputLabel>
+                                                    <apex:inputField value="{!sp.Confirm_British_Irish_Nationality__c}" required="{!requiredMode}" onchange="updateEnglishLang(); return false;" />
+                                                </apex:pageBlockSectionItem>
+                                                <apex:pageMessage rendered="{!sp.Confirm_British_Irish_Nationality__c='No'}" severity="error" strength="3" summary="Please return to the Personal Details page and update your nationality to continue."/>
+                                            </apex:pageBlockSection>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel id="britishIrishDeclarationPanel" rendered="true">
+                                            <apex:pageBlockSection rendered="{!NOT(OR(ISBLANK(studentNationality), studentNationality=='United Kingdom', studentNationality=='Ireland'))}" columns="1" collapsible="false" title="Please indicate which of the following applies to you:" >
+                                            <apex:outputText >
+                                                <b>1. I am a national of a majority English-speaking country</b><br/>
+                                                Nationals of majority English-speaking countries, as defined by the UK Visas and Immigration Service are deemed to meet LSTM’s English language entry requirements. We will use your passport or travel document to evidence this.
+                                            </apex:outputText>
+                                            <apex:pageBlockSectionItem helpText="{!$ObjectType.Student_Programme__c.Fields.National_of_Majority_English_Speaking__c.inlineHelpText}" >
+                                                <apex:outputLabel >Please select</apex:outputLabel>
+                                                <apex:inputField value="{!sp.National_of_Majority_English_Speaking__c}" required="{!requiredMode}"/>
+                                            </apex:pageBlockSectionItem>
+                                            <apex:outputText >
+                                                <b>2. I have completed a Degree Level Qualification taught in the UK, Republic of Ireland or in another majority English-speaking country (excluding Canada)</b><br/>
+                                                Applicants holding degree level qualifications taught in the UK or in a majority English-speaking country, as defined by the UK Visas and Immigration Service (excluding Canada), are deemed to meet LSTM’s English language entry requirements. We will use your verified qualifications to evidence this.
+                                            </apex:outputText>
+                                            <apex:pageBlockSectionItem helpText="{!$ObjectType.Student_Programme__c.Fields.Completed_Degree_Level_Qualification__c.inlineHelpText}" >
+                                                <apex:outputLabel >Please select</apex:outputLabel>
+                                                <apex:inputField value="{!sp.Completed_Degree_Level_Qualification__c}" required="{!requiredMode}" />
+                                            </apex:pageBlockSectionItem>
+                                            <apex:outputText >
+                                                <b>3. I hold a current certificate for an approved country specific qualification</b><br/>
+                                                See <a target="_blank" href="http://www.lstmliverpool.ac.uk/learning--teaching/applying-to-lstm/english-language/">http://www.lstmliverpool.ac.uk/learning--teaching/applying-to-lstm/english-language/</a> for a list of country specific qualifications and the required grades.<br/>
+                                                We will use the details on your certificate to evidence this.
+                                            </apex:outputText>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputPanel >
+                                                    <span class="helpButton">
+                                                        <apex:outputLabel >Please select</apex:outputLabel>
+                                                        <img src="/s.gif" alt="" class="helpOrb" title="<table border='1' cellspacing='0' cellpadding='1'>
+                                                        <tr><td width='300'>Botswana Cambridge Overseas School Certificate</td><td width='300'>Credit (3-6) or above</td></tr>
+                                                        <tr><td>Cameroon GCE O Level (British system)</td><td>Grade C or above</td></tr>
+                                                        <tr><td>Caribbean Examination Council General Proficiency</td><td>Taken pre-2007 - C<br/>Taken post-2007 - 4</td></tr>
+                                                        <tr><td>Hong Kong Use of English AS level</td><td>C</td></tr>
+                                                        <tr><td>INDIA Standard XII (awarded by CBSE, CISCE, West Bengal, Karnataka, Maharashtra & Tamil Nadu boards)</td><td>70% or above (from these boards when education has been completed in English Medium)</td></tr>
+                                                        <tr><td>Kenyan Certificate of Secondary Education (KCSE)</td><td>C</td></tr>
+                                                        <tr><td>Malawi School Certificate of Education</td><td>Credit (3-6)or above</td></tr>
+                                                        <tr><td>Malaysian SPM 1119</td><td>C</td></tr>
+                                                        <tr><td>Singapore Cambridge O Level</td><td>C</td></tr>
+                                                        <tr><td>South Africa National Senior Certificate</td><td>C / 5</td></tr>
+                                                        <tr><td>Tanzania Certificate of Secondary Education (CSE)</td><td>C</td></tr>
+                                                        <tr><td>Uganda Certificate of Education (UCE)</td><td>Credit (3-6) or above</td></tr>
+                                                        <tr><td>UK A/S level English language</td><td>E</td></tr>
+                                                        <tr><td>UK GCSE or O level English language</td><td>C</td></tr>
+                                                        <tr><td>UK IGCSE English as a first language</td><td>C</td></tr>
+                                                        <tr><td>UK IGCSE English as a second language</td><td>B</td></tr>
+                                                        <tr><td>UK - International Baccalaureate</td><td>Standard Level Grade 5 or Higher Level Grade 4 in English B (Group 2).Please note Standard or Higher Level English A (Group 1) is not acceptable. Students who have studied English A should present an alternative, accepted (as outlined in this table), English Language qualification.</td></tr>
+                                                        <tr><td>Zambia Secondary School Certificate</td><td>Grade 6 or above</td></tr>
+                                                        <tr><td>Zimbabwe General Certificate of Education</td><td>Grade C, Credit (5-6) or above</td></tr>
+                                                        <tr><td>WAEC (Gambia, Ghana, Liberia, Nigeria & Sierra Leone)</td><td>Grade C, Credit (4-6) or above</td></tr>
+                                                        </table>"/>
+                                                    </span>
+                                                </apex:outputPanel>
+                                                <apex:inputField value="{!sp.Cert_for_Approved_Country_Specific_Qual__c}" required="{!requiredMode}" onchange="updateEnglishLang(); return false;" />
+                                            </apex:pageBlockSectionItem>
+                                            <apex:pageBlockSectionItem rendered="{!sp.Cert_for_Approved_Country_Specific_Qual__c='Yes'}" >
+                                                <apex:outputLabel >Upload Certificate</apex:outputLabel>
+                                                <!-- 2014-09-08 : CSL : Changing this component as it needs to attach to the Student Programme, not the (redundant) Qualification object -->
+                                                <!-- <c:MultiAttachment multiple="true" description="country specific qualification" parentId="{!qeMap['Language_Qualifications'][0].item.Id}" /> -->
+                                                <c:MultiAttachment multiple="true" description="country specific qualification" parentId="{!sp.Id}" />
+                                            </apex:pageBlockSectionItem>
+                                            <apex:outputText >
+                                                <b>4. I hold a current certificate for one of the following English language tests</b><br/>
+                                                IELTS - 6.5 (minimum 5.5 in each learning component)<br/>
+                                                TOEFL IBT - 88-89 (minimum 21 Listening and Writing, 22 Reading and 23 Speaking)<br/>
+                                                We will use the details on your certificate to evidence this. Tests must be within their validity period of two years.
+                                            </apex:outputText>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel >Please select</apex:outputLabel>
+                                                <apex:inputField value="{!sp.Cert_for_English_Language_Test__c}" required="{!requiredMode}" onchange="updateEnglishLang(); return false;" />
+                                            </apex:pageBlockSectionItem>
+                                            <apex:pageBlockSectionItem rendered="{!sp.Cert_for_English_Language_Test__c='Yes'}" >
+                                                <apex:outputLabel >Upload Certificate</apex:outputLabel>
+                                                <!-- 2014-09-08 : CSL : Changing this component as it needs to attach to the Student Programme, not the (redundant) Qualification object -->
+                                                <!-- <c:MultiAttachment multiple="true" description="English language test" parentId="{!qeMap['Language_Qualifications'][0].item.Id}" /> -->
+                                                <c:MultiAttachment multiple="true" description="English language test" parentId="{!sp.Id}" />
+                                            </apex:pageBlockSectionItem>
+                                            <apex:outputText >
+                                                <b>5. I intend to take an English language test and I understand that this will be a condition of my offer</b><br/>
+                                                Applicants should ensure that they schedule their IELTS or TOEFL test well in advance of the start of their course. Results normally take a minimum of 10 days for release.
+                                            </apex:outputText>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel >Please select</apex:outputLabel>
+                                                <apex:inputField value="{!sp.Intend_to_Take_English_Language_Test__c}" required="{!requiredMode}" />
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                        </apex:outputPanel>
+                                        <apex:actionFunction name="updateEnglishLang"/>                                    
+                                </apex:outputPanel>
+                                <!-- Language QE END -->
+                                
+                                <!-- Professional QE BEGIN -->
+                                <apex:outputPanel id="ProfessionalQE" rendered="{!(step.Name='professional qualifications')}">
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Professional Qualifications">
+                                        <apex:outputLabel >
+                                            Please give details of any relevant professional or other qualifications that you hold and, where applicable, upload copies of your award certificates and transcripts. Should your application be successful we will require you to produce your original documents at registration.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:repeat value="{!qeMap['Professional_Qualifications']}" var="profQE">
+                                            <apex:pageBlockSectionItem >
+                                             <apex:commandLink value="Delete this qualification" action="{!deleteQual}" styleClass="btn" style="text-decoration:none;" rendered="{!applicationType == 'Standard'}">
+                                                 <apex:param assignTo="{!deleteQualId}" value="{!profQE.item.Id}" name="deleteQualId2"/>
+                                             </apex:commandLink>   
+                                            </apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!profQE.item.Name_of_College_University__c}" label="Name of Institution, Awarding Body or Training Provider"/>
+                                            <apex:inputField value="{!profQE.item.Country__c}" styleClass="countryPicklist" label="Country" />
+                                            <apex:inputField value="{!profQE.item.Start_Date__c}" label="Start Date" />
+                                            <apex:inputField value="{!profQE.item.End_Date__c}" label="End Date" />
+                                            <apex:inputField value="{!profQE.item.Qualification__c}" label="Qualification/Award"/>
+                                            <apex:inputField value="{!profQE.item.Subject__c}" label="Subject (if applicable)" />
+                                            <apex:inputField value="{!profQE.item.Class_Grade__c}" label="Class/Grade"/>
+                                            <apex:inputField value="{!profQE.item.Date_of_Award__c}" label="Date of Award" />
+                                            <apex:pageBlockSectionItem rendered="{!((applicationType == 'Short-' || applicationType == 'Short+') && sp.academic_credit__c == true) || (applicationType != 'Short-' && applicationType != 'Short+')}">
+                                                <apex:outputLabel >Click here to attach evidence for this professional qualification</apex:outputLabel>
+                                                <c:MultiAttachment multiple="false" parentId="{!profQE.item.Id}" />
+                                            </apex:pageBlockSectionItem>
+                                            <hr/>
+                                        </apex:repeat>
+                                        <apex:pageBlockSectionItem rendered="{!applicationType == 'Standard'}" >
+                                            <apex:outputLabel >Click here to add another qualification</apex:outputLabel>
+                                            <apex:commandButton action="{!addProfessionalQE}" value="Add"/>
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <!-- Professional QE END -->
+                                
+                                <!-- Experience QE BEGIN -->
+                                <apex:outputPanel id="ExperienceQE" rendered="{!(step.Name='experience')}">
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Experience">
+                                        <apex:outputLabel >
+                                            Please give details of any work history related to your application.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:repeat value="{!qeMap['Experience']}" var="expQE">
+                                        <apex:pageBlockSectionItem >
+                                             <apex:commandLink value="Delete this qualification" action="{!deleteQual}" styleClass="btn" style="text-decoration:none;" rendered="{!applicationType == 'Standard'}" >
+                                                 <apex:param assignTo="{!deleteQualId}" value="{!expQE.item.Id}" name="deleteQualId3"/>
+                                             </apex:commandLink>   
+                                            </apex:pageBlockSectionItem>
+                                            <apex:inputField value="{!expQE.item.Employer__c}" label="Name of Employer" styleClass="wideTextField"/>
+                                            <apex:inputField value="{!expQE.item.Country__c}" styleClass="countryPicklist" label="Country"/>
+                                            <apex:inputField value="{!expQE.item.Start_Date__c}" label="Start Date"/>
+                                            <apex:inputField value="{!expQE.item.End_Date__c}" label="End Date"/>
+                                            <apex:inputField value="{!expQE.item.Position_Held__c}" label="Position Held" styleClass="wideTextField"/>
+                                            <apex:inputTextArea value="{!expQE.item.Brief_Description_of_Responsibilities__c}" label="Brief Description of Responsibilities (max 1000 characters) " rows="4" styleClass="countable2"/>
+                                            <hr/>
+                                        </apex:repeat>
+                                        <apex:pageBlockSectionItem rendered="{!applicationType == 'Standard'}" >
+                                            <apex:outputLabel >Click here to add further experience</apex:outputLabel>
+                                            <apex:commandButton action="{!addExperienceQE}" value="Add"/>
+                                        </apex:pageBlockSectionItem>
+                                        <!-- <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Click here to attach a CV or résumé</apex:outputLabel>
+                                            <c:MultiAttachment multiple="false" parentId="{!student.Id}" description="cv" />
+                                        </apex:pageBlockSectionItem> -->
+                                    </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <!-- Experience QE END -->
+                                
+                                <!-- Personal Statement BEGIN -->
+                                <apex:outputPanel id="personalStatementPanel" rendered="{!(step.Name='personal statement' || step.Name='qualification employment short')}">
+                                    
+                                    <apex:pageBlockSection title="Personal Statement" collapsible="false" rendered="{!step.Name='qualification employment short'}"></apex:pageBlockSection>
+                                    
+                                    <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                                        <apex:outputPanel rendered="{!applicationType == 'Standard'}">
+                                            <apex:outputLabel >
+                                                Please provide a personal statement of around 500 words in support of your application.  This should cover why you want to study this particular programme/course at LSTM, what you hope to gain from it and how it fits with your future plans.  You should also mention any skills and experience that you would bring to the programme/course that might be of value to other students and any long-term benefits that you envisage (e.g. to your current institution, employer or country).<br/><br/>    
+                                                Your personal statement could be the deciding factor in making your application successful so you are advised to take it seriously and allow yourself plenty of time to write it.<br/><br/>                                            
+                                                You may EITHER upload a personal statement that addresses these points OR complete the fields below. <br/><br/>
+                                            </apex:outputLabel>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel >Click here to attach a personal statement</apex:outputLabel>
+                                                <c:MultiAttachment multiple="false" parentId="{!sp.Id}" description="personal statement" />                                                
+                                            </apex:pageBlockSectionItem>
+                                            <br/>
+                                            <apex:pageBlockSection columns="1">
+                                                <apex:inputTextArea value="{!sp.Reasons_for_choosing_programme__c}" rows="4" styleClass="countable2" label="Why have you chosen this programme/course?" />
+                                                <apex:inputTextArea value="{!sp.Reasons_for_choosing_to_study_at_LSTM__c}" rows="4" styleClass="countable2" label="Why do you want to study at LSTM?" />                                        
+                                                <apex:inputTextArea value="{!sp.Future_Plans__c}" rows="4" styleClass="countable2" label="What do you hope to gain from your studies?" />
+                                                <apex:inputTextArea value="{!sp.How_does_programme_connect_to_career_pla__c}" rows="4" styleClass="countable2" label="How does this application fit with your career plans?" />
+                                                <apex:inputTextArea value="{!sp.What_would_you_bring_to_the_programme__c}" rows="4" styleClass="countable2" label="What would you bring to the programme/course?" />                                        
+                                                <apex:inputTextArea value="{!sp.Personal_Statement__c}" rows="4" styleClass="countable2" label="What long-term benefits do you envisage?" />
+                                                <apex:inputTextArea value="{!sp.Other_Relevant_Skills_and_Experience__c}" rows="4" styleClass="countable2" label="Other relevant skills/experience not covered above" />
+                                            </apex:pageBlockSection>
+                                        </apex:outputPanel>
+                                        <apex:outputPanel rendered="{!applicationType != 'Standard'}">
+                                            <apex:pageBlockSection columns="1">
+                                                <apex:inputTextarea id="shortPersonalStatement" label="Please give details of your interest in this course" value="{!sp.Short_Personal_Statement__c}" rows="4" styleClass="countable2" />
+                                            </apex:pageBlockSection>                                            
+                                        </apex:outputPanel>
+                                        <!-- <apex:inputField value="{!sp.Reasons_for_choosing_programme__c}" styleClass="wideField" label="Why have you chosen this programme/course?" />
+                                        <apex:inputField value="{!sp.Reasons_for_choosing_to_study_at_LSTM__c}" styleClass="wideField" label="Why do you want to study at LSTM?" />                                        
+                                        <apex:inputField value="{!sp.Future_Plans__c}" styleClass="wideField" label="What do you hope to gain from your studies?" />
+                                        <apex:inputField value="{!sp.How_does_programme_connect_to_career_pla__c}" styleClass="wideField" label="How does this application fit with your career plans?" />
+                                        <apex:inputField value="{!sp.What_would_you_bring_to_the_programme__c}" styleClass="wideField" label="What would you bring to the programme/course?" />                                        
+                                        <apex:inputField value="{!sp.Personal_Statement__c}" styleClass="wideField" label="What long-term benefits do you envisage?" />
+                                        <apex:inputField value="{!sp.Other_Relevant_Skills_and_Experience__c}" styleClass="wideField" label="Other relevant skills/experience not covered above" /> -->
+                                    </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <!-- Personal Statement END -->
+                                
+                                <!-- Research Proposal BEGIN -->
+                                <apex:outputPanel id="researchProposal" rendered="{!step.Name='research proposal'}">
+                                    <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                                        <apex:inputField value="{!sp.Research_Programme_Type__c}" label="Research Programme Type"/>
+                                        <apex:inputField value="{!sp.Mode_of_Study__c}" label="Mode of Study"/>
+                                        <apex:inputField value="{!sp.Research_Mode_of_Study__c}" label="Proposed Mode of Attendance"/>
+                                        <apex:outputText value="All Postgraduate Research offers are made on the first working day of every month. The only exceptions are January, when offers will be made on the first working day after the Christmas break and September, when offers can be made on any working day."/>
+                                        <apex:inputField value="{!sp.Proposed_Start_Date__c}" label="Proposed Start Date"/>
+                                        <apex:inputField value="{!sp.Application_discussed_with_LSTM_staff__c}" onchange="updateResearchProposal(); return false;" label="Have you already been in discussion with a member of LSTM’s academic staff about your application?"/>
+                                        <apex:inputField value="{!sp.Application_discussed_with_LSTM_details__c}" styleClass="wideField" rendered="{!sp.Application_discussed_with_LSTM_staff__c='Yes'}" label="If yes, please provide the name of the member of staff you have discussed your application with"/>
+                                    </apex:pageBlockSection>
+                                    <apex:outputText value="{!researchProposalCopy.Body_Copy__c}" escape="false"/>
+                                    <apex:pageBlockSection columns="1" collapsible="false" showHeader="false" rendered="{!isPGR}">
+                                        <!-- <apex:outputLabel >
+                                            Please provide an overview of your proposed area of research. You may EITHER complete the field below OR upload a research proposal.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:inputField value="{!sp.Proposed_Area_of_Research__c}" styleClass="wideField" label="Proposed Area of Research"/>
+                                        -->
+                                        
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Click here to attach a research proposal</apex:outputLabel>
+                                            <c:MultiAttachment multiple="false" parentId="{!sp.Id}" description="research proposal" />
+                                        </apex:pageBlockSectionItem>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Click here to attach a CV or résumé</apex:outputLabel>
+                                            <c:MultiAttachment multiple="false" parentId="{!sp.Id}" description="cv" />
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:actionFunction name="updateResearchProposal"/>
+                                    <script>
+                                        function setFocusOnLoad(){ /* Prevent auto-open of calendar */ }
+                                    </script>
+                                </apex:outputPanel>
+                                <!-- Research Proposal END -->
+                                
+                                <!-- References BEGIN -->
+                                <apex:outputPanel id="referencesPanel" rendered="{!(step.Name='references' || (step.Name='personal statement short' && applicationType == 'Short+'))}">
+                                    <apex:outputLabel >
+                                        Please provide the names and contact details of two suitable referees who have indicated that they are willing to be approached to provide a reference for you. Referees should be senior academic and/ or professional persons who are currently responsible, or have recently been responsible for supervising you; friends and family are not acceptable.<br/><br/> 
+                                        Where applicable, LSTM will email your referees upon submission of your application to request a reference.  Alternatively, you may upload an existing reference, provided it is relevant to your application and is no more than 2 years old.<br/><br/>
+                                    </apex:outputLabel>
+                                    <apex:repeat value="{!references}" var="ref">
+                                        <apex:pageBlockSection columns="1" collapsible="false" title="Referee {!ref.index+1}">
+                                            <apex:inputField value="{!ref.referee.Salutation}" label="Title"/>
+                                            <apex:inputField value="{!ref.referee.LastName}" label="Surname" required="{!AND(requiredMode,NOT(ref.empty))}"/>
+                                            <apex:inputField value="{!ref.referee.FirstName}" label="First Name" />
+                                            <apex:inputField value="{!ref.referee.Title}" label="Position"/>
+                                            <apex:inputField value="{!ref.item.College_University_or_Employer__c}" styleClass="wideField" label="College/University or Employer"/>
+                                            <apex:inputField value="{!ref.referee.MailingStreet}" styleClass="wideField" label="Street"/>
+                                            <apex:inputField value="{!ref.referee.MailingCity}" label="City"/>
+                                            <apex:inputField value="{!ref.referee.MailingState}" label="State/Province"/>
+                                            <apex:inputField value="{!ref.referee.MailingPostalCode}" label="Postal code"/>
+                                            <apex:inputField value="{!ref.referee.MailingCountry}" label="Country"/>
+                                            <apex:inputField value="{!ref.referee.Email}" label="Email"/>
+                                            <apex:inputField value="{!ref.referee.Phone}" label="Telephone Number"/>
+                                            <apex:inputField value="{!ref.item.Can_Request_Reference_from_Referee__c}" label="By checking this box, I agree to LSTM contacting this referee, by email, to request a reference on my behalf"/>
+                                            <apex:pageBlockSectionItem >
+                                                <apex:outputLabel >Click here to attach a reference from this referee that is relevant to this programme/course</apex:outputLabel>
+                                                <c:MultiAttachment multiple="true" parentId="{!ref.item.Id}" description="Reference"/>
+                                            </apex:pageBlockSectionItem>
+                                        </apex:pageBlockSection>
+                                    </apex:repeat>
+                                </apex:outputPanel>
+                                <!-- References END -->
+                                
+                                <!-- Fees and Funding BEGIN -->
+                                <apex:outputPanel id="feesAndFunding" rendered="{!(step.Name='fees and funding' || step.Name='fees and funding short')}">
+                                    <apex:pageBlockSection title="Fees and Funding" collapsible="false" rendered="{!step.Name='fees and funding short'}"></apex:pageBlockSection>
+                                    <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                                        <apex:outputLabel >
+                                            Please indicate how you intend to fund your studies. If your application is successful you will normally be asked to provide evidence of funding.<br/><br/>
+                                            Further guidance on this will be provided at a later date so there is no need to enclose any documents at this stage.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:inputField value="{!sp.Fees_and_Funding__c}" onchange="updateSponsorship(); return false;" label="How do you intend to fund your tuition fees and living costs whilst studying at LSTM?"/>
+                                        <apex:inputField value="{!sp.If_Sponsored_applied_for_sponsorship__c}" onchange="updateSponsorship(); return false;" rendered="{!sp.Fees_and_Funding__c='Sponsored'}" label="If you are sponsored, have you applied for a scholarship/sponsorship?"/>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection rendered="{!OR(sp.Fees_and_Funding__c='Fully sponsored',sp.Fees_and_Funding__c='Partly sponsored')}">
+                                        <apex:inputField value="{!sp.If_Sponsored_applied_for_sponsorship__c}" onchange="updateSponsorship();" label="What is the status of your application for sponsorship/funding?"/>
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection rendered="{!sp.If_Sponsored_applied_for_sponsorship__c = 'I have applied for sponsorship/funding to undertake my intended programme of study and my application is pending'}">
+                                        <apex:inputField value="{!sp.Source_of_Funding__c}" styleClass="wideTextField" label="Please state source(s) of funding, amount(s) requested and expected date(s) of decision(s)"/>
+                                    </apex:pageBlockSection>
+                                    
+                                    <apex:pageBlockSection rendered="{!sp.If_Sponsored_applied_for_sponsorship__c = 'I need to apply for sponsorship/funding to undertake my intended programme of study'}">
+                                        <apex:inputField value="{!sp.Source_of_Funding__c}" styleClass="wideTextField" label="Please outline what sponsorship/funding you intend applying for"/>
+                                    </apex:pageBlockSection>
+                                    
+                                    <apex:pageBlockSection rendered="{!AND(OR(sp.Fees_and_Funding__c='Fully sponsored',sp.Fees_and_Funding__c='Partly sponsored'),sp.If_Sponsored_applied_for_sponsorship__c='I have secured sponsorship/funding for my intended programme of study')}" columns="1" collapsible="false" showHeader="false">
+                                        <apex:outputLabel >
+                                            If you have applied for a scholarship/sponsorship, please provide the following information:<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:inputField value="{!sp.Name_of_Sponsor_Financial_Guarantor__c}" label="Sponsor Name"/>
+                                        <apex:inputField value="{!sp.Sponsor_Official_Position__c}" label="Organisation"/>
+                                        <apex:inputField value="{!sp.Sponsor_Address_for_Invoice__c}" styleClass="wideField" label="Address"/>
+                                        <apex:inputField value="{!sp.Sponsor_Email_Address__c}" label="Email Address"/>
+                                        <apex:inputField value="{!sp.Sponsor_Telephone__c}" label="Telephone Number"/>
+                                        <apex:inputField value="{!sp.Amount_of_Sponsorship_Funding__c}" label="Amount of Sponsorship/Funding"/>
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >Click here to attach a proof of sponsorship:</apex:outputLabel>
+                                            <c:MultiAttachment multiple="true" parentId="{!sp.Id}" description="proof of sponsorship"/>
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:actionFunction name="updateSponsorship"/>
+                                </apex:outputPanel>
+                                <!-- Fees and Funding END -->
+                                
+                                <!-- VISA History BEGIN -->
+                                <apex:outputPanel rendered="{!(step.Name='visa history' || step.Name='fees and funding short')}" id="visaPanel">
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Visa & Immigration" showHeader="{!applicationType != 'Standard'}">
+                                        <apex:inputField value="{!sp.UK_Visa_Required__c}" onchange="updateUkVisaRequired(); return false;" required="{!requiredMode}" label="Do you need a visa to study at LSTM?"/>
+                                        <apex:inputField value="{!sp.UK_Visa_Further_Details__c}" styleClass="wideField" rendered="{!sp.UK_Visa_Required__c = 'OTHER'}" label="Further details"/>
+                                        <apex:actionFunction name="updateUkVisaRequired"/>
+                                        <!-- <apex:inputField value="{!Student.Non_EEA_student_with_current_UK_Visa__c}" required="{!requiredMode}" onchange="updateVisaRequired(); return false;" label="Are you a non-EEA student, with a current UK VISA?"/> -->
+                                        <!-- <apex:pageBlockSectionItem rendered="{!needVisaFurtherDetails}"> -->
+                                        <apex:pageBlockSectionItem rendered="{!OR(sp.UK_Visa_Required__c = 'OTHER',sp.UK_Visa_Required__c = 'NO, because I already hold a valid VISA which permits study in the UK or I have indefinite leave to remain in the UK')}">
+                                            <apex:outputLabel >Click here to attach an immigration documentation:</apex:outputLabel>
+                                            <c:MultiAttachment multiple="true" parentId="{!sp.Id}" description="immigration documentation"/>
+                                        </apex:pageBlockSectionItem>
+                                    </apex:pageBlockSection>
+                                    <apex:outputPanel id="visaDetails" rendered="true">
+                                        <apex:pageBlockSection columns="1" collapsible="false" rendered="{!AND(NOT(isEEAStudent), OR(isPGR,isMSc), applicationType  == 'Standard')}" title="UK VISA History (Non-EEA students only)">
+                                            <apex:outputLabel >
+                                                If, on any occasion, you have previously studied in the UK under the Tier 4 (General) Student category or under the pre-Tier 4 student rules then you must declare this below. As a Tier 4 licensed sponsor LSTM must confirm that you are making academic progress from study undertaken during your most recent period of Tier 4 (General) Student leave or pre-Tier 4 student leave. This information must be included in the CAS. It is your responsibility to provide us with this information. Any information withheld could affect your visa application.<br/><br/>
+                                            </apex:outputLabel>
+                                            <apex:pageBlockTable value="{!historyVisaUK}" var="qeVisa">
+                                                <apex:column value="{!qeVisa.Name_of_College_University__c}">
+                                                    <apex:facet name="header">Institution</apex:facet>
+                                                </apex:column>
+                                                <apex:column value="{!qeVisa.Qualification__c}">
+                                                    <apex:facet name="header">Qualification</apex:facet>
+                                                </apex:column>
+                                                <apex:column value="{!qeVisa.Subject__c}">
+                                                    <apex:facet name="header">Programme of Study</apex:facet>
+                                                </apex:column>
+                                                <apex:column value="{!qeVisa.Start_Date__c}">
+                                                    <apex:facet name="header">Start Date</apex:facet>
+                                                </apex:column>
+                                                <apex:column value="{!qeVisa.End_Date__c}">
+                                                    <apex:facet name="header">End Date</apex:facet>
+                                                </apex:column>
+                                                <apex:column >
+                                                    <apex:facet name="header">Type of Visa</apex:facet>
+                                                    <apex:inputField value="{!qeVisa.Type_Of_Visa__c}" required="{!requiredMode}"/>
+                                                </apex:column>
+                                            </apex:pageBlockTable>
+                                            <apex:outputPanel >
+                                                To add details of any other occasions you have studied in the UK under these arrangements, click ‘Add a Period of Study’ to return to Section 2 of the application and add a new qualification, then return to this section to add the Type of Visa.<br/><br/>                                        
+                                                <apex:commandButton action="{!gotoStep}" value="Add a Period of Study" reRender="wizardStep">
+                                                    <apex:param assignTo="{!stepName}" value="academic qualifications"/>
+                                                </apex:commandButton>
+                                            </apex:outputPanel>
+                                        </apex:pageBlockSection>    
+                                    </apex:outputPanel>
+                                    <apex:actionFunction name="updateVisaRequired" reRender="visaDetails"/>
+                                </apex:outputPanel>
+                                <!-- VISA History VISA END -->
+                                
+                                <!-- Equal Opportunities BEGIN -->                                
+                                <apex:outputPanel rendered="{!(step.Name='equal opportunities' || step.Name='regulatory short')}" id="equalOpportunitiesPanel">
+                                    <apex:pageBlockSection title="Equal Opportunities" collapsible="false" rendered="{!(step.Name='regulatory short')}"></apex:pageBlockSection>
+                                    <apex:outputLabel >
+                                        Applicants to the Liverpool School of Tropical Medicine are selected on their academic ability regardless of gender, ethnic or national origin, disability, religion, sexual orientation or any other irrelevant distinction. In order to ensure that our policies and procedures are effective in avoiding discrimination and promoting equal opportunities we ask all applicants about ethnicity and disability. The information you provide will be used for statistical purposes only and will not be available to the Director of Studies when assessing suitability for your chosen programme of study.<br/><br/>
+                                    </apex:outputLabel>
+                                    <apex:pageBlockSection columns="1" collapsible="false" showHeader="false">
+                                        <apex:inputField value="{!sp.Ethnic_Origin__c}" label="Ethnicity" />
+                                    </apex:pageBlockSection>
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Disability Support at LSTM">
+                                        <apex:outputLabel >
+                                            LSTM welcomes students with disabilities and aims to ensure that, as far as possible, appropriate support is offered to meet their needs. LSTM complies with current equality legislation, under which it has a duty not to discriminate against disabled students. The legislation requires us to make "reasonable adjustments" to our services so that disabled students are not placed at a "substantial disadvantage".<br/><br/>
+                                            If you have a disability, long term health condition or specific learning difficulty (e.g. dyslexia), you are strongly encouraged to indicate this. Unless you request otherwise, students who indicate they have a disability will be contacted by LSTM’s Student Experience Officer before the start of their programme of study.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:inputField value="{!sp.Disability__c}" label="Disability" />
+                                        <apex:pageBlockSectionItem >
+                                            <apex:outputLabel >I do not wish to be contacted about my disability</apex:outputLabel>
+                                            <apex:inputField value="{!Student.DoNotContact__c}"/>          
+                                        </apex:pageBlockSectionItem>
+                                        <apex:outputLabel >    
+                                            Applicants who wish to be contacted will be asked to provide further information about their disability so that we can tell you what support is available and discuss with you what reasonable adjustments you will require during your course of study. Knowing about your requirements in advance can also help us to prepare and arrange support in time for the start of your course. The information that you provide will be used to enable our Student Experience Officer to liaise with those colleagues who need to know about the support that you will require, in order that this can be arranged to best serve your interests.<br/><br/>
+                                            We require supporting documentation regarding your disability, before support can be arranged. The type of documentation that we require will depend on your individual circumstances, but may for example be a letter from your GP or an Educational Psychologist’s Report.<br/><br/>
+                                        </apex:outputLabel>
+                                    </apex:pageBlockSection>
+                                </apex:outputPanel>
+                                <!-- Equal Opportunities END -->
+                                
+                                <!-- Declaration BEGIN -->
+                                <apex:outputPanel id="declaration" rendered="{!(step.Name='declaration' || step.Name='regulatory short')}">
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Criminal Convictions">
+                                        <apex:outputLabel >
+                                            To help LSTM reduce the risk of harm or injury to its students caused by the criminal behaviour of other students, we must know if applicants have any relevant criminal convictions. Relevant criminal convictions are only those convictions for offences against the person, whether of a violent or sexual nature, and convictions for offences involving unlawfully supplying controlled drugs or substances where the conviction concerns commercial drug dealing or trafficking. Convictions that are spent (as defined by the Rehabilitation of Offenders Act 1974) are not considered to be relevant and you should not reveal them.<br/><br/>
+                                        </apex:outputLabel>
+                                        <apex:inputField value="{!sp.Do_you_have_any_Criminal_Convictions__c}" required="{!requiredMode}" label="Do you have any criminal convictions?">
+                                            <apex:actionSupport event="onchange" rerender="declaration"/>
+                                        </apex:inputField>
+                                        <apex:inputField value="{!sp.Criminal_Convictions_Details__c}" label="Please provide details of your criminal conviction" rendered="{!sp.Do_you_have_any_Criminal_Convictions__c = 'Yes'}" styleClass="wideTextField"/>
+                                    </apex:pageBlockSection>
+                                    <!--
+                                    <apex:pageBlockSection columns="1" collapsible="false" title="Data Protection">
+                                        <apex:outputLabel >
+                                            Your data will not be disclosed for other purposes without your consent, except where there is a legal obligation to do so or where exceptional issues of personal safety arise. The information will be processed and held in LSTM’s administration systems and used for the administration of your academic related support and any other legitimate LSTM purpose. In doing so, LSTM will observe at all times the data protection principles embodied in the Data Protection Act 1998.<br/><br/>
+                                        </apex:outputLabel>
+                                    </apex:pageBlockSection>
+                                    <hr/>
+                                    <apex:outputLabel >
+                                        By submitting this application I agree to LSTM and its associates processing personal data contained in this form, or other data which LSTM may obtain from me or other sources. I agree to the processing of such data for any purpose connected with my studies or my health, welfare and safety, or for any other legitimate reason. I understand that my personal data will not be disclosed to third parties without my permission.<br/>
+                                    </apex:outputLabel>
+                                    -->
+                                </apex:outputPanel>
+                                <!-- Declaration END -->
+                                
+                            </apex:pageBlock>
+                        </td>
+                        <!-- Step section END -->
+                    </tr>
+                </table>
+            </apex:outputPanel>
+
+            <!-- Validation BEGIN -->
+            <apex:pageBlock title="{!IF(sp.Stage__c = 'Submitted','Finished','Review')}" rendered="{!validationStep}">
+                <apex:pageBlockButtons location="bottom" rendered="{!NOT(isValidationErrors)}" style="text-align: right;" >
+                    <!-- <apex:commandButton action="{!gotoHomePage}" value="Done" rendered="{!step.hasPreviousStep}"/> -->
+                    <apex:commandButton action="{!gotoHomePage}" styleClass="doneButton" value="Done" rendered="{!AND(NOT(isValidationErrors),sp.Stage__c = 'Submitted')}"/>
+                    
+                    <apex:commandButton value="Submit" action="{!doSubmit}" rendered="{!AND(NOT(sp.Stage__c = 'Submitted'),readyToSubmit)}"/>
+                </apex:pageBlockButtons>
+                <apex:actionRegion >
+                    <apex:outputPanel rendered="{!isValidationErrors}">
+                        <apex:outputLabel >Some of the required fields are missing. Please, go to the steps with errors and fill values of required fields.<br/><br/></apex:outputLabel>
+                    </apex:outputPanel>                                                            
+                    <apex:outputPanel rendered="{!AND(NOT(isValidationErrors),sp.Stage__c = 'Submitted')}">
+                        <apex:outputLabel >Thank you for submitting your application<br/><br/></apex:outputLabel>
+                    </apex:outputPanel>
+                    <apex:outputPanel rendered="{!NOT(sp.Stage__c = 'Submitted')}">
+                    <apex:pageBlockSection columns="2" collapsible="false" title="Personal Details">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Welcome" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="welcome"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['personal name'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['personal name']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Name and Passport" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="personal name"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['personal address'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['personal address']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Address" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="personal address"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="2" collapsible="false" title="Qualifications and Experience">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Academic Qualifications" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="academic qualifications"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['language qualifications'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['language qualifications']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Language Qualifications" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="language qualifications"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Professional Qualifications" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="professional qualifications"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Experience" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="experience"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                    <apex:pageBlockSection columns="2" collapsible="false" title="Other Information">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Personal Statement" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="personal statement"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem rendered="{!isPGR}">
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['research proposal'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['research proposal']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Research Proposal" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="research proposal"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['references'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['references']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="References" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="references"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Fees and Funding" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="fees and funding"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['visa history'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['visa history']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Visa History" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="visa history"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel ><apex:image value="/img/msg_icons/confirm24.png" /></apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Equal Opportunities" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="equal opportunities"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel >
+                                <apex:image value="/img/msg_icons/confirm24.png" rendered="{!NOT(errorByStep['declaration'])}" />
+                                <apex:image value="/img/msg_icons/error24.png" rendered="{!errorByStep['declaration']}" />
+                            </apex:outputLabel>
+                            <apex:commandLink action="{!gotoStep}" value="Declaration" reRender="wholePage">
+                                <apex:param assignTo="{!stepName}" value="declaration"/>
+                            </apex:commandLink>
+                        </apex:pageBlockSectionItem>
+                        
+                    </apex:pageBlockSection>
+                    </apex:outputPanel>
+                </apex:actionRegion>
+                    <br/><br/>                
+                    <!--
+                    Suyati Modified 22-Jun-2015
+                    <apex:outputText value="{!reviewPageCopy.Body_Copy__c}" escape="false" rendered="{!AND(NOT(sp.Stage__c = 'Submitted'),readyToSubmit)}"/>
+                    -->
+            </apex:pageBlock>
+            
+            <!-- Validation END -->
+            
+            <!--
+                Suyati Modified Start
+            -->
+            <apex:outputPanel rendered="{!(shortCourseSaved == TRUE)&&(sp.Stage__c == 'Submitted')}">
+                <apex:pageBlock >
+                    <apex:outputLabel >Thank you for submitting your application<br/><br/></apex:outputLabel>
+                </apex:pageBlock>
+            </apex:outputPanel>
+            <!--
+                Suyati Modified End
+            -->
+        </apex:outputPanel>
+    </apex:form>    
+</apex:page>

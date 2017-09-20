@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact.Student_Programmes1__r$AD_Account__c</field>
+    </columns>
+    <columns>
+        <field>Contact.Student_Programmes1__r$Name</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Name</column>
+            <operator>notContain</operator>
+            <value>test</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Programme_Type__c</column>
+            <operator>equals</operator>
+            <value>MSc Programme</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Programme__c</column>
+            <operator>contains</operator>
+            <value>16/17</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact$Name</column>
+            <operator>notEqual</operator>
+            <value>Rick Astley,Billy Idol</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$Stage__c</column>
+            <operator>equals</operator>
+            <value>Conditional,Unconditional,Accepted,Expected,Pre-Registered,Deferred</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Contact.Student_Programmes1__r$AD_Account__c</column>
+            <operator>equals</operator>
+            <value>Yes,No</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Student_Programmes1__r$Programme__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.Student_Programmes1__r$Stage__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>AD accounts MSc 2016 apps not attended</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Students_Applications__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

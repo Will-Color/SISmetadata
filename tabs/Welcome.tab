@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <icon>Logos/LSTM_sails.jpg</icon>
+    <label>Welcome</label>
+    <mobileReady>false</mobileReady>
+    <motif>Custom104: TV Widescreen</motif>
+    <page>WelcomePage</page>
+</CustomTab>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Actual --></label>
+        <name>Actual__c</name>
+    </fields><fields>
+        <help><!-- Actual students attended divided by number of students expected, or scheduled, to attend --></help>
+        <label><!-- Attendance % --></label>
+        <name>Attendance__c</name>
+    </fields><fields>
+        <label><!-- Completed --></label>
+        <name>Completed__c</name>
+    </fields><fields>
+        <help><!-- Start date and time of session --></help>
+        <label><!-- Date &amp; Time --></label>
+        <name>Date_Time__c</name>
+    </fields><fields>
+        <label><!-- Expected --></label>
+        <name>Expected__c</name>
+    </fields><fields>
+        <label><!-- Module Ref --></label>
+        <name>Module_Ref__c</name>
+    </fields><fields>
+        <label><!-- Module --></label>
+        <name>Module__c</name>
+        <relationshipLabel><!-- Sessions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Narrative --></label>
+        <name>Narrative__c</name>
+    </fields><fields>
+        <label><!-- Room Name --></label>
+        <name>Room_Name__c</name>
+    </fields><fields>
+        <label><!-- Session Convenor --></label>
+        <name>Session_Convenor__c</name>
+        <relationshipLabel><!-- My Sessions --></relationshipLabel>
+    </fields><fields>
+        <label><!-- X Session Type --></label>
+        <name>Session_Type__c</name>
+        <picklistValues>
+            <masterLabel>Labs</masterLabel>
+            <translation><!-- Labs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lectures</masterLabel>
+            <translation><!-- Lectures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tutorials</masterLabel>
+            <translation><!-- Tutorials --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- sfxId --></label>
+        <name>sfxId__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Session</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Sessions</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Session Layout</layout>
+        <sections>
+            <label><!-- Attendance --></label>
+            <section>Attendance</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts><recordTypes>
+        <label><!-- Lecture --></label>
+        <name>Lecture</name>
+    </recordTypes><recordTypes>
+        <label><!-- Practical --></label>
+        <name>Practical</name>
+    </recordTypes><recordTypes>
+        <label><!-- Tutorial --></label>
+        <name>Tutorial</name>
+    </recordTypes></CustomObjectTranslation>

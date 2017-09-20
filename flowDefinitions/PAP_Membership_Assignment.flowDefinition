@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>Relates PAP Member records to Progress Assessment records for each Research Period on creation of new Progress Assessment. Invoked by Progress Assessment Process</description>
+    <masterLabel>Progress Assessment - PAP Membership Assignment</masterLabel>
+</FlowDefinition>

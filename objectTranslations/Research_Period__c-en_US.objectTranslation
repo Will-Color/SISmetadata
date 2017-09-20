@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields><fields>
+        <label><!-- Attendance at PGR Conference --></label>
+        <name>Attendance_at_PGR_Conference__c</name>
+        <picklistValues>
+            <masterLabel>Attendee</masterLabel>
+            <translation><!-- Attendee --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Did Not Attend</masterLabel>
+            <translation><!-- Did Not Attend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poster</masterLabel>
+            <translation><!-- Poster --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation><!-- Presentation --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Completed Supervisory Meetings --></label>
+        <name>Completed_Supervisory_Meetings__c</name>
+    </fields><fields>
+        <label><!-- Future Required Supervisory Meetings --></label>
+        <name>Future_Required_Supervisory_Meetings__c</name>
+    </fields><fields>
+        <label><!-- Narrative --></label>
+        <name>Narrative__c</name>
+    </fields><fields>
+        <label><!-- PAP Completed --></label>
+        <name>PAP_Completed__c</name>
+    </fields><fields>
+        <label><!-- PAP Members --></label>
+        <name>PAP_Members__c</name>
+    </fields><fields>
+        <label><!-- PAP Outcome --></label>
+        <name>PAP_Outcome__c</name>
+    </fields><fields>
+        <label><!-- PAP Window Open --></label>
+        <name>PAP_Window_Open__c</name>
+    </fields><fields>
+        <label><!-- Period End Date --></label>
+        <name>Period_End_Date__c</name>
+    </fields><fields>
+        <label><!-- Period Number --></label>
+        <name>Period_Number__c</name>
+    </fields><fields>
+        <label><!-- Period Start Date --></label>
+        <name>Period_Start_Date__c</name>
+    </fields><fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+        <picklistValues>
+            <masterLabel>Period 1</masterLabel>
+            <translation><!-- Period 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period 2</masterLabel>
+            <translation><!-- Period 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period 3</masterLabel>
+            <translation><!-- Period 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period 4</masterLabel>
+            <translation><!-- Period 4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period 5</masterLabel>
+            <translation><!-- Period 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Period 6</masterLabel>
+            <translation><!-- Period 6 --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Previous Period --></label>
+        <name>Previous_Period__c</name>
+        <relationshipLabel><!-- Next Period --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Re-register --></label>
+        <name>Re_register__c</name>
+    </fields><fields>
+        <help><!-- Number of required Supervisions in this Research Period --></help>
+        <label><!-- Required Supervisory Meetings --></label>
+        <name>Required_Supervisory_Meetings__c</name>
+    </fields><fields>
+        <help><!-- Status of Research Period --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Completed</masterLabel>
+            <translation><!-- Completed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Special Measures</masterLabel>
+            <translation><!-- Special Measures --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Terminated</masterLabel>
+            <translation><!-- Terminated --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Student Programme --></label>
+        <lookupFilter>
+            <errorMessage><!-- You can only assign Research Periods to Student Programmes where Record Type = PGR Programme. --></errorMessage>
+            <informationalMessage><!-- Oops... the Student Programme you have selected is not a PGR Programme. --></informationalMessage>
+        </lookupFilter>
+        <name>Student_Programme__c</name>
+        <relationshipLabel><!-- Research Periods --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+    </fields><fields>
+        <help><!-- Set at Student Programme --></help>
+        <label><!-- Study Location --></label>
+        <name>Study_Location__c</name>
+    </fields><fields>
+        <label><!-- User is PAP Member --></label>
+        <name>User_is_PAP_Member__c</name>
+    </fields><fields>
+        <label><!-- User is Supervisor --></label>
+        <name>User_is_Supervisor__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Research Period</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Research Periods</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>New Page Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Section --></label>
+            <section>Hidden Section</section>
+        </sections>
+        <sections>
+            <label><!-- Progression --></label>
+            <section>Progression</section>
+        </sections>
+        <sections>
+            <label><!-- Research Period Details --></label>
+            <section>Research Period Details</section>
+        </sections>
+    </layouts><layouts>
+        <layout>PGR Staff Research Period Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Section --></label>
+            <section>Hidden Section</section>
+        </sections>
+        <sections>
+            <label><!-- Progression --></label>
+            <section>Progression</section>
+        </sections>
+        <sections>
+            <label><!-- Research Period Details --></label>
+            <section>Research Period Details</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Staff Research Period Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Section --></label>
+            <section>Hidden Section</section>
+        </sections>
+        <sections>
+            <label><!-- Progression --></label>
+            <section>Progression</section>
+        </sections>
+        <sections>
+            <label><!-- Research Period Details --></label>
+            <section>Research Period Details</section>
+        </sections>
+    </layouts><layouts>
+        <layout>Student Research Period Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hidden Section --></label>
+            <section>Hidden Section</section>
+        </sections>
+        <sections>
+            <label><!-- Progression --></label>
+            <section>Progression</section>
+        </sections>
+        <sections>
+            <label><!-- Research Period Details --></label>
+            <section>Research Period Details</section>
+        </sections>
+    </layouts><quickActions>
+        <label><!-- Re-Register --></label>
+        <name>Re_Register</name>
+    </quickActions><quickActions>
+        <label><!-- Start PAP Process --></label>
+        <name>Start_PAP_Process</name>
+    </quickActions><recordTypes>
+        <label><!-- Full Time --></label>
+        <name>Full_Time</name>
+    </recordTypes><recordTypes>
+        <label><!-- Part Time --></label>
+        <name>Part_Time</name>
+    </recordTypes><validationRules>
+        <errorMessage><!-- You cannot re-register this Student until a Progress Assessment has been completed and the Panel has allowed the Student to re-register --></errorMessage>
+        <name>Prevent_Reregistration_if_PAP_incomplete</name>
+    </validationRules><webLinks>
+        <label><!-- Delete_All_Periods --></label>
+        <name>Delete_All_Periods</name>
+    </webLinks></CustomObjectTranslation>

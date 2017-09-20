@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <description>Proof of no Contact records with a0H2000000LbQjS record related as Hesa Nationality</description>
+    <filter>
+        <criteriaItems>
+            <column>Contact$HESA_Nationality__c.Id</column>
+            <operator>equals</operator>
+            <value>a0H2000000LbQjS</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>HESA Natioanlity &quot;Unite Kingdom, not ot&quot;</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CRT_Students_Staff_with_HESA_Codes_via_Dom_Nat__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

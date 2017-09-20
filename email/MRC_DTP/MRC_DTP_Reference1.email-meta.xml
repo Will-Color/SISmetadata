@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>MRC-DTP Reference</name>
+    <style>freeForm</style>
+    <subject>Reminder: Reference Request</subject>
+    <textOnly>Dear {!References__c.Referee_Name__c},
+
+{!References__c.Applicant__c} has applied to undertake the LSTM - Lancaster Medical Research Council Doctoral Training Programme at the Liverpool School of Tropical Medicine and has indicated you as their referee.
+
+This is a gentle reminder to ask for your reference letter which is required by today, 14th January 2016. Interviews have been scheduled for Monday/Tuesday next week and the references form part of the candidate assessment.
+
+References will only be accepted using the attached template. Please type your name in the signature field and upload the reference form using the following link:
+
+{!References__c.Upload_URL__c}
+
+If you are not able to provide a reference for {!References__c.Applicant__c}, we would be grateful you could please notify us by email to mrcdtp@lstmed.ac.uk, stating your reasons.
+
+If you experience any issues, please contact us via email at mrcdtp@lstmed.ac.uk.
+
+Yours sincerely,
+
+
+MRC DTP Team
+Liverpool School of Tropical Medicine</textOnly>
+    <type>html</type>
+</EmailTemplate>

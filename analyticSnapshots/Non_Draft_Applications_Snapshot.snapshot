@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Snapshot of all Non-Draft/Non-Submitted Applications for Short Courses/Masters Modules/PGR https://emea.salesforce.com/00O20000007R1HH</description>
+    <groupColumn>Student_Programme__c$Id</groupColumn>
+    <mappings>
+        <sourceField>Student_Programme__c$Stage__c</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Trending__c.Stage__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>ExecutionTime</sourceField>
+        <sourceType>snapshot</sourceType>
+        <targetField>Trending__c.Snapshot_Date__c</targetField>
+    </mappings>
+    <mappings>
+        <sourceField>Student_Programme__c$Id</sourceField>
+        <sourceType>tabular</sourceType>
+        <targetField>Trending__c.Application__c</targetField>
+    </mappings>
+    <name>Non Draft/Subm Applications Snapshot - Short Courses/Masters Modules/PGR</name>
+    <runningUser>magenta.uatlstm@colorconsultancy.co.uk</runningUser>
+    <sourceReport>TRENDING_SNAPSHOTS/Application_Trending_Snapshot_Non_Draft</sourceReport>
+    <targetObject>Trending__c</targetObject>
+</AnalyticSnapshot>

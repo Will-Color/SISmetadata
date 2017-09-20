@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <label><!-- Cohort Affected --></label>
+        <name>Cohort_Affected__c</name>
+    </fields><fields>
+        <label><!-- Date Approved by Mgt Cttee --></label>
+        <name>Date_Approved_by_Mgt_Cttee__c</name>
+    </fields><fields>
+        <label><!-- Date Approved by QMC --></label>
+        <name>Date_Approved_by_QMC__c</name>
+    </fields><fields>
+        <help><!-- Please include details of any student consultation undertaken or confirm that students’ consent was obtained where this was required --></help>
+        <label><!-- Modification Description --></label>
+        <name>Modification_Description__c</name>
+    </fields><fields>
+        <label><!-- Modification Type --></label>
+        <name>Modification_Type__c</name>
+        <picklistValues>
+            <masterLabel>Major</masterLabel>
+            <translation><!-- Major --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Minor</masterLabel>
+            <translation><!-- Minor --></translation>
+        </picklistValues>
+    </fields><fields>
+        <label><!-- Programme Version --></label>
+        <name>Programme_Version__c</name>
+        <relationshipLabel><!-- Modifications --></relationshipLabel>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>Modification</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>Modifications</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>Modification Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts></CustomObjectTranslation>

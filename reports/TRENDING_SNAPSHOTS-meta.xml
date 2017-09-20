@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folderShares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>magenta.uatlstm@colorconsultancy.co.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>sue.assinder@lstmed.ac.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <folderShares>
+        <accessLevel>View</accessLevel>
+        <sharedTo>susan.reilly@lstmed.ac.uk</sharedTo>
+        <sharedToType>User</sharedToType>
+    </folderShares>
+    <name>TRENDING SNAPSHOTS</name>
+</ReportFolder>

@@ -1,0 +1,58 @@
+<apex:page id="communitiesSelfRegPage" showHeader="true" controller="CommunitiesSelfRegController" title="{!$Label.site.user_registration}">
+<style>
+    .zen-pipedList {
+        display:none;
+    }
+</style>
+     <apex:define name="body">  
+
+
+<!-- JS footer for ruler analytics BEGIN-->
+<script type="text/javascript">
+    var __raconfig = __raconfig || {};
+    __raconfig.uid = '582f0e86520ec';
+    __raconfig.action = 'track';
+    (function () {
+        var ra = document.createElement('script');
+        ra.type = 'text/javascript';
+        ra.src = 'https://ruler.nyltx.com/lib/1.0/ra-bootstrap.min.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ra, s);
+    }());
+</script>
+<!-- JS footer for ruler analytics END-->
+      
+<apex:form id="theForm" forceSSL="true">
+                    <apex:pageMessages id="error"/>
+                    <apex:pageBlock title="Create My LSTM Account">
+                    <apex:outputText value="{!selfRegPageCopy.Body_Copy__c}" escape="false"/>
+                    <br/><br/>
+                    <center>
+                    <apex:panelGrid columns="2" style="margin-top:1em;">
+                      <apex:outputLabel value="First Name *" for="firstName"/>
+                      <apex:inputText required="true" id="firstName" value="{!firstName}" label="First Name"/>
+                      <apex:outputLabel value="Last Name *" for="lastName"/>
+                      <apex:inputText required="true" id="lastName" value="{!lastName}" label="Last Name"/>
+                      <!-- <apex:outputLabel value="{!$Label.site.community_nickname}" for="communityNickname"/>
+                      <apex:inputText required="true" id="communityNickname" value="{!communityNickname}" label="{!$Label.site.community_nickname}"/> -->
+                      <apex:outputLabel value="{!$Label.site.email} *" for="email"/>
+                      <apex:inputText required="true" id="email" value="{!email}" label="{!$Label.site.email}"/>
+                      <apex:outputLabel value="{!$Label.site.password} *" for="password"/>
+                      <apex:inputSecret id="password" value="{!password}"/>
+                      <apex:outputLabel value="{!$Label.site.confirm_password} *" for="confirmPassword"/>
+                      <apex:inputSecret id="confirmPassword" value="{!confirmPassword}"/>
+                      <!-- <apex:outputText value=""/> -->
+                      
+                    </apex:panelGrid>
+                        <apex:commandButton action="{!registerUser}" value="{!$Label.site.submit}" id="submit"/>
+                        &nbsp;&nbsp;
+                        <apex:commandButton action="{!cancel}" value="{!$Label.site.cancel}" id="cancel" immediate="true"/> 
+                    </center>
+                    </apex:pageBlock>
+                  <br/>
+</apex:form>
+     
+      <br/>
+    </apex:define>
+
+</apex:page>

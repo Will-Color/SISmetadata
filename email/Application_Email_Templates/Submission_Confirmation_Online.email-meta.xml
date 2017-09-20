@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Submission Confirmation for Online Courses</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Letterhead</letterhead>
+    <name>Submission Confirmation - Online</name>
+    <style>formalLetter</style>
+    <subject>Confirmation of Application Submission</subject>
+    <textOnly>Dear {!Student_Programme__c.Student__c},
+
+Thank you for submitting your application for the {!Student_Programme__c.Programme__c}, {!Student_Programme__c.Programme_Type__c}, and for your interest in studying online with the Liverpool School of Tropical Medicine.
+
+Once your application has been submitted for processing, we aim to provide confirmation as soon as possible, usually within a couple of days. We don&apos;t anticipate this taking longer than 10 working days maximum.
+
+If you have any queries about your application, please e-mail MyLSTM@lstmed.ac.uk
+
+Have a great day.
+
+Yours sincerely
+
+The Admissions Team
+The Liverpool School of Tropical Medicine
+Pembroke Place
+Liverpool
+L3 5QA</textOnly>
+    <type>html</type>
+</EmailTemplate>

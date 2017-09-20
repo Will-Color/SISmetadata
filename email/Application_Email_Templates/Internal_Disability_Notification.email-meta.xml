@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Notification of disability when Student Programme Stage = UNCONDITIONAL</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>LSTM_Internal_Letterhead</letterhead>
+    <name>Internal Disability Notification</name>
+    <style>freeForm</style>
+    <subject>Applicant Disability Notification</subject>
+    <textOnly>The following student has declared a disability on their application form and has sent an unconditional offer:
+
+
+Student: {!Student_Programme__c.Student__c}
+
+Student ID Number: {!Student_Programme__c.LSTM_No__c}
+
+Student Programme: {!Student_Programme__c.Name}
+
+Disability: {!Student_Programme__c.Disability__c}
+
+HESA Disability: {!Student_Programme__c.HESA_Disability__c}
+
+The Student has indicated the following:
+
+Do Not Contact: {!Student_Programme__c.DoNotContact__c}</textOnly>
+    <type>html</type>
+</EmailTemplate>

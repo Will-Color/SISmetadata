@@ -1,0 +1,126 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<p><font face="Times New Roman">
+
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>{!Contact.FirstName}&nbsp;{!Contact.LastName}</span></p><p><font face="Times New Roman">
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>{!Contact.MailingAddress}</span></p><p><font face="Times New Roman">
+
+</font><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>{!Today}</span></p><p><font face="Times New Roman"><br></font></p><p><font face="Times New Roman">
+
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Dear
+{!Contact.FirstName},</span></p><p><font face="Times New Roman">
+</font><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'><b>Student
+ID Number:&nbsp;{!Contact.LSTM_No__c}</b></span></p><p><font face="Times New Roman">
+
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'><br></span></p><p><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>On behalf
+of the Liverpool School of Tropical Medicine, I would like to offer you a
+conditional place on the MSc in&nbsp;<span style="background: white;">{!Student_Programme__c.Programme__c}.&nbsp;</span>The
+programme runs </span><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>from
+{!Student_Programme__c.Programme_Start_Date__c} to {!Student_Programme__c.Programme_End_Date__c}.</span></p><p><font face="Times New Roman">
+
+</font><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>The
+conditions of this offer are:</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>&nbsp;</span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>- You
+must provide evidence of your degree award &lt;and classification if
+applicable&gt;.</span></p><p><font face="Times New Roman">
+
+</font><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>- Receipt
+of one/two suitable references which are no more than two years old. References
+should be from senior academic and/ or professional persons who are currently
+responsible or have recently been responsible for supervising you; friends and
+family are not acceptable. &nbsp;If you have given us permission to contact
+your referees on submitting your application then you do not need to take any
+further action. If you have not given us permission to contact your referees
+then you will need to ask your referees to email their references directly to <a href="mailto:msc@lstmed.ac.uk"><span style="color: windowtext;">msc@lstmed.ac.uk</span></a>.
+Please note that for verification purposes references should be emailed from a
+business email address. If this is not possible, then references should appear
+on headed stationery and/ or bear the official stamp of the organisation.</span></p><p><font face="Times New Roman">
+
+</font><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- You must provide evidence of how you are going to fund your studies.
+If you are self-funding (you or a family member are funding your studies),
+please sign and return the attached fees agreement letter. Please note that
+electronic signatures are not accepted. If you are sponsored by an organisation
+(for example,&nbsp;</span><span lang="EN" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN;'>your home government, the British Council
+etc.),&nbsp;</span><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>please provide a letter from your sponsor confirming these arrangements.
+The letter&nbsp;<u>must</u>&nbsp;include all of the information detailed in the
+template sponsor letter which you will find as an attachment to this offer.</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>&nbsp;</span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>- You
+must meet the English language entry requirements. Further information on how
+to meet these requirements can be found on the website: <a href="http://www.lstmliverpool.ac.uk/learning--teaching/applying-to-lstm/english-language/"><span style="color: windowtext;">http://www.lstmliverpool.ac.uk/learning--teaching/applying-to-lstm/english-language/</span></a>.</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>&nbsp;</span><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>- Payment of £1000 tuition fee in advance must be made no later than 1<sup>st</sup>
+June 2015. Payment </span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>details can be requested from us once&nbsp;you have met all of the conditions detailed above. Payment
+constitutes a commitment to LSTM and as such is non-refundable.</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>Demand for our programmes
+often exceeds the number of available places, therefore it is in your best
+interests to meet all the conditions of your offer as soon as possible in order
+to secure a place. If you think you will be unable to meet the conditions of
+your offer in time for the start date of the programme, you may be able to
+defer entry until the following year.&nbsp; Students may only defer entry once.
+For further details please see the LSTM Admissions policy which can be found on
+our website by clicking </span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'><a href="http://www.lstmliverpool.ac.uk/media/28784/lstm_admissions_policy.pdf"><span lang="EN-US" style="color: windowtext; mso-ansi-language: EN-US;">here</span></a></span><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>.</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>Once you have met <u>all</u>
+of the conditions of this offer we will confirm your place on the programme and
+you will be</span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'> invoiced
+for the remaining balance of your tuition fees. Attached to this email is information about research project which you should read carefully. If you do not know if you wish
+to undertake an overseas project then you should let me know now so that I do
+not include the fee in the final invoice; you can reconsider this decision
+further into your studies. Sponsored students should be aware that it is
+difficult to request additional funds after they have commenced their studies</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>
+</span><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Tuition
+fees are normally due in full one week before the start of the programme. In
+exceptional circumstances students can be considered for a three part
+instalment plan but only if arranged in advance of the start of the programme.</span></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'><br></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><b><span style="font-family: Arial, sans-serif; font-size: 10pt;">Scholarships<o:p></o:p></span></b></p><p class="MsoNormal" style="margin-bottom: 0pt;"><b><span style="font-family: Arial, sans-serif; font-size: 10pt;">&nbsp;</span></b></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style="font-family: Arial, sans-serif; font-size: 10pt;">LSTM is able to offer a limited number of scholarships to support
+applicants who already have some funding in in place. </span><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi;'>Awards
+granted do not normally exceed 50% of the tuition fee </span><span style='font-family: "Arial",sans-serif; font-size: 10pt;'>and in most cases are
+considerably less</span><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi;'>. The deadline for applying is midnight on 30<sup>th</sup>
+April 2015 and in time applications will be considered at the Fellowships and
+Scholarships Committee in May. <o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'>&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'>Scholarship applications received after the
+deadline<o:p></o:p></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'>&nbsp;</span></p><p style="margin: 0cm 0cm 0pt;">
+
+
+
+
+
+
+
+
+
+
+
+</p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'>Occasionally, if there are unused funds we may
+hold a second Fellowships and Scholarships Committee so if you are receiving
+this offer after the deadline you may still wish to submit an application.&nbsp;&nbsp;</span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'><br></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'><strong>Current Passport</strong></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'><br></span></p><p class="MsoNormal" style="margin-bottom: 0pt;"><span style='letter-spacing: -0.1pt; font-family: "Arial",sans-serif; font-size: 10pt; mso-bidi-font-family: "Times New Roman"; mso-bidi-theme-font: minor-bidi; mso-bidi-font-size: 11.0pt;'>As part of the application process you were asked to provide details of your current passport. If you update your passport then you must inform us by emailing us a copy of the photo ID page.</span></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; text-align: justify; line-height: normal;"><span lang="EN-US" style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>May I offer my
+congratulations on gaining this offer. If you require any further information
+or advice then please do not hesitate to contact me.</span></p><p><font face="Times New Roman">
+
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+</font><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Yours
+sincerely</span></p><p><font face="Times New Roman">
+
+<br></font></p><p><font face="Times New Roman">
+
+</font><font face="Times New Roman"><br></font></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>{!User.FirstName}&nbsp;{!User.LastName}</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Administrator
+– Academic Registry</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Email:&nbsp;<a href="mailto:msc@lstmed.ac.uk"><span style="color: windowtext;">msc@lstmed.ac.uk</span></a></span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>Telephone:&nbsp;{!User.Phone}</span><font face="Times New Roman"><br></font></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Enc.</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Tuition Fees 2015/16</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Scholarship Information</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Project Information</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Fees Agreement Letter</span><font face="Times New Roman"><br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><span style='font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-bidi-font-style: italic;'>Template Sponsor Letter</span><font face="Times New Roman"><br></font></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 0pt; line-height: normal;"><b><span style='background: white; font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB;'>SPONSOR LICENCE NUMBER:&nbsp;</span></b><b><span lang="EN-US" style='background: white; font-family: "Arial",sans-serif; font-size: 10pt; mso-fareast-font-family: "Times New Roman"; mso-fareast-language: EN-GB; mso-ansi-language: EN-US;'>WBN38URF9</span></b></p><p><font face="Times New Roman">
+
+<br></font></p><p style="margin: 0cm 0cm 8pt;"><span style='line-height: 107%; font-family: "Arial",sans-serif; font-size: 10pt;'>&nbsp;</span></p><p><font face="Times New Roman">
+
+<br></font></p>]]></td>
+</tr>
+</table>

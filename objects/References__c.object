@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObject xmlns="http://soap.sforce.com/2006/04/metadata"><actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides><actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides><fields>
+        <fullName>Applicant__c</fullName>
+        <externalId>false</externalId>
+        <label>Applicant</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>References</relationshipLabel>
+        <relationshipName>References</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>true</reparentableMasterDetail>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields><fields>
+        <fullName>Applied_Programme__c</fullName>
+        <externalId>false</externalId>
+        <formula>Student_Programme__r.Programme__r.Programme_Version__r.Master_Link__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Used in the email to referees</inlineHelpText>
+        <label>Applied Programme</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Can_Request_Reference_from_Referee__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Can Request Reference from Referee?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>College_University_or_Employer__c</fullName>
+        <externalId>false</externalId>
+        <label>College / University or Employer</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_City__c</fullName>
+        <description>Form Assembly City - SF Mailing City</description>
+        <externalId>false</externalId>
+        <label>FA City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Country__c</fullName>
+        <description>Form Assembly Country - SF Mailing Country</description>
+        <externalId>false</externalId>
+        <label>FA Country</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Email__c</fullName>
+        <description>Form Assembly Email</description>
+        <externalId>false</externalId>
+        <label>FA Email</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_First_Name__c</fullName>
+        <description>Form Assembly First Name - SF First Name</description>
+        <externalId>false</externalId>
+        <label>FA First Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Position__c</fullName>
+        <description>Form Assembly Position - SF Title</description>
+        <externalId>false</externalId>
+        <label>FA Position</label>
+        <length>100</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Postal_Code__c</fullName>
+        <description>Form Assembly Postal Code - SF Mailing Zip/ Postal Code</description>
+        <externalId>false</externalId>
+        <label>FA Postal Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_State_Province__c</fullName>
+        <description>Form Assembly State/Province - SF Mailing State/Province</description>
+        <externalId>false</externalId>
+        <label>FA State/Province</label>
+        <length>180</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Street__c</fullName>
+        <description>Form Assembly Street - SF Mailing Street</description>
+        <externalId>false</externalId>
+        <label>FA Street</label>
+        <length>180</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Surname__c</fullName>
+        <description>Form Assembly Surname - SF Last Name</description>
+        <externalId>false</externalId>
+        <label>FA Surname</label>
+        <length>80</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>FA_Telephone_Number__c</fullName>
+        <description>Form Assembly Telephone Number - SF Business Phone</description>
+        <externalId>false</externalId>
+        <label>FA Telephone Number</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields><fields>
+        <fullName>FA_Title__c</fullName>
+        <description>Form Assembly Title - SF Salutation</description>
+        <externalId>false</externalId>
+        <label>FA Title</label>
+        <length>20</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Has_Attachment__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Has Attachment</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Programme_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Text( Student_Programme__r.Programme__r.Programme_Version__r.Programme_Type_External__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Uses external programme type from Programme Version</inlineHelpText>
+        <label>Programme Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee_Address__c</fullName>
+        <externalId>false</externalId>
+        <formula>Referee__r.MailingStreet + " " + Referee__r.MailingCity + " " +  Referee__r.MailingState + " " +  Referee__r.MailingPostalCode + " " + Referee__r.MailingCountry</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Address</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee_Email__c</fullName>
+        <externalId>false</externalId>
+        <formula>Referee__r.Email</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Referee__r.Salutation) + " " +  Referee__r.FirstName + " " +  Referee__r.LastName</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Full name with title (salutation)</inlineHelpText>
+        <label>Referee Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee_Override__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Student_Programme__r.Programme__r.Referee_Override__c = True, True, False)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Set at programme level</inlineHelpText>
+        <label>Referee Override</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Referee_Phone__c</fullName>
+        <externalId>false</externalId>
+        <formula>Referee__r.Phone</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee_Position__c</fullName>
+        <externalId>false</externalId>
+        <formula>Referee__r.Title</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Referee Position</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><fields>
+        <fullName>Referee__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <inlineHelpText>Link to referee Contact record</inlineHelpText>
+        <label>Referee</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>References (Referee)</relationshipLabel>
+        <relationshipName>References1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Reference_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Reference Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Requested</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replied</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Checked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields><fields>
+        <fullName>Student_Programme__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Student Programme</label>
+        <referenceTo>Student_Programme__c</referenceTo>
+        <relationshipLabel>References</relationshipLabel>
+        <relationshipName>References</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields><fields>
+        <fullName>Test_Record__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF ( Text (Applicant__r.Test_Record__c ) = "Yes", TRUE, FALSE)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>Taken from Student (contact) record</inlineHelpText>
+        <label>Test Record</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields><fields>
+        <fullName>Upload_URL__c</fullName>
+        <description>Note - must change domain element of URL when moving to other Orgs</description>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(
+"http://lstmreference.force.com/ReferenceUpload?spid=" &amp; Student_Programme__c &amp; "&amp;rid=" &amp; Id, "Please Click Here" )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Upload URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields><allowInChatterGroups>false</allowInChatterGroups><compactLayoutAssignment>SYSTEM</compactLayoutAssignment><deploymentStatus>Deployed</deploymentStatus><description>Custom object to hold Reference information on applications</description><enableActivities>true</enableActivities><enableBulkApi>true</enableBulkApi><enableFeeds>true</enableFeeds><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><enableSharing>true</enableSharing><enableStreamingApi>true</enableStreamingApi><externalSharingModel>ControlledByParent</externalSharingModel><label>Reference</label><nameField>
+        <displayFormat>Reference-{00000}</displayFormat>
+        <label>Reference</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField><pluralLabel>References</pluralLabel><searchLayouts>
+        <customTabListAdditionalFields>Applicant__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Student_Programme__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Can_Request_Reference_from_Referee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Has_Attachment__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Referee__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Reference_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Referee_Override__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>LAST_UPDATE</customTabListAdditionalFields>
+        <searchResultsAdditionalFields>Applicant__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Student_Programme__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Has_Attachment__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Referee__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Reference_Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CREATED_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>LAST_UPDATE</searchResultsAdditionalFields>
+    </searchLayouts><sharingModel>ControlledByParent</sharingModel><listViews>
+        <fullName>All_Test</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Can_Request_Reference_from_Referee__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>Referee__c</columns>
+        <columns>Referee_Name__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Test_Record__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>startsWith</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Test References</label>
+        <sharedTo>
+            <group>VLE_Admin_Group</group>
+        </sharedTo>
+    </listViews><listViews>
+        <fullName>All_blanks</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Can_Request_Reference_from_Referee__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>Referee__c</columns>
+        <columns>Referee_Email__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Referee_Override__c</columns>
+        <columns>CREATED_DATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Referee__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>X Blank References</label>
+        <sharedTo>
+            <group>VLE_Admin_Group</group>
+        </sharedTo>
+    </listViews><listViews>
+        <fullName>All_no_Test</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Can_Request_Reference_from_Referee__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>Referee__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Referee_Override__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Programme_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Reference_Status__c</field>
+            <operation>equals</operation>
+            <value>Replied,Checked,Submitted</value>
+        </filters>
+        <label>X All Valid References</label>
+    </listViews><listViews>
+        <fullName>MRC_DTP_References</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <columns>Referee__c</columns>
+        <columns>Referee_Email__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Reference_Status__c</field>
+            <operation>equals</operation>
+            <value>Replied,Requested</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>greaterThan</operation>
+            <value>9/30/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Programme_Type__c</field>
+            <operation>equals</operation>
+            <value>Research Programme</value>
+        </filters>
+        <label>MRC-DTP References</label>
+    </listViews><listViews>
+        <fullName>MSc_New_References_to_Check</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Programme_Type__c</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Reference_Status__c</field>
+            <operation>equals</operation>
+            <value>Replied</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Programme_Type__c</field>
+            <operation>equals</operation>
+            <value>MSc Programme</value>
+        </filters>
+        <label>MSc: New References to Check</label>
+    </listViews><listViews>
+        <fullName>PCU_New_Reference_to_Check</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Reference_Status__c</field>
+            <operation>equals</operation>
+            <value>Replied</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Programme_Type__c</field>
+            <operation>equals</operation>
+            <value>Professional Programme,Short Course</value>
+        </filters>
+        <label>PCU: New Reference to Check</label>
+    </listViews><listViews>
+        <fullName>Research_New_References_to_Check</fullName>
+        <columns>NAME</columns>
+        <columns>Applicant__c</columns>
+        <columns>Programme_Type__c</columns>
+        <columns>Applied_Programme__c</columns>
+        <columns>Student_Programme__c</columns>
+        <columns>Reference_Status__c</columns>
+        <columns>Has_Attachment__c</columns>
+        <columns>LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Applicant__c</field>
+            <operation>notContain</operation>
+            <value>_DUMMY_</value>
+        </filters>
+        <filters>
+            <field>Test_Record__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>Reference_Status__c</field>
+            <operation>equals</operation>
+            <value>Replied</value>
+        </filters>
+        <filters>
+            <field>LAST_UPDATE</field>
+            <operation>greaterThan</operation>
+            <value>1/1/2015 12:00 AM</value>
+        </filters>
+        <filters>
+            <field>Programme_Type__c</field>
+            <operation>equals</operation>
+            <value>Research Programme</value>
+        </filters>
+        <label>Research: New References to Check</label>
+    </listViews><webLinks>
+        <fullName>Checked</fullName>
+        <availability>online</availability>
+        <description>To be used when checking references</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Checked</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT("/soap/ajax/26.0/connection.js")}
+
+var References = new sforce.SObject("References__c");
+References.id = "{!References__c.Id}";
+References.Reference_Status__c = "Checked";
+
+var result=sforce.connection.update([References]);
+
+if (result[0].success=='false') {
+    alert(result[0].errors.message);
+} else {
+    location.reload(true);
+}</url>
+    </webLinks></CustomObject>

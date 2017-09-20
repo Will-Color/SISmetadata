@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>SIS_Audit__c.Student_Programme__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.HESA_Domicile__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.HESA_Domicile_Code__c</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_CITY</field>
+    </columns>
+    <columns>
+        <field>FK_CNTC_ADDR2_COUNTRY</field>
+    </columns>
+    <columns>
+        <field>FK_$Contact.HESA_Nationality__c</field>
+    </columns>
+    <description>Issues for 15/16 HESA return</description>
+    <filter>
+        <criteriaItems>
+            <column>FK_$Contact.HESA_Domicile_Code__c</column>
+            <operator>equals</operator>
+            <value>XK</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>SIS_Audit__c.Output_Section__c</column>
+            <operator>equals</operator>
+            <value>Student</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>HESA Domicile = XK</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$SIS_Audit__c@SIS_Audit__c.Student__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?><CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata"><fields>
+        <help><!-- From Progress Assessment record --></help>
+        <label><!-- Date of Review --></label>
+        <name>Date_of_Review__c</name>
+    </fields><fields>
+        <label><!-- Narrative --></label>
+        <name>Narrative__c</name>
+    </fields><fields>
+        <label><!-- Panel Member --></label>
+        <name>Panel_Member__c</name>
+        <relationshipLabel><!-- PAP Membership --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Progress Assessment --></label>
+        <name>Progress_Assessment__c</name>
+        <relationshipLabel><!-- PAP Members --></relationshipLabel>
+    </fields><fields>
+        <label><!-- Assessed Period --></label>
+        <name>Research_Period__c</name>
+        <relationshipLabel><!-- PAP Members --></relationshipLabel>
+    </fields><fields>
+        <help><!-- From Progress Assessment record --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields><fields>
+        <label><!-- Student --></label>
+        <name>Student__c</name>
+    </fields><fields>
+        <label><!-- Submit to Panel --></label>
+        <name>Submit_to_Panel__c</name>
+    </fields><fields>
+        <label><!-- Submit to Supervisor --></label>
+        <name>Submit_to_Supervisor__c</name>
+    </fields><fields>
+        <help><!-- Used to drive List Views on Staff Community --></help>
+        <label><!-- User is PAP Member --></label>
+        <name>User_is_PAP_Member__c</name>
+    </fields><fields>
+        <label><!-- User is Supervisor --></label>
+        <name>User_is_Supervisor__c</name>
+    </fields><caseValues>
+        <plural>false</plural>
+        <value>PAP Member</value>
+    </caseValues><caseValues>
+        <plural>true</plural>
+        <value>PAP Members</value>
+    </caseValues><startsWith>Consonant</startsWith><layouts>
+        <layout>PAP Member Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts><validationRules>
+        <errorMessage><!-- Sorry, you cannot add yourself as a PAP Member for this Student while you are an Assigned Supervisor. --></errorMessage>
+        <name>Prevent_Running_User_becoming_PAP_Member</name>
+    </validationRules><webLinks>
+        <label><!-- Mass_Delete --></label>
+        <name>Mass_Delete</name>
+    </webLinks></CustomObjectTranslation>

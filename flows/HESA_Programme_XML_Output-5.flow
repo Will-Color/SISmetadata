@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Post_Error_Message</name>
+        <label>Post Error Message</label>
+        <locationX>961</locationX>
+        <locationY>190</locationY>
+        <actionName>chatterPost</actionName>
+        <actionType>chatterPost</actionType>
+        <inputParameters>
+            <name>subjectNameOrId</name>
+            <value>
+                <elementReference>vProgrammeID</elementReference>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>text</name>
+            <value>
+                <elementReference>cErrorMessagePost</elementReference>
+            </value>
+        </inputParameters>
+        <outputParameters>
+            <assignToReference>vErrorPost</assignToReference>
+            <name>feedItemId</name>
+        </outputParameters>
+    </actionCalls>
+    <constants>
+        <name>cAuditBody</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>HESA</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cAuditEvent</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Active Programme</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cAuditPeriod</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>H1516</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cErrorMessagePost</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>There has been an error with the Course XML Flow</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cLSTM_tbc</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>*** LSTM tbc ***</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOrderInXML</name>
+        <dataType>Number</dataType>
+        <value>
+            <numberValue>1.0</numberValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cOutputSection</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Course</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>cWIP</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Work in Progress</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Existing_or_New_Audit</name>
+        <label>Existing or New Audit</label>
+        <locationX>591</locationX>
+        <locationY>187</locationY>
+        <defaultConnector>
+            <targetReference>Post_Error_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>New_Audit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>sO_Programme.Audit_Log__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Course_XML_Create</targetReference>
+            </connector>
+            <label>New Audit</label>
+        </rules>
+        <rules>
+            <name>Existing_Audit</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>sO_Programme.Audit_Log__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Course_XML_Update</targetReference>
+            </connector>
+            <label>Existing Audit</label>
+        </rules>
+    </decisions>
+    <description>Invoked by Process &apos;HESA Programme Audit Event&apos;, which is by Active = True or use of Audit Trigger checkbox; Exclusion = False</description>
+    <formulas>
+        <description>From: https://www.hesa.ac.uk/index.php?option=com_studrec&amp;task=show_file&amp;mnl=15051&amp;href=a^_^COURSEAIM.html
+
+MSc M00; Diplomas M70/H60</description>
+        <name>fCourseAim</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_Programme.Type__c} = &quot;MSc Programme&quot;, &quot;M00&quot;, &quot;H60&quot;)</expression>
+    </formulas>
+    <formulas>
+        <description>To Hesa format</description>
+        <name>fCourseXML</name>
+        <dataType>String</dataType>
+        <expression>&quot;&lt;COURSEID&gt;&quot; &amp; {!sO_Programme.Instance_Code__c} &amp;  &quot;&lt;/COURSEID&gt;&quot; &amp;
+&quot;&lt;OWNCOURSEID&gt;&quot; &amp; {!sO_Programme.Code__c} &amp; &quot;&lt;/OWNCOURSEID&gt;&quot; &amp;
+&quot;&lt;AWARDBOD&gt;10006842&lt;/AWARDBOD&gt;&quot; &amp;
+&quot;&lt;CLSDCRS&gt;0&lt;/CLSDCRS&gt;&quot; &amp;
+&quot;&lt;COLLORG&gt;0000&lt;/COLLORG&gt;&quot; &amp;
+&quot;&lt;COURSEAIM&gt;&quot; &amp; {!fCourseAim} &amp; &quot;&lt;/COURSEAIM&gt;&quot; &amp;
+&quot;&lt;CTITLE&gt;&quot; &amp; {!sO_Programme.Name} &amp; &quot;&lt;/CTITLE&gt;&quot; &amp;
+&quot;&lt;MSFUND&gt;01&lt;/MSFUND&gt;&quot; &amp;
+&quot;&lt;REDUCEDC&gt;00&lt;/REDUCEDC&gt;&quot; &amp;
+&quot;&lt;TTCID&gt;0&lt;/TTCID&gt;&quot; &amp;
+&quot;&lt;CourseSubject&gt;&quot; &amp;
+    &quot;&lt;SBJCA&gt;&quot; &amp; {!fSubjectOfCourse} &amp; &quot;&lt;/SBJCA&gt;&quot; &amp;
+    &quot;&lt;SBJPCNT&gt;100&lt;/SBJPCNT&gt;&quot; &amp;
+&quot;&lt;/CourseSubject&gt;&quot;</expression>
+    </formulas>
+    <formulas>
+        <description>Values as defined by KF 19th Sept 16
+
+https://www.hesa.ac.uk/collection/c15051/a/sbjca/</description>
+        <name>fSubjectOfCourse</name>
+        <dataType>String</dataType>
+        <expression>IF ( {!sO_Programme.Programme_Code__c} = &quot;DTN&quot;, &quot;B702&quot;, &quot;A300&quot;)</expression>
+    </formulas>
+    <interviewLabel>HESA Programme XML Output {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>HESA Programme XML Output</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Course_XML_Create</name>
+        <label>Course XML Create</label>
+        <locationX>438</locationX>
+        <locationY>320</locationY>
+        <assignRecordIdToReference>vCourseXMLID</assignRecordIdToReference>
+        <connector>
+            <targetReference>Audit_ID_to_Programme</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Audit_Body__c</field>
+            <value>
+                <elementReference>cAuditBody</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Event__c</field>
+            <value>
+                <elementReference>cAuditEvent</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fCourseXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Audit_Period__c</field>
+            <value>
+                <elementReference>cAuditPeriod</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Order__c</field>
+            <value>
+                <elementReference>cOrderInXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other_ID__c</field>
+            <value>
+                <elementReference>vProgrammeID</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Output_Section__c</field>
+            <value>
+                <elementReference>cOutputSection</elementReference>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordCreates>
+    <recordLookups>
+        <name>Programme</name>
+        <label>Programme</label>
+        <locationX>594</locationX>
+        <locationY>52</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Existing_or_New_Audit</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vProgrammeID</elementReference>
+            </value>
+        </filters>
+        <object>Programme__c</object>
+        <outputReference>sO_Programme</outputReference>
+        <queriedFields>Academic_Year__c</queriedFields>
+        <queriedFields>Code__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+        <queriedFields>End_Date__c</queriedFields>
+        <queriedFields>Start_Date__c</queriedFields>
+        <queriedFields>Audit_Log__c</queriedFields>
+        <queriedFields>Type__c</queriedFields>
+        <queriedFields>Instance_Code__c</queriedFields>
+        <queriedFields>Programme_Code__c</queriedFields>
+        <queriedFields>Programme_Type__c</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Audit_ID_to_Programme</name>
+        <label>Audit ID to Programme</label>
+        <locationX>438</locationX>
+        <locationY>457</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>vProgrammeID</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Log__c</field>
+            <value>
+                <elementReference>vCourseXMLID</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Programme__c</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Course_XML_Update</name>
+        <label>Course XML Update</label>
+        <locationX>720</locationX>
+        <locationY>322</locationY>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>sO_Programme.Audit_Log__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Audit_Output__c</field>
+            <value>
+                <elementReference>fCourseXML</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Exclude__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>SIS_Audit__c</object>
+    </recordUpdates>
+    <startElementReference>Programme</startElementReference>
+    <variables>
+        <name>sO_Programme</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+        <objectType>Programme__c</objectType>
+    </variables>
+    <variables>
+        <name>vCourseXMLID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vErrorPost</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+    <variables>
+        <name>vProgrammeID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>true</isOutput>
+    </variables>
+</Flow>

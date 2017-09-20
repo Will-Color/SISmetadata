@@ -1,0 +1,8 @@
+Please delete the AD Account for the following student
+
+Please deactivate the Brightspace account if the account exists (student may not have Pre-Registered prior to withdrawal or derferral)
+
+
+{!Student_Programme__c.Student__c}
+{!Student_Programme__c.LSTM_Email__c}
+Stage: {!Student_Programme__c.Stage__c}
